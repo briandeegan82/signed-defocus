@@ -70,7 +70,8 @@ def gate_a(s):
     rho, p_rho = stats.spearmanr(s.lca_over_delta, s.dir_acc)
     tau, p_tau = stats.kendalltau(s.lca_over_delta, s.dir_acc)
     ordered = s.sort_values("lca_over_delta").dir_acc.values
-    return pd.DataFrame([dict(n_lenses=len(s), spearman_rho=rho, spearman_p=p_rho,
+    p_one = stats.spearmanr(s.lca_over_delta, s.dir_acc, alternative="greater").pvalue
+    return pd.DataFrame([dict(n_lenses=len(s), spearman_rho=rho, spearman_p=p_rho, spearman_p_one_sided=p_one,
                               kendall_tau=tau, kendall_p=p_tau,
                               adjacent_inversions=int(np.sum(np.diff(ordered) < 0)),
                               strictly_monotone=bool(np.all(np.diff(ordered) > 0)))])

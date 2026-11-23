@@ -2,6 +2,8 @@
 
 Exploratory gate check, not a paper result. Every number here will be regenerated from the frozen pipeline.
 
+Correction: the "µm" below are render ladder units (DZ × 1000), not sensor displacement. `DOF_RESCORE.md` converts the synthetic lenses to µm and depth of focus.
+
 ## Provenance
 
 - Code: `src/physics_baseline.py` (this commit).

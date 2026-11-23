@@ -4,7 +4,7 @@ Source: B. Deegan et al., "The Influence of Bayer Demosaic Algorithms on Spatiot
 
 | Item | Value | Source |
 |---|---|---|
-| Camera | FLIR Blackfly BFS-U3-89S6 (the paper prints "89s6M"; the data are RGGB Bayer, so this is presumably the colour model, BFS-U3-89S6C; to confirm) | Paper II-A |
+| Camera | FLIR Blackfly BFS-U3-89S6C, colour (the paper prints "89s6M") | Paper II-A; colour model confirmed by Brian, 2026-11-23 |
 | Sensor | Sony IMX255, 4096 x 2160 | Paper II-A; frame size in `lab_sweep.py` |
 | Pixel pitch | 3.45 µm (IMX255 datasheet value; not stated in the paper; to confirm) | Datasheet, not yet checked |
 | Lens | 6 mm focal length, f/2.0; make and model not stated | Paper II-A |
@@ -25,5 +25,4 @@ Source: B. Deegan et al., "The Influence of Bayer Demosaic Algorithms on Spatiot
 ## Open items for Brian
 
 - Lens make and model (gives LCA and the focus-ring thread pitch).
-- Colour or mono camera variant.
 - Whether the 29 repeat frames per step still exist.

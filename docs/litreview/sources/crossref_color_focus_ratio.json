@@ -1,0 +1,1490 @@
+{
+ "query": "sharpness ratio color channels autofocus direction",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.3403/30456285",
+   "title": [
+    "Measuring autofocus repeatability of sharpness and latency"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "standard",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.3403/30456285u",
+   "title": [
+    "Measuring autofocus repeatability of sharpness and latency"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "standard",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2139/ssrn.5033007",
+   "title": [
+    "Sharpness-Statistic Based Autofocus Algorithm for Fourier Ptychographic Microscopy"
+   ],
+   "author": [
+    {
+     "given": "Shuyuan",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yinghui",
+     "family": "Ni",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Weijie",
+     "family": "Deng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mingjie",
+     "family": "Sun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2352/issn.2470-1173.2017.12.iqsp-247",
+   "title": [
+    "Autofocus Analysis: Latency and Sharpness"
+   ],
+   "author": [
+    {
+     "given": "Katrina",
+     "family": "Passarella",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Brett",
+     "family": "Frymire",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Ed",
+     "family": "Chang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      1,
+      29
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/ao.16.002273",
+   "title": [
+    "Depth of convergence of a sharpness index autofocus system"
+   ],
+   "author": [
+    {
+     "given": "Ahmed",
+     "family": "Erteza",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1977,
+      8,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1109/lsp.2006.881525",
+   "title": [
+    "Optimal Sharpness Function for SAR Autofocus"
+   ],
+   "author": [
+    {
+     "given": "Timothy J.",
+     "family": "Schulz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Signal Processing Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 58
+  },
+  {
+   "DOI": "10.1364/ol.25.000221",
+   "title": [
+    "Synthetic-aperture radar autofocus by maximizing sharpness"
+   ],
+   "author": [
+    {
+     "given": "J. R.",
+     "family": "Fienup",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      2,
+      15
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 90
+  },
+  {
+   "DOI": "10.2174/0122127976395345250728074955",
+   "title": [
+    "Research and Improvement of Image Sharpness Evaluation and Autofocus Method"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0003-5991-7374",
+     "authenticated-orcid": true,
+     "given": "Jiajun",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "College of Mechanical and Electrical Engineering, Changchun University of Science and Technology, Changchun, Jilin, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Zhanjiang",
+     "family": "Yu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "College of Mechanical and Electrical Engineering, Changchun University of Science and Technology, Changchun, Jilin, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yiquan",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "College of Mechanical and Electrical Engineering, Changchun University of Science and Technology, Changchun, Jilin, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      27
+     ]
+    ]
+   },
+   "container-title": [
+    "Recent Patents on Mechanical Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/siu.2015.7129897",
+   "title": [
+    "Autofocus liquid lens by using sharpness measurement"
+   ],
+   "author": [
+    {
+     "given": "Pejman",
+     "family": "Rasti",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rudolf",
+     "family": "Kiefer",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Gholamreza",
+     "family": "Anbarjafari",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 23nd Signal Processing and Communications Applications Conference (SIU)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/icivc47709.2019.8980980",
+   "title": [
+    "Research of Image Sharpness Assessment Algorithm for Autofocus"
+   ],
+   "author": [
+    {
+     "given": "Lilin",
+     "family": "Her",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiaojun",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 IEEE 4th International Conference on Image, Vision and Computing (ICIVC)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 15
+  },
+  {
+   "DOI": "10.1109/radar.2018.8378614",
+   "title": [
+    "Fast back-projection autofocus for linear array SAR 3-D imaging via maximum sharpness"
+   ],
+   "author": [
+    {
+     "given": "Shunjun",
+     "family": "Wei",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Liming",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xiaoling",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jun",
+     "family": "Shi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      4
+     ]
+    ]
+   },
+   "container-title": [
+    "2018 IEEE Radar Conference (RadarConf18)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 13
+  },
+  {
+   "DOI": "10.1049/el.2013.4111",
+   "title": [
+    "Autofocus algorithm for SAR imagery based on sharpness optimisation"
+   ],
+   "author": [
+    {
+     "given": "Yang",
+     "family": "Gao",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Institute of Electronics, Chinese Academy of Science, Lab, 6 No. 19, West Bei\u2010Si\u2010Huan Road, Hai Dian District Beijing 100190 People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Weidong",
+     "family": "Yu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Electronics, Chinese Academy of Science, Lab, 6 No. 19, West Bei\u2010Si\u2010Huan Road, Hai Dian District Beijing 100190 People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yabo",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Electronics, Chinese Academy of Science, Lab, 6 No. 19, West Bei\u2010Si\u2010Huan Road, Hai Dian District Beijing 100190 People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Robert",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Electronics, Chinese Academy of Science, Lab, 6 No. 19, West Bei\u2010Si\u2010Huan Road, Hai Dian District Beijing 100190 People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronics Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1109/radar.2015.7131198",
+   "title": [
+    "LASAR autofocus imaging using maximum sharpness back projection via semidefinite programming"
+   ],
+   "author": [
+    {
+     "family": "Shun-Jun Wei",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "family": "Xiao-Ling Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "family": "Ke-Bing Hu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "family": "Wen-Jun Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 IEEE Radar Conference (RadarCon)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/12.805915",
+   "title": [
+    "Extended depth-of-field using sharpness transport across color channels"
+   ],
+   "author": [
+    {
+     "given": "Fr\u00e9d\u00e9ric",
+     "family": "Guichard",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Hoang-Phi",
+     "family": "Nguyen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "R\u00e9gis",
+     "family": "Tessi\u00e8res",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Marine",
+     "family": "Pyanet",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Im\u00e8ne",
+     "family": "Tarchouna",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fr\u00e9d\u00e9ric",
+     "family": "Cao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009,
+      1,
+      18
+     ]
+    ]
+   },
+   "container-title": [
+    "SPIE Proceedings",
+    "Digital Photography V"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 27
+  },
+  {
+   "DOI": "10.1049/icp.2026.0269",
+   "title": [
+    "Sharpness-based autofocus back projection algorithm for UAV TTW SAR"
+   ],
+   "author": [
+    {
+     "given": "Renjie",
+     "family": "Liu",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "School of Information and Electronics, Beijing Institute of Technology, Beijing, People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shichao",
+     "family": "Zhong",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Yangtze Delta Region Academy of Beijing Institute of Technology, Jiaxing, People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiaolu",
+     "family": "Zeng",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Information and Electronics, Beijing Institute of Technology, Beijing, People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhongjie",
+     "family": "Ma",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Information and Electronics, Beijing Institute of Technology, Beijing, People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiaopeng",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Information and Electronics, Beijing Institute of Technology, Beijing, People's Republic of China"
+      },
+      {
+       "name": "Yangtze Delta Region Academy of Beijing Institute of Technology, Jiaxing, People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      7,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "IET Conference Proceedings"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/apsar46974.2019.9048449",
+   "title": [
+    "Maximum Sharpness Based FISTA For SA-BiLASAR 3-D Sparse Autofocus Imaging"
+   ],
+   "author": [
+    {
+     "given": "Min",
+     "family": "Yan",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "School of Communication and Information Engineering, University of Electronic Science and Technology of China,Chengdu,Sichuan,P.R.China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shunjun",
+     "family": "Wei",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Communication and Information Engineering, University of Electronic Science and Technology of China,Chengdu,Sichuan,P.R.China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yue",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Communication and Information Engineering, University of Electronic Science and Technology of China,Chengdu,Sichuan,P.R.China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jun",
+     "family": "Shi",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Communication and Information Engineering, University of Electronic Science and Technology of China,Chengdu,Sichuan,P.R.China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xiaoling",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Communication and Information Engineering, University of Electronic Science and Technology of China,Chengdu,Sichuan,P.R.China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 6th Asia-Pacific Conference on Synthetic Aperture Radar (APSAR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1016/j.optlastec.2025.112855",
+   "title": [
+    "Sharpness-statistic based autofocus algorithm for Fourier ptychographic microscopy"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0000-9018-5122",
+     "authenticated-orcid": false,
+     "given": "Shu-Yuan",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0009-0002-6951-0781",
+     "authenticated-orcid": false,
+     "given": "Ying-Hui",
+     "family": "Ni",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wei-Jie",
+     "family": "Deng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ming-Jie",
+     "family": "Sun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics &amp; Laser Technology"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 7
+  },
+  {
+   "DOI": "10.1109/tip.2007.903252",
+   "title": [
+    "SAR Image Autofocus By Sharpness Optimization: A Theoretical Study"
+   ],
+   "author": [
+    {
+     "given": "Robert L.",
+     "family": "Morrison",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Minh N.",
+     "family": "Do",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "David C.",
+     "family": "Munson",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 159
+  },
+  {
+   "DOI": "10.1109/radar.2017.7944387",
+   "title": [
+    "An autofocus method based on maximum image sharpness for Fast Factorized Back-projection"
+   ],
+   "author": [
+    {
+     "given": "Yunli",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Junjie",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Wei",
+     "family": "Pu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jianyu",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yulin",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Wenchao",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Haiguang",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Weibo",
+     "family": "Huo",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "2017 IEEE Radar Conference (RadarConf)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.2352/cic.2000.8.1.art00028",
+   "title": [
+    "Sharpness Improvement Adaptive to Edge Strength of Color Image"
+   ],
+   "author": [
+    {
+     "given": "Hiroaki",
+     "family": "Kotera",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yoshinori",
+     "family": "Yamada",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Kazuya",
+     "family": "Shimo",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      1,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Color and Imaging Conference"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1109/iccv51701.2025.00606",
+   "title": [
+    "Optical Model-Driven Sharpness Mapping for Autofocus in Small Depth-of-Field and Severe Defocus Scenarios"
+   ],
+   "author": [
+    {
+     "given": "Chen-Liang",
+     "family": "Fan",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Foxconn"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mingpei",
+     "family": "Cao",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Foxconn"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Chih Chien",
+     "family": "Hung",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Foxconn"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuesheng",
+     "family": "Zhu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Electronic and Computer Engineering, Peking University"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      19
+     ]
+    ]
+   },
+   "container-title": [
+    "2025 IEEE/CVF International Conference on Computer Vision (ICCV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.70477/amue4760",
+   "title": [
+    "GENERATION OF SIZE CONTROLLABLE MONODISPERSE DROPLET DEPENDING ON THE CONTINUOUS FLOW DIRECTION USING MICROFLUIDIC CHANNELS WITH HIGH-ASPECT-RATIO ASYMMETRIC CROSS-SECTION"
+   ],
+   "author": [
+    {
+     "given": "Youngseo",
+     "family": "Cho",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Younghak",
+     "family": "Cho",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      10,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 MicroTAS Book of Abstracts"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2352/cic.2000.8.1.art00006",
+   "title": [
+    "Sharpness Rules"
+   ],
+   "author": [
+    {
+     "given": "Garrett M.",
+     "family": "Johnson",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mark D.",
+     "family": "Fairchild",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      1,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Color and Imaging Conference"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 14
+  },
+  {
+   "DOI": "10.1007/3-540-27323-9_2",
+   "title": [
+    "Color"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision with Direction"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2352/cic.1999.7.1.art00015",
+   "title": [
+    "Framework for an Image Sharpness Management System"
+   ],
+   "author": [
+    {
+     "given": "Lindsay",
+     "family": "MacDonald",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999,
+      1,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Color and Imaging Conference"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  }
+ ]
+}

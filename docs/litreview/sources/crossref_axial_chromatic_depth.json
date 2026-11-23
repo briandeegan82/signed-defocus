@@ -1,0 +1,1422 @@
+{
+ "query": "axial chromatic aberration depth estimation single image",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/tip.2021.3071682",
+   "title": [
+    "Exploring Chromatic Aberration and Defocus Blur for Relative Depth Estimation From Monocular Hyperspectral Image"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-4819-6666",
+     "authenticated-orcid": false,
+     "given": "Ali",
+     "family": "Zia",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-5822-8233",
+     "authenticated-orcid": false,
+     "given": "Jun",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-5382-5351",
+     "authenticated-orcid": false,
+     "given": "Yongsheng",
+     "family": "Gao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 18
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084.v1",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-540-69000-9_100167",
+   "title": [
+    "Axial Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018
+     ]
+    ]
+   },
+   "container-title": [
+    "Encyclopedia of Ophthalmology"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a049736",
+   "title": [
+    "Experimental Study of Axial Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1953
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icip.2018.8451377",
+   "title": [
+    "AAM: AN Assessment Metric of Axial Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Majed El",
+     "family": "Helou",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Frederike",
+     "family": "Dumbgen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sabine",
+     "family": "Siisstrunk",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2018 25th IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1142/s0217984992001496",
+   "title": [
+    "AXIAL CHROMATIC ABERRATION OF SINGLE-POLE LENS"
+   ],
+   "author": [
+    {
+     "given": "A.S.A.",
+     "family": "ALAMIR",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Physics Department, Faculty of Science, Assiut University, Assiut, Egypt"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1992,
+      12,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "Modern Physics Letters B"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.18178/joig.6.1.59-63",
+   "title": [
+    "Chromatic Aberration Based Depth Estimation in a Fluid Field"
+   ],
+   "author": [
+    {
+     "name": "Graduate School of Engineering, Tokyo City University, Tokyo, Japan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Nobuhiko",
+     "family": "Mukai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuki",
+     "family": "Matsuura",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Masamichi",
+     "family": "Oishi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Marie",
+     "family": "Oshima",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Image and Graphics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/cvpr.2007.383214",
+   "title": [
+    "Automatic Removal of Chromatic Aberration from a Single Image"
+   ],
+   "author": [
+    {
+     "given": "Sing Bing",
+     "family": "Kang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2007 IEEE Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 57
+  },
+  {
+   "DOI": "10.14711/thesis-991012554068503412",
+   "title": [
+    "Hand pose estimation using single depth image"
+   ],
+   "author": [
+    {
+     "given": "Ruipeng",
+     "family": "Kang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "dissertation",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1021/acs.analchem.8b04390.s001",
+   "title": [
+    "Single Layer Graphene for Estimation of Axial Spatial Resolution in Confocal Raman Microscopy Depth Profiling"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/ao.52.007152",
+   "title": [
+    "Passive depth estimation using chromatic aberration and a depth from defocus approach"
+   ],
+   "author": [
+    {
+     "given": "Pauline",
+     "family": "Trouv\u00e9",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fr\u00e9d\u00e9ric",
+     "family": "Champagnat",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Guy",
+     "family": "Le Besnerais",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jacques",
+     "family": "Sabater",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Thierry",
+     "family": "Avignon",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J\u00e9r\u00f4me",
+     "family": "Idier",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      10,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 44
+  },
+  {
+   "DOI": "10.1109/tip.2012.2228489",
+   "title": [
+    "Correction of Axial and Lateral Chromatic Aberration With False Color Filtering"
+   ],
+   "author": [
+    {
+     "given": "Joonyoung",
+     "family": "Chang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Hee",
+     "family": "Kang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Moon Gi",
+     "family": "Kang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 37
+  },
+  {
+   "DOI": "10.1117/12.2665737",
+   "title": [
+    "Real-time 3D tracking of a microparticle using chromatic aberration"
+   ],
+   "author": [
+    {
+     "given": "Sepehr",
+     "family": "Elahi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Aysu",
+     "family": "Ay",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Parviz",
+     "family": "Elahi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      6,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "Real-time Processing of Image, Depth and Video Information 2023"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.24262348",
+   "title": [
+    "A Multi-Depth Focused Laser Differential Interferometer Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Nicholas",
+     "family": "Webber",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rachel",
+     "family": "Constantin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sophia",
+     "family": "Edwards",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Gragston",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      9
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.24262348.v1",
+   "title": [
+    "A Multi-Depth Focused Laser Differential Interferometer Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Nicholas",
+     "family": "Webber",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rachel",
+     "family": "Constantin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sophia",
+     "family": "Edwards",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Gragston",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      9
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/1.oe.60.4.043103",
+   "title": [
+    "Compound eye image scanner optimally arranged for image combining and suppressing axial chromatic aberration by wavefront coding"
+   ],
+   "author": [
+    {
+     "given": "Hiroyuki",
+     "family": "Kawano",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Mitsubishi Electric Corp."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shigeru",
+     "family": "Takushima",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Mitsubishi Electric Corp."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yoshitaka",
+     "family": "Toyoda",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Mitsubishi Electric Corp."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Miki",
+     "family": "Sugano",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Mitsubishi Electric Corp."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Taku",
+     "family": "Matsuzawa",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Mitsubishi Electric Corp."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      4,
+      28
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1036/1097-8542.134200",
+   "title": [
+    "Chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "AccessScience"
+   ],
+   "type": "dataset",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/oe.576592",
+   "title": [
+    "Depth estimation from hyperspectral images based on chromatic aberration"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-2052-8633",
+     "authenticated-orcid": true,
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00xp9wg62",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00xp9wg62",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-1033-566X",
+     "authenticated-orcid": true,
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00xp9wg62",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00xp9wg62",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00xp9wg62",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mingze",
+     "family": "Ma",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Changchun Institute of Optics, Fine Mechanics and Physics (CIOMP), Chinese Academy of Sciences"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Baohui",
+     "family": "Guo",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Beijing Institute of Remote Sensing Equipment"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Nanjing University of Science and Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      31
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Express"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1007/springerreference_9987",
+   "title": [
+    "chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "SpringerReference"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1524/teme.2013.0042",
+   "title": [
+    "Optimal Depth Estimation from a Single Image by Computational Imaging Using Chromatic Aberrations / Optimale Tiefensch\u00e4tzung in einer Einzelaufnahme mittels Computational Imaging anhand chromatischer Aberrationen"
+   ],
+   "author": [
+    {
+     "given": "Muhammad",
+     "family": "Atif",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Bernd",
+     "family": "J\u00e4hne",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "tm - Technisches Messen"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a049789",
+   "title": [
+    "Chromatic Aberration on Electron Microscope Image of Biological Sectioned Specimen"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1971
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/cisp-bmei53629.2021.9624214",
+   "title": [
+    "Underwater hyperspectral image recovery based on a single chromatic aberration blur image using deep learning"
+   ],
+   "author": [
+    {
+     "given": "Jiarui",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yunzhuo",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shuyue",
+     "family": "Zhan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      10,
+      23
+     ]
+    ]
+   },
+   "container-title": [
+    "2021 14th International Congress on Image and Signal Processing, BioMedical Engineering and Informatics (CISP-BMEI)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.3390/s22051914",
+   "title": [
+    "DTS-Depth: Real-Time Single-Image Depth Estimation Using Depth-to-Space Image Construction"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-8722-3300",
+     "authenticated-orcid": false,
+     "given": "Hatem",
+     "family": "Ibrahem",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Information and Communication Engineering, School of Electrical and Computer Engineering, Chungbuk National University, Cheongju-si 28644, Korea"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4682-0368",
+     "authenticated-orcid": false,
+     "given": "Ahmed",
+     "family": "Salem",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Information and Communication Engineering, School of Electrical and Computer Engineering, Chungbuk National University, Cheongju-si 28644, Korea"
+      },
+      {
+       "name": "Electrical Engineering Department, Faculty of Engineering, Assiut University, Assiut 71515, Egypt"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4333-2852",
+     "authenticated-orcid": false,
+     "given": "Hyun-Soo",
+     "family": "Kang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Information and Communication Engineering, School of Electrical and Computer Engineering, Chungbuk National University, Cheongju-si 28644, Korea"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      3,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Sensors"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a051147",
+   "title": [
+    "Extraction of Spherical and Chromatic Aberration-free Information by Focal-depth Extension Processing Under Tilted Illumination"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1995,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

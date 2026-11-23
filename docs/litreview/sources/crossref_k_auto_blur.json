@@ -1,0 +1,454 @@
+{
+ "query": "automotive camera image blur detection self diagnosis",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/nebc.2011.5778629",
+   "title": [
+    "Blur detection in image sequences recorded by a wearable camera"
+   ],
+   "author": [
+    {
+     "family": "Zhen Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "family": "Zhiqiang Wei",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Robert J.",
+     "family": "Sclabassi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Wenyan",
+     "family": "Jia",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mingui",
+     "family": "Sun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2011,
+      4
+     ]
+    ]
+   },
+   "container-title": [
+    "2011 IEEE 37th Annual Northeast Bioengineering Conference (NEBEC)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/j.imavis.2019.08.008",
+   "title": [
+    "Self-supervised blur detection from synthetically blurred scenes"
+   ],
+   "author": [
+    {
+     "given": "Aitor",
+     "family": "Alvarez-Gila",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Adrian",
+     "family": "Galdran",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Estibaliz",
+     "family": "Garrote",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Joost",
+     "family": "van de Weijer",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "Image and Vision Computing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 8
+  },
+  {
+   "DOI": "10.1109/icpcsn62568.2024.00087",
+   "title": [
+    "Improving Skin Lesion Diagnosis: Hybrid Blur Detection for Accurate Dermatological Image Analysis"
+   ],
+   "author": [
+    {
+     "given": "Bhanurangarao",
+     "family": "M",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Saveetha Institute of Medical and Technical Sciences,Saveetha School of Engineering,Department of Computer Science and Engineering,Chennai,Tamil Nadu,India"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mahaveerakannan",
+     "family": "R",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Saveetha Institute of Medical and Technical Sciences,Saveetha School of Engineering,Department of Computer Science and Engineering,Chennai,Tamil Nadu,India"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      5,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 4th International Conference on Pervasive Computing and Social Networking (ICPCSN)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/s10489-022-03948-9",
+   "title": [
+    "Local sharpness failure detection of camera module lens based on image blur assessment"
+   ],
+   "author": [
+    {
+     "given": "Fan",
+     "family": "Wang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jia",
+     "family": "Chen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Zhengrong",
+     "family": "Xie",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yibo",
+     "family": "Ai",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Weidong",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      9,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Intelligence"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/fabs52071.2021.9702604",
+   "title": [
+    "Enhancement of Camera Blur Image Using Optimization Techniques"
+   ],
+   "author": [
+    {
+     "family": "Prince",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "National Institute of Technical Teachers Training &amp; Research,Electronics &amp; Communication Engineering Department,Chandigarh,India"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Amod",
+     "family": "Kumar",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Institute of Technical Teachers Training &amp; Research,Electronics &amp; Communication Engineering Department,Chandigarh,India"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      12,
+      21
+     ]
+    ]
+   },
+   "container-title": [
+    "2021 International Conference on Forensics, Analytics, Big Data, Security (FABS)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.56726/irjmets52175",
+   "title": [
+    "NMS with Device Health Monitoring and Camera Blur Detection"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      4,
+      15
+     ]
+    ]
+   },
+   "container-title": [
+    "International Research Journal of Modernization in Engineering Technology and Science"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/tip.2007.912928",
+   "title": [
+    "Space-Variant Restoration of Images Degraded by Camera Motion Blur"
+   ],
+   "author": [
+    {
+     "given": "M.",
+     "family": "Sorel",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J.",
+     "family": "Flusser",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2008,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 90
+  },
+  {
+   "DOI": "10.1109/tip.2011.2131660",
+   "title": [
+    "A No-Reference Image Blur Metric Based on the Cumulative Probability of Blur Detection (CPBD)"
+   ],
+   "author": [
+    {
+     "given": "N. D.",
+     "family": "Narvekar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "L. J.",
+     "family": "Karam",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2011,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 543
+  }
+ ]
+}

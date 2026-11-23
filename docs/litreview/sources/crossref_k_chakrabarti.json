@@ -1,0 +1,384 @@
+{
+ "query": "Chakrabarti Zickler depth and deblurring from a spectrally-varying depth-of-field",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1007/978-3-642-33715-4_47",
+   "title": [
+    "Depth and Deblurring from a Spectrally-Varying Depth-of-Field"
+   ],
+   "author": [
+    {
+     "given": "Ayan",
+     "family": "Chakrabarti",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Todd",
+     "family": "Zickler",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2012
+     ]
+    ]
+   },
+   "container-title": [
+    "Lecture Notes in Computer Science",
+    "Computer Vision \u2013 ECCV 2012"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 40
+  },
+  {
+   "DOI": "10.2352/issn.2470-1173.2016.2.vipc-033",
+   "title": [
+    "Motion deblurring for depth-varying scenes"
+   ],
+   "author": [
+    {
+     "given": "Ruiwen",
+     "family": "Zhen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Robert",
+     "family": "Stevenson",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      2,
+      14
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1016/j.aei.2025.103899",
+   "title": [
+    "Automated monitoring of multi-target deformation under varying depth of field using visual segmentation and deblurring"
+   ],
+   "author": [
+    {
+     "given": "Gang",
+     "family": "Xu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yalan",
+     "family": "Yang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Qingrui",
+     "family": "Yue",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiaogang",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Advanced Engineering Informatics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1364/ao.435543",
+   "title": [
+    "Global deblurring for continuous out-of-focus images using a depth-varying diffusion model"
+   ],
+   "author": [
+    {
+     "given": "Yangjie",
+     "family": "Wei",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Northeastern University"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Guochao",
+     "family": "Miao",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Northeastern University"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      10,
+      18
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1049/joe.2018.9062",
+   "title": [
+    "Depth from spectrally\u2010varying blurring detected by a snapshot narrow band multispectral imaging sensor"
+   ],
+   "author": [
+    {
+     "given": "Wei",
+     "family": "Jiang",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "College of Mechanical Engineering and Automation, Huaqiao University Xia Men Fujian Province People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Dingrong",
+     "family": "Yi",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "College of Mechanical Engineering and Automation, Huaqiao University Xia Men Fujian Province People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Linghua",
+     "family": "Kong",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical and Automotive Engineering, Fujian University of Technology Fuzhou Fujian Province People's Republic of China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      10,
+      24
+     ]
+    ]
+   },
+   "container-title": [
+    "The Journal of Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/gmo/9781561592630.article.j746300",
+   "title": [
+    "Depth of Field"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2003
+     ]
+    ]
+   },
+   "container-title": [
+    "Oxford Music Online"
+   ],
+   "type": "reference-book",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/3.798239.ch38",
+   "title": [
+    "Depth of Field and Depth of Focus"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Field Guide to Microscopy"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/cvpr.2010.5539954",
+   "title": [
+    "Analyzing spatially-varying blur"
+   ],
+   "author": [
+    {
+     "given": "Ayan",
+     "family": "Chakrabarti",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Todd",
+     "family": "Zickler",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "William T.",
+     "family": "Freeman",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2010 IEEE Computer Society Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 144
+  }
+ ]
+}

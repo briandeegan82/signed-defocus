@@ -1,0 +1,1445 @@
+{
+ "query": "chromatic aberration depth from defocus single image",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/tip.2021.3071682",
+   "title": [
+    "Exploring Chromatic Aberration and Defocus Blur for Relative Depth Estimation From Monocular Hyperspectral Image"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-4819-6666",
+     "authenticated-orcid": false,
+     "given": "Ali",
+     "family": "Zia",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-5822-8233",
+     "authenticated-orcid": false,
+     "given": "Jun",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-5382-5351",
+     "authenticated-orcid": false,
+     "given": "Yongsheng",
+     "family": "Gao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 18
+  },
+  {
+   "DOI": "10.1364/ao.52.007152",
+   "title": [
+    "Passive depth estimation using chromatic aberration and a depth from defocus approach"
+   ],
+   "author": [
+    {
+     "given": "Pauline",
+     "family": "Trouv\u00e9",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fr\u00e9d\u00e9ric",
+     "family": "Champagnat",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Guy",
+     "family": "Le Besnerais",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jacques",
+     "family": "Sabater",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Thierry",
+     "family": "Avignon",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J\u00e9r\u00f4me",
+     "family": "Idier",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      10,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 44
+  },
+  {
+   "DOI": "10.1109/tci.2026.3697618/mm1",
+   "title": [
+    "Single-Image Depth from Defocus with Coded Aperture and Diffusion Posterior Sampling_supp1-3697618.pdf"
+   ],
+   "author": [
+    {
+     "given": "Hodaka",
+     "family": "Kawachi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icics.2015.7459882",
+   "title": [
+    "Resolving focal plane ambiguity in depth map creation from defocus blur using chromatic aberration"
+   ],
+   "author": [
+    {
+     "given": "Himanshu",
+     "family": "Kumar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sumana",
+     "family": "Gupta",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "K S",
+     "family": "Venkatesh",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 10th International Conference on Information, Communications and Signal Processing (ICICS)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1109/cvpr.2007.383214",
+   "title": [
+    "Automatic Removal of Chromatic Aberration from a Single Image"
+   ],
+   "author": [
+    {
+     "given": "Sing Bing",
+     "family": "Kang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2007 IEEE Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 57
+  },
+  {
+   "DOI": "10.1109/cvpr.2019.00787",
+   "title": [
+    "Single Image Depth Estimation Trained via Depth From Defocus Cues"
+   ],
+   "author": [
+    {
+     "given": "Shir",
+     "family": "Gur",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Tel Aviv Univ."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lior",
+     "family": "Wolf",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Tel Aviv Univ., Israel"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 118
+  },
+  {
+   "DOI": "10.1109/vcip.2013.6706352",
+   "title": [
+    "Depth from defocus and blur for single image"
+   ],
+   "author": [
+    {
+     "given": "Huadong",
+     "family": "Sun",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhijie",
+     "family": "Zhao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xuesong",
+     "family": "Jin",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lianding",
+     "family": "Niu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lizhi",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2013 Visual Communications and Image Processing (VCIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1088/978-0-7503-3295-8ch5",
+   "title": [
+    "Chromatic aberration and thermal defocus"
+   ],
+   "author": [
+    {
+     "given": "Andy",
+     "family": "Wood",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Retired Optical Designer"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      2,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Diffractive Lens Design"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1016/j.exer.2020.108126",
+   "title": [
+    "Signals for defocus arise from longitudinal chromatic aberration in chick"
+   ],
+   "author": [
+    {
+     "given": "Frances J.",
+     "family": "Rucker",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "suffix": "Jr.",
+     "given": "Rhea T.",
+     "family": "Eskew",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-6592-6328",
+     "authenticated-orcid": false,
+     "given": "Christopher",
+     "family": "Taylor",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Experimental Eye Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 26
+  },
+  {
+   "DOI": "10.1109/tip.2021.3061901",
+   "title": [
+    "Joint Depth and Defocus Estimation From a Single Image Using Physical Consistency"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-8310-2827",
+     "authenticated-orcid": false,
+     "given": "Anmei",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-7206-0641",
+     "authenticated-orcid": false,
+     "given": "Jian",
+     "family": "Sun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 38
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084.v1",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a050926",
+   "title": [
+    "Correction of Spherical Aberration in HREM Image Using Defocus-Modulation Image Processing"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1992,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/s00138-020-01162-6",
+   "title": [
+    "Deblur and deep depth from single defocus image"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-0692-8411",
+     "authenticated-orcid": false,
+     "given": "Saeed",
+     "family": "Anwar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zeeshan",
+     "family": "Hayder",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fatih",
+     "family": "Porikli",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Machine Vision and Applications"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 41
+  },
+  {
+   "DOI": "10.1109/ncvpripg.2015.7489946",
+   "title": [
+    "Depth estimation from single image using Defocus and Texture cues"
+   ],
+   "author": [
+    {
+     "given": "Vivek",
+     "family": "Srikakulapu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Himanshu",
+     "family": "Kumar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sumana",
+     "family": "Gupta",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "K.S.",
+     "family": "Venkatesh",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 Fifth National Conference on Computer Vision, Pattern Recognition, Image Processing and Graphics (NCVPRIPG)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1364/ovo.1993.pd.2",
+   "title": [
+    "Transverse Chromatic Aberration of an Ophthalmic Lens Degrades Visual Performance more than Dioptric Defocus"
+   ],
+   "author": [
+    {
+     "given": "Pierre",
+     "family": "Simonet",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jocelyn",
+     "family": "Faubert",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jacques",
+     "family": "Gresset",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1993
+     ]
+    ]
+   },
+   "container-title": [
+    "Ophthalmic and Visual Optics"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/wacv57701.2024.00371",
+   "title": [
+    "Camera-Independent Single Image Depth Estimation from Defocus Blur"
+   ],
+   "author": [
+    {
+     "given": "Lahiru",
+     "family": "Wijayasingha",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Computer Science Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Homa",
+     "family": "Alemzadeh",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Electrical and Computer Engineering Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "John A.",
+     "family": "Stankovic",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Computer Science Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      1,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1016/0042-6989(89)90083-7",
+   "title": [
+    "The interactions between chromatic aberration, defocus and stimulus chromaticity: Implications for visual physiology and colorimetry"
+   ],
+   "author": [
+    {
+     "given": "D.I.",
+     "family": "Flitcroft",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1989,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 80
+  },
+  {
+   "DOI": "10.1117/12.2665737",
+   "title": [
+    "Real-time 3D tracking of a microparticle using chromatic aberration"
+   ],
+   "author": [
+    {
+     "given": "Sepehr",
+     "family": "Elahi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Aysu",
+     "family": "Ay",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Parviz",
+     "family": "Elahi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      6,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "Real-time Processing of Image, Depth and Video Information 2023"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-1-4612-1490-8_9",
+   "title": [
+    "Simultaneous Depth Recovery and Image Restoration"
+   ],
+   "author": [
+    {
+     "given": "Subhasis",
+     "family": "Chaudhuri",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "A. N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999
+     ]
+    ]
+   },
+   "container-title": [
+    "Depth From Defocus: A Real Aperture Imaging Approach"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/fio.2012.ftu4g.2",
+   "title": [
+    "Chromatic Aberration as a Possible Cue to Specify the Sign of Defocus in the Eye"
+   ],
+   "author": [
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2012
+     ]
+    ]
+   },
+   "container-title": [
+    "Frontiers in Optics 2012/Laser Science XXVIII"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/cosi.2012.cm3b.3",
+   "title": [
+    "Chromatic depth from defocus : a theoretical and experimental performance study"
+   ],
+   "author": [
+    {
+     "given": "P.",
+     "family": "Trouv\u00e9",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "F.",
+     "family": "Champagnat",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "G.",
+     "family": "Le Besnerais",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "G.",
+     "family": "Druart",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J.",
+     "family": "Idier",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2012
+     ]
+    ]
+   },
+   "container-title": [
+    "Imaging and Applied Optics Technical Papers"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.3389/fphy.2021.648827",
+   "title": [
+    "Single-Shot Through-Focus Image Acquisition and Phase Retrieval From Chromatic Aberration and Multi-Angle Illumination"
+   ],
+   "author": [
+    {
+     "given": "Guocheng",
+     "family": "Zhou",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shaohui",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yayu",
+     "family": "Zhai",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yao",
+     "family": "Hu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Qun",
+     "family": "Hao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      4,
+      29
+     ]
+    ]
+   },
+   "container-title": [
+    "Frontiers in Physics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1016/s0042-6989(02)00074-3",
+   "title": [
+    "Accommodation to simulations of defocus and chromatic aberration in the presence of chromatic misalignment"
+   ],
+   "author": [
+    {
+     "given": "Lawrence R",
+     "family": "Stark",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Roni S",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Philip B",
+     "family": "Kruger",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Frances J",
+     "family": "Rucker",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Ho",
+     "family": "Ying Fan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2002,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 26
+  },
+  {
+   "DOI": "10.17586/1023-5086-2019-86-01-52-59",
+   "title": [
+    "Using the longitudinal chromatic aberration effect to measure distances from a single color photo"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019
+     ]
+    ]
+   },
+   "container-title": [
+    "\u041e\u043f\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0436\u0443\u0440\u043d\u0430\u043b"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

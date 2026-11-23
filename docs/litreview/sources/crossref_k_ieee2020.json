@@ -1,0 +1,384 @@
+{
+ "query": "IEEE P2020 automotive image quality",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/ieeestd.2024.10935839",
+   "title": [
+    "IEEE Standard for Automotive System Image Quality"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "standard",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/ivs.2007.4290148",
+   "title": [
+    "Image Quality Standards in Automotive Vision Applications"
+   ],
+   "author": [
+    {
+     "given": "Dirk W.",
+     "family": "Hertel",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Edward",
+     "family": "Chang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2007 IEEE Intelligent Vehicles Symposium"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 21
+  },
+  {
+   "DOI": "10.1109/ojvt.2026.3702262/mm1",
+   "title": [
+    "Optical Simulation &amp; Image Quality for Automotive Semantic Segmentation_supp1-3702262.pdf"
+   ],
+   "author": [
+    {
+     "given": "Daniel",
+     "family": "Jakab",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2352/ei.2022.34.16.avm-108",
+   "title": [
+    "A review of IEEE P2020 flicker metrics"
+   ],
+   "author": [
+    {
+     "given": "Brian",
+     "family": "Deegan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      1,
+      16
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.2352/ei.2024.36.17.avm-107",
+   "title": [
+    "Evaluation of Signal and Noise Metrics of High Dynamic Range Image Sensors by IEEE P2020 Methodology"
+   ],
+   "author": [
+    {
+     "given": "Orit",
+     "family": "Skorka",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Paul",
+     "family": "Romanczyk",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jackson",
+     "family": "Knappen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Norman",
+     "family": "Koren",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jonathan",
+     "family": "Phillips",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Radu",
+     "family": "Ispasoiu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      1,
+      21
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.1109/icsens.2007.355489",
+   "title": [
+    "Wide Dynamic Range CMOS Image Sensors for High Quality Digital Camera, Security, Automotive and Medical Applications"
+   ],
+   "author": [
+    {
+     "given": "N.",
+     "family": "Akahane",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "S.",
+     "family": "Sugawa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "S.",
+     "family": "Adachi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "K.",
+     "family": "Mizobuchi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2006,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2006 5th IEEE Conference on Sensors"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 14
+  },
+  {
+   "DOI": "10.2352/ei.2022.34.16.avm-109",
+   "title": [
+    "A review of IEEE P2020 noise metrics"
+   ],
+   "author": [
+    {
+     "given": "Orit",
+     "family": "Skorka",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Paul",
+     "family": "Romanczyk",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      1,
+      16
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.1109/redw.2014.7004587",
+   "title": [
+    "SEE Test Results for P2020 and P5020 Freescale Processors"
+   ],
+   "author": [
+    {
+     "given": "Steven M.",
+     "family": "Guertin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mehran",
+     "family": "Amrbar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "2014 IEEE Radiation Effects Data Workshop (REDW)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  }
+ ]
+}

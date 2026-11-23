@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/design-system-components.css">
+<link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/fonts.css">
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  /* Render the spinout .ds-site-footer standalone / full-bleed. search extends the
+     legacy base, whose bare wrapping <footer> (in base/base.html, outside any
+     overridable block — so it can't be removed from here) is styled by
+     arxivstyle.css with a grey background (hsl(0,0%,95%)) + 1em 2em padding,
+     boxing our warm-wash footer inside a second grey band. display:contents drops
+     the wrapper's box entirely (cleaner than zeroing individual properties) so
+     .ds-site-footer renders in its place; it inherits flex-shrink:0 from the same
+     legacy `footer` rule, so the sticky footer still works. Search-specific
+     legacy-base integration; the shared chrome CSS stays byte-identical to the SSOT. */
+  body > footer {
+    display: contents;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+
+<div id="ds-announcement"></div>
+
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/banner.js" defer></script>
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/header.js" defer></script>
+<header class="ds-site-header ">
+  <a aria-hidden="true" tabindex="-1" href="https://arxiv.org/IgnoreMe" class="is-sr-only"></a>
+  <a href="https://arxiv.org/" class="ds-site-header-logo" aria-label="archive home">
+    <img src="https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg" alt="archive">
+  </a>
+  
+  <a id="ds-search-toggle" class="ds-site-header-search-link" href="https://arxiv.org/search" aria-controls="ds-search-overlay" aria-expanded="false">
+    <svg class="ds-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <span>Search</span>
+  </a>
+  
+  <button type="button" id="ds-nav-toggle" class="ds-site-header-nav-toggle"
+    aria-label="Open menu" aria-controls="ds-site-header-nav" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  
+  <nav class="ds-site-header-nav" id="ds-site-header-nav" aria-label="Main navigation">
+    <a href="https://arxiv.org/submit">Submit</a>
+    <a href="https://info.arxiv.org/about/donate.html">Donate</a>
+    <span class="ds-site-header-divider" aria-hidden="true"></span>
+    
+    <a href="https://arxiv.org/login" class="ds-site-header-login">Log in</a>
+  </nav>
+  
+  
+</header>
+
+<div class="ds-search-overlay" id="ds-search-overlay" hidden>
+  <div class="ds-search-overlay-panel" role="search">
+    <form method="GET" action="https://arxiv.org/search">
+      <label for="ds-search-input" class="is-sr-only">Search arXiv</label>
+      <input type="text" name="query" id="ds-search-input" class="ds-input" autocomplete="off"
+        placeholder="Search papers by title, author, abstract, or ID...">
+      <input type="hidden" name="searchtype" value="all">
+      <input type="hidden" name="source" value="header">
+    </form>
+    <p class="ds-hint">
+      Press Enter to search &middot; <a href="https://arxiv.org/search/advanced">Advanced search</a>
+    </p>
+  </div>
+</div>
+
+
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;17 of 17 results for all: <span class="mathjax">longitudinal chromatic aberration</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="longitudinal chromatic aberration">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=longitudinal+chromatic+aberration&amp;terms-0-field=all&amp;size=50&amp;order=None">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="longitudinal chromatic aberration">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option selected value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2607.15805">arXiv:2607.15805</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2607.15805">pdf</a>, <a href="https://arxiv.org/ps/2607.15805">ps</a>, <a href="https://arxiv.org/format/2607.15805">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Plasma Physics">physics.plasm-ph</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Demonstration of Flying-Focus-Enhanced Relativistic Thomson Scattering
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gerstmayr%2C+E">E. Gerstmayr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mariani%2C+C">C. Mariani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fitzgarrald%2C+R">R. Fitzgarrald</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=VanDusen-Gross%2C+M">M. VanDusen-Gross</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Berger%2C+C">C. Berger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+Q">Q. Chen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Piazza%2C+A">A. Di Piazza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Formanek%2C+M+S">M. S. Formanek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Froula%2C+D+H">D. H. Froula</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Geddes%2C+C+G+R">C. G. R. Geddes</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gonsalves%2C+A+J">A. J. Gonsalves</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Greenwood%2C+B">B. Greenwood</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jacob%2C+R">R. Jacob</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lu%2C+A">A. Lu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=McIlvenny%2C+A">A. McIlvenny</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nakamura%2C+K">K. Nakamura</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Obst-Huebl%2C+L">L. Obst-Huebl</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Palastro%2C+J+P">J. P. Palastro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Picksley%2C+A">A. Picksley</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Poder%2C+K">K. Poder</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramsey%2C+D">D. Ramsey</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rinderknecht%2C+H+G">H. G. Rinderknecht</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sarri%2C+G">G. Sarri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Thomas%2C+A+G+R">A. G. R Thomas</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=van+Tilborg%2C+J">J. van Tilborg</a>
+      , et al. (1 additional authors not shown)
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2607.15805v2-abstract-short" style="display: inline;">
+        &hellip;demonstration of a spatiotemporally engineered &#34;flying-focus&#34; laser pulse for enhanced X-ray generation via relativistic Thomson scattering. By combining <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, angular dispersion, and group delay dispersion, we create a relativistically intens&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2607.15805v2-abstract-full').style.display = 'inline'; document.getElementById('2607.15805v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2607.15805v2-abstract-full" style="display: none;">
+        We report the experimental demonstration of a spatiotemporally engineered &#34;flying-focus&#34; laser pulse for enhanced X-ray generation via relativistic Thomson scattering. By combining <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, angular dispersion, and group delay dispersion, we create a relativistically intense laser pulse whose focal point propagates with an independently tunable velocity vector, enabling control of both its speed and propagation angle. Precise tuning of the focal-point trajectory is used to match the motion of a near-counterpropagating ultrarelativistic electron bunch generated by a laser wakefield accelerator. This spatiotemporal velocity matching extends the interaction length while mitigating nonlinear scattering effects, resulting in an enhanced X-ray yield. Simulations indicate that this approach can increase the spectral density and brightness of Thomson-scattered X-ray beams by orders of magnitude relative to equivalent focusing without spatiotemporal control. The technique provides a new degree of freedom for high-intensity laser-matter interactions, allowing dynamic intensity structures with programmable two-dimensional motion and opening a route to enhanced laser-particle interactions and next-generation ultrabright radiation sources.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2607.15805v2-abstract-full').style.display = 'none'; document.getElementById('2607.15805v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 November, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 July, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">10 pages, 7 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2606.14984">arXiv:2606.14984</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2606.14984">pdf</a>, <a href="https://arxiv.org/ps/2606.14984">ps</a>, <a href="https://arxiv.org/format/2606.14984">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Accelerator Physics">physics.acc-ph</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Long Term Dynamics and Stability Studies for the High-energy Electron Cooler
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Unger%2C+J">Jonathan Unger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hoffstaetter%2C+G+H">Georg H. Hoffstaetter</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fedotov%2C+A">Alexei Fedotov</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jing%2C+Y">Yichao Jing</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kayran%2C+D">Dmitry Kayran</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kewisch%2C+J">Jorg Kewisch</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Seletskiy%2C+S">Sergei Seletskiy</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2606.14984v1-abstract-short" style="display: inline;">
+        &hellip;nonlinear dynamics which can affect electron beam lifetime. In this paper we present the nonlinear optimization of the REC, including optimized focusing wiggler fields, <span class="search-hit mathjax">chromatic</span> correction, misalignments and orbit correction and space-charge studies. A novel sextupole-like wiggler field configuration is shown to substantially reduce&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.14984v1-abstract-full').style.display = 'inline'; document.getElementById('2606.14984v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2606.14984v1-abstract-full" style="display: none;">
+        The Ring Electron Cooler (REC) is being developed for the Electron-Ion Collider to provide cooling at the top proton energy of 275GeV to reduce emittance growth from intra-beam scattering (IBS) and other effects. Cooling electrons circulate in a 150 MeV storage ring equipped with strong damping wigglers. While these wigglers counteract emittance degradation driven by intra-beam scattering and proton-electron beam-beam scattering, they introduce significant nonlinear dynamics which can affect electron beam lifetime. In this paper we present the nonlinear optimization of the REC, including optimized focusing wiggler fields, <span class="search-hit mathjax">chromatic</span> correction, misalignments and orbit correction and space-charge studies. A novel sextupole-like wiggler field configuration is shown to substantially reduce <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> compared with quadrupole-like focusing. Transverse and <span class="search-hit mathjax">longitudinal</span> dynamic apertures exceeding 5$σ$ are achieved in the presence of realistic alignment and BPM errors. Space-charge simulations for a Gaussian beam using the Bassetti-Erskine model show manageable tune spread and limited equilibrium emittance growth. These results demonstrate the feasibility of REC operation under the required cooling parameters.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2606.14984v1-abstract-full').style.display = 'none'; document.getElementById('2606.14984v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 June, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2026.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2604.17605">arXiv:2604.17605</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2604.17605">pdf</a>, <a href="https://arxiv.org/ps/2604.17605">ps</a>, <a href="https://arxiv.org/format/2604.17605">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Accelerator Physics">physics.acc-ph</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Achromatic optics using nonlinear plasma lenses for beam-quality preservation between plasma-accelerator stages
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lindstr%C3%B8m%2C+C+A">C. A. Lindstrøm</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Adli%2C+E">E. Adli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+J+B+B">J. B. B. Chen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Drobniak%2C+P">P. Drobniak</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Huebl%2C+A">A. Huebl</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kalvik%2C+D">D. Kalvik</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mitchell%2C+C+E">C. E. Mitchell</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1a%2C+F">F. Peña</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sjobak%2C+K+N">K. N. Sjobak</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2604.17605v1-abstract-short" style="display: inline;">
+        Plasma acceleration promises to deliver high-energy particle beams by combining, or staging, several low- or medium-energy accelerator stages. However, <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> from the combination of high divergence and energy spread make it nontrivial to transport beams between plasma-accelerator stages. This paper desc&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.17605v1-abstract-full').style.display = 'inline'; document.getElementById('2604.17605v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2604.17605v1-abstract-full" style="display: none;">
+        Plasma acceleration promises to deliver high-energy particle beams by combining, or staging, several low- or medium-energy accelerator stages. However, <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> from the combination of high divergence and energy spread make it nontrivial to transport beams between plasma-accelerator stages. This paper describes a compact and achromatic lattice optimized for staging, based on a new beam-optics element; a nonlinear plasma lens. The lattice preserves emittance for energy spreads up to several percent and has a tunable $R_{56}$ that enables bunch-length preservation or a <span class="search-hit mathjax">longitudinal</span> self-correction mechanism. The performance and limitations of the plasma-lens-based solution are modeled analytically and numerically, and compared to a more conventional yet novel solution based on quadrupole and sextupole magnets. While functional, the latter is double the length, has about twice the number of elements and a narrower energy bandwidth. Lastly, a solution for scaling to TeV energies is described, in which all lengths scale with the square root of the energy and the deleterious effects of coherent and incoherent synchrotron radiation are mitigated.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2604.17605v1-abstract-full').style.display = 'none'; document.getElementById('2604.17605v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 April, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">26 pages, 15 figures, 5 appendices</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2603.07923">arXiv:2603.07923</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2603.07923">pdf</a>, <a href="https://arxiv.org/ps/2603.07923">ps</a>, <a href="https://arxiv.org/format/2603.07923">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1103/5s6w-2dt5">10.1103/5s6w-2dt5 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Ponderomotive Achromat for Electron Optics: Radially Polarized Annular Focusing and a Round-Lens Corrector Regime
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Uesugi%2C+Y">Yuuki Uesugi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kozawa%2C+Y">Yuichi Kozawa</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2603.07923v2-abstract-short" style="display: inline;">
+        &hellip;electron optics has attracted attention because structured optical fields provide round-lens functionalities, including negative lens power and negative spherical <span class="search-hit mathjax">aberration</span>, that are difficult to achieve with conventional Einzel and solenoid lenses. How ponderomotive lenses disperse with electron energy, and whether that dispersion can be engineered for ach&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2603.07923v2-abstract-full').style.display = 'inline'; document.getElementById('2603.07923v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2603.07923v2-abstract-full" style="display: none;">
+        Ponderomotive electron optics has attracted attention because structured optical fields provide round-lens functionalities, including negative lens power and negative spherical <span class="search-hit mathjax">aberration</span>, that are difficult to achieve with conventional Einzel and solenoid lenses. How ponderomotive lenses disperse with electron energy, and whether that dispersion can be engineered for achromatization, have remained largely unexplored. Here we show that the transverse and <span class="search-hit mathjax">longitudinal</span> components of a vector optical field exhibit distinct energy dispersions because a relativistic correction modifies the effective lens action of the component polarized parallel to the electron velocity. In a radially polarized Bessel field coaxial with the electron beam, the two components form spatially co-located $J_1^2$- and $J_0^2$-type ponderomotive potentials whose relative weights depend on the electron energy, the Bessel cone angle, and the propagation direction of the light relative to the electrons. Using a local Abbe number defined in the energy domain, we find that this single field can operate as a self-achromatic round lens. We further construct zero-separation doublets---with a magnetic objective-lens model or an azimuthally polarized Bessel lens---that simultaneously cancel the first-order axial <span class="search-hit mathjax">chromatic</span>- and third-order spherical-<span class="search-hit mathjax">aberration</span> coefficients at a fixed electron-optical focal length, with the useful solutions occurring for counter-propagating light. Finite-aperture calculations at optical wavelengths of $1064~\mathrm{nm}$ and $10.6~\mathrm{μm}$ relate the achievable probe size to the required optical power, and at $10.6~\mathrm{μm}$ they identify a low-energy, large-energy-spread regime in which the corrected doublets outperform the magnetic objective-lens model. The required optical power is compatible with demonstrated near-infrared ultrashort-pulse sources.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2603.07923v2-abstract-full').style.display = 'none'; document.getElementById('2603.07923v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 August, 2026; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 8 March, 2026;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">19 pages, 6 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2511.12066">arXiv:2511.12066</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2511.12066">pdf</a>, <a href="https://arxiv.org/ps/2511.12066">ps</a>, <a href="https://arxiv.org/format/2511.12066">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Image and Video Processing">eess.IV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        DCA-LUT: Deep <span class="search-hit mathjax">Chromatic</span> Alignment with 5D LUT for Purple Fringing Removal
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lu%2C+J">Jialang Lu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sun%2C+S">Shuning Sun</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+P">Pu Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wu%2C+C">Chen Wu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gao%2C+F">Feng Gao</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gong%2C+L">Lina Gong</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lu%2C+D">Dianjie Lu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zhang%2C+G">Guijuan Zhang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zheng%2C+Z">Zhuoran Zheng</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2511.12066v1-abstract-short" style="display: inline;">
+        Purple fringing, a persistent artifact caused by <span class="search-hit mathjax">Longitudinal</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2511.12066v1-abstract-full').style.display = 'inline'; document.getElementById('2511.12066v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2511.12066v1-abstract-full" style="display: none;">
+        Purple fringing, a persistent artifact caused by <span class="search-hit mathjax">Longitudinal</span> <span class="search-hit mathjax">Chromatic</span> <span class="search-hit mathjax">Aberration</span> (LCA) in camera lenses, has long degraded the clarity and realism of digital imaging. Traditional solutions rely on complex and expensive apochromatic (APO) lens hardware and the extraction of handcrafted features, ignoring the data-driven approach. To fill this gap, we introduce DCA-LUT, the first deep learning framework for purple fringing removal. Inspired by the physical root of the problem, the spatial misalignment of RGB color channels due to lens dispersion, we introduce a novel <span class="search-hit mathjax">Chromatic</span>-Aware Coordinate Transformation (CA-CT) module, learning an image-adaptive color space to decouple and isolate fringing into a dedicated dimension. This targeted separation allows the network to learn a precise ``purple fringe channel&#34;, which then guides the accurate restoration of the luminance channel. The final color correction is performed by a learned 5D Look-Up Table (5D LUT), enabling efficient and powerful% non-linear color mapping. To enable robust training and fair evaluation, we constructed a large-scale synthetic purple fringing dataset (PF-Synth). Extensive experiments in synthetic and real-world datasets demonstrate that our method achieves state-of-the-art performance in purple fringing removal.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2511.12066v1-abstract-full').style.display = 'none'; document.getElementById('2511.12066v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 November, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">11 pages, 9 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2510.26665">arXiv:2510.26665</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2510.26665">pdf</a>, <a href="https://arxiv.org/ps/2510.26665">ps</a>, <a href="https://arxiv.org/format/2510.26665">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Instrumentation and Detectors">physics.ins-det</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Quantifying Resolution in Pink Beam Dark Field X-ray Microscopy: Experiments and Simulations
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=La+Bella%2C+M">Michela La Bella</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Poulsen%2C+H+F">Henning Friis Poulsen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Staeck%2C+S">Steffen Staeck</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Henningsson%2C+N+A">Nils Axel Henningsson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kabukcuoglu%2C+M+P">Merve Pinar Kabukcuoglu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Detlefs%2C+C">Carsten Detlefs</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yildirim%2C+C">Can Yildirim</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2510.26665v1-abstract-short" style="display: inline;">
+        &hellip;an increased diffraction intensity depending on the deformation state of the sample, accompanied by a general tenfold degradation in angular resolution along the rocking and <span class="search-hit mathjax">longitudinal</span> directions. This trade-off is disadvantageous for axial strain mapping, but can be advantageous in cases where integrated intensities are needed. For a perfect crystal under&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2510.26665v1-abstract-full').style.display = 'inline'; document.getElementById('2510.26665v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2510.26665v1-abstract-full" style="display: none;">
+        Pink-beam Dark-Field X-ray Microscopy (pDFXM) is a powerful emerging technique for time-resolved studies of microstructure and strain evolution in bulk crystalline materials. In this work, we systematically assess the performance of pDFXM relative to monochromatic DFXM when using a compound refractive lens (CRL) as the objective. Analytical expressions for the spatial and angular resolution are derived and compared with numerical simulations based on geometrical optics and experimental data. The pink-beam configuration provides an increased diffraction intensity depending on the deformation state of the sample, accompanied by a general tenfold degradation in angular resolution along the rocking and <span class="search-hit mathjax">longitudinal</span> directions. This trade-off is disadvantageous for axial strain mapping, but can be advantageous in cases where integrated intensities are needed. For a perfect crystal under parallel illumination with a pink beam, our results show that <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> is absent, whereas under condensed illumination it becomes significant. The <span class="search-hit mathjax">aberration</span> is shown to depend strongly on the local distortion of the crystal. Weak-beam imaging conditions, such as those required for resolving dislocations, are shown to remain feasible under pink-beam operation and may even provide an improved signal-to-noise ratio. The higher incident flux, enhanced by nearly two orders of magnitude, is quantified in terms of beam heating effects, and implications for optimized scanning protocols are discussed.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2510.26665v1-abstract-full').style.display = 'none'; document.getElementById('2510.26665v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 October, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2507.16366">arXiv:2507.16366</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2507.16366">pdf</a>, <a href="https://arxiv.org/format/2507.16366">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Single-layer silicon metalens for broadband achromatic focusing and wide field of view
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Cao%2C+J">Jian Cao</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salhi%2C+S">Sarra Salhi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Peltier%2C+J">Jonathan Peltier</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Coudevylle%2C+J">Jean-René Coudevylle</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Edmond%2C+S">Samson Edmond</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Villebasse%2C+C">Cédric Villebasse</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Herth%2C+E">Etienne Herth</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vivien%2C+L">Laurent Vivien</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramos%2C+C+A">Carlos Alonso Ramos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Melati%2C+D">Daniele Melati</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2507.16366v1-abstract-short" style="display: inline;">
+        &hellip;enabling full field-of-view designs, and apply dispersion engineering to minimize variations of the focal length across wavelengths, thereby substantially reducing both <span class="search-hit mathjax">longitudinal</span> and transverse <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span>. This is accomplished using only the propagation phase in wa&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2507.16366v1-abstract-full').style.display = 'inline'; document.getElementById('2507.16366v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2507.16366v1-abstract-full" style="display: none;">
+        Achieving simultaneous broadband achromatic focusing and a wide field of view remains a significant challenge for metalenses. In this work, we begin with a quadratic phase profile, enabling full field-of-view designs, and apply dispersion engineering to minimize variations of the focal length across wavelengths, thereby substantially reducing both <span class="search-hit mathjax">longitudinal</span> and transverse <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span>. This is accomplished using only the propagation phase in waveguide-like rectangular meta-atoms, without relying on geometric phase contributions. The fabricated singlet metalens experimentally demonstrates a field of view of 86{\textdegree}, along with a tenfold reduction in focal length variations with wavelength compared to a conventional quadratic metalens, achieving a measured relative shift as low as 1.3% across the 1.5 $μ$m - 1.6 $μ$m range (limited by our experimental setup). This improvement also leads to a twofold increase in focusing efficiency relative to the reference metalens. These experimental results validate the effectiveness of our design strategy in simultaneously enhancing the operational bandwidth and field of view of metalenses. The demonstrated performance can directly benefit beam steering applications in the near-infrared wavelength range and provides a path toward achromatic, wide field-of-view metalenses in the visible range for imaging systems
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2507.16366v1-abstract-full').style.display = 'none'; document.getElementById('2507.16366v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 July, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.08563">arXiv:2502.08563</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.08563">pdf</a>, <a href="https://arxiv.org/format/2502.08563">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1103/t33b-f1b2">10.1103/t33b-f1b2 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Strong coupling and dark modes in the motion of a pair of levitated nanoparticles
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pontin%2C+A">Antonio Pontin</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Deplano%2C+Q">Quentin Deplano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ranfagni%2C+A">Andrea Ranfagni</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marino%2C+F">Francesco Marino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marin%2C+F">Francesco Marin</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.08563v1-abstract-short" style="display: inline;">
+        &hellip;composed of two levitating nanospheres whose motions are indirectly coupled via coherent scattering in a single optical cavity mode. The nanospheres are loaded into a double <span class="search-hit mathjax">longitudinal</span> tweezer created with two lasers at different wavelengths, where <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> leads to&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.08563v1-abstract-full').style.display = 'inline'; document.getElementById('2502.08563v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.08563v1-abstract-full" style="display: none;">
+        We experimentally investigate a system composed of two levitating nanospheres whose motions are indirectly coupled via coherent scattering in a single optical cavity mode. The nanospheres are loaded into a double <span class="search-hit mathjax">longitudinal</span> tweezer created with two lasers at different wavelengths, where <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> leads to the formation of two separate trapping sites. We achieve strong coupling between each pair of modes in the transverse plane of the tweezer, as demonstrated by the avoided crossings observed when tuning the eigenfrequencies of the motion of one nanosphere by varying its optical potential depth. Remarkably, we show the emergence of dark modes in the overall coupled motion. The dynamics can be described in terms of spin-1/2 matrices, and the observed features are ubiquitous in a variety of classical and quantum systems. As such, our experiment will allow us to explore the classical analog of typically quantum dynamics, and in further developments to investigate the transition to the quantum domain by lowering the decoherence rate and creating stationary entanglement, as well as implementing non-stationary protocols.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.08563v1-abstract-full').style.display = 'none'; document.getElementById('2502.08563v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Phys. Rev. Lett. 135, 073602 (2025)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2501.10210">arXiv:2501.10210</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2501.10210">pdf</a>, <a href="https://arxiv.org/format/2501.10210">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Quantum Physics">quant-ph</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1103/PhysRevLett.134.203802">10.1103/PhysRevLett.134.203802 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Light-based <span class="search-hit mathjax">Chromatic</span> <span class="search-hit mathjax">Aberration</span> Correction of Ultrafast Electron Microscopes
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mihaila%2C+M+C+C">Marius Constantin Chirita Mihaila</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Streshkova%2C+N+L">Neli Laštovičková Streshkova</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koz%C3%A1k%2C+M">Martin Kozák</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2501.10210v2-abstract-short" style="display: inline;">
+        We propose and theoretically demonstrate a technique that allows one to compensate for <span class="search-hit mathjax">chromatic</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2501.10210v2-abstract-full').style.display = 'inline'; document.getElementById('2501.10210v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2501.10210v2-abstract-full" style="display: none;">
+        We propose and theoretically demonstrate a technique that allows one to compensate for <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> of traditional electron lenses in ultrafast electron microscopes. The technique is based on space- and time-dependent phase modulation of a pulsed electron beam using interaction with a shaped pulsed ponderomotive lens. The energy-selective focal distance is reached by combining the electron temporal chirp with the time-dependent size of the effective potential, with which the electrons interact. As a result, <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> can be reduced by up to a factor of seven. This approach paves the way for advanced transverse and <span class="search-hit mathjax">longitudinal</span> wavefront shaping of electrons in free space.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2501.10210v2-abstract-full').style.display = 'none'; document.getElementById('2501.10210v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 January, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">v1: AAM; licence: CC BY 4.0</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Phys. Rev. Lett. 134, 203802 (2025)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2309.04342">arXiv:2309.04342</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2309.04342">pdf</a>, <a href="https://arxiv.org/format/2309.04342">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Revealing the preference for correcting separated <span class="search-hit mathjax">aberrations</span> in joint optic-image design
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zhou%2C+J">Jingwen Zhou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+S">Shiqi Chen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ren%2C+Z">Zheng Ren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zhang%2C+W">Wenguan Zhang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yan%2C+J">Jiapu Yan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Feng%2C+H">Huajun Feng</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Li%2C+Q">Qi Li</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+Y">Yueting Chen</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2309.04342v3-abstract-short" style="display: inline;">
+        &hellip;joint design of complex systems such as smartphones and drones. In this work, starting from the perspective of the optical design, we characterize the optics with separated <span class="search-hit mathjax">aberrations</span>. Additionally, to bridge the hardware and software without gradients, an image simulation system is presented to reproduce the genuine imaging procedure of lenses with large f&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.04342v3-abstract-full').style.display = 'inline'; document.getElementById('2309.04342v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2309.04342v3-abstract-full" style="display: none;">
+        The joint design of the optical system and the downstream algorithm is a challenging and promising task. Due to the demand for balancing the global optimal of imaging systems and the computational cost of physical simulation, existing methods cannot achieve efficient joint design of complex systems such as smartphones and drones. In this work, starting from the perspective of the optical design, we characterize the optics with separated <span class="search-hit mathjax">aberrations</span>. Additionally, to bridge the hardware and software without gradients, an image simulation system is presented to reproduce the genuine imaging procedure of lenses with large field-of-views. As for <span class="search-hit mathjax">aberration</span> correction, we propose a network to perceive and correct the spatially varying <span class="search-hit mathjax">aberrations</span> and validate its superiority over state-of-the-art methods. Comprehensive experiments reveal that the preference for correcting separated <span class="search-hit mathjax">aberrations</span> in joint design is as follows: <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, lateral <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, spherical <span class="search-hit mathjax">aberration</span>, field curvature, and coma, with astigmatism coming last. Drawing from the preference, a 10% reduction in the total track length of the consumer-level mobile phone lens module is accomplished. Moreover, this procedure spares more space for manufacturing deviations, realizing extreme-quality enhancement of computational photography. The optimization paradigm provides innovative insight into the practical joint design of sophisticated optical systems and post-processing algorithms.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.04342v3-abstract-full').style.display = 'none'; document.getElementById('2309.04342v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 November, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 8 September, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">19 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2301.11017">arXiv:2301.11017</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2301.11017">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1088/1367-2630/acb795">10.1088/1367-2630/acb795 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        <span class="search-hit mathjax">Chromatic</span> <span class="search-hit mathjax">aberrations</span> correction of attosecond high-order harmonic beams by flat-top spatial shaping of the fundamental beam
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Veyrinas%2C+K">K. Veyrinas</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Plach%2C+M">M. Plach</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Peschel%2C+J">J. Peschel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hoflund%2C+M">M. Hoflund</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Catoire%2C+F">F. Catoire</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Valentin%2C+C">C. Valentin</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Smorenburg%2C+P">P. Smorenburg</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dacasa%2C+H">H. Dacasa</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Maclot%2C+S">S. Maclot</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guo%2C+C">C. Guo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wikmark%2C+H">H. Wikmark</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zair%2C+A">A. Zair</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Strelkov%2C+V">V. Strelkov</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Picot%2C+C">C. Picot</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Arnold%2C+C">C. Arnold</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Eng-Johnsson%2C+P">P. Eng-Johnsson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Huillier%2C+A+L">A. L Huillier</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mevel%2C+E">E. Mevel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Constant%2C+E">E. Constant</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2301.11017v1-abstract-short" style="display: inline;">
+        Attosecond pulses created by high-order harmonic generation in gases often exhibit strong <span class="search-hit mathjax">chromatic</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.11017v1-abstract-full').style.display = 'inline'; document.getElementById('2301.11017v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2301.11017v1-abstract-full" style="display: none;">
+        Attosecond pulses created by high-order harmonic generation in gases often exhibit strong <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span>, arising from the broad bandwidth and wavelength-dependent nonlinear light-matter interaction. When the driving laser intensity varies spatially, as for Gaussian driving beams, the apparent source position of the harmonics differs significantly from one order to the next, thus affecting the achievable intensity and duration of the attosecond pulses when they are focused on a target. We show that these <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> can be reduced by spatially shaping the fundamental beam to generate high-order harmonics with a driver having a flat-top profile inside the gas medium. By measuring both the intensity profile and wavefront for each harmonic in a plane, we access the extreme ultra-violet (XUV) beam properties and investigate these properties near focus. We observe that controlling <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> by flat-top spatial shaping strongly reduces the variation of the XUV spectrum on the beam axis during propagation and, in return, the <span class="search-hit mathjax">longitudinal</span> sensitivity of both the temporal profiles and the temporal shifts of the focused attosecond pulses.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.11017v1-abstract-full').style.display = 'none'; document.getElementById('2301.11017v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 January, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">12 pages, 8 figures + supplementary material: 10 pages, 13 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2206.03750">arXiv:2206.03750</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2206.03750">pdf</a>, <a href="https://arxiv.org/format/2206.03750">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1364/OE.466321">10.1364/OE.466321 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Broadband behavior of quadratic metalenses with a wide field of view
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Liu%2C+Y">Yang Liu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zhang%2C+J">Jianhao Zhang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Roux%2C+X+L">Xavier Le Roux</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cassan%2C+E">Eric Cassan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marris-Morini%2C+D">Delphine Marris-Morini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vivien%2C+L">Laurent Vivien</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Alonso-Ramos%2C+C">Carlos Alonso-Ramos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Melati%2C+D">Daniele Melati</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2206.03750v1-abstract-short" style="display: inline;">
+        Metalenses are attracting a large interest for the implementation of complex optical functionalities in planar and compact devices. However, <span class="search-hit mathjax">chromatic</span> and off-axis&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.03750v1-abstract-full').style.display = 'inline'; document.getElementById('2206.03750v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2206.03750v1-abstract-full" style="display: none;">
+        Metalenses are attracting a large interest for the implementation of complex optical functionalities in planar and compact devices. However, <span class="search-hit mathjax">chromatic</span> and off-axis <span class="search-hit mathjax">aberrations</span> remain standing challenges. Here, we experimentally investigate the broadband behavior of metalenses based on quadratic phase profiles. We show that these metalenses do not only guarantee an arbitrarily large field of view but are also inherently tolerant to <span class="search-hit mathjax">longitudinal</span> and transverse <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span>. As such, we demonstrate a single-layer, silicon metalens with a field of view of 86° and a bandwidth up to 140 nm operating at both 1300 nm and 1550 nm telecommunication wavelength bands.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.03750v1-abstract-full').style.display = 'none'; document.getElementById('2206.03750v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 June, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2104.00377">arXiv:2104.00377</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2104.00377">pdf</a>, <a href="https://arxiv.org/format/2104.00377">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Accelerator Physics">physics.acc-ph</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1016/j.ijleo.2021.167242">10.1016/j.ijleo.2021.167242 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Hamiltonian Mechanics Framework for Charge Particle Optics in Straight and Curved Systems
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Kern%2C+F">Felix Kern</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krehl%2C+J">Jonas Krehl</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Thampi%2C+A">Arsha Thampi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lubk%2C+A">Axel Lubk</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2104.00377v2-abstract-short" style="display: inline;">
+        &hellip;of charged particle optics employing perturbative expansion of Hamiltonian mechanics. The derived framework allows the straightforward computation of transversal and <span class="search-hit mathjax">longitudinal</span> (&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2104.00377v2-abstract-full').style.display = 'inline'; document.getElementById('2104.00377v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2104.00377v2-abstract-full" style="display: none;">
+        Charged particle optics, the description of particle trajectories in the vicinity of some optical axis, describe the imaging properties of particle optics devices. Here, we present a complete and compact description of charged particle optics employing perturbative expansion of Hamiltonian mechanics. The derived framework allows the straightforward computation of transversal and <span class="search-hit mathjax">longitudinal</span> (<span class="search-hit mathjax">chromatic</span>) properties of static and dynamic optical devices with straight and curved optical axes. It furthermore gives rise to geometric integration schemes preserving the symplectic phase space structure and pertaining Lagrange invariants, which may be employed to derive analytic approximations of <span class="search-hit mathjax">aberration</span> coefficients and efficient numerical trajectory solvers.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2104.00377v2-abstract-full').style.display = 'none'; document.getElementById('2104.00377v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 April, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 April, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1904.04245">arXiv:1904.04245</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1904.04245">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1364/JOSAA.36.000D41">10.1364/JOSAA.36.000D41 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Influence of laser spot size at diffuser plane on the <span class="search-hit mathjax">longitudinal</span> spatial coherence function of optical coherence microscopy system
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Usmani%2C+K">Kashif Usmani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ahmad%2C+A">Azeem Ahmad</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Joshi%2C+R">Rakesh Joshi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dubey%2C+V">Vishesh Dubey</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Butola%2C+A">Ankit Butola</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mehta%2C+D+S">Dalip Singh Mehta</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1904.04245v1-abstract-short" style="display: inline;">
+        &hellip;microscopy/tomography as they greatly influence the signal to noise ratio, axial resolution, and penetration depth of the system. In the present letter, we investigated the <span class="search-hit mathjax">longitudinal</span> spatial coherence properties of the pseudo-thermal light source (PTS) as a function of spot size at the diffuser plane, which is controlled by translating microscope objectiv&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1904.04245v1-abstract-full').style.display = 'inline'; document.getElementById('1904.04245v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1904.04245v1-abstract-full" style="display: none;">
+        Coherence properties and wavelength of light sources are indispensable for optical coherence microscopy/tomography as they greatly influence the signal to noise ratio, axial resolution, and penetration depth of the system. In the present letter, we investigated the <span class="search-hit mathjax">longitudinal</span> spatial coherence properties of the pseudo-thermal light source (PTS) as a function of spot size at the diffuser plane, which is controlled by translating microscope objective lens towards or away from the diffuser plane. The axial resolution of PTS is found to be maximum ~ 13 microns for the beam spot size of 3.5 mm at the diffuser plane. The change in the axial resolution of the system as the spot size is increased at the diffuser plane is further confirmed by performing experiments on standard gauge blocks of height difference of 15 microns. Thus, by appropriately choosing the beam spot size at the diffuser plane, any monochromatic laser light source depending on the biological window can be utilized to obtain high axial-resolution with large penetration depth and speckle-free tomographic images of multilayered biological specimens irrespective of the source temporal coherence length. In addition, PTS could be an attractive alternative light source for achieving high axial-resolution without needing <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> corrected optics and dispersion-compensation mechanism, unlike conventional setups.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1904.04245v1-abstract-full').style.display = 'none'; document.getElementById('1904.04245v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 April, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">11 pages, 4 figures. arXiv admin note: text overlap with arXiv:1810.01994</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1708.06210">arXiv:1708.06210</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1708.06210">pdf</a>, <a href="https://arxiv.org/format/1708.06210">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Controlling the velocity of ultrashort light pulses in vacuum through spatio-temporal couplings
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Sainte-Marie%2C+A">Antonin Sainte-Marie</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gobert%2C+O">Olivier Gobert</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quere%2C+F">Fabien Quere</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1708.06210v1-abstract-short" style="display: inline;">
+        &hellip;couplings. In this context, we present a theoretical investigation of the linear propagation of ultrashort laser beams that combine temporal chirp and a standard <span class="search-hit mathjax">aberration</span> known as <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatism</span>. When such beams are focused in a vacuum, or in a linear medium, the inter&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1708.06210v1-abstract-full').style.display = 'inline'; document.getElementById('1708.06210v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1708.06210v1-abstract-full" style="display: none;">
+        Due to their broad spectral width, ultrashort lasers provide new possibilities to shape light beams and control their properties, in particular through the use of spatio-temporal couplings. In this context, we present a theoretical investigation of the linear propagation of ultrashort laser beams that combine temporal chirp and a standard <span class="search-hit mathjax">aberration</span> known as <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatism</span>. When such beams are focused in a vacuum, or in a linear medium, the interplay of these two effects can be exploited to set the velocity of the resulting intensity peak to arbitrary values within the Rayleigh length, i.e. precisely where laser pulses are generally used. Such beams could find groundbreaking applications in the control of laser-matter interactions, in particular for laser-driven particle acceleration.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1708.06210v1-abstract-full').style.display = 'none'; document.getElementById('1708.06210v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 August, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2017.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1508.00889">arXiv:1508.00889</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1508.00889">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1364/OL.41.001688">10.1364/OL.41.001688 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Measuring <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> in imaging systems using plasmonic nano-particles
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gennaro%2C+S+D">Sylvain D. Gennaro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Roschuk%2C+T+R">Tyler R. Roschuk</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Maier%2C+S+A">Stefan A. Maier</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oulton%2C+R+F">Rupert F. Oulton</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1508.00889v1-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Chromatic</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1508.00889v1-abstract-full').style.display = 'inline'; document.getElementById('1508.00889v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1508.00889v1-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Chromatic</span> <span class="search-hit mathjax">aberration</span> in optical systems arises from the wavelength dependence of a glass&#39;s refractive index. Polychromatic rays incident upon an optical surface are refracted at slightly different angles and in traversing an optical system follow distinct paths creating images displaced according to color. Although arising from dispersion, it manifests as a spatial distortion correctable only with compound lenses with multiple glasses and accumulates in complicated imaging systems. While <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> is measured with interferometry, simple methods are attractive for their ease of use and low cost. In this letter we retrieve the <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatic</span> focal shift of high numerical aperture (NA) microscope objectives from the extinction spectra of metallic nanoparticles within the focal plane. The method is accurate for high NA objectives with apochromatic correction, and enables rapid assessment of the <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> of any complete microscopy systems, since it is straightforward to implement
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1508.00889v1-abstract-full').style.display = 'none'; document.getElementById('1508.00889v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 August, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">4 pages, 3 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/physics/0609030">arXiv:physics/0609030</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/physics/0609030">pdf</a>, <a href="https://arxiv.org/ps/physics/0609030">ps</a>, <a href="https://arxiv.org/format/physics/0609030">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1364/JOSAA.24.000675">10.1364/JOSAA.24.000675 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Debye representation of dispersive focused waves
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zapata-Rodriguez%2C+C+J">Carlos J. Zapata-Rodriguez</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="physics/0609030v1-abstract-short" style="display: inline;">
+        &hellip;complex system. This diffraction formula is a generalization of the Debye integral applied to apertured focused beams, which may be accommodated to broadband problems. <span class="search-hit mathjax">Longitudinal</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('physics/0609030v1-abstract-full').style.display = 'inline'; document.getElementById('physics/0609030v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="physics/0609030v1-abstract-full" style="display: none;">
+        We report on a matrix-based diffraction integral that evaluates the focal field of any diffraction-limited axisymmetric complex system. This diffraction formula is a generalization of the Debye integral applied to apertured focused beams, which may be accommodated to broadband problems. <span class="search-hit mathjax">Longitudinal</span> <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> may limit the convenience of the Debye formulation and, additionally, spatial boundaries of validity around the focal point are provided. Fresnel number is reformulated in order to guarantee that the focal region is entirely into the region of validity of the Debye approximation when the Fresnel number of the focusing geometry largely exceeds unity. We have applied the matrix-based Debye integral to several examples. Concretely, we present an optical system for beam focusing with strong angular dispersion and free of <span class="search-hit mathjax">longitudinal</span> <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>. This simple formalism leaves an open door for analysis and design of focused beams with arbitrary angular dispersion. Our results are valid for ultrashort pulsed and polychromatic incoherent sources.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('physics/0609030v1-abstract-full').style.display = 'none'; document.getElementById('physics/0609030v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 September, 2006; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2006.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from our <a href="https://info.arxiv.org/about/major_funders.html"><strong>major funders</strong></a>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe.html">Subscribe</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org/" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

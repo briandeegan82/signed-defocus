@@ -1,0 +1,358 @@
+{
+ "query": "online monitoring camera sharpness degradation vehicle",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/hydcon48903.2020.9242840",
+   "title": [
+    "Camera and Biometric based Vehicle Monitoring System for Public Safety"
+   ],
+   "author": [
+    {
+     "given": "Parvathi",
+     "family": "Muddapu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      9,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2020 IEEE-HYDCON"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.3390/wevj15100444",
+   "title": [
+    "Degradation Mechanism and Online Electrical Monitoring Techniques of Stator Winding Insulation in Inverter-Fed Machines: A Review"
+   ],
+   "author": [
+    {
+     "given": "Zihan",
+     "family": "Zou",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Institute of Rail Transit, Tongji University, Shanghai 201804, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Senyi",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Rail Transit, Tongji University, Shanghai 201804, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jinsong",
+     "family": "Kang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Rail Transit, Tongji University, Shanghai 201804, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      9,
+      29
+     ]
+    ]
+   },
+   "container-title": [
+    "World Electric Vehicle Journal"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 22
+  },
+  {
+   "DOI": "10.1109/ivs.2004.1336407",
+   "title": [
+    "A cascade detector approach applied to vehicle occupant monitoring with an omni directional camera"
+   ],
+   "author": [
+    {
+     "given": "S.",
+     "family": "Wender",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "O.",
+     "family": "Loehlein",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Intelligent Vehicles Symposium, 2004"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 7
+  },
+  {
+   "DOI": "10.1109/zinc.2019.8769377",
+   "title": [
+    "Driver monitoring using the in-vehicle camera"
+   ],
+   "author": [
+    {
+     "given": "Luka",
+     "family": "Masanovic",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mario",
+     "family": "Vranjes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Radomir",
+     "family": "Dzakula",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Zeljko",
+     "family": "Lukac",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 Zooming Innovation in Consumer Technologies Conference (ZINC)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1093/gao/9781884446054.article.t013420",
+   "title": [
+    "Camera (i)"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2003
+     ]
+    ]
+   },
+   "container-title": [
+    "Oxford Art Online"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1139/juvs-2017-0008",
+   "title": [
+    "Development of a low-cost multispectral camera for aerial crop monitoring"
+   ],
+   "author": [
+    {
+     "given": "Clayton",
+     "family": "Barrows",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Aerial Precision Images, Star, Idaho, United States;"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Duke",
+     "family": "Bulanon",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Northwest Nazarene University, 623 S University Blvd, ID, Nampa, Idaho, United States, 83683-5897;"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      8,
+      28
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Unmanned Vehicle Systems"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1093/gao/9781884446054.article.t013422",
+   "title": [
+    "Camera lucida"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2003
+     ]
+    ]
+   },
+   "container-title": [
+    "Oxford Art Online"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.1093/gmo/9781561592630.article.04649",
+   "title": [
+    "Camera"
+   ],
+   "author": [
+    {
+     "given": "Michael",
+     "family": "Tilmouth",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sandra",
+     "family": "Mangsen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2001
+     ]
+    ]
+   },
+   "container-title": [
+    "Oxford Music Online"
+   ],
+   "type": "reference-book",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

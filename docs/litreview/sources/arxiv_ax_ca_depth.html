@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/design-system-components.css">
+<link rel="stylesheet" href="https://static.arxiv.org/static/design-system/latest/fonts.css">
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  /* Render the spinout .ds-site-footer standalone / full-bleed. search extends the
+     legacy base, whose bare wrapping <footer> (in base/base.html, outside any
+     overridable block — so it can't be removed from here) is styled by
+     arxivstyle.css with a grey background (hsl(0,0%,95%)) + 1em 2em padding,
+     boxing our warm-wash footer inside a second grey band. display:contents drops
+     the wrapper's box entirely (cleaner than zeroing individual properties) so
+     .ds-site-footer renders in its place; it inherits flex-shrink:0 from the same
+     legacy `footer` rule, so the sticky footer still works. Search-specific
+     legacy-base integration; the shared chrome CSS stays byte-identical to the SSOT. */
+  body > footer {
+    display: contents;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+
+<div id="ds-announcement"></div>
+
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/banner.js" defer></script>
+<script src="https://static.arxiv.org/static/design-system/latest/chrome/header.js" defer></script>
+<header class="ds-site-header ">
+  <a aria-hidden="true" tabindex="-1" href="https://arxiv.org/IgnoreMe" class="is-sr-only"></a>
+  <a href="https://arxiv.org/" class="ds-site-header-logo" aria-label="archive home">
+    <img src="https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg" alt="archive">
+  </a>
+  
+  <a id="ds-search-toggle" class="ds-site-header-search-link" href="https://arxiv.org/search" aria-controls="ds-search-overlay" aria-expanded="false">
+    <svg class="ds-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <span>Search</span>
+  </a>
+  
+  <button type="button" id="ds-nav-toggle" class="ds-site-header-nav-toggle"
+    aria-label="Open menu" aria-controls="ds-site-header-nav" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  
+  <nav class="ds-site-header-nav" id="ds-site-header-nav" aria-label="Main navigation">
+    <a href="https://arxiv.org/submit">Submit</a>
+    <a href="https://info.arxiv.org/about/donate.html">Donate</a>
+    <span class="ds-site-header-divider" aria-hidden="true"></span>
+    
+    <a href="https://arxiv.org/login" class="ds-site-header-login">Log in</a>
+  </nav>
+  
+  
+</header>
+
+<div class="ds-search-overlay" id="ds-search-overlay" hidden>
+  <div class="ds-search-overlay-panel" role="search">
+    <form method="GET" action="https://arxiv.org/search">
+      <label for="ds-search-input" class="is-sr-only">Search arXiv</label>
+      <input type="text" name="query" id="ds-search-input" class="ds-input" autocomplete="off"
+        placeholder="Search papers by title, author, abstract, or ID...">
+      <input type="hidden" name="searchtype" value="all">
+      <input type="hidden" name="source" value="header">
+    </form>
+    <p class="ds-hint">
+      Press Enter to search &middot; <a href="https://arxiv.org/search/advanced">Advanced search</a>
+    </p>
+  </div>
+</div>
+
+
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;4 of 4 results for all: <span class="mathjax">chromatic aberration depth defocus</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="chromatic aberration depth defocus">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=chromatic+aberration+depth+defocus&amp;terms-0-field=all&amp;size=50&amp;order=None">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option selected value="all">All fields</option><option value="title">Title</option><option value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="chromatic aberration depth defocus">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option selected value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2611.22341">arXiv:2611.22341</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2611.22341">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Quantum Physics">quant-ph</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Zernike-efficient phase contrast with a scanned electron probe
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pelz%2C+P">Philipp Pelz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2611.22341v1-abstract-short" style="display: inline;">
+        &hellip;substantially more than diffraction-plane four-dimensional STEM (4D-STEM). In idealized simulations of myoglobin in vitreous ice at a cryo-EM dose (elastic scattering only, no <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, full coherence), ideal-dot APEX at a probe <span class="search-hit mathjax">defocus</span> of 1 $μ$m reconstructs the phas&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2611.22341v1-abstract-full').style.display = 'inline'; document.getElementById('2611.22341v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2611.22341v1-abstract-full" style="display: none;">
+        For weak-phase objects, scanning transmission electron microscopy (STEM) with a far-field detector transfers at most half of the phase information per electron that Zernike phase-contrast (ZPC) conventional transmission electron microscopy (CTEM) achieves. We propose APEX (Apex Phase-plate EXit-wave imaging), a scanned-probe mode that combines a defocused probe, a $π/2$ phase element in a magnified image of the probe crossover, and in-focus image-plane detection at each scan position. It applies the generalized Zernike framework of Dwyer and Paganin to a scanned probe. In a linear model of a thin weak-phase object with an ideal phase dot, APEX transfers nearly the full Zernike Fisher information over a wide band, substantially more than diffraction-plane four-dimensional STEM (4D-STEM). In idealized simulations of myoglobin in vitreous ice at a cryo-EM dose (elastic scattering only, no <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, full coherence), ideal-dot APEX at a probe <span class="search-hit mathjax">defocus</span> of 1 $μ$m reconstructs the phase more accurately than defocused 4D-STEM ptychography with one untuned probe setting. At a <span class="search-hit mathjax">defocus</span> of about 25 $μ$m, a crossed laser phase plate (XLPP) acts as the $π/2$ element, and APEX of a periodic specimen cell comes close to CTEM with the same plate. In two dimensions, this mode is equivalent to laser phase-plate CTEM of a small, scanned area. A single simulated APEX scan with the XLPP also separates two myoglobin phase screens 150 nm apart in vacuum, at known <span class="search-hit mathjax">depths</span>, which is not possible with one ZPC CTEM exposure.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2611.22341v1-abstract-full').style.display = 'none'; document.getElementById('2611.22341v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 November, 2026; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2026.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">18 pages, 7 figures, 1 table; supplementary material (12 pages) . Data: https://doi.org/10.5281/zenodo.24170512</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2302.08054">arXiv:2302.08054</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2302.08054">pdf</a>, <a href="https://arxiv.org/format/2302.08054">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Spectral 3D Computer Vision -- A Review
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Sun%2C+Y">Yajie Sun</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zia%2C+A">Ali Zia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rolland%2C+V">Vivien Rolland</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yu%2C+C">Charissa Yu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zhou%2C+J">Jun Zhou</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2302.08054v1-abstract-short" style="display: inline;">
+        &hellip;spectrum. Mapping the spectral information onto the 3D model reveals changes in the spectra-structure space or enhances 3D representations with properties such as reflectance, <span class="search-hit mathjax">chromatic</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.08054v1-abstract-full').style.display = 'inline'; document.getElementById('2302.08054v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2302.08054v1-abstract-full" style="display: none;">
+        Spectral 3D computer vision examines both the geometric and spectral properties of objects. It provides a deeper understanding of an object&#39;s physical properties by providing information from narrow bands in various regions of the electromagnetic spectrum. Mapping the spectral information onto the 3D model reveals changes in the spectra-structure space or enhances 3D representations with properties such as reflectance, <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>, and varying <span class="search-hit mathjax">defocus</span> blur. This emerging paradigm advances traditional computer vision and opens new avenues of research in 3D structure, <span class="search-hit mathjax">depth</span> estimation, motion analysis, and more. It has found applications in areas such as smart agriculture, environment monitoring, building inspection, geological exploration, and digital cultural heritage records. This survey offers a comprehensive overview of spectral 3D computer vision, including a unified taxonomy of methods, key application areas, and future challenges and prospects.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.08054v1-abstract-full').style.display = 'none'; document.getElementById('2302.08054v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 February, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1904.08601">arXiv:1904.08601</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1904.08601">pdf</a>, <a href="https://arxiv.org/format/1904.08601">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Image and Video Processing">eess.IV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Deep Optics for Monocular <span class="search-hit mathjax">Depth</span> Estimation and 3D Object Detection
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chang%2C+J">Julie Chang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wetzstein%2C+G">Gordon Wetzstein</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1904.08601v1-abstract-short" style="display: inline;">
+        <span class="search-hit mathjax">Depth</span> estimation and 3D object detection are critical for scene understanding but remain challenging to perform with a single image due to the loss of 3D information during image capture. Recent models using deep neural networks have improved monocular&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1904.08601v1-abstract-full').style.display = 'inline'; document.getElementById('1904.08601v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1904.08601v1-abstract-full" style="display: none;">
+        <span class="search-hit mathjax">Depth</span> estimation and 3D object detection are critical for scene understanding but remain challenging to perform with a single image due to the loss of 3D information during image capture. Recent models using deep neural networks have improved monocular <span class="search-hit mathjax">depth</span> estimation performance, but there is still difficulty in predicting absolute <span class="search-hit mathjax">depth</span> and generalizing outside a standard dataset. Here we introduce the paradigm of deep optics, i.e. end-to-end design of optics and image processing, to the monocular <span class="search-hit mathjax">depth</span> estimation problem, using coded <span class="search-hit mathjax">defocus</span> blur as an additional <span class="search-hit mathjax">depth</span> cue to be decoded by a neural network. We evaluate several optical coding strategies along with an end-to-end optimization scheme for <span class="search-hit mathjax">depth</span> estimation on three datasets, including NYU <span class="search-hit mathjax">Depth</span> v2 and KITTI. We find an optimized freeform lens design yields the best results, but <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> from a singlet lens offers significantly improved performance as well. We build a physical prototype and validate that <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberrations</span> improve <span class="search-hit mathjax">depth</span> estimation on real-world results. In addition, we train object detection networks on the KITTI dataset and show that the lens optimized for <span class="search-hit mathjax">depth</span> estimation also results in improved 3D object detection performance.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1904.08601v1-abstract-full').style.display = 'none'; document.getElementById('1904.08601v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 April, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">10 pages, 5 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/physics/0701211">arXiv:physics/0701211</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/physics/0701211">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optics">physics.optics</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Fractal zone plates for wideband imaging with low <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span> and extended <span class="search-hit mathjax">depth</span> of field
+      
+    </p>
+    <p class="authors">
+      <span class="has-text-black-bis has-text-weight-semibold">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Furlan%2C+W+D">Walter D. Furlan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Saavedra%2C+G">Genaro Saavedra</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Monsoriu%2C+J+A">Juan A. Monsoriu</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="search-hit">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="physics/0701211v1-abstract-short" style="display: inline;">
+        &hellip;especially where refractive optics is not available. One of the main shortcomings of Fresnel zone plates, which limit their utility with broadband sources, is their high <span class="search-hit mathjax">chromatic</span>&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('physics/0701211v1-abstract-full').style.display = 'inline'; document.getElementById('physics/0701211v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="physics/0701211v1-abstract-full" style="display: none;">
+        Fresnel zone plates are diffractive elements that are essential to form images in many scientific and technological areas, especially where refractive optics is not available. One of the main shortcomings of Fresnel zone plates, which limit their utility with broadband sources, is their high <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>. Recently presented, Fractal Zone Plates (FZPs) are diffractive lenses characterized by an extended focal <span class="search-hit mathjax">depth</span> with a fractal structure. This behaviour predicts an improved performance of FZPs as image forming devices with an extended <span class="search-hit mathjax">depth</span> of field and a reduced <span class="search-hit mathjax">chromatic</span> <span class="search-hit mathjax">aberration</span>. Here we report the achievement of the first polychromatic images obtained with a FZP that confirm these predictions. We show that the polychromatic modulation transfer function (MTF) of a FZP affected by <span class="search-hit mathjax">defocus</span> is about two times better than one corresponding to a Fresnel zone plate. This result opens the possibility to improve imaging techniques that use conventional Fresnel zone plates over a wide range of the electromagnetic spectrum, ranging from x-rays to THz.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('physics/0701211v1-abstract-full').style.display = 'none'; document.getElementById('physics/0701211v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 January, 2007; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2007.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">7 pages, 4 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <footer class="ds-site-footer">
+  <div class="ds-site-footer-grid">
+    <div class="ds-site-footer-main">
+      <div class="ds-site-footer-ack">
+        We gratefully acknowledge support from our <a href="https://info.arxiv.org/about/major_funders.html"><strong>major funders</strong></a>,
+        <a href="https://info.arxiv.org/about/ourmembers.html"><strong>member institutions</strong></a><span class="ack-member-inline" hidden>, <strong></strong></span>,
+        and all contributors.
+      </div>
+      <nav class="ds-site-footer-links" aria-label="Site navigation">
+        <a href="https://info.arxiv.org/about">About</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help">Help</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/contact.html">Contact</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/subscribe.html">Subscribe</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/license/index.html">Copyright</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://info.arxiv.org/help/web_accessibility.html">Accessibility</a> <span class="ds-site-footer-sep" aria-hidden="true">&middot;</span>
+        <a href="https://status.arxiv.org/" target="_blank" rel="noopener noreferrer">Operational Status<span class="is-sr-only"> (opens in new tab)</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

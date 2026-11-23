@@ -1,0 +1,442 @@
+{
+ "query": "camera focus degradation over lifetime thermal automotive lens",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1021/ba-1996-0249.ch004",
+   "title": [
+    "Thermal Degradation of Automotive Plastics: A Possible Recycling Opportunity"
+   ],
+   "author": [
+    {
+     "given": "M.",
+     "family": "Day",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "National Research Council Canada, Institute for Environmental Chemistry, Ottawa, Ontario K1A 0R6, Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J. D.",
+     "family": "Cooney",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Research Council Canada, Institute for Environmental Chemistry, Ottawa, Ontario K1A 0R6, Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "C.",
+     "family": "Klein",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Research Council Canada, Institute for Environmental Chemistry, Ottawa, Ontario K1A 0R6, Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J.",
+     "family": "Fox",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Research Council Canada, Institute for Environmental Chemistry, Ottawa, Ontario K1A 0R6, Canada"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1996,
+      5,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "Advances in Chemistry",
+    "Polymer Durability"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.20944/preprints202512.1630.v1",
+   "title": [
+    "Driver Tracking in Automotive Environment Using Mobile Thermal Camera"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-2317-8867",
+     "authenticated-orcid": false,
+     "given": "Yordan",
+     "family": "Stoyanov",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      12,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1038/scientificamerican0238-112",
+   "title": [
+    "Your Camera Lens, the Contest is Over, and over"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1938,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Scientific American"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/12.613278",
+   "title": [
+    "Prediction of the lens lifetime by monitoring lens degradation on laser-based microlithography tools"
+   ],
+   "author": [
+    {
+     "given": "Albert",
+     "family": "Michaeli",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Eylon",
+     "family": "Rosner",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yehuda",
+     "family": "Root",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hagay",
+     "family": "Duenias",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shai",
+     "family": "Rubin",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2005,
+      5,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Microlithography XVIII"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.23919/aeitautomotive58986.2023.10217235",
+   "title": [
+    "Thermal Camera-based Driver Monitoring in the Automotive Scenario"
+   ],
+   "author": [
+    {
+     "given": "Veronica",
+     "family": "Mattioli",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "University of Parma,Department of Engineering and Architecture,Parma,Italy"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Luca",
+     "family": "Davoli",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Parma,Department of Engineering and Architecture,Parma,Italy"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Laura",
+     "family": "Belli",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Parma,Department of Engineering and Architecture,Parma,Italy"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Gianluigi",
+     "family": "Ferrari",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Parma,Department of Engineering and Architecture,Parma,Italy"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Riccardo",
+     "family": "Raheli",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Parma,Department of Engineering and Architecture,Parma,Italy"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      7,
+      17
+     ]
+    ]
+   },
+   "container-title": [
+    "2023 AEIT International Conference on Electrical and Electronic Technologies for Automotive (AEIT AUTOMOTIVE)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1117/12.23988",
+   "title": [
+    "Auto-focus video camera system with bag-type lens"
+   ],
+   "author": [
+    {
+     "given": "Norio",
+     "family": "Sugiura",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shinzo",
+     "family": "Morita",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1991,
+      4,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "19th Intl Congress on High-Speed Photography and Photonics"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/mmar.2019.8864659",
+   "title": [
+    "Camera model for lens with strong distortion in automotive application"
+   ],
+   "author": [
+    {
+     "given": "Kamil",
+     "family": "Lelowicz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      8
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 24th International Conference on Methods and Models in Automation and Robotics (MMAR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1016/s0141-3910(99)00125-1",
+   "title": [
+    "On the evaluation of the thermal lifetime of polymeric materials which exhibit a complex mechanism of thermal degradation consisting of two successive reactions"
+   ],
+   "author": [
+    {
+     "given": "P.",
+     "family": "Budrugeac",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Polymer Degradation and Stability"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 7
+  }
+ ]
+}

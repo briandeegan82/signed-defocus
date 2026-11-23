@@ -1,0 +1,453 @@
+{
+ "query": "Kruger accommodation longitudinal chromatic aberration sign of defocus",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1364/fio.2012.ftu4g.2",
+   "title": [
+    "Chromatic Aberration as a Possible Cue to Specify the Sign of Defocus in the Eye"
+   ],
+   "author": [
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2012
+     ]
+    ]
+   },
+   "container-title": [
+    "Frontiers in Optics 2012/Laser Science XXVIII"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/s0042-6989(02)00074-3",
+   "title": [
+    "Accommodation to simulations of defocus and chromatic aberration in the presence of chromatic misalignment"
+   ],
+   "author": [
+    {
+     "given": "Lawrence R",
+     "family": "Stark",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Roni S",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Philip B",
+     "family": "Kruger",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Frances J",
+     "family": "Rucker",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Ho",
+     "family": "Ying Fan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2002,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 26
+  },
+  {
+   "DOI": "10.1364/oam.1989.fk3",
+   "title": [
+    "Accommodation and chromatic aberration: effect of spatial frequency"
+   ],
+   "author": [
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Debra",
+     "family": "Stevens",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Steven",
+     "family": "Mathews",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1989
+     ]
+    ]
+   },
+   "container-title": [
+    "Annual Meeting Optical Society of America"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1167/19.8.106",
+   "title": [
+    "Longitudinal chromatic aberration provides a temporal signal for the sign of defocus for emmetropization in chick at low contrast"
+   ],
+   "author": [
+    {
+     "given": "Frances",
+     "family": "Rucker",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "New England College of Optometry"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rhea",
+     "family": "Eskew",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Northeastern University"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Christopher",
+     "family": "Taylor",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "New England College of Optometry"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      7,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Vision"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/0042-6989(86)90153-7",
+   "title": [
+    "Stimuli for accommodation: Blur, chromatic aberration and size"
+   ],
+   "author": [
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jordan",
+     "family": "Pola",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1986,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 114
+  },
+  {
+   "DOI": "10.1016/s0042-6989(02)00262-6",
+   "title": [
+    "Effects of longitudinal chromatic aberration on accommodation and emmetropization"
+   ],
+   "author": [
+    {
+     "given": "Anne",
+     "family": "Seidemann",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Frank",
+     "family": "Schaeffel",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2002,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 161
+  },
+  {
+   "DOI": "10.1016/j.exer.2020.108126",
+   "title": [
+    "Signals for defocus arise from longitudinal chromatic aberration in chick"
+   ],
+   "author": [
+    {
+     "given": "Frances J.",
+     "family": "Rucker",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "suffix": "Jr.",
+     "given": "Rhea T.",
+     "family": "Eskew",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-6592-6328",
+     "authenticated-orcid": false,
+     "given": "Christopher",
+     "family": "Taylor",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Experimental Eye Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 26
+  },
+  {
+   "DOI": "10.1111/j.1475-1313.1993.tb00466.x",
+   "title": [
+    "Accommodation and chromatic aberration: effect of spatial frequency"
+   ],
+   "author": [
+    {
+     "given": "Debra",
+     "family": "Stone",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Steven",
+     "family": "Mathews",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1993,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "Ophthalmic and Physiological Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 24
+  }
+ ]
+}

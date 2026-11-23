@@ -1,0 +1,428 @@
+{
+ "query": "Pertuz analysis of focus measure operators shape from focus",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1016/j.patcog.2012.11.011",
+   "title": [
+    "Analysis of focus measure operators for shape-from-focus"
+   ],
+   "author": [
+    {
+     "given": "Said",
+     "family": "Pertuz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Domenec",
+     "family": "Puig",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Miguel Angel",
+     "family": "Garcia",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "Pattern Recognition"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 755
+  },
+  {
+   "DOI": "10.1016/j.imavis.2013.07.005",
+   "title": [
+    "Reliability measure for shape-from-focus"
+   ],
+   "author": [
+    {
+     "given": "Said",
+     "family": "Pertuz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Domenec",
+     "family": "Puig",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Miguel Angel",
+     "family": "Garcia",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "Image and Vision Computing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 46
+  },
+  {
+   "DOI": "10.1016/j.micron.2025.103939",
+   "title": [
+    "Focus measure through vectorization analysis for microscopic shape from focus"
+   ],
+   "author": [
+    {
+     "given": "Yuezong",
+     "family": "Wang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0009-0006-7383-960X",
+     "authenticated-orcid": false,
+     "given": "Haoran",
+     "family": "Jia",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Micron"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.5244/c.22.8",
+   "title": [
+    "A New Adaptive Focus Measure for Shape From Focus"
+   ],
+   "author": [
+    {
+     "given": "T.",
+     "family": "Aydin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Y.S.",
+     "family": "Akgul",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2008
+     ]
+    ]
+   },
+   "container-title": [
+    "Procedings of the British Machine Vision Conference 2008"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 14
+  },
+  {
+   "DOI": "10.1109/icpr.2010.202",
+   "title": [
+    "Improving Shape-from-Focus by Compensating for Image Magnification Shift"
+   ],
+   "author": [
+    {
+     "given": "Said",
+     "family": "Pertuz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Domenec",
+     "family": "Puig",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Miguel Angel",
+     "family": "Garcia",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010,
+      8
+     ]
+    ]
+   },
+   "container-title": [
+    "2010 20th International Conference on Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1016/j.patcog.2025.112112",
+   "title": [
+    "A dual-stage focus measure for vector-valued images in shape from focus"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0007-1746-4804",
+     "authenticated-orcid": false,
+     "given": "Khurram",
+     "family": "Ashfaq",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-6814-3137",
+     "authenticated-orcid": false,
+     "given": "Muhammad",
+     "family": "Tariq Mahmood",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Pattern Recognition"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.5244/c.29.134",
+   "title": [
+    "Shape from Focus with Adaptive Focus Measure and High Order Derivatives"
+   ],
+   "author": [
+    {
+     "given": "Yuval",
+     "family": "Frommer",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rami",
+     "family": "Ben-Ari",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Nahum",
+     "family": "Kiryati",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015
+     ]
+    ]
+   },
+   "container-title": [
+    "Procedings of the British Machine Vision Conference 2015"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/icma57826.2023.10215920",
+   "title": [
+    "Multi-confidence Measure Combined with PCA for Focus Measurement Combination in Shape from Focus"
+   ],
+   "author": [
+    {
+     "given": "Jiqiang",
+     "family": "Chen",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Beijing University of Technology,Faculty of Materials and Manufacturing,Beijing,China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuezong",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Beijing University of Technology,Faculty of Materials and Manufacturing,Beijing,China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      8,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2023 IEEE International Conference on Mechatronics and Automation (ICMA)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  }
+ ]
+}

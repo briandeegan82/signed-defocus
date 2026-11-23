@@ -1,0 +1,425 @@
+{
+ "query": "Cossairt Nayar spectral focal sweep extended depth of field chromatic aberration",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/iccphot.2010.5585101",
+   "title": [
+    "Spectral Focal Sweep: Extended depth of field from chromatic aberrations"
+   ],
+   "author": [
+    {
+     "given": "Oliver",
+     "family": "Cossairt",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shree",
+     "family": "Nayar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2010 IEEE International Conference on Computational Photography (ICCP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 60
+  },
+  {
+   "DOI": "10.1109/iccv.2015.400",
+   "title": [
+    "Extended Depth of Field Catadioptric Imaging Using Focal Sweep"
+   ],
+   "author": [
+    {
+     "given": "Ryunosuke",
+     "family": "Yokoya",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shree K.",
+     "family": "Nayar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 IEEE International Conference on Computer Vision (ICCV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1145/1833349.1778768",
+   "title": [
+    "Diffusion coded photography for extended depth of field"
+   ],
+   "author": [
+    {
+     "given": "Oliver",
+     "family": "Cossairt",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Changyin",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shree",
+     "family": "Nayar",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010,
+      7,
+      26
+     ]
+    ]
+   },
+   "container-title": [
+    "ACM SIGGRAPH 2010 papers"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1109/iccphot.2013.6528302",
+   "title": [
+    "Focal sweep videography with deformable optics"
+   ],
+   "author": [
+    {
+     "given": "D.",
+     "family": "Miau",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "O.",
+     "family": "Cossairt",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "S. K.",
+     "family": "Nayar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      4
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE International Conference on Computational Photography (ICCP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 19
+  },
+  {
+   "DOI": "10.1145/1778765.1778768",
+   "title": [
+    "Diffusion coded photography for extended depth of field"
+   ],
+   "author": [
+    {
+     "given": "Oliver",
+     "family": "Cossairt",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Changyin",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shree",
+     "family": "Nayar",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Columbia University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010,
+      7,
+      26
+     ]
+    ]
+   },
+   "container-title": [
+    "ACM Transactions on Graphics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 47
+  },
+  {
+   "DOI": "10.21236/ada606975",
+   "title": [
+    "Imaging System Using Shared Optics and Aberration Exploitation"
+   ],
+   "author": [
+    {
+     "given": "C.",
+     "family": "Zhou",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "O.",
+     "family": "Cossairt",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "D.",
+     "family": "Miau",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "S. K.",
+     "family": "Nayar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      2,
+      11
+     ]
+    ]
+   },
+   "type": "report",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a051147",
+   "title": [
+    "Extraction of Spherical and Chromatic Aberration-free Information by Focal-depth Extension Processing Under Tilted Illumination"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1995,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/s12206-023-1016-2",
+   "title": [
+    "Fourier ptychographic microscopy utilizing chromatic aberration for extended depth of field"
+   ],
+   "author": [
+    {
+     "given": "Soo Hwan",
+     "family": "Seo",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hyun",
+     "family": "Choi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Mechanical Science and Technology"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  }
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "query": "Pentland a new sense for depth of field",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/tpami.1987.4767940",
+   "title": [
+    "A New Sense for Depth of Field"
+   ],
+   "author": [
+    {
+     "given": "Alex Paul",
+     "family": "Pentland",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1987,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 849
+  },
+  {
+   "DOI": "10.1515/9783110906813.29",
+   "title": [
+    "A New Sense of Reality? A New Sense of the Text? Exploring Meta-Realism and the Literary-Critical Field"
+   ],
+   "author": [
+    {
+     "given": "PHILIP",
+     "family": "TEW",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Beyond Postmodernism"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.21428/ba67f642.0499afe0",
+   "title": [
+    "Building the New Economy"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      4,
+      30
+     ]
+    ]
+   },
+   "type": "book",
+   "is-referenced-by-count": 14
+  },
+  {
+   "DOI": "10.1126/science.zxofp6c",
+   "title": [
+    "Pigeons sense Earth\u2019s magnetic field in an entirely new way"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      11,
+      20
+     ]
+    ]
+   },
+   "container-title": [
+    "AAAS Articles DO Group"
+   ],
+   "type": "dataset",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.3366/edinburgh/9781474483094.003.0005",
+   "title": [
+    "Apocalypse as Field of Sense: Markus Gabriel\u2019s Ontology of Fields of Sense and Octavia Butler\u2019s Parable Series"
+   ],
+   "author": [
+    {
+     "given": "Monika",
+     "family": "Kaup",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      5,
+      21
+     ]
+    ]
+   },
+   "container-title": [
+    "New Ecological Realisms"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/s0262-4079(16)31220-9",
+   "title": [
+    "We can sense our invisible force field"
+   ],
+   "author": [
+    {
+     "given": "Anil",
+     "family": "Ananthaswamy",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "New Scientist"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.5040/9781474280136.ch-008",
+   "title": [
+    "New Directions"
+   ],
+   "author": [
+    {
+     "given": "Elizabeth",
+     "family": "Pentland",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019
+     ]
+    ]
+   },
+   "container-title": [
+    "King Henry V"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1093/gmo/9781561592630.article.j746300",
+   "title": [
+    "Depth of Field"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2003
+     ]
+    ]
+   },
+   "container-title": [
+    "Oxford Music Online"
+   ],
+   "type": "reference-book",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

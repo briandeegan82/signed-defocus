@@ -1,0 +1,633 @@
+{
+ "query": "Garg learning single camera depth estimation using dual-pixels",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/iccv.2019.00772",
+   "title": [
+    "Learning Single Camera Depth Estimation Using Dual-Pixels"
+   ],
+   "author": [
+    {
+     "given": "Rahul",
+     "family": "Garg",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Neal",
+     "family": "Wadhwa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sameer",
+     "family": "Ansari",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jonathan",
+     "family": "Barron",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 IEEE/CVF International Conference on Computer Vision (ICCV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 102
+  },
+  {
+   "DOI": "10.1007/978-3-030-58452-8_34",
+   "title": [
+    "Du2Net: Learning Depth Estimation from Dual-Cameras and Dual-Pixels"
+   ],
+   "author": [
+    {
+     "given": "Yinda",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Neal",
+     "family": "Wadhwa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sergio",
+     "family": "Orts-Escolano",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Christian",
+     "family": "H\u00e4ne",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sean",
+     "family": "Fanello",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Rahul",
+     "family": "Garg",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020
+     ]
+    ]
+   },
+   "container-title": [
+    "Lecture Notes in Computer Science",
+    "Computer Vision \u2013 ECCV 2020"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 32
+  },
+  {
+   "DOI": "10.5220/0014562000005024",
+   "title": [
+    "Real-Time Object Distance Estimation Using YOLOv8, Midas Depth Prediction, and Linear Regression with a Single Monocular Camera"
+   ],
+   "author": [
+    {
+     "given": "A.",
+     "family": "Priya",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science and Engineering (Artificial Intelligence and Machine Learning) KIT \u2013 Kalaignarkarunanidhi Institute of technology Coimbatore, India"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "I.",
+     "family": "Sridharan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science and Engineering (Artificial Intelligence and Machine Learning) KIT \u2013 Kalaignarkarunanidhi Institute of technology Coimbatore, India"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "S.",
+     "family": "Raj",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science and Engineering (Artificial Intelligence and Machine Learning) KIT \u2013 Kalaignarkarunanidhi Institute of technology Coimbatore, India"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "D.",
+     "family": "Hemachandran",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science and Engineering (Artificial Intelligence and Machine Learning) KIT \u2013 Kalaignarkarunanidhi Institute of technology Coimbatore, India"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings of the 1st International Conference on Computational and Cognitive Systems Science"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icassp.2013.6638054",
+   "title": [
+    "Single image-based depth estimation using dual off-axis color filtered aperture camera"
+   ],
+   "author": [
+    {
+     "given": "Seungwon",
+     "family": "Lee",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Nahyun",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Kyungwon",
+     "family": "Jung",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Monson H.",
+     "family": "Hayes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Joonki",
+     "family": "Paik",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      5
+     ]
+    ]
+   },
+   "container-title": [
+    "2013 IEEE International Conference on Acoustics, Speech and Signal Processing"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 10
+  },
+  {
+   "DOI": "10.1109/cvpr52734.2025.02514",
+   "title": [
+    "Depth Any Camera: Zero-Shot Metric Depth Estimation from Any Camera"
+   ],
+   "author": [
+    {
+     "given": "Yuliang",
+     "family": "Guo",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Bosch Research North America &#x0026; Bosch Center for Artificial Intelligence (BCAI)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sparsh",
+     "family": "Garg",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Carnegie Mellon University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "S. Mahdi H.",
+     "family": "Miangoleh",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Simon Fraser University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xinyu",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Bosch Research North America &#x0026; Bosch Center for Artificial Intelligence (BCAI)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Liu",
+     "family": "Ren",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Bosch Research North America &#x0026; Bosch Center for Artificial Intelligence (BCAI)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      6,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 33
+  },
+  {
+   "DOI": "10.18502/keg.v2i2.603",
+   "title": [
+    "Depth Estimation of an Underwater Object Using a Single Camera"
+   ],
+   "author": [
+    {
+     "given": "Benjamin",
+     "family": "Champion",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mo",
+     "family": "Jamshidi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Matthew",
+     "family": "Joordens",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      2,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "KnE Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/gcce53005.2021.9621765",
+   "title": [
+    "Estimation method of calorie intake by deep learning using depth images obtained through a single camera smartphone"
+   ],
+   "author": [
+    {
+     "given": "Kazuyuki",
+     "family": "Kaneda",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Tatsuya",
+     "family": "Ooba",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hideki",
+     "family": "Shimada",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Osamu",
+     "family": "Shiku",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuji",
+     "family": "Teshima",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      10,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "2021 IEEE 10th Global Conference on Consumer Electronics (GCCE)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/navcomp.2013.16",
+   "title": [
+    "Real-Time Depth Estimation for Underwater Inspection Using Dual Laser and Camera"
+   ],
+   "author": [
+    {
+     "given": "Paulo",
+     "family": "Drews",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Joao",
+     "family": "Longui",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Vagner",
+     "family": "Rosa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2013 Symposium on Computing and Automation for Offshore Shipbuilding"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  }
+ ]
+}

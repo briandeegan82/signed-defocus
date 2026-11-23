@@ -1,0 +1,446 @@
+{
+ "query": "Garcia chromatic aberration and depth extraction",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/icpr.2000.905499",
+   "title": [
+    "Chromatic aberration and depth extraction"
+   ],
+   "author": [
+    {
+     "given": "J.",
+     "family": "Garcia",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "J.M.",
+     "family": "Sanchez",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "X.",
+     "family": "Orriols",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "X.",
+     "family": "Binefa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings 15th International Conference on Pattern Recognition. ICPR-2000"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 16
+  },
+  {
+   "DOI": "10.1093/oxfordjournals.jmicro.a051147",
+   "title": [
+    "Extraction of Spherical and Chromatic Aberration-free Information by Focal-depth Extension Processing Under Tilted Illumination"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1995,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electron Microscopy"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.24262348",
+   "title": [
+    "A Multi-Depth Focused Laser Differential Interferometer Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Nicholas",
+     "family": "Webber",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rachel",
+     "family": "Constantin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sophia",
+     "family": "Edwards",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Gragston",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      9
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.24262348.v1",
+   "title": [
+    "A Multi-Depth Focused Laser Differential Interferometer Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Nicholas",
+     "family": "Webber",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rachel",
+     "family": "Constantin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sophia",
+     "family": "Edwards",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Gragston",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      9
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1036/1097-8542.134200",
+   "title": [
+    "Chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "AccessScience"
+   ],
+   "type": "dataset",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/springerreference_9987",
+   "title": [
+    "chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "SpringerReference"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084.v1",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

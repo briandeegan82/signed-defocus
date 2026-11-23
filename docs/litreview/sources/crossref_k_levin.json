@@ -1,0 +1,511 @@
+{
+ "query": "Levin image and depth from a conventional camera with a coded aperture",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1145/1275808.1276464",
+   "title": [
+    "Image and depth from a conventional camera with a coded aperture"
+   ],
+   "author": [
+    {
+     "given": "Anat",
+     "family": "Levin",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Rob",
+     "family": "Fergus",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fr\u00e9do",
+     "family": "Durand",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "William T.",
+     "family": "Freeman",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      7,
+      29
+     ]
+    ]
+   },
+   "container-title": [
+    "ACM SIGGRAPH 2007 papers"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 196
+  },
+  {
+   "DOI": "10.1145/1276377.1276464",
+   "title": [
+    "Image and depth from a conventional camera with a coded aperture"
+   ],
+   "author": [
+    {
+     "given": "Anat",
+     "family": "Levin",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Rob",
+     "family": "Fergus",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fr\u00e9do",
+     "family": "Durand",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "William T.",
+     "family": "Freeman",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Computer Science and Artificial Intelligence Laboratory"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      7,
+      29
+     ]
+    ]
+   },
+   "container-title": [
+    "ACM Transactions on Graphics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1023
+  },
+  {
+   "DOI": "10.1109/tci.2026.3697618/mm1",
+   "title": [
+    "Single-Image Depth from Defocus with Coded Aperture and Diffusion Posterior Sampling_supp1-3697618.pdf"
+   ],
+   "author": [
+    {
+     "given": "Hodaka",
+     "family": "Kawachi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2352/issn.2470-1173.2016.21.3dipm-405",
+   "title": [
+    "Depth Estimation Algorithm for Color Coded Aperture Camera"
+   ],
+   "author": [
+    {
+     "given": "Ivan",
+     "family": "Panchenko",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Vladimir",
+     "family": "Paramonov",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Victor",
+     "family": "Bucha",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      2,
+      14
+     ]
+    ]
+   },
+   "container-title": [
+    "Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1108/sr.2000.08720cad.020",
+   "title": [
+    "Aperture coded camera"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      9,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Sensor Review"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/lsens.2023.3315248",
+   "title": [
+    "Toward High-Resolution Face Image Generation From Coded Aperture Camera"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-8199-0098",
+     "authenticated-orcid": false,
+     "given": "Hatef Otroshi",
+     "family": "Shahreza",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Biometrics Security, Privacy Group, Idiap Research Institute, Martigny, Switzerland"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0009-0007-6348-972X",
+     "authenticated-orcid": false,
+     "given": "Alexandre",
+     "family": "Veuthey",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Innovation Office, ams OSRAM, Martigny, Switzerland"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2497-9140",
+     "authenticated-orcid": false,
+     "given": "S\u00e9bastien",
+     "family": "Marcel",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Biometrics Security, Privacy Group, Idiap Research Institute, Martigny, Switzerland"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Sensors Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1016/j.ijleo.2012.12.039",
+   "title": [
+    "A new method to accelerate depth extraction for aperture-coded camera"
+   ],
+   "author": [
+    {
+     "given": "Yupeng",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Dongdong",
+     "family": "Weng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yongtian",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Siyuan",
+     "family": "Zheng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "Optik"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1109/cvprw.2016.118",
+   "title": [
+    "Depth Camera Based on Color-Coded Aperture"
+   ],
+   "author": [
+    {
+     "given": "Vladimir",
+     "family": "Paramonov",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ivan",
+     "family": "Panchenko",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Victor",
+     "family": "Bucha",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrey",
+     "family": "Drogolyub",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Sergey",
+     "family": "Zagoruyko",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 13
+  }
+ ]
+}

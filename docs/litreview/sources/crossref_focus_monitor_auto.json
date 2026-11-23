@@ -1,0 +1,1212 @@
+{
+ "query": "automotive camera defocus detection fixed focus",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/icma.2009.5246652",
+   "title": [
+    "Global depth from defocus with fixed camera parameters"
+   ],
+   "author": [
+    {
+     "family": "Yangjie Wei",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "family": "Zaili Dong",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "family": "Chengdong Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009,
+      8
+     ]
+    ]
+   },
+   "container-title": [
+    "2009 International Conference on Mechatronics and Automation"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.52202/083091-0021",
+   "title": [
+    "Balancing Focus and Defocus: Optimized Camera-Only Imaging for In-Orbit Satellite Servicing"
+   ],
+   "author": [
+    {
+     "given": "Jasprabhjit",
+     "family": "Mehami",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "The University of Sydney"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Donald G.",
+     "family": "Dansereau",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "The University of Sydney"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025
+     ]
+    ]
+   },
+   "container-title": [
+    "IAF Space Systems Symposium"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/iccv.2007.4409024",
+   "title": [
+    "Shape from Focus and Defocus: Convexity, Quasiconvexity and Defocus-Invariant Textures"
+   ],
+   "author": [
+    {
+     "given": "Paolo",
+     "family": "Favaro",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007
+     ]
+    ]
+   },
+   "container-title": [
+    "2007 IEEE 11th International Conference on Computer Vision"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1088/1361-6404/ae7e29/data8",
+   "title": [
+    "Script Fixed Camera"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1038/scientificamerican02251911-204a",
+   "title": [
+    "A Home-made Portrait Attachment for a Camera of Fixed Focus"
+   ],
+   "author": [
+    {
+     "given": "Albert S.",
+     "family": "Getten",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1911,
+      2,
+      25
+     ]
+    ]
+   },
+   "container-title": [
+    "Scientific American"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/3.100284.ch8",
+   "title": [
+    "Defocus and Focus-Related Topics"
+   ],
+   "author": [
+    {
+     "given": "Peter",
+     "family": "De Bisschop",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      2,
+      26
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Lithography for Advanced Semiconductor Patterning"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/s0007-1935(17)46153-7",
+   "title": [
+    "A Fixed-Focus, Close-Shot Camera Mounting for Veterinary Clinical Photography"
+   ],
+   "author": [
+    {
+     "given": "E.F.",
+     "family": "Lewis",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1957,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "British Veterinary Journal"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1515/mms-2015-0011",
+   "title": [
+    "Measurement of Membrane Displacement with a Motionless Camera Equipped with a Fixed Focus Lens"
+   ],
+   "author": [
+    {
+     "given": "Krzysztof",
+     "family": "Murawski",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      3,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Metrology and Measurement Systems"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 16
+  },
+  {
+   "DOI": "10.1109/etecte59617.2023.10396727",
+   "title": [
+    "3D Shape Reconstruction Using Focus Clue From Defocus Blur Detection"
+   ],
+   "author": [
+    {
+     "given": "Usman",
+     "family": "Ali",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Sungkyunkwan University,Department of Electrical and Computer Engineering,Suwon,South Korea"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Byeonghyeon",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Sungkyunkwan University,Department of Artificial Intelligence,Suwon,South Korea"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Howoong",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Sungkyunkwan University,Department of Electrical and Computer Engineering,Suwon,South Korea"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      11,
+      27
+     ]
+    ]
+   },
+   "container-title": [
+    "2023 2nd International Conference on Emerging Trends in Electrical, Control, and Telecommunication Engineering (ETECTE)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.32144539",
+   "title": [
+    "Fixed-Detector Tilt--Defocus Sensing by Upstream Source Coding in a Time-Reversed Young Interferometer"
+   ],
+   "author": [
+    {
+     "given": "Jianming",
+     "family": "Wen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      5,
+      5
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.1016/j.rineng.2025.105951",
+   "title": [
+    "Estimating the effect of age-induced defocus on object detection performance of automotive cameras"
+   ],
+   "author": [
+    {
+     "given": "Amit",
+     "family": "Pandey",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Stephan",
+     "family": "K\u00fchn",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Marcel",
+     "family": "Kettelgerdes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Bernhard",
+     "family": "Wunderle",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Gordon",
+     "family": "Elger",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Results in Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 12
+  },
+  {
+   "DOI": "10.1364/opticaopen.32144539.v1",
+   "title": [
+    "Fixed-Detector Tilt--Defocus Sensing by Upstream Source Coding in a Time-Reversed Young Interferometer"
+   ],
+   "author": [
+    {
+     "given": "Jianming",
+     "family": "Wen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      5,
+      5
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/iv55156.2024.10588554",
+   "title": [
+    "Deep Learning Based Road Boundary Detection Using Camera and Automotive Radar"
+   ],
+   "author": [
+    {
+     "given": "Dipkumar",
+     "family": "Patel",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Ontario Tech University,IoT Research Laboratory,ECSE Department,Oshawa,ON,Canada"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Khalid",
+     "family": "Elgazzar",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Ontario Tech University,IoT Research Laboratory,ECSE Department,Oshawa,ON,Canada"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      6,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 IEEE Intelligent Vehicles Symposium (IV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.36227/techrxiv.20199836.v3",
+   "title": [
+    "Analysis of Automotive Camera Sensor Noise Factors and Impact on Object Detection"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-3051-0875",
+     "authenticated-orcid": false,
+     "given": "Boda",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "University of Warwick"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1705-5430",
+     "authenticated-orcid": false,
+     "given": "Pak Hung",
+     "family": "Chan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Matthew",
+     "family": "Higgins",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Valentina",
+     "family": "Donzella",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Gabriele",
+     "family": "Baris",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      10,
+      10
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.36227/techrxiv.20199836",
+   "title": [
+    "Analysis of Automotive Camera Sensor Noise Factors and Impact on Object Detection"
+   ],
+   "author": [
+    {
+     "given": "Boda",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Pak Hung",
+     "family": "Chan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Gabriele",
+     "family": "Baris",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Matthew",
+     "family": "Higgins",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Valentina",
+     "family": "Donzella",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      10,
+      10
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.7753/ijcatr0305.1001",
+   "title": [
+    "Moving Object Detection with Fixed Camera and Moving Camera for Automated Video Analysis"
+   ],
+   "author": [
+    {
+     "given": "Dipali",
+     "family": "Shahare",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Ranjana",
+     "family": "Shende",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      5,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "International Journal of Computer Applications Technology and Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1007/springerreference_14636",
+   "title": [
+    "fixed focus"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "SpringerReference"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/3dv.2015.44",
+   "title": [
+    "Optimal Camera Parameters for Depth from Defocus"
+   ],
+   "author": [
+    {
+     "given": "Fahim",
+     "family": "Mannan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Michael S.",
+     "family": "Langer",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 International Conference on 3D Vision"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 7
+  },
+  {
+   "DOI": "10.1016/j.inffus.2022.08.023",
+   "title": [
+    "Defocus to focus: Photo-realistic bokeh rendering by fusing defocus and radiance priors"
+   ],
+   "author": [
+    {
+     "given": "Xianrui",
+     "family": "Luo",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Juewen",
+     "family": "Peng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ke",
+     "family": "Xian",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zijin",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9223-1863",
+     "authenticated-orcid": false,
+     "given": "Zhiguo",
+     "family": "Cao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Information Fusion"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 18
+  },
+  {
+   "DOI": "10.1364/cosi.2015.cm4e.3",
+   "title": [
+    "Depth Reconstruction from the Defocus Effect of an XSlit Camera"
+   ],
+   "author": [
+    {
+     "given": "Yu",
+     "family": "Ji",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jinwei",
+     "family": "Ye",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jingyi",
+     "family": "Yu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015
+     ]
+    ]
+   },
+   "container-title": [
+    "Imaging and Applied Optics 2015"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.7467/ksae.2015.23.5.463",
+   "title": [
+    "Lane Detection-based Camera Pose Estimation"
+   ],
+   "author": [
+    {
+     "given": "Ho Gi",
+     "family": "Jung",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jae Kyu",
+     "family": "Suhr",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      9,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Transactions of the Korean Society of Automotive Engineers"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.5244/c.35.77",
+   "title": [
+    "Absolute Scale from Varifocal Monocular Camera through SfM and Defocus Combined"
+   ],
+   "author": [
+    {
+     "given": "Nao",
+     "family": "Mishima",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Akihito",
+     "family": "Seki",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shinsaku",
+     "family": "Hiura",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings of the British Machine Vision Conference 2021"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1007/978-3-030-03243-2_839-1",
+   "title": [
+    "Shape from Focus and Defocus"
+   ],
+   "author": [
+    {
+     "given": "Tae Hyun",
+     "family": "Kim",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kyoung Mu",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      12,
+      17
+     ]
+    ]
+   },
+   "container-title": [
+    "Computer Vision"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-030-63416-2_839",
+   "title": [
+    "Shape from Focus and Defocus"
+   ],
+   "author": [
+    {
+     "given": "Tae Hyun",
+     "family": "Kim",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kyoung Mu",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "Computer Vision"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icpr.2006.704",
+   "title": [
+    "Improving Shape from Focus Using Defocus Information"
+   ],
+   "author": [
+    {
+     "given": "K.S.",
+     "family": "Pradeep",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "A.N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2006
+     ]
+    ]
+   },
+   "container-title": [
+    "18th International Conference on Pattern Recognition (ICPR'06)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  }
+ ]
+}

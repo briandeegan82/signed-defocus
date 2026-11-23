@@ -1,0 +1,1371 @@
+{
+ "query": "defocus blur sign ambiguity single image front back focus",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/vcip.2013.6706352",
+   "title": [
+    "Depth from defocus and blur for single image"
+   ],
+   "author": [
+    {
+     "given": "Huadong",
+     "family": "Sun",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhijie",
+     "family": "Zhao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xuesong",
+     "family": "Jin",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lianding",
+     "family": "Niu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lizhi",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2013 Visual Communications and Image Processing (VCIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/tip.2013.2279316",
+   "title": [
+    "Estimating Spatially Varying Defocus Blur From A Single Image"
+   ],
+   "author": [
+    {
+     "given": "Xiang",
+     "family": "Zhu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Scott",
+     "family": "Cohen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Stephen",
+     "family": "Schiller",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Peyman",
+     "family": "Milanfar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 145
+  },
+  {
+   "DOI": "10.1016/j.icte.2019.10.003",
+   "title": [
+    "Single image defocus blur segmentation using Local Ternary Pattern"
+   ],
+   "author": [
+    {
+     "given": "Muhammad Tariq",
+     "family": "Mahmood",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Usman",
+     "family": "Ali",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Young Kyu",
+     "family": "Choi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "ICT Express"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/wacv57701.2024.00371",
+   "title": [
+    "Camera-Independent Single Image Depth Estimation from Defocus Blur"
+   ],
+   "author": [
+    {
+     "given": "Lahiru",
+     "family": "Wijayasingha",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Computer Science Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Homa",
+     "family": "Alemzadeh",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Electrical and Computer Engineering Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "John A.",
+     "family": "Stankovic",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "University of Virginia,Computer Science Department,USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      1,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1007/978-1-84628-688-9_7",
+   "title": [
+    "Dealing with motion: Unifying defocus and motion blur"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "3-D Shape Estimation and Image Restoration"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/cvpr.2007.383217",
+   "title": [
+    "Estimating Scale of a Scene from a Single Image Based on Defocus Blur and Scene Geometry"
+   ],
+   "author": [
+    {
+     "given": "Takayuki",
+     "family": "Okatani",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Koichiro",
+     "family": "Deguchi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2007 IEEE Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.7717/peerj-cs.3918/fig-5",
+   "title": [
+    "Figure 5: F1-score comparison across blur degradation types on the CrowdPose test split: Gaussian blur (left), motion blur (middle), and defocus blur (right)."
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1609/aaai.v39i6.32714",
+   "title": [
+    "Multi-Focus Image Fusion via Explicit Defocus Blur Modelling"
+   ],
+   "author": [
+    {
+     "given": "Yuhui",
+     "family": "Quan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xi",
+     "family": "Wan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zitao",
+     "family": "Tang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jinxiu",
+     "family": "Liang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Hui",
+     "family": "Ji",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      4,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings of the AAAI Conference on Artificial Intelligence"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 11
+  },
+  {
+   "DOI": "10.1109/icip.2011.6116643",
+   "title": [
+    "Single image spatially variant out-of-focus blur removal"
+   ],
+   "author": [
+    {
+     "given": "Stanley H.",
+     "family": "Chan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Truong Q.",
+     "family": "Nguyen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2011,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2011 18th IEEE International Conference on Image Processing"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 18
+  },
+  {
+   "DOI": "10.1109/icip.2016.7532848",
+   "title": [
+    "Image retargeting based on spatially varying defocus blur map"
+   ],
+   "author": [
+    {
+     "given": "Ali",
+     "family": "Karaali",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Claudio Rosito",
+     "family": "Jung",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 10
+  },
+  {
+   "DOI": "10.1016/j.jvcir.2016.01.002",
+   "title": [
+    "Spatially variant defocus blur map estimation and deblurring from a single image"
+   ],
+   "author": [
+    {
+     "given": "Xinxin",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ronggang",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiubao",
+     "family": "Jiang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wenmin",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wen",
+     "family": "Gao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Visual Communication and Image Representation"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 76
+  },
+  {
+   "DOI": "10.1109/icip.2019.8803191",
+   "title": [
+    "Depth from Spectral Defocus Blur"
+   ],
+   "author": [
+    {
+     "given": "Shin",
+     "family": "Ishihara",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "National Institute of Informatics, Japan"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Antonin",
+     "family": "Sulc",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Institute of Informatics, Japan"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Imari",
+     "family": "Sato",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National Institute of Informatics, Japan"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.3390/photonics13080732",
+   "title": [
+    "Ambiguity-Reduced Depth from Defocus via Single-Shot Polarizer-Free Dual-Focus Imaging"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-6361-120X",
+     "authenticated-orcid": false,
+     "given": "Wenjie",
+     "family": "Lai",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fanyu",
+     "family": "Zeng",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Communications and Information Engineering, Nanjing University of Posts and Telecommunications, Nanjing 210023, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiao",
+     "family": "Hu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shaowei",
+     "family": "He",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ziji",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Huiling",
+     "family": "Tai",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yadong",
+     "family": "Jiang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Optoelectronic Science and Engineering, University of Electronic Science and Technology of China, Chengdu 610051, China"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      7,
+      31
+     ]
+    ]
+   },
+   "container-title": [
+    "Photonics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/ispacs.2013.6704583",
+   "title": [
+    "Depth estimation based on defocus blur using a single image taken by a tilted lens optics camera"
+   ],
+   "author": [
+    {
+     "given": "Yuzo",
+     "family": "Taketomi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hiroshi",
+     "family": "Ikeoka",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Takayuki",
+     "family": "Hamamoto",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2013 International Symposium on Intelligent Signal Processing and Communication Systems"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.5204/thesis.eprints.212506",
+   "title": [
+    "The eye's response to defocus and diffuse blur"
+   ],
+   "author": [
+    {
+     "given": "Swee Chai",
+     "family": "Teoh",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "dissertation",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icip.2018.8451778",
+   "title": [
+    "Temporal Consistency for Still Image Based Defocus Blur Estimation Methods"
+   ],
+   "author": [
+    {
+     "given": "Ali",
+     "family": "Karaali",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Claudio Rosita",
+     "family": "Jung",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Francois",
+     "family": "Pitie",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2018 25th IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1109/icip.2016.7532832",
+   "title": [
+    "Superpixel-based depth map estimation using defocus blur"
+   ],
+   "author": [
+    {
+     "given": "Saeed",
+     "family": "Mahmoudpour",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Manbae",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1167/jov.23.11.83",
+   "title": [
+    "Poster Session: Peripheral blur may provide the eye with a cue for the sign of defocus"
+   ],
+   "author": [
+    {
+     "given": "Len",
+     "family": "Zheleznyak",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Clerio Vision, Inc."
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      9,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Vision"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icip.2015.7351359",
+   "title": [
+    "Improving surf interest point detection for defocus blur robustness"
+   ],
+   "author": [
+    {
+     "given": "Elhusain",
+     "family": "Saad",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Keigo",
+     "family": "Hirakawa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.1007/978-3-319-58771-4_9",
+   "title": [
+    "Blind Space-Variant Single-Image Restoration of Defocus Blur"
+   ],
+   "author": [
+    {
+     "given": "Leah",
+     "family": "Bar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Nir",
+     "family": "Sochen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Nahum",
+     "family": "Kiryati",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017
+     ]
+    ]
+   },
+   "container-title": [
+    "Lecture Notes in Computer Science",
+    "Scale Space and Variational Methods in Computer Vision"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1109/icip.2014.7025932",
+   "title": [
+    "Adaptive scale selection for multiresolution defocus blur estimation"
+   ],
+   "author": [
+    {
+     "given": "Ali",
+     "family": "Karaali",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Claudio Rosito",
+     "family": "Jung",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2014 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/tip.2016.2528042",
+   "title": [
+    "LBP-Based Segmentation of Defocus Blur"
+   ],
+   "author": [
+    {
+     "given": "Xin",
+     "family": "Yi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mark",
+     "family": "Eramian",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      4
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 134
+  },
+  {
+   "DOI": "10.1109/access.2020.3026332",
+   "title": [
+    "Image Synthesis With Efficient Defocus Blur for Stereoscopic Displays"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-9557-5349",
+     "authenticated-orcid": false,
+     "given": "Yi-Chun",
+     "family": "Chen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-0561-8745",
+     "authenticated-orcid": false,
+     "given": "Tian-Sheuan",
+     "family": "Chang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Access"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/tip.2016.2555702",
+   "title": [
+    "Defocus Blur-Invariant Scale-Space Feature Extractions"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-3433-4239",
+     "authenticated-orcid": false,
+     "given": "Elhusain",
+     "family": "Saad",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Keigo",
+     "family": "Hirakawa",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 32
+  },
+  {
+   "DOI": "10.1109/cvidl62147.2024.10604239",
+   "title": [
+    "Aperture-mask-render-based defocus blur generation method for calibration plate image"
+   ],
+   "author": [
+    {
+     "given": "Qingjian",
+     "family": "Cheng",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Guangdong University of Technology,Guangzhou,Guangdong,China,510000"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      4,
+      19
+     ]
+    ]
+   },
+   "container-title": [
+    "2024 5th International Conference on Computer Vision, Image and Deep Learning (CVIDL)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  }
+ ]
+}

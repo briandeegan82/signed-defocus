@@ -1,0 +1,427 @@
+{
+ "query": "chromatic aberration defocus direction sensor wavefront",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1364/oe.479357",
+   "title": [
+    "Analog holographic wavefront sensor for defocus and spherical aberration measurement recorded in a photopolymer"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-6652-1755",
+     "authenticated-orcid": true,
+     "given": "Emma",
+     "family": "Branigan",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/04t0qbt32",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Technological University Dublin (TU Dublin)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4735-7897",
+     "authenticated-orcid": true,
+     "given": "Suzanne",
+     "family": "Martin",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/04t0qbt32",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Technological University Dublin (TU Dublin)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Matthew",
+     "family": "Sheehan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Technological University Dublin (TU Dublin)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-2446-4064",
+     "authenticated-orcid": true,
+     "given": "Kevin",
+     "family": "Murphy",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/04t0qbt32",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Technological University Dublin (TU Dublin)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      2,
+      28
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Express"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 8
+  },
+  {
+   "DOI": "10.1088/978-0-7503-3295-8ch5",
+   "title": [
+    "Chromatic aberration and thermal defocus"
+   ],
+   "author": [
+    {
+     "given": "Andy",
+     "family": "Wood",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Retired Optical Designer"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      2,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Diffractive Lens Design"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1117/12.3073920",
+   "title": [
+    "An optimization method used to measure chromatic aberration with Shack-Hartmann wavefront sensor"
+   ],
+   "author": [
+    {
+     "given": "Dexuan",
+     "family": "Fu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xinqi",
+     "family": "Hu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Chuanxu",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      11,
+      20
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Design and Testing XV"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/ovo.1993.pd.2",
+   "title": [
+    "Transverse Chromatic Aberration of an Ophthalmic Lens Degrades Visual Performance more than Dioptric Defocus"
+   ],
+   "author": [
+    {
+     "given": "Pierre",
+     "family": "Simonet",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jocelyn",
+     "family": "Faubert",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jacques",
+     "family": "Gresset",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1993
+     ]
+    ]
+   },
+   "container-title": [
+    "Ophthalmic and Visual Optics"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/0042-6989(89)90083-7",
+   "title": [
+    "The interactions between chromatic aberration, defocus and stimulus chromaticity: Implications for visual physiology and colorimetry"
+   ],
+   "author": [
+    {
+     "given": "D.I.",
+     "family": "Flitcroft",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1989,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Vision Research"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 80
+  },
+  {
+   "DOI": "10.1364/fio.2012.ftu4g.2",
+   "title": [
+    "Chromatic Aberration as a Possible Cue to Specify the Sign of Defocus in the Eye"
+   ],
+   "author": [
+    {
+     "given": "Philip B.",
+     "family": "Kruger",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2012
+     ]
+    ]
+   },
+   "container-title": [
+    "Frontiers in Optics 2012/Laser Science XXVIII"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/12.2205141",
+   "title": [
+    "Thermal lensing measurement from the coefficient of defocus aberration using Shack-Hartmann wavefront sensor"
+   ],
+   "author": [
+    {
+     "given": "Teboho",
+     "family": "Bell",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Darryl",
+     "family": "Naidoo",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sandile",
+     "family": "Ngcobo",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Andrew",
+     "family": "Forbes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      4,
+      22
+     ]
+    ]
+   },
+   "container-title": [
+    "SPIE Proceedings",
+    "Laser Resonators, Microresonators, and Beam Control XVIII"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 2
+  },
+  {
+   "DOI": "10.55776/p29093",
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      7,
+      1
+     ]
+    ]
+   },
+   "type": "grant"
+  }
+ ]
+}

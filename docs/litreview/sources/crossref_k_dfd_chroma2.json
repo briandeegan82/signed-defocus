@@ -1,0 +1,509 @@
+{
+ "query": "depth from chromatic aberration color channels single lens camera",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.17586/1023-5086-2019-86-01-52-59",
+   "title": [
+    "Using the longitudinal chromatic aberration effect to measure distances from a single color photo"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019
+     ]
+    ]
+   },
+   "container-title": [
+    "\u041e\u043f\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0436\u0443\u0440\u043d\u0430\u043b"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/b978-0-08-051009-5.50007-x",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "RUDOLF",
+     "family": "KINGSLAKE",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1978
+     ]
+    ]
+   },
+   "container-title": [
+    "Lens Design Fundamentals"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1364/ods.2003.wa7",
+   "title": [
+    "Analysis of chromatic aberration of single objective lens and correction of that of a NA=0.85 objective lens."
+   ],
+   "author": [
+    {
+     "given": "Makoto",
+     "family": "Itonaga",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Fumihiko",
+     "family": "Ito",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Toshiya",
+     "family": "Saito",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2003
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Data Storage"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.3390/s17051048",
+   "title": [
+    "Full-Field Calibration of Color Camera Chromatic Aberration using Absolute Phase Maps"
+   ],
+   "author": [
+    {
+     "given": "Xiaohong",
+     "family": "Liu",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Hebei University of Technology, Tianjin 300130, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shujun",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Hebei University of Technology, Tianjin 300130, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-6645-6647",
+     "authenticated-orcid": false,
+     "given": "Zonghua",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "School of Mechanical Engineering, Hebei University of Technology, Tianjin 300130, China"
+      },
+      {
+       "name": "Centre for Precision Technologies, University of Huddersfield, Huddersfield HD1 3DH, UK"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3835-6929",
+     "authenticated-orcid": false,
+     "given": "Feng",
+     "family": "Gao",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Centre for Precision Technologies, University of Huddersfield, Huddersfield HD1 3DH, UK"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xiangqian",
+     "family": "Jiang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Centre for Precision Technologies, University of Huddersfield, Huddersfield HD1 3DH, UK"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      5,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "Sensors"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 14
+  },
+  {
+   "DOI": "10.1364/optcon.539565",
+   "title": [
+    "Chromatic aberration compensation in a digital camera lens for fringe projection profilometry"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-9335-4718",
+     "authenticated-orcid": true,
+     "given": "Anal\u00eda",
+     "family": "Sicardi-Segade",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00q8h8k29",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-6809-2368",
+     "authenticated-orcid": true,
+     "given": "Juan A.",
+     "family": "Rayas",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00q8h8k29",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-5491-181X",
+     "authenticated-orcid": true,
+     "given": "Amalia",
+     "family": "Mart\u00ednez-Garc\u00eda",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/00q8h8k29",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      10,
+      14
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Continuum"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.1117/12.2633425",
+   "title": [
+    "Type 2 longitudinal chromatic aberration from a high-harmonic MODE lens and color corrector"
+   ],
+   "author": [
+    {
+     "given": "Tom D.",
+     "family": "Milster",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Youngsik",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Zichan",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      10,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Manufacturing and Testing XIV"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/opticaopen.29924084.v1",
+   "title": [
+    "Depth Estimation from Hyperspectral Images Based on Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Zhuang",
+     "family": "Zhao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lei",
+     "family": "Gan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jing",
+     "family": "Han",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Lianfa",
+     "family": "Bai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Xingyu",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yong",
+     "family": "Peng",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      8,
+      18
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/b978-0-12-374301-5.00009-7",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Rudolf",
+     "family": "Kingslake",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "R.",
+     "family": "Barry Johnson",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010
+     ]
+    ]
+   },
+   "container-title": [
+    "Lens Design Fundamentals"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

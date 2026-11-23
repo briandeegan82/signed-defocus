@@ -1,0 +1,335 @@
+{
+ "query": "Subbarao depth from defocus spatial domain approach",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/cvpr.1993.340978",
+   "title": [
+    "Depth from defocus by changing camera aperture: a spatial domain approach"
+   ],
+   "author": [
+    {
+     "given": "G.",
+     "family": "Surya",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "M.",
+     "family": "Subbarao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings of IEEE Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 44
+  },
+  {
+   "DOI": "10.1007/bf02028349",
+   "title": [
+    "Depth from defocus: A spatial domain approach"
+   ],
+   "author": [
+    {
+     "given": "Murali",
+     "family": "Subbarao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Gopal",
+     "family": "Surya",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1994,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "International Journal of Computer Vision"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 365
+  },
+  {
+   "DOI": "10.1117/12.279778",
+   "title": [
+    "&lt;title&gt;Noise sensitivity analysis of depth-from-defocus by a spatial-domain approach&lt;/title&gt;"
+   ],
+   "author": [
+    {
+     "given": "Murali",
+     "family": "Subbarao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "JennKwei",
+     "family": "Tyan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1997,
+      7,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "SPIE Proceedings",
+    "Videometrics V"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/iccv.1998.710809",
+   "title": [
+    "Passive depth from defocus using a spatial domain approach"
+   ],
+   "author": [
+    {
+     "given": "D.",
+     "family": "Ziou",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Sixth International Conference on Computer Vision (IEEE Cat. No.98CH36271)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.1109/cvpr.1992.223176",
+   "title": [
+    "Depth from defocus and rapid autofocusing: a practical approach"
+   ],
+   "author": [
+    {
+     "given": "M.",
+     "family": "Subbarao",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "T.-C.",
+     "family": "Wei",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings 1992 IEEE Computer Society Conference on Computer Vision and Pattern Recognition"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 36
+  },
+  {
+   "DOI": "10.1016/j.patrec.2006.01.003",
+   "title": [
+    "An image-based calibration technique of spatial domain depth-from-defocus"
+   ],
+   "author": [
+    {
+     "given": "Soon-Yong",
+     "family": "Park",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2006,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Pattern Recognition Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1006/cviu.2000.0899",
+   "title": [
+    "Depth from Defocus Estimation in Spatial Domain"
+   ],
+   "author": [
+    {
+     "given": "Djemel",
+     "family": "Ziou",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Francois",
+     "family": "Deschenes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2001,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Computer Vision and Image Understanding"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 51
+  },
+  {
+   "DOI": "10.1117/1.2774830",
+   "title": [
+    "Effects of nonlinear camera response function in spatial domain depth-from-defocus"
+   ],
+   "author": [
+    {
+     "given": "Soon-Yong",
+     "family": "Park",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Kyungpook National Univ."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      7,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Electronic Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

@@ -1,0 +1,1676 @@
+{
+ "query": "defocus map estimation single image",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/icip49359.2023.10223146",
+   "title": [
+    "Accurate Single-Image Defocus Deblurring Based on Improved Integration with Defocus Map Estimation"
+   ],
+   "author": [
+    {
+     "given": "Qian",
+     "family": "Ye",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Tohoku University,Graduate School of Information Sciences"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Masanori",
+     "family": "Suganuma",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Tohoku University,Graduate School of Information Sciences"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Takayuki",
+     "family": "Okatani",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Tohoku University,Graduate School of Information Sciences"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      8
+     ]
+    ]
+   },
+   "container-title": [
+    "2023 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.1109/tip.2016.2617460",
+   "title": [
+    "Defocus Map Estimation From a Single Image Based on Two-Parameter Defocus Model"
+   ],
+   "author": [
+    {
+     "given": "Shaojun",
+     "family": "Liu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1216-2181",
+     "authenticated-orcid": false,
+     "given": "Fei",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Qingmin",
+     "family": "Liao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 45
+  },
+  {
+   "DOI": "10.1109/icip.2009.5414620",
+   "title": [
+    "Single image defocus map estimation using local contrast prior"
+   ],
+   "author": [
+    {
+     "family": "Yu-Wing Tai",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Michael S.",
+     "family": "Brown",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "2009 16th IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 23
+  },
+  {
+   "DOI": "10.1016/j.patcog.2011.03.009",
+   "title": [
+    "Defocus map estimation from a single image"
+   ],
+   "author": [
+    {
+     "given": "Shaojie",
+     "family": "Zhuo",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Terence",
+     "family": "Sim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2011,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "Pattern Recognition"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 360
+  },
+  {
+   "DOI": "10.1109/dicta60407.2023.00070",
+   "title": [
+    "Self-supervised Defocus Map Estimation and Auxiliary Image Deblurring Given a Single Defocused Image"
+   ],
+   "author": [
+    {
+     "given": "Saqib",
+     "family": "Nazir",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "National University of Science and Technology Politehnica,CEOSpaceTech,Bucharest,Romania"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Cristian",
+     "family": "Damian",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National University of Science and Technology Politehnica,CEOSpaceTech,Bucharest,Romania"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Daniela",
+     "family": "Coltuc",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "National University of Science and Technology Politehnica,CEOSpaceTech,Bucharest,Romania"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      11,
+      28
+     ]
+    ]
+   },
+   "container-title": [
+    "2023 International Conference on Digital Image Computing: Techniques and Applications (DICTA)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1364/ol.38.001706",
+   "title": [
+    "Defocus map estimation from a single image via spectrum contrast"
+   ],
+   "author": [
+    {
+     "given": "Chang",
+     "family": "Tang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Chunping",
+     "family": "Hou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhanjie",
+     "family": "Song",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      5,
+      14
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 83
+  },
+  {
+   "DOI": "10.1109/ispcc.2015.7375018",
+   "title": [
+    "Defocus map estimation from a single image using principal components"
+   ],
+   "author": [
+    {
+     "given": "Himanshu",
+     "family": "Kumar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sumana",
+     "family": "Gupta",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "K S",
+     "family": "Venkatesh",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 International Conference on Signal Processing, Computing and Control (ISPCC)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1007/s00371-022-02609-9",
+   "title": [
+    "Single image defocus map estimation through patch blurriness classification and its applications"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-7456-201X",
+     "authenticated-orcid": false,
+     "given": "Fernando",
+     "family": "Galetto",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Guang",
+     "family": "Deng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      7,
+      25
+     ]
+    ]
+   },
+   "container-title": [
+    "The Visual Computer"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.1364/ol.39.006281",
+   "title": [
+    "Handling noise in single image defocus map estimation by using directional filters"
+   ],
+   "author": [
+    {
+     "given": "Xin",
+     "family": "Yu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiaolin",
+     "family": "Zhao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yao",
+     "family": "Sui",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Li",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2014,
+      10,
+      27
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Letters"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1109/tip.2021.3127850",
+   "title": [
+    "Defocus Image Deblurring Network With Defocus Map Estimation as Auxiliary Task"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-0888-6523",
+     "authenticated-orcid": false,
+     "given": "Haoyu",
+     "family": "Ma",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9201-9301",
+     "authenticated-orcid": false,
+     "given": "Shaojun",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-7509-3964",
+     "authenticated-orcid": false,
+     "given": "Qingmin",
+     "family": "Liao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3661-7312",
+     "authenticated-orcid": false,
+     "given": "Juncheng",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1174-610X",
+     "authenticated-orcid": false,
+     "given": "Jing-Hao",
+     "family": "Xue",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 74
+  },
+  {
+   "DOI": "10.1109/iccpct.2015.7159323",
+   "title": [
+    "A novel technique for estimation of defocus map from a single image"
+   ],
+   "author": [
+    {
+     "given": "Jaya",
+     "family": "Tiwari",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Rajesh Kumar",
+     "family": "Rai",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Brahmi",
+     "family": "Shrman",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "2015 International Conference on Circuits, Power and Computing Technologies [ICCPCT-2015]"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/j.patcog.2020.107485",
+   "title": [
+    "Defocus map estimation from a single image using improved likelihood feature and edge-based basis"
+   ],
+   "author": [
+    {
+     "given": "Shaojun",
+     "family": "Liu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Qingmin",
+     "family": "Liao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1174-610X",
+     "authenticated-orcid": false,
+     "given": "Jing-Hao",
+     "family": "Xue",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1216-2181",
+     "authenticated-orcid": false,
+     "given": "Fei",
+     "family": "Zhou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "Pattern Recognition"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 17
+  },
+  {
+   "DOI": "10.1016/j.jvcir.2016.01.002",
+   "title": [
+    "Spatially variant defocus blur map estimation and deblurring from a single image"
+   ],
+   "author": [
+    {
+     "given": "Xinxin",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ronggang",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xiubao",
+     "family": "Jiang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wenmin",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wen",
+     "family": "Gao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      2
+     ]
+    ]
+   },
+   "container-title": [
+    "Journal of Visual Communication and Image Representation"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 76
+  },
+  {
+   "DOI": "10.1109/csci.2016.0151",
+   "title": [
+    "Defocus Map Detection Using a Single Image"
+   ],
+   "author": [
+    {
+     "given": "Juan",
+     "family": "Andrade",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      12
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 International Conference on Computational Science and Computational Intelligence (CSCI)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/icip.2016.7532832",
+   "title": [
+    "Superpixel-based depth map estimation using defocus blur"
+   ],
+   "author": [
+    {
+     "given": "Saeed",
+     "family": "Mahmoudpour",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Manbae",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 6
+  },
+  {
+   "DOI": "10.1109/icip.2016.7533103",
+   "title": [
+    "Fast defocus map estimation"
+   ],
+   "author": [
+    {
+     "given": "Ding-Jie",
+     "family": "Chen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hwann-Tzong",
+     "family": "Chen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Long-Wen",
+     "family": "Chang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "2016 IEEE International Conference on Image Processing (ICIP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 20
+  },
+  {
+   "DOI": "10.1364/oe.519059",
+   "title": [
+    "Spatially varying defocus map estimation from a single image based on spatial aliasing sampling method"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0008-1315-4224",
+     "authenticated-orcid": true,
+     "given": "Peng",
+     "family": "Yang",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ming",
+     "family": "Liu",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Beijing Key Laboratory for Precision Optoelectronic Measurement Instrument and Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Liquan",
+     "family": "Dong",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Beijing Key Laboratory for Precision Optoelectronic Measurement Instrument and Technology"
+      },
+      {
+       "name": "Yangtze Delta Region Academy of Beijing Institute of Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lingqin",
+     "family": "Kong",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Beijing Key Laboratory for Precision Optoelectronic Measurement Instrument and Technology"
+      },
+      {
+       "name": "Yangtze Delta Region Academy of Beijing Institute of Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Yuejin",
+     "family": "Zhao",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Beijing Key Laboratory for Precision Optoelectronic Measurement Instrument and Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mei",
+     "family": "Hui",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/01skt4w74",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ]
+      },
+      {
+       "name": "Beijing Key Laboratory for Precision Optoelectronic Measurement Instrument and Technology"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      2,
+      27
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics Express"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1007/978-3-319-25903-1_2",
+   "title": [
+    "Edge Width Estimation for Defocus Map from a Single Image"
+   ],
+   "author": [
+    {
+     "given": "Andrey",
+     "family": "Nasonov",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Alexandra",
+     "family": "Nasonova",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrey",
+     "family": "Krylov",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015
+     ]
+    ]
+   },
+   "container-title": [
+    "Lecture Notes in Computer Science",
+    "Advanced Concepts for Intelligent Vision Systems"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1109/iccv48922.2021.00223",
+   "title": [
+    "Defocus Map Estimation and Deblurring from a Single Dual-Pixel Image"
+   ],
+   "author": [
+    {
+     "given": "Shumian",
+     "family": "Xin",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Carnegie Mellon University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Neal",
+     "family": "Wadhwa",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Google Research"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Tianfan",
+     "family": "Xue",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Google Research"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jonathan T.",
+     "family": "Barron",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Google Research"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Pratul P.",
+     "family": "Srinivasan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Google Research"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jiawen",
+     "family": "Chen",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Adobe Inc."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ioannis",
+     "family": "Gkioulekas",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Carnegie Mellon University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Rahul",
+     "family": "Garg",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Google Research"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      10
+     ]
+    ]
+   },
+   "container-title": [
+    "2021 IEEE/CVF International Conference on Computer Vision (ICCV)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 44
+  },
+  {
+   "DOI": "10.1155/2017/6089650",
+   "title": [
+    "A Single Image Deblurring Algorithm for Nonuniform Motion Blur Using Uniform Defocus Map Estimation"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-1776-4686",
+     "authenticated-orcid": false,
+     "given": "Chia-Feng",
+     "family": "Chang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-4046-8196",
+     "authenticated-orcid": false,
+     "given": "Jiunn-Lin",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-0637-1211",
+     "authenticated-orcid": false,
+     "given": "Ting-Yu",
+     "family": "Tsai",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      1
+     ]
+    ]
+   },
+   "container-title": [
+    "Mathematical Problems in Engineering"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 5
+  },
+  {
+   "DOI": "10.1109/icccn.2008.ecp.173",
+   "title": [
+    "Defocus Estimation from a Single Image"
+   ],
+   "author": [
+    {
+     "family": "Shiqian Wu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "family": "Weisi Lin",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2008,
+      8
+     ]
+    ]
+   },
+   "container-title": [
+    "2008 Proceedings of 17th International Conference on Computer Communications and Networks"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/tip.2021.3061901",
+   "title": [
+    "Joint Depth and Defocus Estimation From a Single Image Using Physical Consistency"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-8310-2827",
+     "authenticated-orcid": false,
+     "given": "Anmei",
+     "family": "Zhang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-7206-0641",
+     "authenticated-orcid": false,
+     "given": "Jian",
+     "family": "Sun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Image Processing"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 38
+  },
+  {
+   "DOI": "10.1201/9781315116242-84",
+   "title": [
+    "Multifocus image fusion based on defocus map estimation and NSCT"
+   ],
+   "author": [
+    {
+     "given": "Ruixia",
+     "family": "Shi",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Institute of Intelligent Control and Image Engineering, Xdian University, Xi\u2019an, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Fanjie",
+     "family": "Meng",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Intelligent Control and Image Engineering, Xdian University, Xi\u2019an, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Dalong",
+     "family": "Shan",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Intelligent Control and Image Engineering, Xdian University, Xi\u2019an, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Pingping",
+     "family": "Zeng",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Intelligent Control and Image Engineering, Xdian University, Xi\u2019an, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yanlong",
+     "family": "Wang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute of Intelligent Control and Image Engineering, Xdian University, Xi\u2019an, China"
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      4,
+      26
+     ]
+    ]
+   },
+   "container-title": [
+    "Civil, Architecture and Environmental Engineering, Volume 2"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1201/9781315226187-282",
+   "title": [
+    "Multifocus image fusion based on defocus map estimation and NSCT"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      4,
+      24
+     ]
+    ]
+   },
+   "container-title": [
+    "Civil, Architecture and Environmental Engineering"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/cvpr.2019.00787",
+   "title": [
+    "Single Image Depth Estimation Trained via Depth From Defocus Cues"
+   ],
+   "author": [
+    {
+     "given": "Shir",
+     "family": "Gur",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Tel Aviv Univ."
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Lior",
+     "family": "Wolf",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Tel Aviv Univ., Israel"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      6
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 118
+  }
+ ]
+}

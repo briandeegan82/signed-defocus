@@ -1,0 +1,479 @@
+{
+ "query": "Haim depth estimation from a single image using deep learned phase coded mask",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/tci.2018.2849326",
+   "title": [
+    "Depth Estimation From a Single Image Using Deep Learned Phase Coded Mask"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-3104-0809",
+     "authenticated-orcid": false,
+     "given": "Harel",
+     "family": "Haim",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9880-0510",
+     "authenticated-orcid": false,
+     "given": "Shay",
+     "family": "Elmalem",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2830-0297",
+     "authenticated-orcid": false,
+     "given": "Raja",
+     "family": "Giryes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Alex M.",
+     "family": "Bronstein",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-9086-7334",
+     "authenticated-orcid": false,
+     "given": "Emanuel",
+     "family": "Marom",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      9
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Computational Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 122
+  },
+  {
+   "DOI": "10.1364/cosi.2018.cw3b.3",
+   "title": [
+    "Deep Learned Phase Mask for Single Image Depth Estimation and 3D scanning"
+   ],
+   "author": [
+    {
+     "given": "Harel",
+     "family": "Haim",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Shay",
+     "family": "Elmalem",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Raja",
+     "family": "Giryes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Alex M.",
+     "family": "Bronstein",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Emanuel",
+     "family": "Marom",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018
+     ]
+    ]
+   },
+   "container-title": [
+    "Imaging and Applied Optics 2018 (3D, AO, AIO, COSI, DH, IS, LACSEA, LS&amp;C, MATH, pcAOP)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/tci.2024.3396700",
+   "title": [
+    "Depth Estimation From a Single Optical Encoded Image Using a Learned Colored-Coded Aperture"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-5246-3566",
+     "authenticated-orcid": false,
+     "given": "Jhon",
+     "family": "Lopez",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science, Universidad Industrial de Santander, Bucaramanga, Colombia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-7979-9497",
+     "authenticated-orcid": false,
+     "given": "Edwin",
+     "family": "Vargas",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Electronics Engineering, Universidad Industrial de Santander, Bucaramanga, Colombia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2202-253X",
+     "authenticated-orcid": false,
+     "given": "Henry",
+     "family": "Arguello",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science, Universidad Industrial de Santander, Bucaramanga, Colombia"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Transactions on Computational Imaging"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.1109/access.2019.2944937",
+   "title": [
+    "Depth Estimation From a Single Image Using Guided Deep Network"
+   ],
+   "author": [
+    {
+     "given": "Minsoo",
+     "family": "Song",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-5121-5931",
+     "authenticated-orcid": false,
+     "given": "Wonjun",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019
+     ]
+    ]
+   },
+   "container-title": [
+    "IEEE Access"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 16
+  },
+  {
+   "DOI": "10.1364/isa.2013.iw2e.3",
+   "title": [
+    "Single Image Depth Detection Using a Trefoil Phase Mask"
+   ],
+   "author": [
+    {
+     "given": "Donald J.",
+     "family": "Bone",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Ben",
+     "family": "Yip",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Matthew R.",
+     "family": "Arnison",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013
+     ]
+    ]
+   },
+   "container-title": [
+    "Imaging and Applied Optics"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.2139/ssrn.4760939",
+   "title": [
+    "Sliceformer: Deep Dense Depth Estimation from a Single Indoor Omnidirectional Image Using a Slice-Based Transformer"
+   ],
+   "author": [
+    {
+     "given": "Yihong",
+     "family": "Wu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yuwen",
+     "family": "Heng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mahesan",
+     "family": "Niranjan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hansung",
+     "family": "Kim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/southeastcon42311.2019.9020545",
+   "title": [
+    "Single image depth estimation using multi-scale deep connections and batch data augmentation"
+   ],
+   "author": [
+    {
+     "given": "Amit",
+     "family": "Bhatia",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      4
+     ]
+    ]
+   },
+   "container-title": [
+    "2019 SoutheastCon"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 1
+  },
+  {
+   "DOI": "10.14711/thesis-991012554068503412",
+   "title": [
+    "Hand pose estimation using single depth image"
+   ],
+   "author": [
+    {
+     "given": "Ruipeng",
+     "family": "Kang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "dissertation",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

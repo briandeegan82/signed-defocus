@@ -1,0 +1,350 @@
+{
+ "query": "Tang depth from defocus in the wild",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1109/cvpr.2017.507",
+   "title": [
+    "Depth from Defocus in the Wild"
+   ],
+   "author": [
+    {
+     "given": "Huixuan",
+     "family": "Tang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Scott",
+     "family": "Cohen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Brian",
+     "family": "Price",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Stephen",
+     "family": "Schiller",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kiriakos N.",
+     "family": "Kutulakos",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
+   ],
+   "type": "proceedings-article",
+   "is-referenced-by-count": 42
+  },
+  {
+   "DOI": "10.70675/4c4df4cbz477az42b5zb2e2z0a8ec821bf74",
+   "title": [
+    "Deep Depth from Defocus : Neural Networks for Monocular Depth Estimation"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-6252-9511",
+     "authenticated-orcid": false,
+     "given": "Marcela Pinheiro de",
+     "family": "Carvalho",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/03xjwb503",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "Universit\u00e9 Paris-Saclay (ComUE)"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "dissertation",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-030-63416-2_300345",
+   "title": [
+    "Depth from Defocus"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021
+     ]
+    ]
+   },
+   "container-title": [
+    "Computer Vision"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-1-4612-1490-8_2",
+   "title": [
+    "Depth Recovery from Defocused Images"
+   ],
+   "author": [
+    {
+     "given": "Subhasis",
+     "family": "Chaudhuri",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "A. N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999
+     ]
+    ]
+   },
+   "container-title": [
+    "Depth From Defocus: A Real Aperture Imaging Approach"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 7
+  },
+  {
+   "DOI": "10.1007/978-1-4612-1490-8_7",
+   "title": [
+    "Recursive Computation of Depth from Multiple Images"
+   ],
+   "author": [
+    {
+     "given": "Subhasis",
+     "family": "Chaudhuri",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "A. N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999
+     ]
+    ]
+   },
+   "container-title": [
+    "Depth From Defocus: A Real Aperture Imaging Approach"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1109/tci.2026.3697618/mm1",
+   "title": [
+    "Single-Image Depth from Defocus with Coded Aperture and Diffusion Posterior Sampling_supp1-3697618.pdf"
+   ],
+   "author": [
+    {
+     "given": "Hodaka",
+     "family": "Kawachi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-1-4612-1490-8",
+   "title": [
+    "Depth From Defocus: A Real Aperture Imaging Approach"
+   ],
+   "author": [
+    {
+     "given": "Subhasis",
+     "family": "Chaudhuri",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "A. N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999
+     ]
+    ]
+   },
+   "type": "book",
+   "is-referenced-by-count": 138
+  },
+  {
+   "DOI": "10.1007/978-1-4612-1490-8_1",
+   "title": [
+    "Passive Methods for Depth Recovery"
+   ],
+   "author": [
+    {
+     "given": "Subhasis",
+     "family": "Chaudhuri",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "A. N.",
+     "family": "Rajagopalan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1999
+     ]
+    ]
+   },
+   "container-title": [
+    "Depth From Defocus: A Real Aperture Imaging Approach"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 2
+  }
+ ]
+}

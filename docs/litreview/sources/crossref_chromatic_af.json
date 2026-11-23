@@ -1,0 +1,627 @@
+{
+ "query": "chromatic aberration autofocus",
+ "date": "2026-11-23",
+ "source": "crossref",
+ "items": [
+  {
+   "DOI": "10.1364/ao.50.004967",
+   "title": [
+    "Exploiting chromatic aberration for image-based microscope autofocus"
+   ],
+   "author": [
+    {
+     "given": "Derek N.",
+     "family": "Fuller",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Albert L.",
+     "family": "Kellner",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jeffrey H.",
+     "family": "Price",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2011,
+      8,
+      26
+     ]
+    ]
+   },
+   "container-title": [
+    "Applied Optics"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 9
+  },
+  {
+   "DOI": "10.1036/1097-8542.134200",
+   "title": [
+    "Chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "AccessScience"
+   ],
+   "type": "dataset",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/springerreference_9987",
+   "title": [
+    "chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "SpringerReference"
+   ],
+   "type": "reference-entry",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.21428/66f840a4.560b9540",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Ashley",
+     "family": "Tendekai",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Leeds Beckett University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      8,
+      11
+     ]
+    ]
+   },
+   "container-title": [
+    "Sonic Scope"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1002/cyto.a.20788",
+   "title": [
+    "Exploration of chromatic aberration for multiplanar imaging: Proof of concept with implications for fast, efficient autofocus"
+   ],
+   "author": [
+    {
+     "given": "Martin",
+     "family": "Weinigel",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Albert L.",
+     "family": "Kellner",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jeffrey H.",
+     "family": "Price",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009,
+      9,
+      16
+     ]
+    ]
+   },
+   "container-title": [
+    "Cytometry Part A"
+   ],
+   "type": "journal-article",
+   "is-referenced-by-count": 4
+  },
+  {
+   "DOI": "10.1002/9781119302773.ch4",
+   "title": [
+    "Aberration Theory and Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      1,
+      3
+     ]
+    ]
+   },
+   "container-title": [
+    "Optical Engineering Science"
+   ],
+   "type": "other",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.7554/elife.42282.027",
+   "title": [
+    "Source code 1. Python script to correct chromatic aberration using multi-chromatic reference beads."
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "type": "component",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/3.397107.ch5",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Fundamental Optical Design"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1888/0333750888/4785",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "The Encyclopedia of Astronomy and Astrophysics"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1002/0471743984.vse1725",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2005,
+      10,
+      14
+     ]
+    ]
+   },
+   "container-title": [
+    "Van Nostrand's Scientific Encyclopedia"
+   ],
+   "type": "other",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.21236/ada285064",
+   "title": [
+    "Visual Neural Development and Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Laurence T.",
+     "family": "Maloney",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1994,
+      3,
+      14
+     ]
+    ]
+   },
+   "type": "report",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.21236/ada277402",
+   "title": [
+    "Visual Neural Development and Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "Laurence T.",
+     "family": "Maloney",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1993,
+      3,
+      14
+     ]
+    ]
+   },
+   "type": "report",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/3.547461.p68",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Field Guide to Geometrical Optics"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1117/3.665802.p23",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Field Guide to Optical Lithography"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/b978-0-08-009670-4.50026-4",
+   "title": [
+    "CHROMATIC ABERRATION"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1970
+     ]
+    ]
+   },
+   "container-title": [
+    "Introduction to Electron Microscopy"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-540-72816-0_38",
+   "title": [
+    "aberration, chromatic"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Dictionary of Gems and Gemology"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-540-72816-0_4279",
+   "title": [
+    "chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   },
+   "container-title": [
+    "Dictionary of Gems and Gemology"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.15760/etd.1170",
+   "title": [
+    "Correction of Chromatic Aberration with an Electron Mirror"
+   ],
+   "author": [
+    {
+     "given": "Michael",
+     "family": "Mauck",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2000,
+      1,
+      1
+     ]
+    ]
+   },
+   "type": "report",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.5005/jp/books/10577_6",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "PC",
+     "family": "Mukherjee",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009
+     ]
+    ]
+   },
+   "container-title": [
+    "Optics for Optometry Students"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1016/b978-0-08-051009-5.50007-x",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "author": [
+    {
+     "given": "RUDOLF",
+     "family": "KINGSLAKE",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1978
+     ]
+    ]
+   },
+   "container-title": [
+    "Lens Design Fundamentals"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 3
+  },
+  {
+   "DOI": "10.1007/978-3-540-69000-9_101039",
+   "title": [
+    "Longitudinal Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018
+     ]
+    ]
+   },
+   "container-title": [
+    "Encyclopedia of Ophthalmology"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-0-387-30160-0_2305",
+   "title": [
+    "Chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007
+     ]
+    ]
+   },
+   "container-title": [
+    "Encyclopedic Dictionary of Polymers"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.5040/9781350088733.0042",
+   "title": [
+    "Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2010
+     ]
+    ]
+   },
+   "container-title": [
+    "The Visual Dictionary of Photography"
+   ],
+   "type": "other",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1351/goldbook.09237",
+   "title": [
+    "chromatic aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      4,
+      17
+     ]
+    ]
+   },
+   "container-title": [
+    "The IUPAC Compendium of Chemical Terminology"
+   ],
+   "type": "book-section",
+   "is-referenced-by-count": 0
+  },
+  {
+   "DOI": "10.1007/978-3-540-69000-9_100167",
+   "title": [
+    "Axial Chromatic Aberration"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018
+     ]
+    ]
+   },
+   "container-title": [
+    "Encyclopedia of Ophthalmology"
+   ],
+   "type": "book-chapter",
+   "is-referenced-by-count": 0
+  }
+ ]
+}

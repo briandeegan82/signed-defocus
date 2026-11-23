@@ -11,4 +11,4 @@ This repository is a fresh start. The earlier study (`briandeegan82/defocus-esti
 | `src/` | Analysis and figure scripts (empty until the protocol is approved) |
 | `paper/` | LaTeX source and generated `numbers.tex` (empty until analysis is complete) |
 
-Status: proposal and protocol awaiting approval. No experiments have been run in this repository.
+Status: proposal and protocol awaiting approval. Phase 1 gate checks under way: physics baseline v0 on cached renders (`results/PHYSICS_BASELINE.md`), re-scored in µm and depth of focus (`results/DOF_RESCORE.md`).

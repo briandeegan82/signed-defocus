@@ -1,0 +1,15 @@
+lens,f_number,pixel_pitch_um,defocus_scale_mm,long_ca_mm_per_um,source
+synth00,3.49998,10.8189,0.887512,0.0574871,defocus-estimator@4564cf2 results/lens_population.csv
+synth01,2.08293,10.3009,1.42614,0.0498396,defocus-estimator@4564cf2 results/lens_population.csv
+synth02,3.19624,7.46791,2.31162,0.0111619,defocus-estimator@4564cf2 results/lens_population.csv
+synth03,2.45323,6.4042,0.577799,0.0251418,defocus-estimator@4564cf2 results/lens_population.csv
+synth04,2.75159,4.88457,1.72339,0.00215149,defocus-estimator@4564cf2 results/lens_population.csv
+synth05,3.85177,8.43126,1.02308,0.0227705,defocus-estimator@4564cf2 results/lens_population.csv
+synth06,1.65768,7.80967,0.425458,0.00796962,defocus-estimator@4564cf2 results/lens_population.csv
+synth07,2.2813,4.43247,2.08921,0.0368252,defocus-estimator@4564cf2 results/lens_population.csv
+synth08,2.85477,5.77699,1.97088,0.0521489,defocus-estimator@4564cf2 results/lens_population.csv
+synth09,3.75514,11.4816,2.35697,0.0349746,defocus-estimator@4564cf2 results/lens_population.csv
+synth10,3.37602,9.60925,1.56726,0.0162357,defocus-estimator@4564cf2 results/lens_population.csv
+synth11,1.94292,3.12529,1.11556,0.0426301,defocus-estimator@4564cf2 results/lens_population.csv
+synth_lcaP,2,5.5,1,0.235294,defocus-estimator@4564cf2 src/lens_lca_probe.py BASE; results/lens_lca_probe.csv
+synth_lcaN,2,5.5,1,-0.235294,defocus-estimator@4564cf2 src/lens_lca_probe.py BASE; results/lens_lca_probe.csv

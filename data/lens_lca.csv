@@ -1,0 +1,19 @@
+lens,r_um,g_um,b_um,lca_spread_um,source
+horimoto,0.0,0.0,0.0,0.0,defocus-estimator results/lca_all.csv
+laikin,10.0,-20.0,0.0,30.0,defocus-estimator results/lca_all.csv
+sony,20.0,10.0,-10.0,30.0,defocus-estimator results/lca_all.csv
+sunex,50.0,20.0,-10.0,60.0,defocus-estimator results/lca_all.csv
+synth00,-20.0,-20.0,-10.0,10.0,defocus-estimator results/lca_all.csv
+synth01,-10.0,-10.0,0.0,10.0,defocus-estimator results/lca_all.csv
+synth02,-10.0,-10.0,-10.0,0.0,defocus-estimator results/lca_all.csv
+synth03,-50.0,-50.0,-50.0,0.0,defocus-estimator results/lca_all.csv
+synth04,0.0,0.0,0.0,0.0,defocus-estimator results/lca_all.csv
+synth05,-20.0,-20.0,-20.0,0.0,defocus-estimator results/lca_all.csv
+synth06,-50.0,-50.0,-50.0,0.0,defocus-estimator results/lca_all.csv
+synth07,-10.0,-10.0,-10.0,0.0,defocus-estimator results/lca_all.csv
+synth08,-20.0,-20.0,-20.0,0.0,defocus-estimator results/lca_all.csv
+synth09,-20.0,-20.0,-20.0,0.0,defocus-estimator results/lca_all.csv
+synth10,-10.0,-10.0,-10.0,0.0,defocus-estimator results/lca_all.csv
+synth11,0.0,0.0,0.0,0.0,defocus-estimator results/lca_all.csv
+synth_lcaP,-20.0,0.0,20.0,40.0,defocus-estimator src/exp_lab_optics_sdfe.py line 146 (design values)
+synth_lcaN,20.0,0.0,-20.0,40.0,defocus-estimator src/exp_lab_optics_sdfe.py line 147 (design values)

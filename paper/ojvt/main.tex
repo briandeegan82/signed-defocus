@@ -108,7 +108,8 @@ The two-feature method takes the size of the shift from $\bar\ell$, which is the
 \input{../reference_table.tex}
 
 \subsection{Field position}
-Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
+This test and those of RQ4 use the nine-rung displacement ladder of the earlier study, DZ $\in\{0,\pm0.01,\pm0.02,\pm0.05,\pm0.1\}$, where DZ is the renderer's nominal defocus parameter: calibration uses the ladder frames of the training traversals and scoring the same rungs on the held-out traversals. For the synthetic designs 1\,DZ is 1\,mm of sensor displacement, so 0.01\,DZ is 10\,\textmu m or $0.45\,\delta$. The real lens design used here (Sony) has no recorded f-number or pixel pitch, so its results stay in DZ and cannot be converted to \textmu m or $\delta$.
+Under the full field-varying PSF of this design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
 
 \subsection{Laboratory sweep (RQ3)}
 On the calibration split only, direction is correct on \LabCalDirOk{} of \LabCalDirN{} frames and the displacement MAE is \LabCalMaeDelta\,$\delta$. The within-frame sampling error of the chromatic cue alone has a median of \MfourSeMedianDelta\,$\delta$; the sweep has one exposure per step, so exposure-to-exposure repeatability is not measured.
@@ -120,8 +121,9 @@ Within $2\,\delta$ of focus the chromatic cue reads \LabTrOffsetNear{} higher on
 The near-focus failure therefore follows the change of chart half, not the interpolation between calibration steps; the sweep is one static scene, so these counts are not independent samples.
 
 \subsection{Threats in service (RQ4, simulation)}
-On a lens with LCA of $1.8\,\delta$, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusPos{} for a real defocus of matched blur; on a weak-LCA lens, motion blur (\MeightWeakMotion) alarms more often than real defocus (\MeightWeakDefocusPos; Fig.~\ref{fig:m8}).
-Illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
+These are simulations on the nine-rung ladder (Field position), not the continuous protocol of RQ1--RQ2, so their errors are not comparable with those of RQ2: on the same strong-LCA design the nominal ladder MAE is \MsixMaeNominal\,$\delta$, against \MtwoMaeDelta\,$\delta$ at continuous displacements. The strong-LCA design (synth\_lcaP, optically identical to the m3\_ref design of Fig.~\ref{fig:m2}) has f/2.0, a 5.5\,\textmu m pixel and LCA $1.82\,\delta$. The weak-LCA design (Laikin) is a real lens design with no recorded f-number or pixel pitch, so its LCA/$\delta$ is unknown. The confounds are applied to in-focus frames at a strength matched to a $+0.02$\,DZ defocus ($0.91\,\delta$ on synth\_lcaP).
+On synth\_lcaP, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusNeg{} and \MeightStrongDefocusPos{} for a real defocus of $-0.02$ and $+0.02$\,DZ. On Laikin, motion blur (\MeightWeakMotion) and fog (\MeightWeakFog) alarm more often than real defocus (\MeightWeakDefocusNeg{} at $-0.02$ and \MeightWeakDefocusPos{} at $+0.02$\,DZ; Fig.~\ref{fig:m8}).
+On synth\_lcaP, illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
 
 \section{Discussion and Limitations}
 \note{Sign cue, not size estimator: pair $\bar c$ with an unsigned sharpness measure. LCA/$\delta$ as the design quantity; the lab lens (\LabLcaDelta\,$\delta$) sits where the rendered cue is weak. One real lens; iris set by eye; no repeat exposures; spherical aberration and field curvature as confounds; renders use one PSF model.}
@@ -139,11 +141,11 @@ All numbers in this paper are generated from the committed result tables by \tex
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig3_m2_continuous.pdf}
 \caption{The LCA $1.8\,\delta$ design, \MtwoN{} held-out frames at continuous displacements. (a) Predicted against true $\Delta z$. (b) Direction accuracy per $|\Delta z|$ band.}\label{fig:m2}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig4_m7_field.pdf}
-\caption{M7, field position. (a) Rendered direction accuracy per zone. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
+\caption{M7, field position. (a) Rendered direction accuracy per zone, Sony design, nine-rung ladder. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig5_m8_confounds.pdf}
-\caption{M8, rendered in-focus confounds. (a) Alarm rate. (b) Predicted $\Delta z$ per frame.}\label{fig:m8}\end{figure*}
+\caption{M8, rendered in-focus confounds on the nine-rung ladder, synth\_lcaP (LCA $1.82\,\delta$) and Laikin (LCA/$\delta$ unknown). (a) Alarm rate. (b) Predicted $\Delta z$ per frame.}\label{fig:m8}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig6_m6_illuminant.pdf}
-\caption{M6, simulation only: bias and MAE per illuminant and white-balance condition.}\label{fig:m6}\end{figure*}
+\caption{M6, simulation only, nine-rung ladder on the synth\_lcaP design (LCA $1.82\,\delta$): bias and MAE per illuminant and white-balance condition.}\label{fig:m6}\end{figure*}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

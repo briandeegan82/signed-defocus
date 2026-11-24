@@ -40,7 +40,7 @@ Rank correlation is not a headline metric. Uncertainty: 95% bootstrap intervals 
 
 ## 5. Decision rules
 
-- Gate A (direction): accuracy must increase monotonically with LCA/δ across the population. If not, the central claim is wrong and the paper is redesigned before any writing.
+- Gate A (direction): frame direction accuracy must rise with LCA/δ across the lens population as a rank trend: Spearman ρ > 0 with a one-sided p < 0.05, over lenses with known f-number and pixel pitch. Strict order between every pair of lenses is not required, because lenses with similar LCA/δ differ by noise. If the trend fails, the central claim is wrong and the paper is redesigned before any writing.
 - Gate B (displacement): on withheld Δz, MAE must be below one δ for lenses with LCA above one δ. If not, the paper claims direction only and reports displacement as a negative result.
 - The lab sweep cannot be used to choose features, thresholds or pooling.
 
@@ -62,3 +62,4 @@ Every number in the paper is a macro in `paper/numbers.tex`, written by a script
 ## Change log
 
 - v0, 2026-11-23: first version.
+- v0.1, 2026-11-23: Gate A is a rank trend (Spearman), not strict monotonicity. Reason: the v0 re-scoring (`results/DOF_RESCORE.md`) showed adjacent-lens inversions at similar LCA/δ; decided by Brian.

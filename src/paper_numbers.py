@@ -10,6 +10,8 @@ import pandas as pd
 from scipy import stats
 
 from lab_test import DELTA_PER_STEP, MIN_PATCHES
+from m3_lenses import BASE, LAMBDA, SYNTH_LCAP_LONG_CA
+from m8_confounds import MATCH_DZ
 
 R = Path(__file__).resolve().parents[1] / "results"
 
@@ -55,6 +57,16 @@ def numbers():
     d = pd.read_csv(ref / "m2_direction.csv")
     d = d[d.level == "fitted"].set_index("band")
     n["MtwoDirAll"], n["MtwoDirNear"] = f(d.loc["all", "acc"]), f(d.loc["[0.0, 0.5)", "acc"])
+    fe = pd.read_csv(ref / "m2_displacement_frames.csv")
+    fe = fe[fe.train == "continuous"]
+    dl = 2 * BASE["f_number"] * BASE["pixel_pitch"]
+    n["MthreeNplates"], n["MthreeNtraversals"] = fe.stem.nunique(), fe.traversal.nunique()
+    n["SynthDeltaUm"] = f(dl, 0)
+    n["MthreeDzMaxUm"] = f(np.ceil(fe.dz_um.abs().max()), 0)
+    n["MthreeDzMaxDelta"] = f(np.ceil(fe.dz_um.abs().max()) / dl, 1)
+    n["SynthLcapLca"] = f(SYNTH_LCAP_LONG_CA * (LAMBDA["r"] - LAMBDA["b"]) / BASE["defocus_scale"] * 1000 / dl)
+    n["MeightMatchDelta"] = f(MATCH_DZ * 1000 / dl)
+    n["LabTestNsteps"] = len(pd.read_csv(R / "lab_test/lab_test_frames.csv"))
     s2 = pd.read_csv(R / "m2_gate/m2_displacement.csv")
     s2 = s2[s2.band == "all"].set_index("train")
     n["MtwoSubsetN"] = int(s2.loc["continuous", "n"])

@@ -93,6 +93,7 @@ def numbers():
         for k, K in ((1, "One"), (10, "Ten"), (100, "Hundred")):
             g = al[al.n == k].set_index("condition").value
             n[f"MeightAgg{tag}{K}Defocus"] = f(g[["defocus -0.02", "defocus +0.02"]].min())
+            n[f"MeightAgg{tag}{K}DefocusMax"] = f(g[["defocus -0.02", "defocus +0.02"]].max())
             n[f"MeightAgg{tag}{K}Focus"], n[f"MeightAgg{tag}{K}Motion"], n[f"MeightAgg{tag}{K}Fog"] = (
                 f(g["in focus"]), f(g["motion"]), f(g["fog"]))
     m6 = pd.read_csv(R / "m6_illuminant/m6_summary.csv").set_index("condition")

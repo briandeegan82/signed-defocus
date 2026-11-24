@@ -6,7 +6,7 @@ Cheap gate (proposal Phase 1), not the full M2 experiment: one lens, 40 plates.
 
 - Lens: exact copy of `synth_lcaP` (f/2.0, 5.5 µm pitch, `defocus_scale` 1.0 mm, so δ = 22 µm; red-blue LCA 40 µm = 1.82 δ).
 - Render: `python src/m2_continuous.py render --estimator ~/blur_study --noise-model ~/blur_study/results/robotcar_noise_model.json --out ~/sd_data/m2` on Brian's machine (GB10 GPU), frozen `defocus-estimator@4564cf2` code, pre-ISP arm. 40 plates from 12 traversals, 8 displacements per plate drawn uniformly from ±0.1 DZ (±100 µm), seeded by plate. 319 frames: one plate drew two displacements that round to the same 1e-4 DZ directory, so one frame overwrote the other.
-- Score: `python src/m2_continuous.py score --cache ~/sd_data/m2/rc_feat_m2_synth_lcaP_pre_all.parquet --ladder ~/blur_study/results/rc_feat_robotcar_render_synth_lcaP_pre_all.parquet --out results/m2_gate`. Five traversal-disjoint folds; every test frame has a displacement never seen in training. "continuous" trains the through-focus curve on the other folds' continuous frames (binned at 0.01 DZ); "ladder" trains it on the cached 9-rung v0 render of the same training traversals.
+- Score: `python src/m2_continuous.py score --cache ~/sd_data/m2/rc_feat_m2_synth_lcaP_pre_all.parquet --ladder ~/blur_study/results/rc_feat_robotcar_render_synth_lcaP_pre_all.parquet --out results/m2_gate`. Five traversal-disjoint folds; every test frame has a displacement never seen in training. "continuous" trains the through-focus curve on the other folds' continuous frames (binned at 0.01 DZ); "ladder" trains it on the cached 9-rung v0 render of the same lens, minus the test fold's traversals.
 
 ## Results (`m2_direction.csv`, `m2_displacement.csv`)
 

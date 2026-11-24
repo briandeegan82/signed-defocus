@@ -9,6 +9,7 @@ method. Table: `reference_rows.csv`. Errors in δ; `abs_mae_delta` is the error 
 | learned | histogram gradient boosting on all 69 patch features, the earlier study's SDFE settings (300 trees, lr 0.08, depth 6, min leaf 40), patch median | signed |
 | laplacian | finest Laplacian-pyramid energy (`lp_e0`, green), 1-D curve against |Δz| | unsigned |
 | tenengrad | mean green gradient magnitude (`cx_grad_mean`), 1-D curve against |Δz| | unsigned |
+| paired | **exploratory, added after the method freeze**: sign of the physics direction rule × Laplacian |Δz| | signed |
 
 No-SA designs, mean over LCA sign:
 
@@ -41,3 +42,26 @@ No-SA designs, mean over LCA sign:
   provenance is not established; see `ADDITIONAL_BASELINES_PLAN.md` in defocus-estimator).
 - A first run included the `target` label column among the learned inputs (MAE 0.12 δ on `m3_ref`);
   it is excluded and that run discarded.
+
+## Paired rule (exploratory, post-freeze, rendered only)
+
+Sign from the frozen physics direction rule, size from the Laplacian floor: `paired_dz = physics_dir * laplacian_absdz`.
+Not part of the method frozen at `method-freeze-v1`, chosen after the reference rows above were seen, and never
+run on lab data. Its direction equals the physics direction and its |Δz| error equals the Laplacian floor's by
+construction. The other four rows in `reference_rows.csv` reproduce byte-identically with this change.
+
+Signed MAE (δ), mean over LCA sign:
+
+| LCA/δ | physics | learned | paired (no SA) | paired (SA) |
+|---:|---:|---:|---:|---:|
+| 0 | 2.64 | 2.26 | 2.28 | 2.38 |
+| 0.25 | 1.65 | 1.82 | 1.45 | 1.50 |
+| 0.5 | 1.00 | 1.13 | 0.72 | 0.79 |
+| 0.75 | 0.78 | 0.69 | 0.44 | 0.55 |
+| 1 | 0.67 | 0.45 | 0.31 | 0.44 |
+| 1.5 | 0.61 | 0.25 | 0.30 | 0.46 |
+| 2 | 0.59 | 0.18 | 0.30 | 0.41 |
+
+- Above 1 δ, paired MAE is 0.29–0.31 δ without spherical aberration and 0.38–0.46 δ with it, against 0.59–0.63 δ for the physics method. The learned regressor is lower at 1.5–2 δ (0.17–0.26 δ).
+- Without spherical aberration, paired has the lowest signed MAE of the three at LCA/δ = 0.25, 0.5, 0.75, 1.
+- Spherical aberration raises the Laplacian floor from 0.29 to 0.38 δ, so paired gains less on SA designs.

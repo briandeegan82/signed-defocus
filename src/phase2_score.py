@@ -7,7 +7,9 @@ curve of training frames binned at 0.01 DZ). Draws are rounded to 1e-4 DZ, so a 
 displacement with a training frame of another plate; `mae_delta_unseen` scores only the test frames whose
 displacement occurs in no training fold, as the protocol's "Δz absent from training". Then, over lenses,
 Gate A (Spearman rho of direction accuracy against LCA/δ, one-sided) and Gate B (MAE < 1 δ for
-LCA/δ > 1), as `rescore_dof.gate_a`. Per-frame CSVs are kept for m3_ref (the synth_lcaP copy) only.
+LCA/δ > 1), as `rescore_dof.gate_a`. `phase2_bootstrap.csv` gives, per lens, 95% intervals that
+resample whole traversals (the 12 clusters; 2000 draws, seed 0) and the range over the five folds, for
+direction accuracy, MAE and MAE on displacements absent from training. Per-frame CSVs are kept for m3_ref (the synth_lcaP copy) only.
 
   python src/phase2_score.py --cache ~/sd_data/phase2 --out results/phase2
 """
@@ -35,6 +37,28 @@ def unseen(out):
     return dict(n_unseen=len(u), mae_delta_unseen=u.err_delta.abs().mean(), p90_delta_unseen=u.err_delta.abs().quantile(0.9))
 
 
+def clustered(out, n=2000, seed=0):
+    """Traversal-clustered bootstrap intervals and fold range for dir_acc, mae_delta, mae_delta_unseen."""
+    d = pd.read_csv(out / "m2_direction_frames.csv")
+    d = d[d.level == "fitted"].assign(v=lambda x: x.ok.astype(float))
+    e = pd.read_csv(out / "m2_displacement_frames.csv")
+    e = e[e.train == "continuous"]
+    seen = pd.Series(False, index=e.index)
+    for k, g in e.groupby("fold"):
+        seen[g.index] = g.dz.round(4).isin(e[e.fold != k].dz.round(4))
+    e = e.assign(v=e.err_delta.abs())
+    trav = sorted(e.traversal.unique())
+    idx = np.random.default_rng(seed).integers(0, len(trav), (n, len(trav)))
+    row = {}
+    for name, t in (("dir_acc", d), ("mae_delta", e), ("mae_delta_unseen", e[~seen])):
+        g = t.groupby("traversal").v.agg(["sum", "size"]).reindex(trav, fill_value=0)
+        b = g["sum"].values[idx].sum(1) / g["size"].values[idx].sum(1)
+        fo = t.groupby("fold").v.mean()
+        row.update({name: t.v.mean(), f"{name}_ci_lo": np.percentile(b, 2.5), f"{name}_ci_hi": np.percentile(b, 97.5),
+                    f"{name}_fold_min": fo.min(), f"{name}_fold_max": fo.max()})
+    return row
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--cache", type=Path, required=True)
@@ -43,7 +67,7 @@ def main():
     lenses = pd.read_csv(HERE / "data" / "m3_lenses.csv")
     lca = pd.read_csv(HERE / "data" / "m3_lca.csv").set_index("lens")
     delta = 2.0 * M2.BASE["f_number"] * M2.BASE["pixel_pitch"]
-    rows, missing = [], []
+    rows, boots, missing = [], [], []
     for r in lenses.itertuples():
         feat = a.cache / f"rc_feat_m2_{r.lens}_pre_all.parquet"
         if not feat.exists():
@@ -61,6 +85,8 @@ def main():
                          dir_acc_within_half_delta=fit.loc["[0.0, 0.5)", "acc"],
                          mae_delta=cont.loc["all", "mae_delta"], p90_delta=cont.loc["all", "p90_delta"],
                          bias_um=cont.loc["all", "bias_um"], mae_um=cont.loc["all", "mae_um"], **unseen(out)))
+        boots.append(dict(lens=r.lens, lca_over_delta=round(lca.loc[r.lens, "lca_spread_um"] / delta, 4),
+                          **clustered(out)))
         if r.lens != "m3_ref":
             for f in out.glob("*_frames.csv"):
                 f.unlink()
@@ -70,6 +96,9 @@ def main():
     s["gate_b_pass_unseen"] = np.where(s.gate_b_applies, s.mae_delta_unseen < 1.0, pd.NA)
     a.out.mkdir(parents=True, exist_ok=True)
     s.round(4).to_csv(a.out / "phase2_summary.csv", index=False)
+    pd.DataFrame(boots).sort_values(["lca_over_delta", "lens"], ascending=[False, True],
+                                                                 kind="mergesort").round(4).to_csv(
+        a.out / "phase2_bootstrap.csv", index=False)
     g = gate_a(s.set_index("lens"))
     g["missing_lenses"] = ";".join(missing)
     g.round(4).to_csv(a.out / "phase2_gate_a.csv", index=False)

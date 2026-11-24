@@ -64,6 +64,17 @@ def pick_plates(groups, n):
     return out[:n]
 
 
+def draw_dz(seed, k, dz_max):
+    """k distinct displacements, rounded to 1e-4 DZ (one frame per file name); extra draws replace repeats."""
+    rng = np.random.default_rng(seed)
+    out = []
+    while len(out) < k:
+        for z in np.round(rng.uniform(-dz_max, dz_max, k), 4):
+            if z not in out and len(out) < k:
+                out.append(z)
+    return np.array(out)
+
+
 def render(a):
     sys.path.insert(0, str(a.estimator / "src"))
     import torch
@@ -74,12 +85,12 @@ def render(a):
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = json.loads(Path(a.noise_model).read_text())["model"]
-    design = dict(BASE, long_ca=a.long_ca)
+    design = dict(BASE, long_ca=a.long_ca, spherical=a.spherical)
     root = a.out / a.lens
-    plates = pick_plates(RC.plate_paths(), a.n_plates)
+    groups = RC.plate_paths()
+    plates = pick_plates(groups, a.n_plates or sum(len(v) for v in groups.values()))
     print(f"{len(plates)} plates from {len({t for t, _ in plates})} traversals, {a.k} displacements each")
-    draws = [(t, p, np.round(np.random.default_rng(RA.stable_seed(t, p.stem, "m2")).uniform(
-        -a.dz_max, a.dz_max, a.k), 4)) for t, p in plates]
+    draws = [(t, p, draw_dz(RA.stable_seed(t, p.stem, "m2"), a.k, a.dz_max)) for t, p in plates]
     levels = sorted({float(z) for _, _, zs in draws for z in zs})
     psfs = {}
     for i in range(0, len(levels), 32):
@@ -187,7 +198,8 @@ def main():
     for p in (r, s):
         p.add_argument("--lens", default="synth_lcaP")
         p.add_argument("--long-ca", type=float, default=SYNTH_LCAP_LONG_CA)
-    r.add_argument("--n-plates", type=int, default=40)
+    r.add_argument("--n-plates", type=int, default=40, help="0 = every plate")
+    r.add_argument("--spherical", type=float, default=0.0)
     r.add_argument("--k", type=int, default=8, help="displacements per plate (default 8)")
     r.add_argument("--dz-max", type=float, default=0.1, help="nominal DZ half-range (default 0.1, the v0 ladder)")
     a = ap.parse_args()

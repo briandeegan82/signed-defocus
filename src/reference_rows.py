@@ -28,7 +28,7 @@ import physics_baseline as PB
 
 HERE = Path(__file__).resolve().parent.parent
 DELTA_UM, UM_PER_DZ, BIN = 22.0, 1000.0, 0.01
-META = {"dz", "traversal", "stem", "py", "px", "frame", "fy", "fx", "mtf025_mean", "mtf025_g"}
+META = {"dz", "traversal", "stem", "py", "px", "frame", "fy", "fx", "mtf025_mean", "mtf025_g", "target"}  # labels, not features
 
 
 def binned_curve(x, y, width=BIN):

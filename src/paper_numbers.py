@@ -136,19 +136,24 @@ def reference_table():
     rr = pd.read_csv(R / "reference/reference_rows.csv")
     rr = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")]
     g = rr.groupby(["lca_over_delta", "method"])[["direction_acc", "mae_delta", "abs_mae_delta"]].mean().unstack()
+    p2 = pd.read_csv(R / "phase2/phase2_summary.csv")
+    d2 = p2[p2.lens.str.match(r"m3_[zpn]\d{3}$")].groupby("lca_over_delta").dir_acc.mean()
     lines = [r"\begin{table}[t]\centering\footnotesize",
-             r"\caption{Reference rows on the Phase~2 render (no spherical aberration, mean over LCA sign). "
-             r"Dir.: direction accuracy; MAE: signed error; $|\Delta z|$: error of the magnitude only, all in $\delta$.}",
+             r"\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the "
+             r"two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames "
+             r"(two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; "
+             r"$|\Delta z|$: error of the magnitude only; both in $\delta$.}",
              r"\label{tab:ref}\setlength{\tabcolsep}{3pt}",
-             r"\begin{tabular}{rcccccccc}\hline",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Lapl. & Ten. \\",
-             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\hline"]
+             r"\begin{tabular}{rcccccccc}\toprule",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Laplacian & Tenengrad \\",
+             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}",
+             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
     for lca, r in g.iterrows():
-        v = [r[("direction_acc", "physics")], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
+        v = [d2[lca], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
              r[("direction_acc", "learned")], r[("mae_delta", "learned")], r[("abs_mae_delta", "learned")],
              r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
         lines.append(f"{lca:.2f} & " + " & ".join(f(x) for x in v) + r" \\")
-    lines += [r"\hline\end{tabular}\end{table}"]
+    lines += [r"\bottomrule\end{tabular}\end{table}"]
     return "\n".join(lines) + "\n"
 
 

@@ -1,0 +1,2 @@
+n_lenses,spearman_rho,spearman_p,spearman_p_one_sided,kendall_tau,kendall_p,adjacent_inversions,strictly_monotone,missing_lenses
+27,0.9529,0.0,0.0,0.8687,0.0,11,False,

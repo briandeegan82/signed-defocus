@@ -18,7 +18,7 @@
 Fixed-focus automotive cameras drift out of focus in service, and an unsigned sharpness drop cannot tell the direction of the drift.
 We test whether the residual longitudinal chromatic aberration (LCA) of the lens makes the sign and size of a focus shift measurable from ordinary images.
 On \MthreeNlenses{} rendered lens designs, frame direction accuracy rises with the ratio of LCA to depth of focus $\delta$ (Spearman $\rho=\MthreeRho$).
-For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the error of displacements withheld from training is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, and on \MtwoN{} frames at continuous displacements it is \MtwoMaeDelta\,$\delta$.
+For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the mean error at displacements never seen in training is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$.
 \note{Lab test-split result after the method is frozen.}
 Field curvature, motion blur, fog and white-balance error each degrade the cue; we report where.
 \end{abstract}
@@ -53,11 +53,10 @@ The lab sweep is split into calibration (every fourth step, left chart half) and
 
 \section{Results}
 \subsection{Direction accuracy against LCA (RQ1)}
-Direction accuracy rises with LCA/$\delta$ across the \MthreeNlenses{} designs (Spearman $\rho=\MthreeRho$, Kendall $\tau=\MthreeTau$; Fig.~\ref{fig:m3}), so Gate~A passes. Spherical aberration alone gives a direction accuracy of \MthreeZeroSaDir{} with no LCA, so it is a confound rather than noise.
+Each of the \MthreeNlenses{} designs is rendered on \MthreeNframes{} frames (every RobotCar plate at eight continuous displacements). Direction accuracy rises with LCA/$\delta$ (Spearman $\rho=\MthreeRho$, Kendall $\tau=\MthreeTau$; Fig.~\ref{fig:m3}), so Gate~A passes. With no LCA it is at chance (\MthreeZeroDir{} without and \MthreeZeroSaDir{} with spherical aberration), and at $0.25\,\delta$ it is \MthreeQuarterDirMin--\MthreeQuarterDirMax.
 
 \subsection{Displacement at unseen defocus (RQ2)}
-For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the withheld-displacement MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes. On \MtwoN{} frames at continuous displacements never seen in training (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$; training on the nine-level ladder instead gives \MtwoLadderMaeDelta\,$\delta$. Direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus.
-\note{Full Phase 2 render (27 lenses, 245 plates) replaces these subset numbers.}
+Every test displacement is absent from training. For the \MthreeGateBN{} designs with LCA above $1\,\delta$, MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes; at $0.25\,\delta$ it is \MthreeQuarterMaeMin--\MthreeQuarterMaeMax\,$\delta$. For the design with LCA $1.8\,\delta$ (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$, and direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus. On a \MtwoSubsetN-frame subset, training on the nine-level ladder instead of continuous displacements gives the same error (\MtwoSubsetLadderMaeDelta{} against \MtwoSubsetMaeDelta\,$\delta$).
 
 \subsection{Field position}
 Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
@@ -80,11 +79,11 @@ All numbers in this paper are generated from the committed result tables by \tex
 \note{One paragraph after the lab test split.}
 
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig1_m3_dose_response.pdf}
-\caption{M3, \MthreeNlenses{} rendered lenses. (a) Direction accuracy against $|\mathrm{LCA}|/\delta$. (b) Withheld-rung MAE and p90; Gate B applies in the shaded region.}\label{fig:m3}\end{figure*}
+\caption{M3, \MthreeNlenses{} rendered lenses. (a) Direction accuracy against $|\mathrm{LCA}|/\delta$. (b) MAE and p90 at unseen continuous displacements; Gate B applies in the shaded region.}\label{fig:m3}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig2_lab_through_focus.pdf}
 \caption{Lab sweep, calibration steps only: raw-Bayer SFR per channel with the exact defocus-OTF fit.}\label{fig:lab}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig3_m2_continuous.pdf}
-\caption{M2, \MtwoN{} held-out frames at continuous displacements. (a) Predicted against true $\Delta z$. (b) Direction accuracy per $|\Delta z|$ band.}\label{fig:m2}\end{figure*}
+\caption{The LCA $1.8\,\delta$ design, \MtwoN{} held-out frames at continuous displacements. (a) Predicted against true $\Delta z$. (b) Direction accuracy per $|\Delta z|$ band.}\label{fig:m2}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig4_m7_field.pdf}
 \caption{M7, field position. (a) Rendered direction accuracy per zone. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig5_m8_confounds.pdf}

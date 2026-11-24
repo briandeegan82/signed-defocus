@@ -57,11 +57,11 @@ def boot_mean(x, groups, n=2000):
 
 
 def fig1_m3(out):
-    d = pd.read_csv(R / "m3_gate/dof_summary.csv")
+    d = pd.read_csv(R / "phase2/phase2_summary.csv")
     d["sign"] = np.where(d.lens.str.contains("_n"), "−", np.where(d.lens.str.contains("_p"), "+", "0"))
     d.loc[d.lens == "m3_ref", "sign"] = "ref"
     d["sa"] = d.lens.str.endswith("_sa")
-    ga = pd.read_csv(R / "m3_gate/dof_gate_a.csv").iloc[0]
+    ga = pd.read_csv(R / "phase2/phase2_gate_a.csv").iloc[0]
     fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.4), layout="constrained")
     mk = {"+": "^", "−": "v", "0": "o", "ref": "*"}
     for (sg, sa), g in d.groupby(["sign", "sa"]):
@@ -75,9 +75,9 @@ def fig1_m3(out):
     a.text(0.98, 0.05, f"Spearman ρ = {ga.spearman_rho:.2f}, n = {int(ga.n_lenses)}", transform=a.transAxes, ha="right")
     b.axhline(1.0, color="k", lw=0.8, ls="--")
     b.axvspan(1.0, 2.1, color="0.92", zorder=0)
-    b.text(1.55, 3.9, "Gate B applies", ha="center", fontsize=7)
+    b.text(1.55, 6.3, "Gate B applies", ha="center", fontsize=7)
     b.text(0.02, 1.08, "1 δ", fontsize=7)
-    b.set(xlabel="|LCA| / δ", ylabel="Withheld-rung error (δ)", xlim=(-0.08, 2.1), ylim=(0, 4.8))
+    b.set(xlabel="|LCA| / δ", ylabel="Error at unseen Δz (δ)", xlim=(-0.08, 2.1), ylim=(0, 7.6))
     b.set_title("solid: MAE   faded: p90", loc="right", fontsize=7)
     a.legend(loc="center right", ncol=1, handletextpad=0.3)
     tag(a, "(a)"); tag(b, "(b)")
@@ -116,18 +116,18 @@ def fig2_lab(out):
 
 
 def fig3_m2(out):
-    f = pd.read_csv(R / "m2_gate/m2_displacement_frames.csv")
+    f = pd.read_csv(R / "phase2/lenses/m3_ref/m2_displacement_frames.csv")
     f = f[f.train == "continuous"]
-    dr = pd.read_csv(R / "m2_gate/m2_direction.csv")
+    dr = pd.read_csv(R / "phase2/lenses/m3_ref/m2_direction.csv")
     dr = dr[(dr.level == "fitted") & (dr.band != "all")]
     fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.5), layout="constrained", gridspec_kw=dict(width_ratios=[1.3, 1]))
     x, y = f.dz_over_delta, f.dz_hat * DZ2D
     lim = np.array([-5, 5])
     a.fill_between(lim, lim - 1, lim + 1, color="0.9", lw=0, label="±1 δ")
     a.plot(lim, lim, "k-", lw=0.7, label="y = x")
-    a.plot(x, y, "o", ms=2.5, color=OK["blue"], alpha=0.6, mew=0, label=f"held-out frames (n = {len(f)})")
+    a.plot(x, y, "o", ms=1.5, color=OK["blue"], alpha=0.35, mew=0, label=f"held-out frames (n = {len(f)})")
     a.set(xlabel="True Δz (δ)", ylabel="Predicted Δz (δ)", xlim=lim, ylim=lim, aspect="equal")
-    a.legend(loc="lower right")
+    a.legend(loc="upper left")
     lab = [s.replace("inf", "∞") for s in dr.band]
     b.bar(range(len(dr)), dr.acc, color=OK["sky"], edgecolor="k", lw=0.5)
     for i, (acc, n) in enumerate(zip(dr.acc, dr.n)):

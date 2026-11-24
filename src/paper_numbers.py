@@ -16,25 +16,31 @@ def f(x, nd=2):
 
 def numbers():
     n = {}
-    m3, ga = pd.read_csv(R / "m3_gate/dof_summary.csv"), pd.read_csv(R / "m3_gate/dof_gate_a.csv").iloc[0]
+    p2, ga = pd.read_csv(R / "phase2/phase2_summary.csv"), pd.read_csv(R / "phase2/phase2_gate_a.csv").iloc[0]
     n["MthreeNlenses"] = int(ga.n_lenses)
+    n["MthreeNframes"] = int(p2.n_frames.iloc[0])
     n["MthreeRho"] = f(ga.spearman_rho)
     n["MthreeTau"] = f(ga.kendall_tau)
-    gb = m3[m3.gate_b_applies.astype(str) == "True"]
+    gb = p2[p2.gate_b_applies.astype(str) == "True"]
     n["MthreeGateBN"] = len(gb)
     n["MthreeGateBMaeMin"], n["MthreeGateBMaeMax"] = f(gb.mae_delta.min()), f(gb.mae_delta.max())
-    z = m3[m3.lens == "m3_z000_sa"].iloc[0]
-    n["MthreeZeroSaDir"] = f(z.dir_acc)
-    m2 = pd.read_csv(R / "m2_gate/m2_displacement.csv")
-    c = m2[(m2.train == "continuous") & (m2.band == "all")].iloc[0]
+    z = p2.set_index("lens")
+    n["MthreeZeroDir"], n["MthreeZeroSaDir"] = f(z.loc["m3_z000", "dir_acc"]), f(z.loc["m3_z000_sa", "dir_acc"])
+    q = p2[p2.lca_over_delta == 0.25]
+    n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
+    n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta.min()), f(q.mae_delta.max())
+    ref = R / "phase2/lenses/m3_ref"
+    e = pd.read_csv(ref / "m2_displacement.csv")
+    c = e[(e.train == "continuous") & (e.band == "all")].iloc[0]
     n["MtwoN"] = int(c.n)
     n["MtwoMaeUm"], n["MtwoMaeDelta"], n["MtwoPninetyDelta"] = f(c.mae_um, 1), f(c.mae_delta), f(c.p90_delta)
-    l = m2[(m2.train == "ladder") & (m2.band == "all")].iloc[0]
-    n["MtwoLadderMaeDelta"] = f(l.mae_delta)
-    d = pd.read_csv(R / "m2_gate/m2_direction.csv")
-    d = d[d.level == "fitted"]
-    n["MtwoDirAll"] = f((d.acc * d.n).sum() / d.n.sum())
-    n["MtwoDirNear"] = f(d[d.band.str.startswith("[0.0")].acc.iloc[0])
+    d = pd.read_csv(ref / "m2_direction.csv")
+    d = d[d.level == "fitted"].set_index("band")
+    n["MtwoDirAll"], n["MtwoDirNear"] = f(d.loc["all", "acc"]), f(d.loc["[0.0, 0.5)", "acc"])
+    s2 = pd.read_csv(R / "m2_gate/m2_displacement.csv")
+    s2 = s2[s2.band == "all"].set_index("train")
+    n["MtwoSubsetN"] = int(s2.loc["continuous", "n"])
+    n["MtwoSubsetMaeDelta"], n["MtwoSubsetLadderMaeDelta"] = f(s2.loc["continuous", "mae_delta"]), f(s2.loc["ladder", "mae_delta"])
     st = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
     n["LabStepUm"] = f(st.k)
     n["LabDeltaPerStep"] = f(st.k / (2 * 2.0 * 3.45), 3)

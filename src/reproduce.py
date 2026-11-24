@@ -70,6 +70,12 @@ def steps(est, data):
             ["m8_confounds.py", "--cache", cache, "--lens", "synth_lcaP", "--conf-dir", data / "m8" / "synth_lcaP",
              "--out", "{out}"]],
          [data / "m8" / "synth_lcaP", rc("synth_lcaP")]),
+        ("phase2", "results/phase2", [
+            ["phase2_score.py", "--cache", data / "phase2", "--out", "{out}"]],
+         [data / "phase2"]),
+        ("m5_lab", "results/m5_lab", [
+            ["m5_lab_lens.py", "score", "--cache", data / "m5", "--out", "{out}"]],
+         [data / "m5"]),
         ("figures", None, [["figures.py", "--out", "{out}"]], []),
     ]
 
@@ -148,12 +154,14 @@ def main():
             rows.append(dict(step=name, file="", status=failed or "ran"))
             continue
         refd = REPO / ref
-        for f in sorted(refd.glob("*.csv")):
-            n = out / f.name
-            rows.append(dict(step=name, file=f"{ref}/{f.name}",
-                             status=compare(f, n, a.rtol, a.atol) if n.exists() else "not regenerated"))
-        for n in sorted(set(p.name for p in out.glob("*.csv")) - set(p.name for p in refd.glob("*.csv"))):
-            rows.append(dict(step=name, file=f"{ref}/{n}", status="new (not committed)"))
+        pat = "*.csv" if ref == "results" else "**/*.csv"  # results/ itself also holds the other steps' dirs
+        have = {str(p.relative_to(refd)) for p in refd.glob(pat)}
+        made = {str(p.relative_to(out)) for p in out.glob(pat)}
+        for f in sorted(have):
+            rows.append(dict(step=name, file=f"{ref}/{f}", status=compare(refd / f, out / f, a.rtol, a.atol)
+                             if f in made else "not regenerated"))
+        for f in sorted(made - have):
+            rows.append(dict(step=name, file=f"{ref}/{f}", status="new (not committed)"))
     t = pd.DataFrame(rows)
     t.to_csv(a.scratch / "reproduce_report.csv", index=False)
     (a.scratch / "provenance.json").write_text(json.dumps(provenance(inputs), indent=1))

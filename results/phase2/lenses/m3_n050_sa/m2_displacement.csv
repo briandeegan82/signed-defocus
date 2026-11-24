@@ -1,0 +1,6 @@
+train,band,n,bias_um,mae_um,p90_um,mae_delta,p90_delta,gate_b_pass
+continuous,"[0.0, 0.5)",220,-3.7314,13.1586,36.93,0.5981,1.6786,True
+continuous,"[0.5, 1.0)",214,0.1257,12.5967,24.67,0.5726,1.1214,True
+continuous,"[1.0, 2.0)",448,-3.1913,17.2614,40.36,0.7846,1.8345,True
+continuous,"[2.0, inf)",1078,-2.8141,25.9642,52.06,1.1802,2.3664,False
+continuous,all,1960,-2.6823,21.0781,43.0,0.9581,1.9545,True

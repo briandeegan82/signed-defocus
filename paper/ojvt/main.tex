@@ -1,0 +1,97 @@
+% Skeleton draft. Every number comes from ../numbers.tex (src/paper_numbers.py); do not type numbers.
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\input{../numbers.tex}
+\newcommand{\note}[1]{\textcolor{blue}{[#1]}}
+\graphicspath{{../../results/figures/}}
+
+\begin{document}
+\title{Signed Defocus Estimation From a Single Image Using Longitudinal Chromatic Aberration: When It Works, and How Much Calibration It Needs}
+\author{\note{Authors and affiliations}}
+\maketitle
+
+\begin{abstract}
+Fixed-focus automotive cameras drift out of focus in service, and an unsigned sharpness drop cannot tell the direction of the drift.
+We test whether the residual longitudinal chromatic aberration (LCA) of the lens makes the sign and size of a focus shift measurable from ordinary images.
+On \MthreeNlenses{} rendered lens designs, frame direction accuracy rises with the ratio of LCA to depth of focus $\delta$ (Spearman $\rho=\MthreeRho$).
+For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the error of displacements withheld from training is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, and on \MtwoN{} frames at continuous displacements it is \MtwoMaeDelta\,$\delta$.
+\note{Lab test-split result after the method is frozen.}
+Field curvature, motion blur, fog and white-balance error each degrade the cue; we report where.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Automotive cameras, chromatic aberration, defocus estimation, focus monitoring, image quality.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\note{Motivation: fixed-focus ADAS cameras, focus drift with temperature and ageing, why the sign matters for service decisions.}
+LCA is known to carry the sign of defocus in vision science \cite{kruger1986stimuli}, microscope autofocus \cite{fuller2011microscope} and chromatic depth from defocus \cite{garcia2000chromatic,trouve2013passive,chakrabarti2012depth}, and it is exploited for extended depth of field \cite{guichard2009edof}.
+\note{Gap: no study of how much LCA a fixed-focus camera needs, in units of its depth of focus, nor of the calibration needed to move from rendered to real data.}
+\note{Contributions, each tied to RQ1--RQ4 of the protocol.}
+
+\section{Background}
+We define the displacement $\Delta z$ as the sensor offset from the best-focus plane of the channel-mean MTF at 0.25 cycles/pixel, positive away from the lens, and the depth of focus as
+\begin{equation}
+\delta = 2Nc,
+\end{equation}
+with $N$ the working f-number and $c$ the pixel pitch. LCA is the separation between the red and blue best-focus planes. Displacements and LCA are reported in units of $\delta$, and in \textmu m only where $N$ and $c$ are known.
+\note{Defocus OTF of a circular pupil (Hopkins); why the red/blue sharpness ratio changes sign across focus.}
+
+\section{Method}
+\note{Per-channel sharpness on admitted $128\times128$ patches; chromatic cue $c$ (\texttt{ch\_ten\_rb}, red versus blue Tenengrad) and log luminance gradient; sign and offset of $c$ fitted for direction; through-focus curve over $(c,\text{luminance})$ inverted for $\Delta z$; median pooling per frame; abstention below 10 admitted patches.}
+
+\section{Experimental Design}
+\note{Rendered data: Oxford RobotCar raw plates, PSF inserted before the ISP, measured noise; traversal-disjoint five-fold splits. Lens population M3 (LCA/$\delta$ 0--2, both signs, $\pm$ spherical aberration). Continuous displacements M2.}
+The laboratory sweep uses a VS Technology VS-0618H1 lens (6\,mm, C-mount) at about f/2 on a FLIR Blackfly S BFS-U3-89S6C colour camera, 80 equal servo steps over a 90$^\circ$ focus-ring rotation, with an ISO~12233 eSFR chart at about 30\,cm. The slanted-edge MTF was measured on the raw Bayer planes \cite{deegan2024demosaic}.
+An exact defocus-OTF fit to the per-channel through-focus MTF gives \LabStepUm\,\textmu m per step at f/2, that is \LabDeltaPerStep\,$\delta$ per step whatever the f-number, and a red--blue LCA of \LabLcaDelta\,$\delta$ (Fig.~\ref{fig:lab}).
+The lab sweep is split into calibration (every fourth step, left chart half) and test (the rest); the test split is evaluated once, after the method is frozen.
+\note{Pre-registered decision rules: Gate A (rank trend) and Gate B (MAE $<1\,\delta$ for LCA $>1\,\delta$).}
+
+\section{Results}
+\subsection{Direction accuracy against LCA (RQ1)}
+Direction accuracy rises with LCA/$\delta$ across the \MthreeNlenses{} designs (Spearman $\rho=\MthreeRho$, Kendall $\tau=\MthreeTau$; Fig.~\ref{fig:m3}), so Gate~A passes. Spherical aberration alone gives a direction accuracy of \MthreeZeroSaDir{} with no LCA, so it is a confound rather than noise.
+
+\subsection{Displacement at unseen defocus (RQ2)}
+For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the withheld-displacement MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes. On \MtwoN{} frames at continuous displacements never seen in training (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$; training on the nine-level ladder instead gives \MtwoLadderMaeDelta\,$\delta$. Direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus.
+\note{Full Phase 2 render (27 lenses, 245 plates) replaces these subset numbers.}
+
+\subsection{Field position}
+Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
+
+\subsection{Laboratory sweep (RQ3)}
+On the calibration split only, direction is correct on \LabCalDirOk{} of \LabCalDirN{} frames and the displacement MAE is \LabCalMaeDelta\,$\delta$. The within-frame sampling error of the chromatic cue alone has a median of \MfourSeMedianDelta\,$\delta$; the sweep has one exposure per step, so exposure-to-exposure repeatability is not measured.
+\note{Held-out test split at three calibration levels: none, channel order only, calibration steps.}
+
+\subsection{Threats in service (RQ4, simulation)}
+On a lens with LCA of $1.8\,\delta$, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusPos{} for a real defocus of matched blur; on a weak-LCA lens, motion blur (\MeightWeakMotion) alarms more often than real defocus (\MeightWeakDefocusPos; Fig.~\ref{fig:m8}).
+Illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
+
+\section{Discussion and Limitations}
+\note{LCA/$\delta$ as the design quantity; the lab lens (\LabLcaDelta\,$\delta$) sits where the rendered cue is weak. One real lens; iris set by eye; no repeat exposures; spherical aberration and field curvature as confounds; renders use one PSF model.}
+
+\section{Reproducibility}
+All numbers in this paper are generated from the committed result tables by \texttt{src/paper\_numbers.py}; \texttt{src/reproduce.py} reruns every analysis from the feature caches and checks each table. \note{Data and code availability.}
+
+\section{Conclusion}
+\note{One paragraph after the lab test split.}
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig1_m3_dose_response.pdf}
+\caption{M3, \MthreeNlenses{} rendered lenses. (a) Direction accuracy against $|\mathrm{LCA}|/\delta$. (b) Withheld-rung MAE and p90; Gate B applies in the shaded region.}\label{fig:m3}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig2_lab_through_focus.pdf}
+\caption{Lab sweep, calibration steps only: raw-Bayer SFR per channel with the exact defocus-OTF fit.}\label{fig:lab}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig3_m2_continuous.pdf}
+\caption{M2, \MtwoN{} held-out frames at continuous displacements. (a) Predicted against true $\Delta z$. (b) Direction accuracy per $|\Delta z|$ band.}\label{fig:m2}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig4_m7_field.pdf}
+\caption{M7, field position. (a) Rendered direction accuracy per zone. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig5_m8_confounds.pdf}
+\caption{M8, rendered in-focus confounds. (a) Alarm rate. (b) Predicted $\Delta z$ per frame.}\label{fig:m8}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig6_m6_illuminant.pdf}
+\caption{M6, simulation only: bias and MAE per illuminant and white-balance condition.}\label{fig:m6}\end{figure*}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

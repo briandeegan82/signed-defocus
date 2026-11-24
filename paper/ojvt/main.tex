@@ -58,6 +58,14 @@ Each of the \MthreeNlenses{} designs is rendered on \MthreeNframes{} frames (eve
 \subsection{Displacement at unseen defocus (RQ2)}
 Every test displacement is absent from training. For the \MthreeGateBN{} designs with LCA above $1\,\delta$, MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes; at $0.25\,\delta$ it is \MthreeQuarterMaeMin--\MthreeQuarterMaeMax\,$\delta$. For the design with LCA $1.8\,\delta$ (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$, and direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus. On a \MtwoSubsetN-frame subset, training on the nine-level ladder instead of continuous displacements gives the same error (\MtwoSubsetLadderMaeDelta{} against \MtwoSubsetMaeDelta\,$\delta$).
 
+\subsection{Reference rows}
+On the same frames and folds, two unsigned sharpness floors (green-channel Tenengrad and finest Laplacian-pyramid energy, each a one-dimensional curve against $|\Delta z|$) and a learned regressor (gradient boosting on all 69 patch features, the earlier study's settings) are scored; Table~\ref{tab:ref}.
+For the \RefGateBN{} designs with LCA above $1\,\delta$, the learned regressor's signed MAE is \RefLearnMaeMin--\RefLearnMaeMax\,$\delta$ against \RefPhysMaeMin--\RefPhysMaeMax\,$\delta$ for the two-feature method.
+For the magnitude $|\Delta z|$ alone, the Laplacian floor (\RefLapAbsMin--\RefLapAbsMax\,$\delta$) is more accurate than the two-feature method (\RefPhysAbsMin--\RefPhysAbsMax\,$\delta$); the Tenengrad floor is \RefTenAbsMin--\RefTenAbsMax\,$\delta$.
+At $0.25\,\delta$ the learned regressor's direction accuracy is \RefQuarterLearnDirMin--\RefQuarterLearnDirMax{}, but its MAE (\RefQuarterLearnMaeMin--\RefQuarterLearnMaeMax\,$\delta$) is no better.
+All rows are trained and tested on renders of one lens design each; none is tested on the laboratory lens.
+\input{../reference_table.tex}
+
 \subsection{Field position}
 Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
 

@@ -49,4 +49,4 @@ Best-focus step per channel, square and frequency, from a parabola in log MTF ov
 - **Centre:** both frequencies agree, at 0.2 δ.
 - **Off-axis:** they disagree, by up to 6 steps on single squares (4, 8, 10). At 0.25 cy/px the red−blue order reverses in the mid and corner zones; at 0.125 cy/px it shrinks toward zero.
 - **Reading:** the lab lens's chromatic cue is weak everywhere (≤ 0.23 δ), and off-axis it is not a stable signed quantity. Astigmatism and lateral colour along each square's edge direction are the likely causes; one edge per square cannot separate them.
-- **Consequence for the held-out lab test:** the planned lab test split covers off-axis squares. Direction there should be expected near chance, and that expectation is stated before the test is run.
+- **Consequence for the held-out lab test:** frame-level pooling can still work on this lens, since it gave 19/20 on the calibration split (PR #8). The test should therefore also report accuracy per field zone; the off-axis squares are where it is expected to fail first.

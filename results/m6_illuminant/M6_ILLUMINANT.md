@@ -36,7 +36,7 @@ Direction excludes the DZ = 0 rung. The worst rung is +0.45 δ under wb_b0.8 (di
 
 ## Interpretation
 
-- **Direction is robust on this lens.** It stays at or above 0.97 under every condition; only the rungs nearest focus lose any frames.
+- **Direction is robust on this lens.** It stays at or above 0.96 (minimum 0.967) under every condition; only the rungs nearest focus lose any frames.
 - **The error is an offset in c, not lost signal.** Each condition moves the in-focus red/blue ratio (median c from −0.03 to 0.36 against 0.16 nominal), which shifts the estimated focus point. The far rungs are unaffected; the error concentrates within ±0.45 δ of focus, where MAE rises from 0.24 δ to at most 0.41 δ.
 - **Wavelength shifts of ±10 nm bias Δz by about ±0.1 δ.** The sign follows the direction of the shift.
 - **A 20 % white-balance gain error costs more than a 10 nm shift** (MAE up to 0.52 δ) but stays under Gate B's 1 δ.

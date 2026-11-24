@@ -82,6 +82,9 @@ def steps(est, data):
         ("lab_test", "results/lab_test", [
             ["lab_test.py", "--estimator", est, "--m5", data / "m5", "--out", "{out}"]],
          [cache / "lab_feat_real_all.parquet", data / "m5"]),
+        ("lab_transfer", "results/lab_transfer", [
+            ["lab_transfer.py", "--estimator", est, "--out", "{out}"]],
+         [cache / "lab_feat_real_all.parquet"]),
         ("figures", None, [["figures.py", "--out", "{out}"]], []),
     ]
 

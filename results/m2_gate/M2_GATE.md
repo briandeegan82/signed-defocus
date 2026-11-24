@@ -22,7 +22,7 @@ Direction is the "fitted" level; "order" (sign from the prescription) gives the 
 
 ## Gates
 
-- **Gate B passes on continuous displacement for this lens:** MAE 0.56 δ over 319 unseen displacements, below 1 δ in every band and every fold. It matches the v0 leave-one-rung-out MAE (12.3 µm), so the ladder test was not flattering the estimator.
+- **Gate B passes on continuous displacement for this lens:** MAE 0.56 δ over 319 continuous displacements, below 1 δ in every band and every fold. It matches the v0 leave-one-rung-out MAE (12.3 µm), so the ladder test was not flattering the estimator. Correction (2026-11-24): draws are rounded to 1e-4 DZ, so 37 of the 319 test frames share their displacement with a training frame of another plate; on the 282 that do not, MAE is 0.57 δ.
 - **Training on the ladder is as good as training on continuous frames** (MAE 0.56 δ both); continuous training has a shorter tail (p90 1.22 vs 1.37 δ).
 - **Direction fails only near focus:** 0.844 below 0.5 δ, where the red/blue ratio is close to its in-focus value; 1.000 above.
 

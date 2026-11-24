@@ -1,7 +1,7 @@
 # Phase 2: all 27 M3 designs on every RobotCar plate at continuous displacements
 
 - Render: `src/phase2_render.sh ~/blur_study ~/blur_study/results/robotcar_noise_model.json ~/sd_data/phase2` on Brian's machine (GB10 GPU), 2026-11-24. Each design in `data/m3_lenses.csv` is rendered with `m2_continuous.py render --n-plates 0 --k 8`: 245 plates from 12 traversals, 8 distinct displacements per plate drawn uniformly from ±0.1 DZ (`draw_dz`, seeded by plate), so 1,960 frames per lens; pre-ISP arm, frozen `defocus-estimator@4564cf2` code.
-- Score: `python src/phase2_score.py --cache ~/sd_data/phase2 --out results/phase2`. Each lens is scored with `m2_continuous.score`: five traversal-disjoint folds, direction sign and offset fitted on training traversals, displacement from the through-focus curve of training frames binned at 0.01 DZ. Every test displacement is absent from training. Gate A and Gate B as in `docs/PROTOCOL.md`.
+- Score: `python src/phase2_score.py --cache ~/sd_data/phase2 --out results/phase2`. Each lens is scored with `m2_continuous.score`: five traversal-disjoint folds, direction sign and offset fitted on training traversals, displacement from the through-focus curve of training frames binned at 0.01 DZ. Test scenes are held out; displacements are continuous. Draws are rounded to 1e-4 DZ, so 1,015 of the 1,960 test frames of each lens share their displacement with a training frame of another plate (see below). Gate A and Gate B as in `docs/PROTOCOL.md`.
 - Optics: f/2.0, 5.5 µm pitch, δ = 22 µm, 1 DZ = 1 mm. This supersedes the 8-plate subset in `results/m3_gate/` and the 40-plate test in `results/m2_gate/` for reported numbers.
 
 ## Gates
@@ -11,6 +11,10 @@
 | Gate A: Spearman ρ over 27 lenses | 0.96 | 0.95 (one-sided p < 1e-14) |
 | Kendall τ | 0.88 | 0.87 |
 | Gate B: MAE for the 9 lenses with LCA/δ > 1 | 0.48–0.51 δ | 0.59–0.63 δ, all pass |
+
+## Strictly unseen displacements
+
+The protocol scores Gate B on Δz absent from training. `mae_delta_unseen` in `phase2_summary.csv` keeps only the 945 test frames per lens whose rounded displacement occurs in no training fold. For the 9 lenses with LCA/δ > 1 it is 0.59–0.64 δ (against 0.59–0.63 δ on all frames), so Gate B passes on that set too (`gate_b_pass_unseen`). Over all 27 lenses the two MAEs differ by at most 0.04 δ: the through-focus curve is built from 0.01 DZ bins and does not memorise displacement values.
 
 ## Per LCA level (`phase2_summary.csv`, ranges over sign and SA)
 

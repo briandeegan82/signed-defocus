@@ -1,4 +1,4 @@
-# Analysis protocol (version 0, for approval)
+# Analysis protocol (version 1, approved 2026-11-24)
 
 Fixed before any new experiment is run. Changes after approval are logged at the bottom with a date and a reason. A result that the protocol did not plan is reported as exploratory.
 
@@ -63,3 +63,4 @@ Every number in the paper is a macro in `paper/numbers.tex`, written by a script
 
 - v0, 2026-11-23: first version.
 - v0.1, 2026-11-23: Gate A is a rank trend (Spearman), not strict monotonicity. Reason: the v0 re-scoring (`results/DOF_RESCORE.md`) showed adjacent-lens inversions at similar LCA/δ; decided by Brian.
+- v1, 2026-11-24: approved by Brian (the merge of PR #4 counts as approval). Text unchanged from v0.1. Later changes are logged here with a date and a reason.

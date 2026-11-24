@@ -66,7 +66,11 @@ c(p)=\log\frac{T_r(p)+\epsilon}{T_b(p)+\epsilon},\qquad \ell(p)=\log\bigl\langle
 \end{equation}
 with $\epsilon=10^{-9}$. A frame is summarized by the medians $\bar c$ and $\bar\ell$ over its patches. A frame with fewer than 10 patches returns no estimate and is counted as an abstention.
 
-The direction estimate is $\hat d=s\,\operatorname{sign}(\bar c-c_0)$, with sign $s\in\{-1,+1\}$ and threshold $c_0$. The displacement estimate inverts a through-focus curve. On training frames, the medians of $(\bar c,\bar\ell)$ are taken in bins of $\Delta z$ and interpolated on a fine grid; each feature is scaled by its training standard deviation, and a test frame is assigned the $\Delta z$ of the nearest curve point. The curve covers only the training range of $\Delta z$, so estimates beyond it saturate.
+The direction estimate is $\hat d=s\,\operatorname{sign}(\bar c-c_0)$, with sign $s\in\{-1,+1\}$ and threshold $c_0$. The displacement estimate inverts a through-focus curve. On training frames, the medians of $(\bar c,\bar\ell)$ are taken in bins of $\Delta z$ and interpolated on a grid $\mathcal{Z}$ to give a curve $\gamma(z)$; with $\Sigma$ the diagonal matrix of training standard deviations of the two features, a test frame is assigned
+\begin{equation}
+\widehat{\Delta z}=\operatorname*{arg\,min}_{z\in\mathcal{Z}}\bigl\|\Sigma^{-1}\bigl((\bar c,\bar\ell)-\gamma(z)\bigr)\bigr\|_2 .
+\label{eq:invert}
+\end{equation} The curve covers only the training range of $\Delta z$, so estimates beyond it saturate.
 
 The calibration levels differ in what is fitted, and on which data. At the \emph{rendered} level, $s$, $c_0$ and the curve come from rendered frames only. At the \emph{order} level, $s$ follows from the lens's channel order and only $c_0$ is fitted. At the \emph{calibration} level, $s$, $c_0$ and the curve are all fitted on calibration data of the same camera. $c_0$ and $s$ maximize training direction accuracy over a grid of training quantiles of $\bar c$. No parameter is learned beyond these: the method has no texture threshold and no learned representation, and the pooling statistic is fixed.
 
@@ -75,6 +79,16 @@ Rendered frames start from raw Bayer plates of the Oxford RobotCar dataset \cite
 The laboratory sweep uses a VS Technology VS-0618H1 lens (6\,mm, C-mount) at about f/2 on a FLIR Blackfly S BFS-U3-89S6C colour camera, 80 equal servo steps over a 90$^\circ$ focus-ring rotation, with an ISO~12233 eSFR chart at about 30\,cm. The slanted-edge MTF was measured on the raw Bayer planes \cite{deegan2024demosaic}.
 An exact defocus-OTF fit to the per-channel through-focus MTF gives \LabStepUm\,\textmu m per step at f/2, that is \LabDeltaPerStep\,$\delta$ per step whatever the f-number, and a red--blue LCA of \LabLcaDelta\,$\delta$ (Fig.~\ref{fig:lab}).
 The lab sweep is split into calibration (every fourth step, left chart half) and test (the rest); the test split is evaluated once, after the method is frozen.
+We score each frame $i$ of a test set by the error $e_i=\widehat{\Delta z}_i-\Delta z_i$ in units of $\delta$. Over the set $\mathcal{F}$ of frames that return an estimate,
+\begin{equation}
+\mathrm{MAE}=\frac{1}{|\mathcal{F}|}\sum_{i\in\mathcal{F}}|e_i|,\qquad
+\mathrm{bias}=\frac{1}{|\mathcal{F}|}\sum_{i\in\mathcal{F}}e_i ,
+\end{equation}
+and p90 is the 90th percentile of $|e_i|$ over $\mathcal{F}$. Direction accuracy is
+\begin{equation}
+\mathrm{acc}=\frac{1}{|\mathcal{F}_d|}\sum_{i\in\mathcal{F}_d}\mathbf{1}\bigl[\hat d_i=\operatorname{sign}\Delta z_i\bigr],
+\end{equation}
+where $\mathcal{F}_d\subseteq\mathcal{F}$ excludes frames with no defined direction: rendered displacements are continuous and never zero, while in the laboratory sweep a frame within half a step of best focus has no direction truth and is left out. The abstention rate is the share of frames that return no estimate; abstentions are left out of $\mathcal{F}$ and reported separately. Direction intervals on the laboratory sweep are Wilson score intervals for a binomial proportion. Intervals on rendered alarm rates resample whole traversals (2000 bootstrap draws). For the in-service tests (RQ4) a frame raises an \emph{alarm} when $|\widehat{\Delta z}|>\tau$, where $\tau$ is the 95th percentile of $|\widehat{\Delta z}|$ over the in-focus ($\Delta z=0$) training frames of the same fold, predicted with that fold's calibration. Because $\tau$ is set on training frames only, the in-focus alarm rate on test frames is measured, not fixed at 5\,\%.
 Two decision rules were fixed before any experiment. Gate~A requires direction accuracy to rise with LCA/$\delta$ across the lens population, as a rank trend (Spearman $\rho>0$, one-sided $p<0.05$). Gate~B requires the mean absolute displacement error at displacements absent from training to be below $1\,\delta$ for lenses with LCA above $1\,\delta$. Failing Gate~A would falsify the central claim. Failing Gate~B would limit the claim to direction.
 
 \section{Results}
@@ -94,7 +108,8 @@ The two-feature method takes the size of the shift from $\bar\ell$, which is the
 \input{../reference_table.tex}
 
 \subsection{Field position}
-Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
+This test and those of RQ4 use the nine-rung displacement ladder of the earlier study, DZ $\in\{0,\pm0.01,\pm0.02,\pm0.05,\pm0.1\}$, where DZ is the renderer's nominal defocus parameter: calibration uses the ladder frames of the training traversals and scoring the same rungs on the held-out traversals. For the synthetic designs 1\,DZ is 1\,mm of sensor displacement, so 0.01\,DZ is 10\,\textmu m or $0.45\,\delta$. The real lens design used here (Sony) has no recorded f-number or pixel pitch, so its results stay in DZ and cannot be converted to \textmu m or $\delta$.
+Under the full field-varying PSF of this design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).
 
 \subsection{Laboratory sweep (RQ3)}
 On the calibration split only, direction is correct on \LabCalDirOk{} of \LabCalDirN{} frames and the displacement MAE is \LabCalMaeDelta\,$\delta$. The within-frame sampling error of the chromatic cue alone has a median of \MfourSeMedianDelta\,$\delta$; the sweep has one exposure per step, so exposure-to-exposure repeatability is not measured.
@@ -106,8 +121,9 @@ Within $2\,\delta$ of focus the chromatic cue reads \LabTrOffsetNear{} higher on
 The near-focus failure therefore follows the change of chart half, not the interpolation between calibration steps; the sweep is one static scene, so these counts are not independent samples.
 
 \subsection{Threats in service (RQ4, simulation)}
-On a lens with LCA of $1.8\,\delta$, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusPos{} for a real defocus of matched blur; on a weak-LCA lens, motion blur (\MeightWeakMotion) alarms more often than real defocus (\MeightWeakDefocusPos; Fig.~\ref{fig:m8}).
-Illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
+These are simulations on the nine-rung ladder (Field position), not the continuous protocol of RQ1--RQ2, so their errors are not comparable with those of RQ2: on the same strong-LCA design the nominal ladder MAE is \MsixMaeNominal\,$\delta$, against \MtwoMaeDelta\,$\delta$ at continuous displacements. The strong-LCA design (synth\_lcaP, optically identical to the m3\_ref design of Fig.~\ref{fig:m2}) has f/2.0, a 5.5\,\textmu m pixel and LCA $1.82\,\delta$. The weak-LCA design (Laikin) is a real lens design with no recorded f-number or pixel pitch, so its LCA/$\delta$ is unknown. The confounds are applied to in-focus frames at a strength matched to a $+0.02$\,DZ defocus ($0.91\,\delta$ on synth\_lcaP).
+On synth\_lcaP, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusNeg{} and \MeightStrongDefocusPos{} for a real defocus of $-0.02$ and $+0.02$\,DZ. On Laikin, motion blur (\MeightWeakMotion) and fog (\MeightWeakFog) alarm more often than real defocus (\MeightWeakDefocusNeg{} at $-0.02$ and \MeightWeakDefocusPos{} at $+0.02$\,DZ; Fig.~\ref{fig:m8}).
+On synth\_lcaP, illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
 
 \section{Discussion and Limitations}
 \note{Sign cue, not size estimator: pair $\bar c$ with an unsigned sharpness measure. LCA/$\delta$ as the design quantity; the lab lens (\LabLcaDelta\,$\delta$) sits where the rendered cue is weak. One real lens; iris set by eye; no repeat exposures; spherical aberration and field curvature as confounds; renders use one PSF model.}
@@ -125,11 +141,11 @@ All numbers in this paper are generated from the committed result tables by \tex
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig3_m2_continuous.pdf}
 \caption{The LCA $1.8\,\delta$ design, \MtwoN{} held-out frames at continuous displacements. (a) Predicted against true $\Delta z$. (b) Direction accuracy per $|\Delta z|$ band.}\label{fig:m2}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig4_m7_field.pdf}
-\caption{M7, field position. (a) Rendered direction accuracy per zone. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
+\caption{M7, field position. (a) Rendered direction accuracy per zone, Sony design, nine-rung ladder. (b) Lab chart squares, red$-$blue focus; exploratory.}\label{fig:m7}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig5_m8_confounds.pdf}
-\caption{M8, rendered in-focus confounds. (a) Alarm rate. (b) Predicted $\Delta z$ per frame.}\label{fig:m8}\end{figure*}
+\caption{M8, rendered in-focus confounds on the nine-rung ladder, synth\_lcaP (LCA $1.82\,\delta$) and Laikin (LCA/$\delta$ unknown). (a) Alarm rate. (b) Predicted $\Delta z$ per frame.}\label{fig:m8}\end{figure*}
 \begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig6_m6_illuminant.pdf}
-\caption{M6, simulation only: bias and MAE per illuminant and white-balance condition.}\label{fig:m6}\end{figure*}
+\caption{M6, simulation only, nine-rung ladder on the synth\_lcaP design (LCA $1.82\,\delta$): bias and MAE per illuminant and white-balance condition.}\label{fig:m6}\end{figure*}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

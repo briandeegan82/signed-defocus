@@ -71,7 +71,7 @@ def numbers():
             f(m8["in focus"]), f(m8["motion"]), f(m8["fog"]))
         n[f"Meight{tag}DefocusPos"], n[f"Meight{tag}DefocusNeg"] = f(m8["defocus +0.02"]), f(m8["defocus -0.02"])
     m6 = pd.read_csv(R / "m6_illuminant/m6_summary.csv").set_index("condition")
-    n["MsixDirMin"] = f(m6.direction_acc.min())
+    n["MsixDirMin"] = f"{np.floor(m6.direction_acc.min() * 100) / 100:.2f}"  # floor: "at or above"
     n["MsixMaeNominal"], n["MsixMaeMax"] = f(m6.loc["nominal", "mae_delta"]), f(m6.mae_delta.max())
     n["MsixShiftBiasMax"] = f(m6.loc[["shift+10", "shift-10", "warm", "cool"], "bias_delta"].abs().max())
     rr = pd.read_csv(R / "reference/reference_rows.csv")

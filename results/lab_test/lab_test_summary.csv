@@ -1,0 +1,4 @@
+level,n_frames,n_abstain,n_direction,direction_ok,direction_acc,direction_ci_lo,direction_ci_hi,bias_delta,mae_delta,p90_delta
+rendered,60,0,59,34,0.5763,0.4493,0.6939,-2.9316,3.7758,7.7364
+order,60,0,59,46,0.7797,0.6587,0.8665,,,
+calibration,60,0,59,46,0.7797,0.6587,0.8665,0.9553,1.0331,3.3135

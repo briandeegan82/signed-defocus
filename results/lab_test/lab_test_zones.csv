@@ -1,0 +1,4 @@
+level,n_frames,n_abstain,n_direction,direction_ok,direction_acc,direction_ci_lo,direction_ci_hi,patches_per_frame
+"calibration, centre",60,0,59,47,0.7966,0.6773,0.8796,47.0
+"calibration, mid",60,0,59,43,0.7288,0.604,0.8256,99.0
+"calibration, corner",60,60,0,0,,,,4.0

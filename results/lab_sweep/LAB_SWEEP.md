@@ -19,7 +19,7 @@ The measured per-channel MTF at 0.125 and 0.25 cy/px is fitted with the exact (H
 
 - The defocus blur sets k / N, not k: the fit measures 1.07 µm of focus shift per step per unit f-number. At f/2 that is 2.1 µm/step (1.85-2.30 over the variants); at f/2.8, 3.0 µm/step.
 - In depth-of-focus units the f-number cancels: one step is k / (2Nc) = 0.154 δ, so δ is about 6.5 steps. This holds whatever the iris setting was.
-- The geometry estimate in `docs/LAB_RIG.md` (3.7 µm/step, assuming step 79 is infinity) agrees only if the lens was at about f/3.5. At f/2, step 79 would focus at about 0.7 m and infinity would lie near step 104, past the end of the sweep.
+- The geometry estimate in `docs/LAB_RIG.md` (3.7 µm/step, assuming step 79 is infinity) agrees only if the lens was at about f/3.5. At f/2, step 79 would focus at about 0.7 m and infinity would lie near step 104, past the end of the sweep. The iris was at about f/2, set by eye (Brian, 2026-11-24), so the sweep does not reach infinity.
 - The off-chart wall peaks at file step 112-114 (s = 56-57, `hf_wall_raw`), 10.3 steps after the chart. At 2.13 µm/step that is 22 µm, a wall about 6 cm behind the chart; at 3.7 µm/step it is about 13 cm. Field curvature does not explain the offset: the corner squares peak at most one step after the centre square (`lab_sweep_field_mtf.csv`).
 
 Limits: the model treats the lens's other aberrations as a constant in-focus loss. Spherical aberration would broaden the through-focus curve and bias k low; the tails-only fit (1.85) and the 0.25 cy/px fit (1.98) are within 15% of the primary fit. The pixel pitch (3.45 µm) is still the datasheet value.

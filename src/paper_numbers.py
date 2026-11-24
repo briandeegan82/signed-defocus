@@ -93,6 +93,13 @@ def numbers():
     far = fr[fr.dz_delta.abs() >= 2]
     n["LabTestFarDir"] = f((far.dir_calibration == np.sign(far.dz_delta)).mean())
     n["LabTestFarMae"] = f((far.dz_calibration - far.dz_delta).abs().mean())
+    tr = pd.read_csv(R / "lab_transfer/lab_transfer_summary.csv").set_index(["subset", "band"])
+    for sub, tag in (("other_half", "Half"), ("other_steps", "Steps"), ("test_split_committed", "Test")):
+        for band, b in (("all", "All"), ("within_2d", "Near"), ("beyond_2d", "Far")):
+            n[f"LabTr{tag}{b}Ok"], n[f"LabTr{tag}{b}N"] = int(tr.loc[(sub, band), "direction_ok"]), int(tr.loc[(sub, band), "n_direction"])
+        n[f"LabTr{tag}Mae"] = f(tr.loc[(sub, "all"), "mae_delta"])
+    off = pd.read_csv(R / "lab_transfer/lab_transfer_offsets.csv").iloc[0]
+    n["LabTrOffsetNear"], n["LabTrOffsetAll"] = f(off.cue_offset_median_within_2d, 3), f(off.cue_offset_median, 3)
     return n
 
 

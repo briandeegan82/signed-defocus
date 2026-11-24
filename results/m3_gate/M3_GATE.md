@@ -26,7 +26,7 @@ Direction accuracy is the "fitted" level; MAE is for the withheld rung (leave-on
 
 ## Gates
 
-- **Gate A (rank trend) passes.** Over all 27 lenses, Spearman ρ = 0.96, one-sided p < 1e-4 (`dof_gate_a.csv`); 0.98 without SA (14 lenses) and 0.98 with SA (13 lenses). Of the 12 adjacent inversions, most are ties: p/n mirror pairs and SA/no-SA pairs at the same LCA/δ.
+- **Gate A (rank trend) passes.** Over all 27 lenses, Spearman ρ = 0.96, one-sided p < 1e-4 (`dof_gate_a.csv`); 0.98 without SA (14 lenses) and 0.98 with SA (13 lenses). Of the 11 adjacent inversions, most are ties: p/n mirror pairs and SA/no-SA pairs at the same LCA/δ. Tied lenses are ordered by name; the count depends on that order (10–12), so it is descriptive only.
 - **Gate B (withheld MAE < 1 δ when LCA > 1 δ) passes** on all 9 lenses strictly above 1 δ: MAE 0.48-0.51 δ, p90 ≤ 1.36 δ. The ±1 δ lenses sit on the threshold (0.51-0.55 δ). This is still the 9-rung ladder, so the MAE floor of about 0.48 δ (10.6 µm) mostly reflects rung spacing; M2 tests continuous displacement.
 - **The sign does not matter without SA.** p and n mirror lenses differ by at most 0.009 in direction accuracy and 0.01 δ in MAE.
 

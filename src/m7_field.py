@@ -11,8 +11,10 @@ frame. Zones by normalised field radius r = |(fy, fx)| / sqrt(2), with fy, fx in
 [-1, 1] from the patch centre: centre r < 1/3, mid 1/3-2/3, corner >= 2/3. The
 same zones on the uniform render of the same plates are the control (same
 content, centre PSF everywhere), so the field-PSF effect is the difference.
-Direction truth is the sign of the nominal rung; the zone's own best-focus shift
-(peak of mtf025_mean over dz in `field_labels.json`) is reported next to it.
+Direction truth is the sign of the nominal rung ("nominal"), and also the sign of
+the rung minus the zone's own best-focus shift ("local": mean over the zone's
+field-map cells of the peak of mtf025_mean over dz in `field_labels.json`; the
+centre cell's peak for the uniform render), since field curvature moves focus.
 Sony has no recorded f-number or pixel pitch, so DZ stays in ladder units.
 
 Lab part. The 11 chart squares of the 80-step sweep (`lab_sweep_field_mtf.csv`,
@@ -118,27 +120,35 @@ def score(a):
     fmap = PB.folds(uni_frames.traversal.unique())
     for t in (uni_frames, uni, fv):
         t["fold"] = t.traversal.map(fmap)
+    ff = field_focus(a.field_labels)
+    off = ff.groupby("zone").peak_dz_mean.mean()
+    centre = float(ff.loc[(ff.gy == 3) & (ff.gx == 4), "peak_dz_mean"].iloc[0])
+    uni["focus_dz"], fv["focus_dz"] = centre, fv.zone.map(off)
     dir_rows, dz_rows = [], []
     for k in range(PB.N_FOLDS):
         tr = uni_frames[uni_frames.fold != k]
         c0, s = PB.fit_direction(tr)
         for render, z in (("uniform", uni), ("field-varying", fv)):
             te = z[(z.fold == k) & (z.dz != 0)]
-            ok = s * np.sign(te.c - c0) == np.sign(te.dz)
-            dir_rows.append(te.assign(render=render, ok=ok.values)[["render", "zone", "dz", "fold", "ok"]])
+            pred = s * np.sign(te.c - c0)
+            dir_rows.append(te.assign(render=render, ok=(pred == np.sign(te.dz)).values,
+                                      ok_local=(pred == np.sign(te.dz - te.focus_dz)).values)[
+                ["render", "zone", "dz", "fold", "ok", "ok_local"]])
         for dz_out in sorted(uni_frames.dz.unique())[1:-1]:
             curve = PB.through_focus_curve(tr[tr.dz != dz_out])
             for render, z in (("uniform", uni), ("field-varying", fv)):
                 te = z[(z.fold == k) & (z.dz == dz_out)]
-                err = PB.invert(curve, te[["c", "lum"]].values) - dz_out
-                dz_rows.append(pd.DataFrame(dict(render=render, zone=te.zone.values, dz=dz_out, fold=k, err_dz=err)))
+                p = PB.invert(curve, te[["c", "lum"]].values)
+                dz_rows.append(pd.DataFrame(dict(render=render, zone=te.zone.values, dz=dz_out, fold=k, err_dz=p - dz_out,
+                                                 err_local_dz=p - (dz_out - te.focus_dz.values))))
     dr, er = pd.concat(dir_rows), pd.concat(dz_rows)
-    ff = field_focus(a.field_labels)
     a.out.mkdir(parents=True, exist_ok=True)
     ff.to_csv(a.out / "sony_field_focus.csv", index=False)
-    summ = dr.groupby(["render", "zone"]).ok.agg(direction_acc="mean", n="size").join(
+    g = dr.groupby(["render", "zone"])
+    summ = pd.DataFrame(dict(direction_acc=g.ok.mean(), direction_acc_local=g.ok_local.mean(), n=g.size())).join(
         er.groupby(["render", "zone"]).err_dz.agg(mae_dz=lambda x: x.abs().mean(),
-                                                   p90_dz=lambda x: x.abs().quantile(0.9), bias_dz="mean"))
+                                                   p90_dz=lambda x: x.abs().quantile(0.9), bias_dz="mean")).join(
+        er.groupby(["render", "zone"]).err_local_dz.agg(mae_local_dz=lambda x: x.abs().mean(), bias_local_dz="mean"))
     fz = ff.groupby("zone")[["peak_dz_mean", "peak_dz_r", "peak_dz_b"]].mean()
     fz["lca_rb_dz"] = fz.peak_dz_r - fz.peak_dz_b
     summ = summ.join(fz, on="zone")

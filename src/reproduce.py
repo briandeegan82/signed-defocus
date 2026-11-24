@@ -85,7 +85,7 @@ def compare(ref, new, rtol, atol):
                 return f"{c}: {int((~ok).sum())} values differ, max |d| {np.nanmax(np.abs(x - y)):.3g}"
             d = np.abs(x - y)
             worst = max(worst, float(np.nanmax(d)) if np.isfinite(d).any() else 0.0)
-        elif not (x.astype(str) == y.astype(str)).all():
+        elif not (x.astype(object).fillna("").astype(str) == y.astype(object).fillna("").astype(str)).all():
             return f"{c}: strings differ"
     return f"ok (max |d| {worst:.3g})"
 

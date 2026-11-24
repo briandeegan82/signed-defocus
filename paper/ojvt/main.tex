@@ -42,27 +42,27 @@ Unsigned sharpness measures already estimate how far a camera is from focus; wha
 \note{Motivation paragraph and gap statement above to be finalized.}
 
 \section{Background}
-We define the displacement $\Delta z$ as the sensor offset from the best-focus plane of the channel-mean MTF at 0.25 cycles/pixel, positive away from the lens, and the depth of focus as
+We define the displacement $\Delta z$ as the sensor offset from the best-focus plane of the green channel, positive away from the lens, and the depth of focus as
 \begin{equation}
-\delta = 2Nc,
+\delta = 2Nw,
 \end{equation}
-with $N$ the working f-number and $c$ the pixel pitch. LCA is the separation between the red and blue best-focus planes. Displacements and LCA are reported in units of $\delta$, and in \textmu m only where $N$ and $c$ are known.
+with $N$ the working f-number and $w$ the pixel pitch. With $z_k$ the best-focus plane of color channel $k\in\{r,g,b\}$, we define the signed $\mathrm{LCA}=z_r-z_b$ and use its size $|\mathrm{LCA}|/\delta$ as the design quantity, written LCA/$\delta$ in the text. Displacements and LCA are reported in units of $\delta$, and in \textmu m only where $N$ and $w$ are known.
 For an aberration-free circular pupil, a sensor displacement $\Delta z$ gives a defocus wavefront coefficient $W_{020}=\Delta z/(8N^2)$, and the optical transfer function at normalized frequency $a=2\nu\lambda N$ ($0\le a\le 2$) is the Hopkins integral \cite{hopkins1955defocus,stokseth1969defocused}
 \begin{equation}
-H(a;\Delta z)=\frac{1}{\pi}\int_{-1}^{1}\frac{2\sin\!\bigl(bL(y)\bigr)}{b}\,dy,
+H(a;\Delta z)=\frac{1}{\pi}\int_{-1}^{1}\frac{2\sin\!\bigl(\beta L(y)\bigr)}{\beta}\,dy,
 \label{eq:otf}
 \end{equation}
-with $b=4\pi W_{020}a/\lambda$ and $L(y)=\max\bigl(0,\sqrt{1-y^2}-a/2\bigr)$.
-With longitudinal chromatic aberration each color channel $k\in\{r,g,b\}$ has its own best-focus plane $z_k$, so channel $k$ sees the displacement $\Delta z-z_k$. Near focus, the channel whose plane is closer to the sensor is sharper. The ratio of red to blue sharpness therefore crosses its in-focus value near $(z_r+z_b)/2$ and has the sign of $(z_r-z_b)\,(\Delta z-(z_r+z_b)/2)$: its sign carries the direction of defocus, and the size of the effect scales with $|z_r-z_b|/\delta$. Far from focus both channels are blurred beyond the passband and the ratio flattens.
+with $\beta=4\pi W_{020}a/\lambda$ and $L(y)=\max\bigl(0,\sqrt{1-y^2}-a/2\bigr)$.
+With longitudinal chromatic aberration each channel $k$ has its own best-focus plane $z_k$, so channel $k$ sees the displacement $\Delta z-z_k$. Near focus, the channel whose plane is closer to the sensor is sharper. The ratio of red to blue sharpness therefore crosses its in-focus value near $(z_r+z_b)/2$ and has the sign of $(z_r-z_b)\,(\Delta z-(z_r+z_b)/2)$: its sign carries the direction of defocus, and the size of the effect scales with $|z_r-z_b|/\delta$. Far from focus both channels are blurred beyond the passband and the ratio flattens.
 
 \section{Method}
-Each frame is the demosaiced, white-balanced, gamma-encoded 8-bit RGB output of the camera pipeline. It is tiled into $128\times128$-pixel patches on a regular grid. In each patch $p$ we compute the Tenengrad energy of each channel,
+Each frame is the demosaiced, white-balanced, gamma-encoded 8-bit RGB output of the camera pipeline. It is tiled into $128\times128$-pixel patches on a regular grid. In each patch $j$ we compute the Tenengrad energy of each channel,
 \begin{equation}
-T_k(p)=\bigl\langle(\partial_x I_k)^2+(\partial_y I_k)^2\bigr\rangle_p ,
+T_k(j)=\bigl\langle(\partial_x I_k)^2+(\partial_y I_k)^2\bigr\rangle_j ,
 \end{equation}
 with central differences, and the chromatic cue and the sharpness level
 \begin{equation}
-c(p)=\log\frac{T_r(p)+\epsilon}{T_b(p)+\epsilon},\qquad \ell(p)=\log\bigl\langle|\nabla I_g|\bigr\rangle_p ,
+c(j)=\log\frac{T_r(j)+\epsilon}{T_b(j)+\epsilon},\qquad \ell(j)=\log\bigl\langle|\nabla I_g|\bigr\rangle_j ,
 \end{equation}
 with $\epsilon=10^{-9}$. A frame is summarized by the medians $\bar c$ and $\bar\ell$ over its patches. A frame with fewer than 10 patches returns no estimate and is counted as an abstention.
 
@@ -91,7 +91,7 @@ and p90 is the 90th percentile of $|e_i|$ over $\mathcal{F}$. Direction accuracy
 where $\mathcal{F}_d\subseteq\mathcal{F}$ excludes frames with no defined direction: rendered displacements are continuous and never zero, while in the laboratory sweep a frame within half a step of best focus has no direction truth and is left out. The abstention rate is the share of frames that return no estimate; abstentions are left out of $\mathcal{F}$ and reported separately. Laboratory results are given as counts without intervals, because the frames are consecutive steps of one sweep and not independent. Intervals on rendered results resample whole traversals, the 12 scene clusters (2000 bootstrap draws), and we also give the range over the five folds. For the in-service tests (RQ4) a frame raises an \emph{alarm} when $|\widehat{\Delta z}|>\tau$, where $\tau$ is the 95th percentile of $|\widehat{\Delta z}|$ over the in-focus ($\Delta z=0$) training frames of the same fold, predicted with that fold's calibration. Because $\tau$ is set on training frames only, the in-focus alarm rate on test frames is measured, not fixed at 5\,\%.
 Two decision rules were fixed before any experiment. Gate~A requires direction accuracy to rise with LCA/$\delta$ across the lens population, as a rank trend (Spearman $\rho>0$, one-sided $p<0.05$). Gate~B requires the mean absolute displacement error at displacements absent from training to be below $1\,\delta$ for lenses with LCA above $1\,\delta$. Failing Gate~A would falsify the central claim. Failing Gate~B would limit the claim to direction.
 
-What we ran departs from the protocol fixed before the experiments in seven ways. (i) The protocol excludes rank correlation as a headline metric; Spearman $\rho$ is the test statistic of Gate~A, and we report it with $n$ and $p$. (ii) The protocol asks for bootstrap intervals over frames within a fold; because frames of one traversal share scenes, we resample whole traversals instead, and add the fold range. (iii) The planned texture threshold for admitting patches was not implemented: every patch is admitted, and only frames with fewer than 10 patches abstain. (iv) The through-focus curve is fitted to training frames (\eqref{eq:invert}), not built from the lens's per-channel MTF curves. (v) The planned reference rows, the earlier study's magnitude estimator with a chromatic feature and a two-output CNN, are replaced by a gradient-boosting regressor on all 69 patch features; the CNN could not be rerun because the rendered frames were not kept after feature extraction. (vi) The protocol's uncalibrated laboratory level is implemented as calibration on rendered frames of a lens design matched to the laboratory lens (\emph{rendered}), because a direction rule needs a sign and a threshold from somewhere. (vii) The planned secondary laboratory check, agreement between rendered and measured per-channel through-focus curves, was not made, and no exposure-to-exposure noise floor was measured, because the sweep has one exposure per step.
+What we ran departs from the protocol fixed before the experiments in eight ways. (i) The protocol excludes rank correlation as a headline metric; Spearman $\rho$ is the test statistic of Gate~A, and we report it with $n$ and $p$. (ii) The protocol asks for bootstrap intervals over frames within a fold; because frames of one traversal share scenes, we resample whole traversals instead, and add the fold range. (iii) The planned texture threshold for admitting patches was not implemented: every patch is admitted, and only frames with fewer than 10 patches abstain. (iv) The through-focus curve is fitted to training frames (\eqref{eq:invert}), not built from the lens's per-channel MTF curves. (v) The planned reference rows, the earlier study's magnitude estimator with a chromatic feature and a two-output CNN, are replaced by a gradient-boosting regressor on all 69 patch features; the CNN could not be rerun because the rendered frames were not kept after feature extraction. (vi) The protocol's uncalibrated laboratory level is implemented as calibration on rendered frames of a lens design matched to the laboratory lens (\emph{rendered}), because a direction rule needs a sign and a threshold from somewhere. (vii) The planned secondary laboratory check, agreement between rendered and measured per-channel through-focus curves, was not made, and no exposure-to-exposure noise floor was measured, because the sweep has one exposure per step. (viii) The protocol puts $\Delta z=0$ at best focus of the channel-mean MTF; renders and lab both measure from the green plane. The two differ by at most \MthreeZeroOffsetMax\,$\delta$ in the renders and by \LabZeroOffsetDelta\,$\delta$ on the lab lens, whose green plane lies beyond both red and blue.
 
 \section{Results}
 \subsection{Direction accuracy against LCA (RQ1)}

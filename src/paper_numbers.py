@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 R = Path(__file__).resolve().parents[1] / "results"
 
@@ -30,6 +31,17 @@ def numbers():
     n["MthreeUnseenMaxDiff"] = f((p2.mae_delta_unseen - p2.mae_delta).abs().max())
     z = p2.set_index("lens")
     n["MthreeZeroDir"], n["MthreeZeroSaDir"] = f(z.loc["m3_z000", "dir_acc"]), f(z.loc["m3_z000_sa", "dir_acc"])
+    # phase2_gate_a.csv rounds p to 4 decimals (0.0); recompute it from the committed per-lens table
+    p1 = stats.spearmanr(p2.lca_over_delta, p2.dir_acc, alternative="greater").pvalue
+    m, e10 = f"{p1:.0e}".split("e")
+    n["MthreeGateAP"] = rf"{m}\times10^{{{int(e10)}}}"
+    bs = pd.read_csv(R / "phase2/phase2_bootstrap.csv").set_index("lens")
+    for lens, tag in (("m3_z000", "Zero"), ("m3_z000_sa", "ZeroSa")):
+        n[f"Mthree{tag}DirLo"], n[f"Mthree{tag}DirHi"] = f(bs.loc[lens, "dir_acc_ci_lo"]), f(bs.loc[lens, "dir_acc_ci_hi"])
+    bg = bs[bs.lca_over_delta > 1.0]
+    n["MthreeGateBCiHiMax"] = f(bg.mae_delta_unseen_ci_hi.max())
+    n["MthreeGateBFoldMax"] = f(bg.mae_delta_unseen_fold_max.max())
+    n["MtwoMaeCiLo"], n["MtwoMaeCiHi"] = f(bs.loc["m3_ref", "mae_delta_ci_lo"]), f(bs.loc["m3_ref", "mae_delta_ci_hi"])
     q = p2[p2.lca_over_delta == 0.25]
     n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
     n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())

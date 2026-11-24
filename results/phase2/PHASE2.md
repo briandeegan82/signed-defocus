@@ -38,6 +38,13 @@ The protocol scores Gate B on Δz absent from training. `mae_delta_unseen` in `p
 
 Per-lens direction and displacement by |Δz| band are in `lenses/<lens>/`; per-frame tables only for `m3_ref` (Fig. 3).
 
+## Uncertainty
+
+`phase2_bootstrap.csv`: for each design, direction accuracy, all-frame MAE and MAE on displacements absent from training, each with a traversal-clustered 95% interval (2000 draws over the 12 traversals, seed 0) and the range over the five folds. Frames of one traversal share scenes, so whole traversals are resampled rather than frames.
+
+- With no LCA, direction is 0.54 (0.51–0.57) without and 0.51 (0.48–0.53) with spherical aberration.
+- For the 9 Gate B designs, the upper interval ends of MAE on displacements absent from training reach at most 0.86 δ, and the worst fold 0.78 δ.
+
 ## Provenance
 
 Feature parquets on Brian's machine, `~/sd_data/phase2/rc_feat_m2_<lens>_pre_all.parquet`, SHA-256 prefixes:

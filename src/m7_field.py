@@ -11,6 +11,11 @@ frame. Zones by normalised field radius r = |(fy, fx)| / sqrt(2), with fy, fx in
 [-1, 1] from the patch centre: centre r < 1/3, mid 1/3-2/3, corner >= 2/3. The
 same zones on the uniform render of the same plates are the control (same
 content, centre PSF everywhere), so the field-PSF effect is the difference.
+Per-zone calibration ("zone-calibrated", `m7_zonecal.csv`): the same estimator refitted
+on each zone of the field-varying render's training traversals (c0 and sign; the
+through-focus curve with the scored rung withheld), then scored on that zone of the
+held-out traversals. This is the best case for a per-zone calibration: it assumes a
+calibration render or chart that matches the deployed lens's field map.
 Direction truth is the sign of the nominal rung ("nominal"), and also the sign of
 the rung minus the zone's own best-focus shift ("local": mean over the zone's
 field-map cells of the peak of mtf025_mean over dz in `field_labels.json`; the
@@ -101,6 +106,28 @@ def lab_squares(path):
     return pd.DataFrame(out)
 
 
+def zone_calibration(fv):
+    """Per-zone refit on the field-varying render (training traversals), held-out traversal scoring."""
+    dirs, errs = [], []
+    for zone, z in fv.groupby("zone"):
+        for k in range(PB.N_FOLDS):
+            tr, te = z[z.fold != k], z[z.fold == k]
+            c0, s = PB.fit_direction(tr)
+            t = te[te.dz != 0]
+            dirs.append(pd.DataFrame(dict(zone=zone, ok=s * np.sign(t.c - c0) == np.sign(t.dz))))
+            for dz_out in sorted(z.dz.unique())[1:-1]:
+                tt = te[te.dz == dz_out]
+                p = PB.invert(PB.through_focus_curve(tr[tr.dz != dz_out]), tt[["c", "lum"]].values)
+                errs.append(pd.DataFrame(dict(zone=zone, err_dz=p - dz_out)))
+    d, e = pd.concat(dirs), pd.concat(errs)
+    out = pd.DataFrame(dict(direction_acc=d.groupby("zone").ok.mean(), n=d.groupby("zone").size()))
+    out = out.join(e.groupby("zone").err_dz.agg(mae_dz=lambda x: x.abs().mean(),
+                                                p90_dz=lambda x: x.abs().quantile(0.9), bias_dz="mean"))
+    out.insert(0, "render", "field-varying, zone-calibrated")
+    print(out.round(4).to_string())
+    return out
+
+
 def extract(a):
     sys.path.insert(0, str(a.estimator / "src"))
     import extract_parallel as EP
@@ -143,6 +170,7 @@ def score(a):
                                                  err_local_dz=p - (dz_out - te.focus_dz.values))))
     dr, er = pd.concat(dir_rows), pd.concat(dz_rows)
     a.out.mkdir(parents=True, exist_ok=True)
+    zone_calibration(fv).to_csv(a.out / "m7_zonecal.csv")
     ff.to_csv(a.out / "sony_field_focus.csv", index=False)
     g = dr.groupby(["render", "zone"])
     summ = pd.DataFrame(dict(direction_acc=g.ok.mean(), direction_acc_local=g.ok_local.mean(), n=g.size())).join(

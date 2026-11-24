@@ -32,8 +32,21 @@ MAE is against the nominal rung, from leaving one rung out, as in v0. Per-rung a
 **Findings**
 1. **Off-axis, direction accuracy falls from about 0.90 to 0.69 under the real field PSF.** Field curvature explains about half of the fall. Mid and corner focus about 0.015–0.019 DZ nearer than the centre, so at rungs −0.01 and −0.02 those patches are on the other side of their own focus. Accuracy at those rungs drops to 0.09–0.29 (`m7_direction_by_dz.csv`). Scored against local focus, mid and corner reach 0.78–0.79, still below the uniform 0.90.
 2. **Even the centre zone drops, from 0.88 to 0.81.** Its cells also carry the field map's off-centre PSFs.
-3. **The displacement estimate gains a positive bias off-axis**, of +0.04 DZ (+0.02 against local focus). A calibration made on the centre PSF does not transfer to the field edge. A per-zone calibration, or a field-varying training render, is needed before off-axis numbers are reported.
+3. **The displacement estimate gains a positive bias off-axis**, of +0.04 DZ (+0.02 against local focus). A calibration made on the centre PSF does not transfer to the field edge. A per-zone calibration, or a field-varying training render, is needed before off-axis numbers are reported (finding 5).
 4. **The red − blue focus difference grows slightly off-axis** in the Sony map, from 0.016 to 0.023 DZ.
+
+### Per-zone calibration (`m7_zonecal.csv`)
+
+The estimator refitted on each zone of the field-varying render's training traversals (threshold and sign; through-focus curve with the scored rung withheld), then scored on the same zone of the held-out traversals. Direction truth is the nominal rung. This is a best case: it assumes a calibration render or chart that matches the deployed lens's field map.
+
+| Zone | Direction, centre-calibrated | Direction, zone-calibrated | MAE (DZ), centre → zone | p90 (DZ), zone | Bias (DZ), centre → zone |
+|---|---:|---:|---:|---:|---:|
+| centre | 0.814 | 0.817 | 0.047 → 0.028 | 0.071 | −0.001 → −0.006 |
+| mid | 0.689 | 0.753 | 0.063 → 0.022 | 0.050 | +0.044 → −0.003 |
+| corner | 0.678 | 0.682 | 0.076 → 0.024 | 0.052 | +0.036 → −0.002 |
+
+5. **Per-zone calibration removes the off-axis displacement bias.** Bias falls to within ±0.006 DZ in every zone, and MAE to 0.022–0.028 DZ, the level of the uniform render (0.025–0.036).
+6. **It does not recover direction.** Mid gains 0.06, corner nothing; both stay well below the uniform 0.90. A single threshold per zone cannot fit rungs that sit on opposite sides of their nominal and local focus, so the off-axis direction loss is a property of the field PSF, not of the calibration.
 
 ## Lab: the 11 chart squares, 80-step sweep
 

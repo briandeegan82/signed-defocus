@@ -63,14 +63,14 @@ def summarise(d, dzs, o):
     out["p90_delta"] = ge.err_delta.apply(lambda x: x.abs().quantile(0.9))
     out["gate_b_applies"] = out.lca_over_delta > 1.0
     out["gate_b_pass"] = np.where(out.gate_b_applies, out.mae_delta < 1.0, pd.NA)
-    return out.sort_values("lca_over_delta", ascending=False), e
+    return out.reset_index().sort_values(["lca_over_delta", "lens"], ascending=[False, True], kind="mergesort").set_index("lens"), e
 
 
 def gate_a(s):
     s = s.dropna(subset=["dir_acc"])
     rho, p_rho = stats.spearmanr(s.lca_over_delta, s.dir_acc)
     tau, p_tau = stats.kendalltau(s.lca_over_delta, s.dir_acc)
-    ordered = s.sort_values("lca_over_delta").dir_acc.values
+    ordered = s.reset_index().sort_values(["lca_over_delta", "lens"], kind="mergesort").dir_acc.values  # ties by lens name
     p_one = stats.spearmanr(s.lca_over_delta, s.dir_acc, alternative="greater").pvalue
     return pd.DataFrame([dict(n_lenses=len(s), spearman_rho=rho, spearman_p=p_rho, spearman_p_one_sided=p_one,
                               kendall_tau=tau, kendall_p=p_tau,

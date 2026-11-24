@@ -20,7 +20,8 @@ DZ 0.02 is 0.91 δ; Laikin has no recorded f-number or pixel pitch.
 
 Reported per condition: median predicted DZ; share predicted positive; share with
 |predicted DZ| >= 0.01 (one rung); share above the 95th percentile of |predicted
-DZ| on the in-focus frames of the same fold (the "alarm" threshold).
+DZ| on the in-focus frames of the training folds, predicted with the same fold's calibration (the
+"alarm" threshold; fitted on training data only, so the held-out in-focus alarm rate is measured).
 
   python src/m8_confounds.py --cache ~/blur_study/results --lens laikin --out results/m8_confounds/laikin
   python src/m8_confounds.py --cache ~/blur_study/results --lens synth_lcaP \
@@ -66,7 +67,8 @@ def main():
         te = pd.concat([lad[(lad.fold == k) & lad.dz.isin(named)].assign(condition=lambda x: x.dz.map(named)),
                         conf[conf.fold == k]])
         te = te.assign(fold=k, dir_pred=s * np.sign(te.c - c0), dz_pred=PB.invert(curve, te[["c", "lum"]].values))
-        thr = np.quantile(np.abs(te.loc[te.condition == "in focus", "dz_pred"]), 0.95)
+        tr_in = tr[tr.dz == 0]
+        thr = np.quantile(np.abs(PB.invert(curve, tr_in[["c", "lum"]].values)), 0.95)
         rows.append(te.assign(alarm_thr=thr))
     fr = pd.concat(rows, ignore_index=True)
     a.out.mkdir(parents=True, exist_ok=True)

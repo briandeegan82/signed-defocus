@@ -4,7 +4,7 @@ Script: `src/m8_confounds.py`. Inputs are defocus-estimator caches at commit `45
 
 | Lens | Ladder cache | Confound caches | Motion blur | Fog transmission | Plates scored |
 |---|---|---|---|---|---|
-| synth_lcaP (f/2.0, 5.5 µm pitch; LCA 40 µm = 1.82 δ) | `rc_feat_robotcar_render_synth_lcaP_pre_all` `b4083e9a` | rendered here: `confound_robotcar.py --lens synth_lcaP`, motion `c51f9cf0`, fog `5f6ebb39` | 3.17 px at 20° | 0.956 | 245 |
+| synth_lcaP (f/2.0, 5.5 µm pitch; LCA 40 µm = 1.82 δ) | `rc_feat_robotcar_render_synth_lcaP_pre_all` `b4083e9a` | rendered here: `confound_robotcar.py --lens synth_lcaP`, motion `5f6ebb39`, fog `c51f9cf0` | 3.17 px at 20° | 0.956 | 245 |
 | Laikin (no recorded f-number or pitch) | `rc_feat_robotcar_render_laikin_pre_all` `d983ec14` | defocus-estimator's own: motion `2dc7a661`, fog `66a0c5c4` | 5.75 px at 20° | 0.934 | 219 (traversals in the ladder) |
 
 Both confounds are applied to in-focus frames (DZ = 0). Their strength is matched to a DZ = +0.02 defocus in 90th-percentile gradient. For synth_lcaP, DZ +0.02 is 20 µm, which is 0.91 δ.

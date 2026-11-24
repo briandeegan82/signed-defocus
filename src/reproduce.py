@@ -8,6 +8,8 @@ skipped, not passed. Regenerated CSVs with no committed counterpart are listed a
 Not rerun: renders and feature extraction (GPU, hours; their parquet caches are hashed into the
 provenance instead), and the held-out lab test split, which no script touches until the method is
 frozen (docs/PROTOCOL.md section 2). Figures are rebuilt to check they run, not compared byte-wise.
+Every input a step reads (feature caches, MTF tables, raw duplicates) is SHA-256-hashed into
+provenance.json with the commit, a dirty flag for src/ and data/, and package versions.
 
     python src/reproduce.py --estimator ~/blur_study --data ~/sd_data --scratch ~/sd_work/m9
 """
@@ -30,41 +32,44 @@ REPO = Path(__file__).resolve().parents[1]
 def steps(est, data):
     cache = est / "results"
     fv = data / "m7" / "rc_feat_fieldvarying_sony_pre_all.parquet"
+    rc = lambda lens: cache / f"rc_feat_robotcar_render_{lens}_pre_all.parquet"
+    v0 = [rc(x) for x in pd.read_csv(REPO / "data" / "lens_lca.csv").lens]
     return [
         ("physics_baseline_v0", "results", [
             ["physics_baseline.py", "--cache", cache, "--lca", "data/lens_lca.csv", "--out", "{out}"],
             ["rescore_dof.py", "--results", "{out}", "--optics", "data/lens_optics.csv", "--out", "{out}"]],
-         [cache / "rc_feat_robotcar_render_laikin_pre_all.parquet"]),
+         v0),
         ("m3_gate", "results/m3_gate", [
             ["physics_baseline.py", "--cache", data / "m3", "--lca", "data/m3_lca.csv", "--lenses", "lca",
              "--cache-fmt", "rc_feat_{lens}_pre_all.parquet", "--out", "{out}"],
             ["rescore_dof.py", "--results", "{out}", "--optics", "data/m3_lenses.csv", "--out", "{out}"]],
-         [data / "m3" / "rc_feat_m3_ref_pre_all.parquet"]),
+         [data / "m3"]),
         ("m2_gate", "results/m2_gate", [
             ["m2_continuous.py", "score", "--cache", data / "m2" / "rc_feat_m2_synth_lcaP_pre_all.parquet",
              "--ladder", cache / "rc_feat_robotcar_render_synth_lcaP_pre_all.parquet", "--out", "{out}"]],
-         [data / "m2" / "rc_feat_m2_synth_lcaP_pre_all.parquet"]),
+         [data / "m2" / "rc_feat_m2_synth_lcaP_pre_all.parquet", rc("synth_lcaP")]),
         ("lab_sweep", "results/lab_sweep", [
             ["lab_sweep.py", "--estimator", est, "--out", "{out}"]],
          [cache / "lab_sweep_mtf.csv", cache / "lab_feat_real_all.parquet"]),
         ("m4_repeat", "results/m4_repeat", [
             ["m4_repeat.py", "--estimator", est, "--out", "{out}"]],
-         [cache / "lab_feat_real_all.parquet"]),
+         [cache / "lab_feat_real_all.parquet", est / "data/lab_images/archives/duplicates"]),
         ("m6_illuminant", "results/m6_illuminant", [
             ["m6_illuminant.py", "score", "--cache", cache, "--m6", data / "m6", "--out", "{out}"]],
-         [data / "m6"]),
+         [data / "m6", rc("synth_lcaP")]),
         ("m7_field", "results/m7_field", [
             ["m7_field.py", "score", "--cache", cache, "--fv", fv,
              "--field-labels", est / "data/raw/robotcar_render_fieldvarying/field_labels.json",
              "--lab-field", cache / "lab_sweep_field_mtf.csv", "--out", "{out}"]],
-         [fv]),
+         [fv, rc("sony"), est / "data/raw/robotcar_render_fieldvarying/field_labels.json",
+          cache / "lab_sweep_field_mtf.csv"]),
         ("m8_laikin", "results/m8_confounds/laikin", [
             ["m8_confounds.py", "--cache", cache, "--lens", "laikin", "--out", "{out}"]],
-         [cache / "rc_feat_confound_motion.parquet"]),
+         [rc("laikin"), cache / "rc_feat_confound_motion.parquet", cache / "rc_feat_confound_fog.parquet"]),
         ("m8_synth_lcaP", "results/m8_confounds/synth_lcaP", [
             ["m8_confounds.py", "--cache", cache, "--lens", "synth_lcaP", "--conf-dir", data / "m8" / "synth_lcaP",
              "--out", "{out}"]],
-         [data / "m8" / "synth_lcaP"]),
+         [data / "m8" / "synth_lcaP", rc("synth_lcaP")]),
         ("figures", None, [["figures.py", "--out", "{out}"]], []),
     ]
 
@@ -100,11 +105,12 @@ def sha256(p):
 
 def provenance(inputs):
     git = lambda *a: subprocess.run(["git", *a], cwd=REPO, capture_output=True, text=True).stdout.strip()
-    files = sorted({f for p in inputs if p.exists() for f in ([p] if p.is_file() else p.rglob("*.parquet"))})
+    files = sorted({f for p in inputs if p.exists()
+                    for f in ([p] if p.is_file() else [*p.glob("*.parquet"), *p.glob("*.raw")])})
     return dict(commit=git("rev-parse", "HEAD"), dirty=bool(git("status", "--porcelain", "--", "src", "data")),
                 python=platform.python_version(),
                 packages={k: metadata.version(k) for k in ("numpy", "pandas", "pyarrow", "scipy", "matplotlib")},
-                inputs={str(f): sha256(f) for f in files})
+                inputs={str(f).replace(str(Path.home()), "~"): sha256(f) for f in files})
 
 
 def main():

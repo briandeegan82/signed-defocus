@@ -25,7 +25,10 @@ def numbers():
     n["MthreeTau"] = f(ga.kendall_tau)
     gb = p2[p2.gate_b_applies.astype(str) == "True"]
     n["MthreeGateBN"] = len(gb)
-    n["MthreeGateBMaeMin"], n["MthreeGateBMaeMax"] = f(gb.mae_delta.min()), f(gb.mae_delta.max())
+    n["MthreeGateBMaeMin"], n["MthreeGateBMaeMax"] = f(gb.mae_delta_unseen.min()), f(gb.mae_delta_unseen.max())
+    n["MthreeGateBMaeAllMin"], n["MthreeGateBMaeAllMax"] = f(gb.mae_delta.min()), f(gb.mae_delta.max())
+    n["MthreeUnseenN"] = int(p2.n_unseen.min()) if p2.n_unseen.nunique() == 1 else "MIXED"
+    n["MthreeUnseenMaxDiff"] = f((p2.mae_delta_unseen - p2.mae_delta).abs().max())
     z = p2.set_index("lens")
     n["MthreeZeroDir"], n["MthreeZeroSaDir"] = f(z.loc["m3_z000", "dir_acc"]), f(z.loc["m3_z000_sa", "dir_acc"])
     # phase2_gate_a.csv rounds p to 4 decimals (0.0); recompute it from the committed per-lens table
@@ -41,7 +44,7 @@ def numbers():
     n["MtwoMaeCiLo"], n["MtwoMaeCiHi"] = f(bs.loc["m3_ref", "mae_delta_ci_lo"]), f(bs.loc["m3_ref", "mae_delta_ci_hi"])
     q = p2[p2.lca_over_delta == 0.25]
     n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
-    n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta.min()), f(q.mae_delta.max())
+    n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())
     ref = R / "phase2/lenses/m3_ref"
     e = pd.read_csv(ref / "m2_displacement.csv")
     c = e[(e.train == "continuous") & (e.band == "all")].iloc[0]

@@ -130,6 +130,8 @@ On synth\_lcaP, illuminant shifts of $\pm10$\,nm bias the displacement by at mos
 \section{Discussion and Limitations}
 \note{Sign cue, not size estimator: pair $\bar c$ with an unsigned sharpness measure. LCA/$\delta$ as the design quantity; the lab lens (\LabLcaDelta\,$\delta$) sits where the rendered cue is weak. One real lens; iris set by eye; no repeat exposures; spherical aberration and field curvature as confounds; renders use one PSF model.}
 
+Several conditions of service are untested. An automotive camera sits behind a windscreen, whose glass adds dispersion of its own and, when tilted, astigmatism. Focus and LCA shift with lens temperature, and the automotive temperature range is wide. Dirt, water or condensation on the lens or windscreen blurs all channels and can mimic defocus. The rendered scenes are daylight; at night, LED and sodium street lighting have narrow or peaked spectra that can move each channel's effective wavelength further than the $\pm10$\,nm tested in simulation, and low light adds noise. Patches are not gated on texture (deviation (iii)), so on low-texture frames such as sky, bare road or fog the cue is dominated by noise. The laboratory sweep has one exposure per step, so no exposure-to-exposure noise was measured on real data. A deployed detector should therefore admit only patches above a texture threshold and frames within an exposure range, and should be tested behind a windscreen, across temperature and at night.
+
 \section{Reproducibility}
 All numbers in this paper are generated from the committed result tables by \texttt{src/paper\_numbers.py}; \texttt{src/reproduce.py} reruns every analysis from the feature caches and checks each table. \note{Data and code availability.}
 

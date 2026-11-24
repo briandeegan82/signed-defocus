@@ -75,10 +75,10 @@ def invert(curve, x):
     return grid[np.argmin(dist, axis=1)]
 
 
-def run(cache, lca):
+def run(cache, lca, lenses=LENSES, cache_fmt="rc_feat_robotcar_render_{lens}_pre_all.parquet"):
     dir_rows, dz_rows = [], []
-    for lens in LENSES:
-        p = cache / f"rc_feat_robotcar_render_{lens}_pre_all.parquet"
+    for lens in lenses:
+        p = cache / cache_fmt.format(lens=lens)
         if not p.exists():
             continue
         f = frame_table(p)
@@ -126,9 +126,13 @@ def main():
     ap.add_argument("--cache", type=Path, required=True, help="defocus-estimator results/ directory")
     ap.add_argument("--lca", type=Path, required=True, help="per-lens LCA table (lens,r_um,g_um,b_um,lca_spread_um)")
     ap.add_argument("--out", type=Path, default=Path("results"))
+    ap.add_argument("--lenses", default=None, help="comma-separated lenses, or 'lca' for every lens in --lca "
+                                                   "(default: the v0 set)")
+    ap.add_argument("--cache-fmt", default="rc_feat_robotcar_render_{lens}_pre_all.parquet")
     a = ap.parse_args()
     lca = pd.read_csv(a.lca).set_index("lens")
-    dirs, dzs = run(a.cache, lca)
+    lenses = LENSES if a.lenses is None else list(lca.index) if a.lenses == "lca" else a.lenses.split(",")
+    dirs, dzs = run(a.cache, lca, lenses, a.cache_fmt)
     a.out.mkdir(parents=True, exist_ok=True)
     dirs.to_csv(a.out / "physics_baseline_direction.csv", index=False)
     dzs.to_csv(a.out / "physics_baseline_displacement.csv", index=False)

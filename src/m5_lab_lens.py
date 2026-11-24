@@ -87,8 +87,24 @@ def check(a):
     levels = [round(float(z), 4) for z in np.arange(-0.03, 0.0301, 0.001)]
     for row in table().itertuples():
         psfs = channel_psfs(LS, row, levels, device)
-        peak = {c: levels[int(np.argmax([float((psfs[z][c] ** 2).sum()) for z in levels]))] for c in "rgb"}
-        print(row.lens, {c: f"{peak[c] * 1000:+.1f} µm (design {getattr(row, f'z_{c}_um'):+.1f})" for c in "rgb"})
+        peak = {}
+        for c in "rgb":
+            m = np.array([mtf(psfs[z][c]) for z in levels])
+            i = int(np.clip(np.argmax(m), 2, len(m) - 3))
+            x = np.array(levels[i - 2:i + 3]) * 1000.0
+            a2, a1, _ = np.polyfit(x, m[i - 2:i + 3], 2)
+            peak[c] = -a1 / (2 * a2)
+        print(row.lens, {c: f"{peak[c] - peak['g']:+.1f} µm from green (design "
+                         f"{getattr(row, f'z_{c}_um') - row.z_g_um:+.1f})" for c in "rgb"})
+
+
+def mtf(k, f=0.25):
+    """Radially averaged MTF of a centred kernel at f cycles/pixel."""
+    n = k.shape[0]
+    F = np.abs(np.fft.fftshift(np.fft.fft2(k, (4 * n, 4 * n))))
+    y, x = np.indices(F.shape) - 2 * n
+    r = np.hypot(y, x) / (4 * n)
+    return float(F[np.abs(r - f) < 0.5 / (4 * n)].mean())
 
 
 def render(a):

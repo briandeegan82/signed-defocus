@@ -13,24 +13,24 @@ Both confounds are applied to in-focus frames (DZ = 0). Their strength is matche
 
 This is the physics baseline as in `physics_baseline.py`: frame medians of the red/blue Tenengrad ratio c and of the log luminance gradient.
 - Calibration uses the 9-rung ladder of the training traversals; scoring uses the held-out traversals (five traversal-disjoint folds).
-- An "alarm" is |predicted Δz| above the 95th percentile of |predicted Δz| on the same fold's in-focus frames, so the in-focus alarm rate is about 5% by construction.
+- An "alarm" is |predicted Δz| above the 95th percentile of |predicted Δz| on the in-focus (DZ = 0) ladder frames of the training traversals, predicted with the same fold's calibration. The threshold uses training data only, so the held-out in-focus alarm rate is measured, not fixed. (An earlier version took the percentile from the held-out in-focus frames themselves, which fixed their alarm rate at about 5%; it was replaced after review.)
 - No texture threshold is applied, so nothing abstains; this matches the M2/M3 gates.
 
 ## Results
 
 | Condition | synth_lcaP: alarm | synth_lcaP: \|Δz\| ≥ 10 µm | synth_lcaP: direction "+" | synth_lcaP: median Δz (µm) | Laikin: alarm | Laikin: direction "+" |
 |---|---:|---:|---:|---:|---:|---:|
-| In focus | 0.053 | 0.061 | 0.118 | 0 | 0.068 | 0.037 |
-| Defocus −20 µm (−0.91 δ) | 0.580 | 0.951 | 0.000 | −20 | 0.009 | 0.000 |
-| Defocus +20 µm (+0.91 δ) | 0.576 | 0.992 | 1.000 | +20 | 0.110 | 0.826 |
-| Motion blur, in focus | 0.163 | 0.184 | 0.592 | +4 | 0.301 | 0.511 |
-| Fog, in focus | 0.106 | 0.167 | 0.192 | +1 | 0.237 | 0.005 |
+| In focus | 0.061 | 0.061 | 0.118 | 0 | 0.059 | 0.037 |
+| Defocus −20 µm (−0.91 δ) | 0.449 | 0.951 | 0.000 | −20 | 0.027 | 0.000 |
+| Defocus +20 µm (+0.91 δ) | 0.510 | 0.992 | 1.000 | +20 | 0.119 | 0.826 |
+| Motion blur, in focus | 0.171 | 0.184 | 0.592 | +4 | 0.174 | 0.511 |
+| Fog, in focus | 0.151 | 0.167 | 0.192 | +1 | 0.146 | 0.005 |
 
 Full table: `*/m8_summary.csv`; per frame: `*/m8_frames.csv`.
 
 ## Findings
 
-1. **synth_lcaP: the confounds raise false alarms, but far less than a matched defocus does.** With LCA at 1.82 δ, motion blur trips the alarm on 16% of in-focus frames and fog on 11%, against 5% for clean in-focus frames. A defocus of equal apparent blur trips it on 58%, with the direction right on 100% of frames.
+1. **synth_lcaP: the confounds raise false alarms, but far less than a matched defocus does.** With LCA at 1.82 δ, motion blur trips the alarm on 17% of in-focus frames and fog on 15%, against 6% for clean in-focus frames. A defocus of equal apparent blur trips it on 45% (−) and 51% (+), with the direction right on 100% of frames.
 2. **The sign is biased under motion blur.** Motion blur moves c from 0.19 (in focus) to 0.03, between the in-focus and +20 µm values (−0.45). 93% of motion-blurred frames get a positive Δz estimate, but small: median +4 µm, 0.18 δ. Fog moves c less (0.14).
-3. **Laikin: the confounds trip the alarm more often than the matched defocus does.** Laikin's ±0.02 defocus is barely separable from focus (alarm on 1% and 11% of frames), while motion blur and fog trip it on 30% and 24%. A lens with weak LCA does not tell a confound from defocus at this level. Its ladder is in nominal units only, so its LCA/δ is unknown.
+3. **Laikin: the confounds trip the alarm more often than the matched defocus does.** Laikin's ±0.02 defocus is barely separable from focus (alarm on 3% and 12% of frames), while motion blur and fog trip it on 17% and 15%. A lens with weak LCA does not tell a confound from defocus at this level. Its ladder is in nominal units only, so its LCA/δ is unknown.
 4. **Scope.** These are rendered confounds on two lenses at one strength each, matched to DZ +0.02. They are not a hardware result.

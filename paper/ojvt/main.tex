@@ -18,7 +18,7 @@
 Fixed-focus automotive cameras drift out of focus in service, and an unsigned sharpness drop cannot tell the direction of the drift.
 We test whether the residual longitudinal chromatic aberration (LCA) of the lens makes the sign and size of a focus shift measurable from ordinary images.
 On \MthreeNlenses{} rendered lens designs, frame direction accuracy rises with the ratio of LCA to depth of focus $\delta$ (Spearman $\rho=\MthreeRho$).
-For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the mean error at displacements never seen in training is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$.
+For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the mean error at continuous displacements, on scenes held out from calibration, is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$.
 On the held-out half of a real through-focus sweep of a lens with LCA \LabLcaDelta\,$\delta$, direction is correct on \LabTestCalOk{} of \LabTestCalN{} frames once the channel order and a threshold are known, and at chance from rendered calibration alone.
 Field curvature, motion blur, fog and white-balance error each degrade the cue; we report where.
 \end{abstract}
@@ -39,24 +39,42 @@ We define the displacement $\Delta z$ as the sensor offset from the best-focus p
 \delta = 2Nc,
 \end{equation}
 with $N$ the working f-number and $c$ the pixel pitch. LCA is the separation between the red and blue best-focus planes. Displacements and LCA are reported in units of $\delta$, and in \textmu m only where $N$ and $c$ are known.
-\note{Defocus OTF of a circular pupil (Hopkins); why the red/blue sharpness ratio changes sign across focus.}
+For an aberration-free circular pupil, a sensor displacement $\Delta z$ gives a defocus wavefront coefficient $W_{020}=\Delta z/(8N^2)$, and the optical transfer function at normalized frequency $a=2\nu\lambda N$ ($0\le a\le 2$) is the Hopkins integral \cite{hopkins1955defocus,stokseth1969defocused}
+\begin{equation}
+H(a;\Delta z)=\frac{1}{\pi}\int_{-1}^{1}\frac{2\sin\!\bigl(bL(y)\bigr)}{b}\,dy,
+\label{eq:otf}
+\end{equation}
+with $b=4\pi W_{020}a/\lambda$ and $L(y)=\max\bigl(0,\sqrt{1-y^2}-a/2\bigr)$.
+With longitudinal chromatic aberration each color channel $k\in\{r,g,b\}$ has its own best-focus plane $z_k$, so channel $k$ sees the displacement $\Delta z-z_k$. Near focus, the channel whose plane is closer to the sensor is sharper. The ratio of red to blue sharpness therefore crosses its in-focus value near $(z_r+z_b)/2$ and has the sign of $(z_r-z_b)\,(\Delta z-(z_r+z_b)/2)$: its sign carries the direction of defocus, and the size of the effect scales with $|z_r-z_b|/\delta$. Far from focus both channels are blurred beyond the passband and the ratio flattens.
 
 \section{Method}
-\note{Per-channel sharpness on admitted $128\times128$ patches; chromatic cue $c$ (\texttt{ch\_ten\_rb}, red versus blue Tenengrad) and log luminance gradient; sign and offset of $c$ fitted for direction; through-focus curve over $(c,\text{luminance})$ inverted for $\Delta z$; median pooling per frame; abstention below 10 admitted patches.}
+Each frame is the demosaiced, white-balanced, gamma-encoded 8-bit RGB output of the camera pipeline. It is tiled into $128\times128$-pixel patches on a regular grid. In each patch $p$ we compute the Tenengrad energy of each channel,
+\begin{equation}
+T_k(p)=\bigl\langle(\partial_x I_k)^2+(\partial_y I_k)^2\bigr\rangle_p ,
+\end{equation}
+with central differences, and the chromatic cue and the sharpness level
+\begin{equation}
+c(p)=\log\frac{T_r(p)+\epsilon}{T_b(p)+\epsilon},\qquad \ell(p)=\log\bigl\langle|\nabla I_g|\bigr\rangle_p ,
+\end{equation}
+with $\epsilon=10^{-9}$. A frame is summarized by the medians $\bar c$ and $\bar\ell$ over its patches. A frame with fewer than 10 patches returns no estimate and is counted as an abstention.
+
+The direction estimate is $\hat d=s\,\operatorname{sign}(\bar c-c_0)$, with sign $s\in\{-1,+1\}$ and threshold $c_0$. The displacement estimate inverts a through-focus curve. On training frames, the medians of $(\bar c,\bar\ell)$ are taken in bins of $\Delta z$ and interpolated on a fine grid; each feature is scaled by its training standard deviation, and a test frame is assigned the $\Delta z$ of the nearest curve point. The curve covers only the training range of $\Delta z$, so estimates beyond it saturate.
+
+The calibration levels differ in what is fitted, and on which data. At the \emph{rendered} level, $s$, $c_0$ and the curve come from rendered frames only. At the \emph{order} level, $s$ follows from the lens's channel order and only $c_0$ is fitted. At the \emph{calibration} level, $s$, $c_0$ and the curve are all fitted on calibration data of the same camera. $c_0$ and $s$ maximize training direction accuracy over a grid of training quantiles of $\bar c$. No parameter is learned beyond these: the method has no texture threshold and no learned representation, and the pooling statistic is fixed.
 
 \section{Experimental Design}
-\note{Rendered data: Oxford RobotCar raw plates, PSF inserted before the ISP, measured noise; traversal-disjoint five-fold splits. Lens population M3 (LCA/$\delta$ 0--2, both signs, $\pm$ spherical aberration). Continuous displacements M2.}
+Rendered frames start from raw Bayer plates of the Oxford RobotCar dataset \cite{maddern2017robotcar}: 245 plates from 12 traversals. Each Bayer plane is convolved with its channel's point-spread function before sensor noise is added \note{noise model: source and fit}. The frame then passes through a fixed demosaic, white-balance and gamma pipeline. The point-spread functions come from a scalar pupil model with third-order aberrations; the channel focus planes follow $z_k=-\kappa(\lambda_k-\lambda_g)$, with $\kappa$ the longitudinal chromatic aberration. The lens population (Table~\note{lens table}) shares f/2.0 optics and a 5.5\,\textmu m pixel ($\delta=22$\,\textmu m). It varies $|z_r-z_b|/\delta$ over 0, 0.25, 0.5, 0.75, 1, 1.5 and 2, in both signs, with and without spherical aberration, plus a copy of an earlier reference design: 27 lenses in all. Every plate is rendered at eight displacements drawn uniformly from $\pm100$\,\textmu m ($\pm4.5\,\delta$), so displacements are continuous rather than on a fixed ladder; the through-focus curve is built from 10\,\textmu m bins of training frames. Scoring uses five folds split by traversal, so test scenes never appear in training.
 The laboratory sweep uses a VS Technology VS-0618H1 lens (6\,mm, C-mount) at about f/2 on a FLIR Blackfly S BFS-U3-89S6C colour camera, 80 equal servo steps over a 90$^\circ$ focus-ring rotation, with an ISO~12233 eSFR chart at about 30\,cm. The slanted-edge MTF was measured on the raw Bayer planes \cite{deegan2024demosaic}.
 An exact defocus-OTF fit to the per-channel through-focus MTF gives \LabStepUm\,\textmu m per step at f/2, that is \LabDeltaPerStep\,$\delta$ per step whatever the f-number, and a red--blue LCA of \LabLcaDelta\,$\delta$ (Fig.~\ref{fig:lab}).
 The lab sweep is split into calibration (every fourth step, left chart half) and test (the rest); the test split is evaluated once, after the method is frozen.
-\note{Pre-registered decision rules: Gate A (rank trend) and Gate B (MAE $<1\,\delta$ for LCA $>1\,\delta$).}
+Two decision rules were fixed before any experiment. Gate~A requires direction accuracy to rise with LCA/$\delta$ across the lens population, as a rank trend (Spearman $\rho>0$, one-sided $p<0.05$). Gate~B requires the mean absolute displacement error at unseen displacements to be below $1\,\delta$ for lenses with LCA above $1\,\delta$. Failing Gate~A would falsify the central claim. Failing Gate~B would limit the claim to direction.
 
 \section{Results}
 \subsection{Direction accuracy against LCA (RQ1)}
 Each of the \MthreeNlenses{} designs is rendered on \MthreeNframes{} frames (every RobotCar plate at eight continuous displacements). Direction accuracy rises with LCA/$\delta$ (Spearman $\rho=\MthreeRho$, Kendall $\tau=\MthreeTau$; Fig.~\ref{fig:m3}), so Gate~A passes. With no LCA it is at chance (\MthreeZeroDir{} without and \MthreeZeroSaDir{} with spherical aberration), and at $0.25\,\delta$ it is \MthreeQuarterDirMin--\MthreeQuarterDirMax.
 
 \subsection{Displacement at unseen defocus (RQ2)}
-Every test displacement is absent from training. For the \MthreeGateBN{} designs with LCA above $1\,\delta$, MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes; at $0.25\,\delta$ it is \MthreeQuarterMaeMin--\MthreeQuarterMaeMax\,$\delta$. For the design with LCA $1.8\,\delta$ (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$, and direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus. On a \MtwoSubsetN-frame subset, training on the nine-level ladder instead of continuous displacements gives the same error (\MtwoSubsetLadderMaeDelta{} against \MtwoSubsetMaeDelta\,$\delta$).
+Test displacements are continuous and test scenes are held out. For the \MthreeGateBN{} designs with LCA above $1\,\delta$, MAE is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$, so Gate~B passes; at $0.25\,\delta$ it is \MthreeQuarterMaeMin--\MthreeQuarterMaeMax\,$\delta$. For the design with LCA $1.8\,\delta$ (Fig.~\ref{fig:m2}), MAE is \MtwoMaeDelta\,$\delta$ (\MtwoMaeUm\,\textmu m) and p90 \MtwoPninetyDelta\,$\delta$, and direction accuracy is \MtwoDirAll{} overall and \MtwoDirNear{} within $0.5\,\delta$ of focus. On a \MtwoSubsetN-frame subset, training on the nine-level ladder instead of continuous displacements gives the same error (\MtwoSubsetLadderMaeDelta{} against \MtwoSubsetMaeDelta\,$\delta$).
 
 \subsection{Field position}
 Under the full field-varying PSF of one real lens design, direction accuracy falls from \MsevenUniMidDir{} to \MsevenFvMidDir{} in the mid zone and to \MsevenFvCornerDir{} in the corner (Fig.~\ref{fig:m7}); against each zone's own best focus it is \MsevenFvMidDirLocal{} and \MsevenFvCornerDirLocal. A centre calibration leaves an off-axis bias of \MsevenFvMidBias\,DZ; per-zone calibration removes it (\MsevenZcMidBias\,DZ) but does not restore direction accuracy (\MsevenZcMidDir{} mid, \MsevenZcCornerDir{} corner).

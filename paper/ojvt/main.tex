@@ -19,7 +19,7 @@ Fixed-focus automotive cameras drift out of focus in service, and an unsigned sh
 We test whether the residual longitudinal chromatic aberration (LCA) of the lens makes the sign and size of a focus shift measurable from ordinary images.
 On \MthreeNlenses{} rendered lens designs, frame direction accuracy rises with the ratio of LCA to depth of focus $\delta$ (Spearman $\rho=\MthreeRho$).
 For the \MthreeGateBN{} designs with LCA above $1\,\delta$, the mean error at continuous displacements, on scenes held out from calibration, is \MthreeGateBMaeMin--\MthreeGateBMaeMax\,$\delta$.
-\note{Lab test-split result after the method is frozen.}
+On the held-out half of a real through-focus sweep of a lens with LCA \LabLcaDelta\,$\delta$, direction is correct on \LabTestCalOk{} of \LabTestCalN{} frames once the channel order and a threshold are known, and at chance from rendered calibration alone.
 Field curvature, motion blur, fog and white-balance error each degrade the cue; we report where.
 \end{abstract}
 
@@ -81,7 +81,7 @@ Under the full field-varying PSF of one real lens design, direction accuracy fal
 
 \subsection{Laboratory sweep (RQ3)}
 On the calibration split only, direction is correct on \LabCalDirOk{} of \LabCalDirN{} frames and the displacement MAE is \LabCalMaeDelta\,$\delta$. The within-frame sampling error of the chromatic cue alone has a median of \MfourSeMedianDelta\,$\delta$; the sweep has one exposure per step, so exposure-to-exposure repeatability is not measured.
-\note{Held-out test split at three calibration levels: none, channel order only, calibration steps.}
+On the held-out test split (right chart half, the other 60 steps), evaluated once with the method frozen, calibration from rendered data alone gives direction on \LabTestRenderedOk{} of \LabTestRenderedN{} frames (95\,\% interval \LabTestRenderedCiLo--\LabTestRenderedCiHi) and a displacement MAE of \LabTestRenderedMae\,$\delta$. The channel order plus a threshold from the calibration split gives \LabTestOrderOk{} of \LabTestOrderN{} (\LabTestOrderCiLo--\LabTestOrderCiHi), the same as full calibration, whose displacement MAE is \LabTestCalMae\,$\delta$ with a bias of \LabTestCalBias\,$\delta$. Beyond $2\,\delta$ from focus, direction accuracy is \LabTestFarDir{} and MAE \LabTestFarMae\,$\delta$; nearer focus the threshold set on one chart half does not transfer to the other.
 
 \subsection{Threats in service (RQ4, simulation)}
 On a lens with LCA of $1.8\,\delta$, in-focus motion blur and fog raise the alarm rate from \MeightStrongInFocus{} to \MeightStrongMotion{} and \MeightStrongFog, against \MeightStrongDefocusPos{} for a real defocus of matched blur; on a weak-LCA lens, motion blur (\MeightWeakMotion) alarms more often than real defocus (\MeightWeakDefocusPos; Fig.~\ref{fig:m8}).

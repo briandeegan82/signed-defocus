@@ -76,6 +76,9 @@ def steps(est, data):
         ("m5_lab", "results/m5_lab", [
             ["m5_lab_lens.py", "score", "--cache", data / "m5", "--out", "{out}"]],
          [data / "m5"]),
+        ("lab_test", "results/lab_test", [
+            ["lab_test.py", "--estimator", est, "--m5", data / "m5", "--out", "{out}"]],
+         [cache / "lab_feat_real_all.parquet", data / "m5"]),
         ("figures", None, [["figures.py", "--out", "{out}"]], []),
     ]
 

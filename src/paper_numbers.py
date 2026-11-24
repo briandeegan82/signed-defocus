@@ -5,6 +5,7 @@ Do not edit numbers.tex by hand; rerun `python src/paper_numbers.py` after any r
 import argparse
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 R = Path(__file__).resolve().parents[1] / "results"
@@ -70,6 +71,17 @@ def numbers():
     n["MsixDirMin"] = f(m6.direction_acc.min())
     n["MsixMaeNominal"], n["MsixMaeMax"] = f(m6.loc["nominal", "mae_delta"]), f(m6.mae_delta.max())
     n["MsixShiftBiasMax"] = f(m6.loc[["shift+10", "shift-10", "warm", "cool"], "bias_delta"].abs().max())
+    lt = pd.read_csv(R / "lab_test/lab_test_summary.csv").set_index("level")
+    for lvl, tag in (("rendered", "Rendered"), ("order", "Order"), ("calibration", "Cal")):
+        n[f"LabTest{tag}Ok"], n[f"LabTest{tag}N"] = int(lt.loc[lvl, "direction_ok"]), int(lt.loc[lvl, "n_direction"])
+        n[f"LabTest{tag}Dir"] = f(lt.loc[lvl, "direction_acc"])
+        n[f"LabTest{tag}CiLo"], n[f"LabTest{tag}CiHi"] = f(lt.loc[lvl, "direction_ci_lo"]), f(lt.loc[lvl, "direction_ci_hi"])
+    n["LabTestRenderedMae"], n["LabTestCalMae"] = f(lt.loc["rendered", "mae_delta"]), f(lt.loc["calibration", "mae_delta"])
+    n["LabTestCalBias"] = f(lt.loc["calibration", "bias_delta"])
+    fr = pd.read_csv(R / "lab_test/lab_test_frames.csv")
+    far = fr[fr.dz_delta.abs() >= 2]
+    n["LabTestFarDir"] = f((far.dir_calibration == np.sign(far.dz_delta)).mean())
+    n["LabTestFarMae"] = f((far.dz_calibration - far.dz_delta).abs().mean())
     return n
 
 

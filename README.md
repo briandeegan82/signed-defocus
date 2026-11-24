@@ -16,3 +16,5 @@ Reproducibility: `python src/reproduce.py` reruns every analysis from the caches
 Status: protocol v1 approved (2026-11-24). Phase 1 gates passed: Gate A (Spearman ρ = 0.96 over 27 M3 lenses, `results/m3_gate/M3_GATE.md`) and Gate B (withheld-Δz MAE below 1 δ on continuous displacement, `results/m2_gate/M2_GATE.md`). Phase 2 (full renders) under way.
 
 Phase 2 full render scored (`results/phase2/PHASE2.md`): Gate A ρ = 0.95 over 27 designs, Gate B MAE 0.59–0.63 δ for LCA > 1 δ.
+
+Held-out lab test, run once at tag `method-freeze-v1` (`results/lab_test/LAB_TEST.md`): direction 0.78 with channel order and a threshold, chance from rendered calibration alone.

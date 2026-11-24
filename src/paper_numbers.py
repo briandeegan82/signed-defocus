@@ -9,6 +9,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from lab_test import DELTA_PER_STEP, MIN_PATCHES
+
 R = Path(__file__).resolve().parents[1] / "results"
 
 
@@ -105,6 +107,17 @@ def numbers():
     n["LabTestRenderedMae"], n["LabTestCalMae"] = f(lt.loc["rendered", "mae_delta"]), f(lt.loc["calibration", "mae_delta"])
     n["LabTestCalBias"] = f(lt.loc["calibration", "bias_delta"])
     fr = pd.read_csv(R / "lab_test/lab_test_frames.csv")
+    sc = fr[(fr.dz_delta.abs() > 0.5 * DELTA_PER_STEP) & (fr.n_patches >= MIN_PATCHES)]
+    assert len(sc) == lt.loc["calibration", "n_direction"]
+    truth = np.sign(sc.dz_delta)
+    assert sc.dir_rendered.nunique() == 1 and sc.dir_rendered.iloc[0] == -1
+    assert (lt.loc["order", "direction_ok"] == lt.loc["calibration", "direction_ok"]
+            and (sc.dir_order == sc.dir_calibration).all())
+    n["LabTestNegN"] = int((truth < 0).sum())
+    for name, m in (("Near", sc.dz_delta.abs() < 2), ("Far", sc.dz_delta.abs() >= 2), ("NearThree", sc.dz_delta.abs() < 3)):
+        g, t = sc[m], truth[m]
+        n[f"LabBand{name}Ok"], n[f"LabBand{name}N"] = int((g.dir_calibration == t).sum()), int(m.sum())
+        n[f"LabBand{name}Maj"] = int(max((t < 0).sum(), (t > 0).sum()))
     far = fr[fr.dz_delta.abs() >= 2]
     n["LabTestFarDir"] = f((far.dir_calibration == np.sign(far.dz_delta)).mean())
     n["LabTestFarMae"] = f((far.dz_calibration - far.dz_delta).abs().mean())

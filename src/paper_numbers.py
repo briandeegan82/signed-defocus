@@ -3,6 +3,7 @@
 Do not edit numbers.tex by hand; rerun `python src/paper_numbers.py` after any result changes.
 """
 import argparse
+import itertools
 from pathlib import Path
 
 import numpy as np
@@ -46,6 +47,17 @@ def numbers():
     n["MtwoMaeCiLo"], n["MtwoMaeCiHi"] = f(bs.loc["m3_ref", "mae_delta_ci_lo"]), f(bs.loc["m3_ref", "mae_delta_ci_hi"])
     q = p2[p2.lca_over_delta == 0.25]
     n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
+    lv = p2[p2.lens != "m3_ref"].groupby("lca_over_delta").dir_acc
+    assert len(lv) == 7
+    for (lca, g), tag in zip(lv, ("Zero", "Quarter", "Half", "ThreeQ", "One", "OneHalf", "Two")):
+        n[f"MthreeLvl{tag}DirMin"], n[f"MthreeLvl{tag}DirMax"] = f(g.min()), f(g.max())
+    lm_ = lv.mean().values
+    rho = stats.spearmanr(lv.mean().index, lm_).statistic
+    perms = np.array(list(itertools.permutations(lm_)))  # exact one-sided permutation p over the 7! orders
+    p_lv = (np.array([stats.spearmanr(lv.mean().index, x).statistic for x in perms]) >= rho - 1e-12).mean()
+    n["MthreeLevelN"], n["MthreeLevelRho"] = len(lv), f(rho)
+    lm, le = f"{p_lv:.0e}".split("e")
+    n["MthreeLevelP"] = rf"{lm}\times10^{{{int(le)}}}"
     n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())
     ref = R / "phase2/lenses/m3_ref"
     e = pd.read_csv(ref / "m2_displacement.csv")

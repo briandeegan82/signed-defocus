@@ -27,7 +27,7 @@ def optics_table(path):
     o = pd.read_csv(path).set_index("lens")
     o["delta_um"] = 2.0 * o.f_number * o.pixel_pitch_um
     o["lca_rb_um"] = -o.long_ca_mm_per_um * (LAMBDA_R - LAMBDA_B) * 1000.0
-    o["lca_over_delta"] = o.lca_rb_um.abs() / o.delta_um
+    o["lca_over_delta"] = (o.lca_rb_um.abs() / o.delta_um).round(4)
     o["rung_um"] = 10.0 * o.defocus_scale_mm
     return o
 
@@ -67,6 +67,7 @@ def summarise(d, dzs, o):
 
 
 def gate_a(s):
+    s = s.dropna(subset=["dir_acc"])
     rho, p_rho = stats.spearmanr(s.lca_over_delta, s.dir_acc)
     tau, p_tau = stats.kendalltau(s.lca_over_delta, s.dir_acc)
     ordered = s.sort_values("lca_over_delta").dir_acc.values

@@ -10,6 +10,8 @@ Per lens (data/m3_lenses.csv, caches `rc_feat_m2_<lens>_pre_all.parquet`) and pe
   learned      a re-implementation of the earlier study's SDFE regressor settings (histogram gradient
                boosting, 300 trees, learning rate 0.08, depth 6, min leaf 40) on every patch feature,
                trained to regress signed Δz per patch; frame estimate = median over patches.
+  paired       exploratory, added after the method freeze: sign from the physics direction rule,
+               size from the Laplacian floor (signed Δz = physics_dir * laplacian |Δz|).
 Unsigned floors have no direction output (direction accuracy is 0.5 by construction and not
 reported). All methods report the error of |Δz| so they can be compared; signed methods also report
 direction accuracy and signed MAE. The two-output CNN of the earlier study is not rerun: it needs the
@@ -74,7 +76,8 @@ def lens_rows(path, lens):
     k = UM_PER_DZ / DELTA_UM
     nz = r.dz != 0
     rows = []
-    for name in ("physics", "learned"):
+    r["paired_dir"], r["paired_dz"] = r.physics_dir, r.physics_dir * r.laplacian_absdz
+    for name in ("physics", "learned", "paired"):
         dz_hat = r[f"{name}_dz"]
         rows.append(dict(lens=lens, method=name, direction_acc=(r[f"{name}_dir"][nz] == np.sign(r.dz[nz])).mean(),
                          mae_delta=((dz_hat - r.dz).abs() * k).mean(), abs_mae_delta=((dz_hat.abs() - r.dz.abs()).abs() * k).mean()))
@@ -99,7 +102,7 @@ def main():
         path = a.cache / f"rc_feat_m2_{lens}_pre_all.parquet"
         if path.exists():
             rows += lens_rows(path, lens)
-            print(pd.DataFrame(rows[-4:]).round(3).to_string(index=False), flush=True)
+            print(pd.DataFrame(rows[-5:]).round(3).to_string(index=False), flush=True)
     t = pd.DataFrame(rows)
     t.insert(1, "lca_over_delta", t.lens.map(lca).round(4))
     a.out.mkdir(parents=True, exist_ok=True)

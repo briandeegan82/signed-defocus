@@ -94,6 +94,9 @@ def numbers():
     n["RefPhysMaeMin"], n["RefPhysMaeMax"] = f(q.mae_delta.physics.min()), f(q.mae_delta.physics.max())
     n["RefLearnMaeMin"], n["RefLearnMaeMax"] = f(q.mae_delta.learned.min()), f(q.mae_delta.learned.max())
     n["RefPhysAbsMin"], n["RefPhysAbsMax"] = f(q.abs_mae_delta.physics.min()), f(q.abs_mae_delta.physics.max())
+    n["RefPairedMaeMin"], n["RefPairedMaeMax"] = f(q.mae_delta.paired.min()), f(q.mae_delta.paired.max())
+    ns = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")].groupby(["lca_over_delta", "method"]).mae_delta.mean().unstack()
+    n["RefHalfPairedMae"], n["RefHalfLearnMae"] = f(ns.loc[0.5, "paired"]), f(ns.loc[0.5, "learned"])
     for m, tag in (("laplacian", "Lap"), ("tenengrad", "Ten")):
         n[f"Ref{tag}AbsMin"], n[f"Ref{tag}AbsMax"] = f(q.abs_mae_delta[m].min()), f(q.abs_mae_delta[m].max())
     lo = rr[rr.lca_over_delta == 0.25].pivot(index="lens", columns="method")
@@ -138,15 +141,16 @@ def reference_table():
     g = rr.groupby(["lca_over_delta", "method"])[["direction_acc", "mae_delta", "abs_mae_delta"]].mean().unstack()
     lines = [r"\begin{table}[t]\centering\footnotesize",
              r"\caption{Reference rows on the Phase~2 render (no spherical aberration, mean over LCA sign). "
-             r"Dir.: direction accuracy; MAE: signed error; $|\Delta z|$: error of the magnitude only, all in $\delta$.}",
+             r"Dir.: direction accuracy; MAE: signed error; $|\Delta z|$: error of the magnitude only, all in $\delta$. "
+             r"Paired: exploratory, added after the method freeze; sign from the two-feature rule, size from the Laplacian floor.}",
              r"\label{tab:ref}\setlength{\tabcolsep}{3pt}",
-             r"\begin{tabular}{rcccccccc}\hline",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Lapl. & Ten. \\",
-             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\hline"]
+             r"\begin{tabular}{rccccccccc}\hline",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Lapl. & Ten. \\",
+             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\hline"]
     for lca, r in g.iterrows():
         v = [r[("direction_acc", "physics")], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
              r[("direction_acc", "learned")], r[("mae_delta", "learned")], r[("abs_mae_delta", "learned")],
-             r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
+             r[("mae_delta", "paired")], r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
         lines.append(f"{lca:.2f} & " + " & ".join(f(x) for x in v) + r" \\")
     lines += [r"\hline\end{tabular}\end{table}"]
     return "\n".join(lines) + "\n"

@@ -2,7 +2,7 @@
 
 Designs and render: `src/m5_lab_lens.py` (`data/m5_lenses.csv`). M3 base optics (f/2.0, 5.5 µm, δ = 22 µm); per-channel focus copied from the lab sweep in δ (red − blue 0.29 δ, green beyond both), mirrored along z. Same 245 plates × 8 displacements and seeds as the Phase 2 render, so the frames pair with the M3 designs. Truth Δz is the displacement from the green plane.
 
-Score: `python src/m5_lab_lens.py score --cache ~/sd_data/m5 --out results/m5_lab` (`m2_continuous.score`: five traversal-disjoint folds, unseen continuous displacements).
+Score: `python src/m5_lab_lens.py score --cache ~/sd_data/m5 --out results/m5_lab` (`m2_continuous.score`: five traversal-disjoint folds, continuous displacements).
 
 | Lens | Direction | Within 0.5 δ of focus | MAE (δ) | p90 (δ) |
 |---|---:|---:|---:|---:|
@@ -17,6 +17,8 @@ Score: `python src/m5_lab_lens.py score --cache ~/sd_data/m5 --out results/m5_la
 2. **The lab lens's secondary spectrum (green outside red–blue) helps a little.** Against the linear control at the same red–blue LCA, direction is +0.02 overall and +0.13 within 0.5 δ of focus. That is one render with no interval, so it is suggestive only.
 3. **Adding spherical aberration removes that near-focus gain** (0.57 within 0.5 δ).
 4. **The rendered result does not match the lab calibration split** (19/20 direction, MAE 0.16 δ, `results/lab_sweep/LAB_SWEEP.md`). The chart is one fixed high-contrast scene, and the lab fit uses its own through-focus curve. The rendered folds hold out whole traversals of natural scenes. For this lens, then, the chart result should not be read as evidence of in-service accuracy.
+
+On the 945 test frames per lens whose rounded displacement occurs in no training fold, MAE is 1.46 / 1.46 / 1.49 δ (m5_lab / m5_lab_sa / m5_lin029), as on all frames.
 
 **Limits:** rendered only; the PSF model resolves blue focus only roughly at this pitch (`m5_lab_lens.py check`); and the lab's step direction relative to the sensor is assumed.
 

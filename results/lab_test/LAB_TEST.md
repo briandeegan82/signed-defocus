@@ -23,3 +23,19 @@ By field zone (`lab_test_zones.csv`, calibration level): centre 0.80 (0.68–0.8
 5. **The rendered prediction for a lens of this LCA was 0.78 direction** on driving scenes (M5a, `results/m5_lab/M5_LAB.md`); the lab test gives the same figure. The match is in the headline only: the error pattern differs (the lab fails on one side of focus).
 
 **Reading for the paper:** with the lab lens's LCA (0.29 δ), signed defocus is measurable on hardware only well away from focus, and only with at least the channel order and a per-scene threshold. This is a single-lens, single-chart case study.
+
+## Post-review reading notes (no re-evaluation)
+
+Added after review; derived from the committed `lab_test_frames.csv` and `lab_test_rules.csv`, numbers generated in `paper/numbers.tex`.
+
+- **Rendered level is the majority class.** It answers −1 on all 59 scored frames; 34 of the 59 are on the negative side, so 34/59 is the majority-class rate, not evidence of a cue.
+- **Order and calibration levels are one rule.** Both fix sign +1 and threshold −0.174, so their equal 46/59 is true by construction.
+- **By distance from focus (calibration level):**
+
+| \|Δz\| band | Correct | Majority class |
+|---|---|---|
+| beyond 2 δ | 36/40 | 25/40 |
+| within 2 δ | 10/19 | 10/19 |
+| within 3 δ | 16/28 | 14/28 |
+
+- **Intervals:** the Wilson intervals above treat the 59 frames as independent. They are consecutive steps of one static sweep of one chart, so the paper reports counts without intervals.

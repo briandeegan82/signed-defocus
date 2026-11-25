@@ -1,0 +1,43 @@
+lens,kind,condition,against,n,value
+synth_lcaP,auc,defocus -0.02,in focus,1,0.9369
+synth_lcaP,auc,defocus -0.02,motion,1,0.8396
+synth_lcaP,auc,defocus -0.02,fog,1,0.8403
+synth_lcaP,auc,defocus +0.02,in focus,1,0.9430
+synth_lcaP,auc,defocus +0.02,motion,1,0.8505
+synth_lcaP,auc,defocus +0.02,fog,1,0.8459
+synth_lcaP,alarm,defocus -0.02,,1,0.1355
+synth_lcaP,alarm,defocus +0.02,,1,0.1320
+synth_lcaP,alarm,in focus,,1,0.0510
+synth_lcaP,alarm,motion,,1,0.1320
+synth_lcaP,alarm,fog,,1,0.1225
+synth_lcaP,alarm,defocus -0.02,,10,0.9990
+synth_lcaP,alarm,defocus +0.02,,10,1.0000
+synth_lcaP,alarm,in focus,,10,0.0390
+synth_lcaP,alarm,motion,,10,0.4095
+synth_lcaP,alarm,fog,,10,0.1610
+synth_lcaP,alarm,defocus -0.02,,100,1.0000
+synth_lcaP,alarm,defocus +0.02,,100,1.0000
+synth_lcaP,alarm,in focus,,100,0.0380
+synth_lcaP,alarm,motion,,100,0.9985
+synth_lcaP,alarm,fog,,100,0.1675
+laikin,auc,defocus -0.02,in focus,1,0.5804
+laikin,auc,defocus -0.02,motion,1,0.3429
+laikin,auc,defocus -0.02,fog,1,0.4865
+laikin,auc,defocus +0.02,in focus,1,0.7119
+laikin,auc,defocus +0.02,motion,1,0.4995
+laikin,auc,defocus +0.02,fog,1,0.5921
+laikin,alarm,defocus -0.02,,1,0.0160
+laikin,alarm,defocus +0.02,,1,0.1040
+laikin,alarm,in focus,,1,0.0420
+laikin,alarm,motion,,1,0.1845
+laikin,alarm,fog,,1,0.1165
+laikin,alarm,defocus -0.02,,10,0.0045
+laikin,alarm,defocus +0.02,,10,0.0310
+laikin,alarm,in focus,,10,0.0380
+laikin,alarm,motion,,10,0.2105
+laikin,alarm,fog,,10,0.4495
+laikin,alarm,defocus -0.02,,100,0.0065
+laikin,alarm,defocus +0.02,,100,0.0030
+laikin,alarm,in focus,,100,0.0525
+laikin,alarm,motion,,100,0.3545
+laikin,alarm,fog,,100,0.9985

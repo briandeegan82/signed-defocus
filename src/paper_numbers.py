@@ -3,13 +3,17 @@
 Do not edit numbers.tex by hand; rerun `python src/paper_numbers.py` after any result changes.
 """
 import argparse
+import itertools
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from scipy import stats
 
+from lab_sweep import N_F, PITCH
 from lab_test import DELTA_PER_STEP, MIN_PATCHES
+from m3_lenses import BASE, LAMBDA, LEVELS, REF, SYNTH_LCAP_LONG_CA
+from m8_confounds import MATCH_DZ
 
 R = Path(__file__).resolve().parents[1] / "results"
 
@@ -46,6 +50,17 @@ def numbers():
     n["MtwoMaeCiLo"], n["MtwoMaeCiHi"] = f(bs.loc["m3_ref", "mae_delta_ci_lo"]), f(bs.loc["m3_ref", "mae_delta_ci_hi"])
     q = p2[p2.lca_over_delta == 0.25]
     n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
+    lv = p2[p2.lens != "m3_ref"].groupby("lca_over_delta").dir_acc
+    assert len(lv) == 7
+    for (lca, g), tag in zip(lv, ("Zero", "Quarter", "Half", "ThreeQ", "One", "OneHalf", "Two")):
+        n[f"MthreeLvl{tag}DirMin"], n[f"MthreeLvl{tag}DirMax"] = f(g.min()), f(g.max())
+    lm_ = lv.mean().values
+    rho = stats.spearmanr(lv.mean().index, lm_).statistic
+    perms = np.array(list(itertools.permutations(lm_)))  # exact one-sided permutation p over the 7! orders
+    p_lv = (np.array([stats.spearmanr(lv.mean().index, x).statistic for x in perms]) >= rho - 1e-12).mean()
+    n["MthreeLevelN"], n["MthreeLevelRho"] = len(lv), f(rho)
+    lm, le = f"{p_lv:.0e}".split("e")
+    n["MthreeLevelP"] = rf"{lm}\times10^{{{int(le)}}}"
     n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())
     ref = R / "phase2/lenses/m3_ref"
     e = pd.read_csv(ref / "m2_displacement.csv")
@@ -55,18 +70,50 @@ def numbers():
     d = pd.read_csv(ref / "m2_direction.csv")
     d = d[d.level == "fitted"].set_index("band")
     n["MtwoDirAll"], n["MtwoDirNear"] = f(d.loc["all", "acc"]), f(d.loc["[0.0, 0.5)", "acc"])
+    m5 = R / "m5_lab/m5_lab"
+    d5 = pd.read_csv(m5 / "m2_direction.csv").set_index(["level", "band"])
+    e5 = pd.read_csv(m5 / "m2_displacement.csv").set_index(["train", "band"])
+    n["MthreeLvlTopDir"] = f(np.floor(p2[p2.lca_over_delta >= 1].dir_acc.min() * 100) / 100)  # floor: "or more"
+    n["MfiveDir"], n["MfiveMae"] = f(d5.loc[("fitted", "all"), "acc"]), f(e5.loc[("continuous", "all"), "mae_delta"])
+    # Truth zero is the green plane; its offset from the mean of the three channel planes, in δ.
+    lam = np.array([LAMBDA[c] for c in "rgb"])
+    n["MthreeZeroOffsetMax"] = f(abs((lam - REF).mean() / (lam[0] - lam[2])) * max(LEVELS))
+    sf = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
+    n["LabZeroOffsetDelta"] = f((sf.s0_g - (sf.s0_r + sf.s0_g + sf.s0_b) / 3) * sf.k / (2 * 2.0 * 3.45))
+    fe = pd.read_csv(ref / "m2_displacement_frames.csv")
+    fe = fe[fe.train == "continuous"]
+    dl = 2 * BASE["f_number"] * BASE["pixel_pitch"]
+    n["MthreeNplates"], n["MthreeNtraversals"] = fe.stem.nunique(), fe.traversal.nunique()
+    n["SynthDeltaUm"] = f(dl, 0)
+    n["MthreeDzMaxUm"] = f(np.ceil(fe.dz_um.abs().max()), 0)
+    n["MthreeDzMaxDelta"] = f(np.ceil(fe.dz_um.abs().max()) / dl, 1)
+    n["SynthLcapLca"] = f(SYNTH_LCAP_LONG_CA * (LAMBDA["r"] - LAMBDA["b"]) / BASE["defocus_scale"] * 1000 / dl)
+    n["MeightMatchDelta"] = f(MATCH_DZ * 1000 / dl)
+    n["LabTestNsteps"] = len(pd.read_csv(R / "lab_test/lab_test_frames.csv"))
+    sq = pd.read_csv(R / "m7_field/lab_squares_focus.csv")
+    sq = sq[sq.freq_cy_px == 0.25].groupby("zone").lca_rb_delta.median()
+    n["MsevenLabCenter"], n["MsevenLabMid"], n["MsevenLabCorner"] = (f(sq[z]) for z in ("center", "mid", "corner"))
     s2 = pd.read_csv(R / "m2_gate/m2_displacement.csv")
     s2 = s2[s2.band == "all"].set_index("train")
     n["MtwoSubsetN"] = int(s2.loc["continuous", "n"])
     n["MtwoSubsetMaeDelta"], n["MtwoSubsetLadderMaeDelta"] = f(s2.loc["continuous", "mae_delta"]), f(s2.loc["ladder", "mae_delta"])
     st = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
+    dl = 2 * N_F * PITCH
     n["LabStepUm"] = f(st.k)
-    n["LabDeltaPerStep"] = f(st.k / (2 * 2.0 * 3.45), 3)
+    n["LabDeltaPerStep"] = f(st.k / dl, 3)
     n["LabLcaDelta"] = f(st.lca_rb_over_delta)
+    n["LabLcaDeltaOne"] = f(st.lca_rb_over_delta, 1)
+    n["LabPitchUm"], n["LabFnum"], n["LabDeltaUm"] = f(PITCH), f(N_F, 0), f(dl, 1)
+    sv = pd.read_csv(R / "lab_sweep/step_size_fits.csv").dropna(subset=["lca_rb_over_delta"])
+    bs = pd.read_csv(R / "lab_sweep/step_size_bootstrap_ci.csv", index_col=0)
+    n["LabStepCiLo"], n["LabStepCiHi"] = f(bs.loc[0.025, "k"]), f(bs.loc[0.975, "k"])
+    n["LabDeltaPerStepMin"], n["LabDeltaPerStepMax"] = f(sv.k.min() / dl, 3), f(sv.k.max() / dl, 3)
+    n["LabLcaMin"], n["LabLcaMax"] = f(sv.lca_rb_over_delta.min()), f(sv.lca_rb_over_delta.max())
+    n["LabNvariants"] = len(sv)
     b = pd.read_csv(R / "lab_sweep/baseline_calibration_frames.csv")
     nz = b[b.dz_steps.abs() > 0.5]
     n["LabCalDirOk"], n["LabCalDirN"] = int(nz.dir_ok.sum()), len(nz)
-    n["LabCalMaeDelta"] = f((b.dz_hat_steps - b.dz_steps).abs().mean() * st.k / (2 * 2.0 * 3.45))
+    n["LabCalMaeDelta"] = f((b.dz_hat_steps - b.dz_steps).abs().mean() * st.k / dl)
     m7 = pd.read_csv(R / "m7_field/m7_summary.csv").set_index(["render", "zone"])
     zc = pd.read_csv(R / "m7_field/m7_zonecal.csv").set_index("zone")
     for zone in ("centre", "mid", "corner"):
@@ -79,11 +126,25 @@ def numbers():
         n[f"MsevenZc{Z}Bias"] = f(zc.loc[zone, "bias_dz"], 3)
     s4 = pd.read_csv(R / "m4_repeat/sampling_se_calibration.csv")
     n["MfourSeMedianDelta"] = f(s4.se_delta.median())
+    n["MfourSeMinDelta"], n["MfourSeMaxDelta"] = f(s4.se_delta.min()), f(s4.se_delta.max(), 1)
+    n["LabCalMaeN"] = int(b.dz_hat_steps.notna().sum())
     for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
         m8 = pd.read_csv(R / f"m8_confounds/{lens}/m8_summary.csv").set_index("condition").share_alarm
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (
             f(m8["in focus"]), f(m8["motion"]), f(m8["fog"]))
         n[f"Meight{tag}DefocusPos"], n[f"Meight{tag}DefocusNeg"] = f(m8["defocus +0.02"]), f(m8["defocus -0.02"])
+    fl = pd.read_csv(R / "m8_confounds/fleet/m8_fleet.csv").fillna("")
+    for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
+        au = fl[(fl.lens == lens) & (fl.kind == "auc")].groupby("against").value
+        for q, Q in (("in focus", "Focus"), ("motion", "Motion"), ("fog", "Fog")):
+            n[f"MeightAuc{tag}{Q}Min"], n[f"MeightAuc{tag}{Q}Max"] = f(au.get_group(q).min()), f(au.get_group(q).max())
+        al = fl[(fl.lens == lens) & (fl.kind == "alarm")]
+        for k, K in ((1, "One"), (10, "Ten"), (100, "Hundred")):
+            g = al[al.n == k].set_index("condition").value
+            n[f"MeightAgg{tag}{K}Defocus"] = f(g[["defocus -0.02", "defocus +0.02"]].min())
+            n[f"MeightAgg{tag}{K}DefocusMax"] = f(g[["defocus -0.02", "defocus +0.02"]].max())
+            n[f"MeightAgg{tag}{K}Focus"], n[f"MeightAgg{tag}{K}Motion"], n[f"MeightAgg{tag}{K}Fog"] = (
+                f(g["in focus"]), f(g["motion"]), f(g["fog"]))
     m6 = pd.read_csv(R / "m6_illuminant/m6_summary.csv").set_index("condition")
     n["MsixDirMin"] = f"{np.floor(m6.direction_acc.min() * 100) / 100:.2f}"  # floor: "at or above"
     n["MsixMaeNominal"], n["MsixMaeMax"] = f(m6.loc["nominal", "mae_delta"]), f(m6.mae_delta.max())
@@ -139,20 +200,25 @@ def reference_table():
     rr = pd.read_csv(R / "reference/reference_rows.csv")
     rr = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")]
     g = rr.groupby(["lca_over_delta", "method"])[["direction_acc", "mae_delta", "abs_mae_delta"]].mean().unstack()
+    p2 = pd.read_csv(R / "phase2/phase2_summary.csv")
+    d2 = p2[p2.lens.str.match(r"m3_[zpn]\d{3}$")].groupby("lca_over_delta").dir_acc.mean()
     lines = [r"\begin{table}[t]\centering\footnotesize",
-             r"\caption{Reference rows on the Phase~2 render (no spherical aberration, mean over LCA sign). "
-             r"Dir.: direction accuracy; MAE: signed error; $|\Delta z|$: error of the magnitude only, all in $\delta$. "
+             r"\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the "
+             r"two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames "
+             r"(two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; "
+             r"$|\Delta z|$: error of the magnitude only; both in $\delta$. "
              r"Paired: exploratory, added after the method freeze; sign from the two-feature rule, size from the Laplacian floor.}",
-             r"\label{tab:ref}\setlength{\tabcolsep}{3pt}",
-             r"\begin{tabular}{rccccccccc}\hline",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Lapl. & Ten. \\",
-             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\hline"]
+             r"\label{tab:ref}\setlength{\tabcolsep}{2pt}",
+             r"\begin{tabular}{rccccccccc}\toprule",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Laplacian & Tenengrad \\",
+             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}\cmidrule(lr){10-10}",
+             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
     for lca, r in g.iterrows():
-        v = [r[("direction_acc", "physics")], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
+        v = [d2[lca], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
              r[("direction_acc", "learned")], r[("mae_delta", "learned")], r[("abs_mae_delta", "learned")],
              r[("mae_delta", "paired")], r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
         lines.append(f"{lca:.2f} & " + " & ".join(f(x) for x in v) + r" \\")
-    lines += [r"\hline\end{tabular}\end{table}"]
+    lines += [r"\bottomrule\end{tabular}\end{table}"]
     return "\n".join(lines) + "\n"
 
 

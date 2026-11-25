@@ -70,6 +70,9 @@ def steps(est, data):
             ["m8_confounds.py", "--cache", cache, "--lens", "synth_lcaP", "--conf-dir", data / "m8" / "synth_lcaP",
              "--out", "{out}"]],
          [data / "m8" / "synth_lcaP", rc("synth_lcaP")]),
+        ("m8_fleet", "results/m8_confounds/fleet", [
+            ["m8_fleet.py", "--m8", REPO / "results/m8_confounds", "--out", "{out}/m8_fleet.csv"]],
+         [REPO / "results/m8_confounds/laikin/m8_frames.csv", REPO / "results/m8_confounds/synth_lcaP/m8_frames.csv"]),
         ("phase2", "results/phase2", [
             ["phase2_score.py", "--cache", data / "phase2", "--out", "{out}"]],
          [data / "phase2"]),

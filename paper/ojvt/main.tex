@@ -31,14 +31,15 @@
 \markboth{Single-Image Sign of Defocus From Longitudinal Chromatic Aberration}{Deegan \textit{et al.}}
 
 \begin{abstract}
-Fixed-focus automotive cameras drift out of focus in service, and reduced sharpness alone cannot indicate the direction of defocus.
-Longitudinal chromatic aberration (LCA) provides a directional cue because color channels focus at different axial planes.
-We investigate the conditions required to exploit this cue reliably and identify four requirements.
+Fixed-focus automotive cameras drift out of focus over a vehicle's lifetime through thermal cycling, adhesive creep and mechanical shock.
+Knowing both the direction and rate of drift aids fleet diagnostics, yet standard unsigned sharpness metrics cannot resolve defocus sign from one image.
+Longitudinal chromatic aberration (LCA) supplies a passive directional cue because red, green and blue wavelengths focus at different axial planes.
+Combining physics-based raw-Bayer rendering of \MthreeNplates{} Oxford RobotCar driving images with a physical laboratory focus sweep, we establish four requirements for reliable deployment.
 First, sufficient LCA: across \MthreeNlenses{} rendered lens designs, direction accuracy increases from chance at zero LCA to at least \MthreeLvlTopDir{} once $|\mathrm{LCA}|$ reaches one depth of focus $\delta$ (Spearman $\rho=\MthreeRho$).
-Second, separate magnitude estimation: the chromatic cue resolves the sign, whereas a Laplacian sharpness metric alone estimates $|\Delta z|$ to \RefLapAbsMin--\RefLapAbsMax\,$\delta$, outperforming a two-feature curve incorporating the chromatic cue.
-Third, camera-specific calibration: on a physical lens (LCA approximately \LabLcaDeltaOne\,$\delta$), rendered-only calibration predicts the same direction for every frame. With measured channel order and an empirical threshold, a single held-out evaluation achieves \LabBandFarOk{} of \LabBandFarN{} correct beyond $2\,\delta$ from focus, but only \LabBandNearOk{} of \LabBandNearN{} within $2\,\delta$ (no better than majority-class prediction), and the threshold does not transfer across chart halves.
-Fourth, rejection of non-defocus degradations: in simulation, in-focus motion blur and fog trigger false alarms amplified by temporal averaging, whereas white-balance errors bias magnitude while preserving direction.
-Hardware evaluation is limited to one lens and one static sweep.
+Second, separate sign and magnitude estimation: the chromatic cue resolves sign, whereas finest-band Laplacian sharpness estimates $|\Delta z|$ to \RefLapAbsMin--\RefLapAbsMax\,$\delta$ in simulation (outperforming a two-feature chromatic--Tenengrad curve) and tracks raw-Bayer green modulation transfer function with wider dynamic range than Tenengrad on laboratory data.
+Third, camera-specific calibration: on a physical lens (LCA $\LabLcaDelta\,\delta$), rendered-only calibration predicts one direction for every frame; empirical calibration achieves \LabBandFarOk{} of \LabBandFarN{} correct beyond $2\,\delta$ but only \LabBandNearOk{} of \LabBandNearN{} within $2\,\delta$, and the threshold does not transfer across chart halves.
+Fourth, rejection of non-defocus degradations: in-focus motion blur and fog trigger false alarms amplified by temporal averaging, whereas illuminant and white-balance errors bias magnitude while preserving direction.
+Hardware validation is limited to one lens and one static sweep.
 \end{abstract}
 
 \begin{IEEEkeywords}

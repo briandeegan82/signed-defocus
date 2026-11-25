@@ -4,8 +4,8 @@ Uses the exact same pre-ISP rendering pipeline and confound calibration as the M
 (synth_lcaP, f/2.0, 5.5 um pitch, LCA 1.82 delta; matched to +0.02 DZ = +0.91 delta):
   - Default (in focus): DZ = 0.0
   - Lens defocus:       DZ = +0.02 (+0.91 delta)
-  - Motion blur:        3.17 px at 20 deg (achromatic kernel)
-  - Fog:                uniform veiling airlight t = 0.956, A = 220 DN
+  - Motion blur:        2.03 px at 20 deg convolved with in-focus optical PSF
+  - Fog:                uniform neutral veiling airlight t = 0.956, A = 220 DN (inverse-WB scaled)
 
 Saves a compact npz to results/figures/data/confound_examples.npz so src/fig_confound_examples.py
 can redraw the figure without raw RobotCar data.
@@ -18,9 +18,10 @@ from pathlib import Path
 import numpy as np
 
 import m2_continuous as M2
+import m8_confound_render as M8R
 
 ROOT = Path(__file__).resolve().parents[1]
-MOTION_LEN = 3.171875
+MOTION_LEN = 2.03125
 MOTION_ANG = 20.0
 FOG_TRANS = 0.95625
 
@@ -38,10 +39,11 @@ def main():
 
     sys.path.insert(0, str(a.estimator / "src"))
     import torch
-    import confound_robotcar as CR
+    import confound as CF
     import lens_synth as LS
     import render_arms as RA
     import robotcar as RC
+    import weather_raw as WR
 
     # synth_lcaP = m3_ref: f/2.0, 5.5 um pitch, LCA = 40 um = 1.82 delta
     design = dict(M2.BASE, long_ca=0.2353, spherical=0.0)
@@ -61,10 +63,10 @@ def main():
     img_focus = RA.render(plate, psfs[0.0], wb, model, "pre", seed0)
     img_defocus = RA.render(plate, psfs[0.02], wb, model, "pre", seed_def)
 
-    mp = CR.motion_psfs(MOTION_LEN, MOTION_ANG, psfs[0.0])
+    mp = M8R.motion_psfs_convolved(CF, MOTION_LEN, MOTION_ANG, psfs[0.0])
     img_motion = RA.render(plate, mp, wb, model, "pre", RA.stable_seed(t, p.stem, 99.0, 0))
 
-    foggy = CR.fog_bayer(plate.astype(np.float64), FOG_TRANS)
+    foggy = M8R.fog_bayer_neutral(WR, plate, FOG_TRANS, wb)
     img_fog = RA.render(foggy, psfs[0.0], RA.plate_grey_world(foggy), model, "pre",
                         RA.stable_seed(t, p.stem, 98.0, 0))
 

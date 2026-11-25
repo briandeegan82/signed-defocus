@@ -1,43 +1,43 @@
 lens,kind,condition,against,n,value
 synth_lcaP,auc,defocus -0.02,in focus,1,0.9369
-synth_lcaP,auc,defocus -0.02,motion,1,0.8396
-synth_lcaP,auc,defocus -0.02,fog,1,0.8403
+synth_lcaP,auc,defocus -0.02,motion,1,0.8760
+synth_lcaP,auc,defocus -0.02,fog,1,0.8190
 synth_lcaP,auc,defocus +0.02,in focus,1,0.9430
-synth_lcaP,auc,defocus +0.02,motion,1,0.8505
-synth_lcaP,auc,defocus +0.02,fog,1,0.8459
+synth_lcaP,auc,defocus +0.02,motion,1,0.8824
+synth_lcaP,auc,defocus +0.02,fog,1,0.8254
 synth_lcaP,alarm,defocus -0.02,,1,0.1355
 synth_lcaP,alarm,defocus +0.02,,1,0.1320
 synth_lcaP,alarm,in focus,,1,0.0510
-synth_lcaP,alarm,motion,,1,0.1320
-synth_lcaP,alarm,fog,,1,0.1225
+synth_lcaP,alarm,motion,,1,0.0990
+synth_lcaP,alarm,fog,,1,0.1260
 synth_lcaP,alarm,defocus -0.02,,10,0.9990
 synth_lcaP,alarm,defocus +0.02,,10,1.0000
 synth_lcaP,alarm,in focus,,10,0.0390
-synth_lcaP,alarm,motion,,10,0.4095
-synth_lcaP,alarm,fog,,10,0.1610
+synth_lcaP,alarm,motion,,10,0.1335
+synth_lcaP,alarm,fog,,10,0.2265
 synth_lcaP,alarm,defocus -0.02,,100,1.0000
 synth_lcaP,alarm,defocus +0.02,,100,1.0000
 synth_lcaP,alarm,in focus,,100,0.0380
-synth_lcaP,alarm,motion,,100,0.9985
-synth_lcaP,alarm,fog,,100,0.1675
+synth_lcaP,alarm,motion,,100,0.4605
+synth_lcaP,alarm,fog,,100,0.6415
 m5_lab,auc,defocus -0.02,in focus,1,0.6830
-m5_lab,auc,defocus -0.02,motion,1,0.5489
-m5_lab,auc,defocus -0.02,fog,1,0.5317
+m5_lab,auc,defocus -0.02,motion,1,0.5739
+m5_lab,auc,defocus -0.02,fog,1,0.5342
 m5_lab,auc,defocus +0.02,in focus,1,0.6689
-m5_lab,auc,defocus +0.02,motion,1,0.4958
-m5_lab,auc,defocus +0.02,fog,1,0.4856
+m5_lab,auc,defocus +0.02,motion,1,0.5362
+m5_lab,auc,defocus +0.02,fog,1,0.4851
 m5_lab,alarm,defocus -0.02,,1,0.1265
 m5_lab,alarm,defocus +0.02,,1,0.0595
 m5_lab,alarm,in focus,,1,0.0490
-m5_lab,alarm,motion,,1,0.1105
-m5_lab,alarm,fog,,1,0.0710
+m5_lab,alarm,motion,,1,0.0985
+m5_lab,alarm,fog,,1,0.0880
 m5_lab,alarm,defocus -0.02,,10,0.3685
 m5_lab,alarm,defocus +0.02,,10,0.7255
 m5_lab,alarm,in focus,,10,0.0485
-m5_lab,alarm,motion,,10,0.2165
-m5_lab,alarm,fog,,10,0.3830
+m5_lab,alarm,motion,,10,0.0670
+m5_lab,alarm,fog,,10,0.2205
 m5_lab,alarm,defocus -0.02,,100,0.9285
 m5_lab,alarm,defocus +0.02,,100,1.0000
 m5_lab,alarm,in focus,,100,0.0500
-m5_lab,alarm,motion,,100,0.5785
-m5_lab,alarm,fog,,100,0.9785
+m5_lab,alarm,motion,,100,0.0020
+m5_lab,alarm,fog,,100,0.4775

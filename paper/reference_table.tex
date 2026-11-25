@@ -1,8 +1,8 @@
 \begin{table}[t]\centering\footnotesize
-\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames (two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; $|\Delta z|$: error of the magnitude only; both in $\delta$. Paired: exploratory, added after the method freeze; sign from the two-feature rule, size from the Laplacian floor.}
-\label{tab:ref}\setlength{\tabcolsep}{2pt}
+\caption{Reference methods on the continuous-displacement render, designs without spherical aberration, averaged over the two LCA signs (designs with spherical aberration behave similarly). Dir.: direction accuracy, fraction of frames (two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; $|\Delta z|$: error of the magnitude only; both in $\delta$. Paired: post-freeze exploratory combination of two-feature sign with Laplacian-energy magnitude; Mean $|\nabla I_g|$ is the unsquared green-channel gradient-magnitude baseline.}
+\label{tab:ref}\setlength{\tabcolsep}{1.8pt}
 \begin{tabular}{rccccccccc}\toprule
-LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Laplacian & Tenengrad \\
+LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Lap. & Mean $|\nabla I_g|$ \\
 \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}\cmidrule(lr){10-10}
  & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\midrule
 0.00 & 0.54 & 2.64 & 0.64 & 0.51 & 2.26 & 2.18 & 2.28 & 0.29 & 0.65 \\

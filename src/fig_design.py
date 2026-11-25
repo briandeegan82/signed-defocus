@@ -47,8 +47,8 @@ def main():
 
     # population
     box(1, 80, 30, 19, f"{len(lenses)} lens designs\nLCA 0 to 2 $\\delta$,\nboth signs, with and\nwithout spherical ab.")
-    box(35, 80, 30, 19, f"{n_plates} RobotCar\nraw plates from\n{n_trav} drives")
-    box(69, 80, 30, 19, f"{k} random\ndisplacements per\nplate, within\n$\\pm{dz_max:.1f}\\,\\delta$")
+    box(35, 80, 30, 19, f"{n_plates} RobotCar\nraw images from\n{n_trav} drives")
+    box(69, 80, 30, 19, f"{k} random\ndisplacements per\nimage, within\n$\\pm{dz_max:.1f}\\,\\delta$")
     for x in (33, 67):
         ax.text(x, 89.5, r"$\times$", ha="center", va="center", fontsize=8)
     arrow((50, 79.5), (50, 75.5))
@@ -64,7 +64,7 @@ def main():
         y = top - (r + 1) * rh
         t = pd.Timestamp(pd.to_datetime(row.traversal, format="%Y-%m-%d-%H-%M-%S"))
         ax.text(1, y + rh / 2, t.strftime("%-d %b %Y, %H:%M"), va="center", fontsize=5.5)
-        ax.text(cx - 2, y + rh / 2, f"{row.n} plates", va="center", ha="right", fontsize=5.5)
+        ax.text(cx - 2, y + rh / 2, f"{row.n} images", va="center", ha="right", fontsize=5.5)
         for c in range(n_fold):
             ax.add_patch(Rectangle((cx + c * cw, y + 0.3), cw - 0.6, rh - 0.6,
                                    fc=TEST if row.fold == c else TRAIN, ec=EDGE, lw=0.3))

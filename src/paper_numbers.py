@@ -3,12 +3,14 @@
 Do not edit numbers.tex by hand; rerun `python src/paper_numbers.py` after any result changes.
 """
 import argparse
+import itertools
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from scipy import stats
 
+from lab_sweep import N_F, PITCH
 from lab_test import DELTA_PER_STEP, MIN_PATCHES
 
 R = Path(__file__).resolve().parents[1] / "results"
@@ -46,6 +48,17 @@ def numbers():
     n["MtwoMaeCiLo"], n["MtwoMaeCiHi"] = f(bs.loc["m3_ref", "mae_delta_ci_lo"]), f(bs.loc["m3_ref", "mae_delta_ci_hi"])
     q = p2[p2.lca_over_delta == 0.25]
     n["MthreeQuarterDirMin"], n["MthreeQuarterDirMax"] = f(q.dir_acc.min()), f(q.dir_acc.max())
+    lv = p2[p2.lens != "m3_ref"].groupby("lca_over_delta").dir_acc
+    assert len(lv) == 7
+    for (lca, g), tag in zip(lv, ("Zero", "Quarter", "Half", "ThreeQ", "One", "OneHalf", "Two")):
+        n[f"MthreeLvl{tag}DirMin"], n[f"MthreeLvl{tag}DirMax"] = f(g.min()), f(g.max())
+    lm_ = lv.mean().values
+    rho = stats.spearmanr(lv.mean().index, lm_).statistic
+    perms = np.array(list(itertools.permutations(lm_)))  # exact one-sided permutation p over the 7! orders
+    p_lv = (np.array([stats.spearmanr(lv.mean().index, x).statistic for x in perms]) >= rho - 1e-12).mean()
+    n["MthreeLevelN"], n["MthreeLevelRho"] = len(lv), f(rho)
+    lm, le = f"{p_lv:.0e}".split("e")
+    n["MthreeLevelP"] = rf"{lm}\times10^{{{int(le)}}}"
     n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())
     ref = R / "phase2/lenses/m3_ref"
     e = pd.read_csv(ref / "m2_displacement.csv")
@@ -63,13 +76,22 @@ def numbers():
     n["MtwoSubsetN"] = int(s2.loc["continuous", "n"])
     n["MtwoSubsetMaeDelta"], n["MtwoSubsetLadderMaeDelta"] = f(s2.loc["continuous", "mae_delta"]), f(s2.loc["ladder", "mae_delta"])
     st = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
+    dl = 2 * N_F * PITCH
     n["LabStepUm"] = f(st.k)
-    n["LabDeltaPerStep"] = f(st.k / (2 * 2.0 * 3.45), 3)
+    n["LabDeltaPerStep"] = f(st.k / dl, 3)
     n["LabLcaDelta"] = f(st.lca_rb_over_delta)
+    n["LabLcaDeltaOne"] = f(st.lca_rb_over_delta, 1)
+    n["LabPitchUm"], n["LabFnum"], n["LabDeltaUm"] = f(PITCH), f(N_F, 0), f(dl, 1)
+    sv = pd.read_csv(R / "lab_sweep/step_size_fits.csv").dropna(subset=["lca_rb_over_delta"])
+    bs = pd.read_csv(R / "lab_sweep/step_size_bootstrap_ci.csv", index_col=0)
+    n["LabStepCiLo"], n["LabStepCiHi"] = f(bs.loc[0.025, "k"]), f(bs.loc[0.975, "k"])
+    n["LabDeltaPerStepMin"], n["LabDeltaPerStepMax"] = f(sv.k.min() / dl, 3), f(sv.k.max() / dl, 3)
+    n["LabLcaMin"], n["LabLcaMax"] = f(sv.lca_rb_over_delta.min()), f(sv.lca_rb_over_delta.max())
+    n["LabNvariants"] = len(sv)
     b = pd.read_csv(R / "lab_sweep/baseline_calibration_frames.csv")
     nz = b[b.dz_steps.abs() > 0.5]
     n["LabCalDirOk"], n["LabCalDirN"] = int(nz.dir_ok.sum()), len(nz)
-    n["LabCalMaeDelta"] = f((b.dz_hat_steps - b.dz_steps).abs().mean() * st.k / (2 * 2.0 * 3.45))
+    n["LabCalMaeDelta"] = f((b.dz_hat_steps - b.dz_steps).abs().mean() * st.k / dl)
     m7 = pd.read_csv(R / "m7_field/m7_summary.csv").set_index(["render", "zone"])
     zc = pd.read_csv(R / "m7_field/m7_zonecal.csv").set_index("zone")
     for zone in ("centre", "mid", "corner"):

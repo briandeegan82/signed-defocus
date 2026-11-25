@@ -91,7 +91,7 @@ def fig1_m3(out):
     a.text(0.98, 0.05, f"Spearman ρ = {ga.spearman_rho:.2f}, n = {int(ga.n_lenses)}", transform=a.transAxes, ha="right")
     b.axhline(1.0, color="k", lw=0.8, ls="--")
     b.axvspan(1.0, 2.1, color="0.92", zorder=0)
-    b.text(1.55, 6.3, "Gate B applies", ha="center")
+    b.text(1.55, 6.3, "|LCA| > 1 δ\n(MAE < 1 δ target)", ha="center")
     b.text(0.3, 1.12, "1 δ")
     b.set(xlabel="|LCA| / δ", ylabel="Error, Δz absent from training (δ)", xlim=(-0.08, 2.1), ylim=(0, 7.6))
     b.set_title("solid: MAE   faded: p90", loc="right")

@@ -155,6 +155,9 @@ def numbers():
     n["RefPhysMaeMin"], n["RefPhysMaeMax"] = f(q.mae_delta.physics.min()), f(q.mae_delta.physics.max())
     n["RefLearnMaeMin"], n["RefLearnMaeMax"] = f(q.mae_delta.learned.min()), f(q.mae_delta.learned.max())
     n["RefPhysAbsMin"], n["RefPhysAbsMax"] = f(q.abs_mae_delta.physics.min()), f(q.abs_mae_delta.physics.max())
+    n["RefPairedMaeMin"], n["RefPairedMaeMax"] = f(q.mae_delta.paired.min()), f(q.mae_delta.paired.max())
+    ns = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")].groupby(["lca_over_delta", "method"]).mae_delta.mean().unstack()
+    n["RefHalfPairedMae"], n["RefHalfLearnMae"] = f(ns.loc[0.5, "paired"]), f(ns.loc[0.5, "learned"])
     for m, tag in (("laplacian", "Lap"), ("tenengrad", "Ten")):
         n[f"Ref{tag}AbsMin"], n[f"Ref{tag}AbsMax"] = f(q.abs_mae_delta[m].min()), f(q.abs_mae_delta[m].max())
     lo = rr[rr.lca_over_delta == 0.25].pivot(index="lens", columns="method")
@@ -203,16 +206,17 @@ def reference_table():
              r"\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the "
              r"two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames "
              r"(two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; "
-             r"$|\Delta z|$: error of the magnitude only; both in $\delta$.}",
-             r"\label{tab:ref}\setlength{\tabcolsep}{3pt}",
-             r"\begin{tabular}{rcccccccc}\toprule",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Laplacian & Tenengrad \\",
-             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}",
-             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
+             r"$|\Delta z|$: error of the magnitude only; both in $\delta$. "
+             r"Paired: exploratory, added after the method freeze; sign from the two-feature rule, size from the Laplacian floor.}",
+             r"\label{tab:ref}\setlength{\tabcolsep}{2pt}",
+             r"\begin{tabular}{rccccccccc}\toprule",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Laplacian & Tenengrad \\",
+             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}\cmidrule(lr){10-10}",
+             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
     for lca, r in g.iterrows():
         v = [d2[lca], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
              r[("direction_acc", "learned")], r[("mae_delta", "learned")], r[("abs_mae_delta", "learned")],
-             r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
+             r[("mae_delta", "paired")], r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
         lines.append(f"{lca:.2f} & " + " & ".join(f(x) for x in v) + r" \\")
     lines += [r"\bottomrule\end{tabular}\end{table}"]
     return "\n".join(lines) + "\n"

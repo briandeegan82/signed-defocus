@@ -123,6 +123,8 @@ def numbers():
         n[f"MsevenZc{Z}Bias"] = f(zc.loc[zone, "bias_dz"], 3)
     s4 = pd.read_csv(R / "m4_repeat/sampling_se_calibration.csv")
     n["MfourSeMedianDelta"] = f(s4.se_delta.median())
+    n["MfourSeMinDelta"], n["MfourSeMaxDelta"] = f(s4.se_delta.min()), f(s4.se_delta.max(), 1)
+    n["LabCalMaeN"] = int(b.dz_hat_steps.notna().sum())
     for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
         m8 = pd.read_csv(R / f"m8_confounds/{lens}/m8_summary.csv").set_index("condition").share_alarm
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (

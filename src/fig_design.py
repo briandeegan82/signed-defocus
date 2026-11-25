@@ -55,11 +55,12 @@ def main():
     ax.text(50, 72.5, f"{len(f):,} rendered frames per design", ha="center", va="center", fontsize=7)
 
     # one row per drive (traversal), one column per fold
-    ax.text(1, 67.5, f"{n_trav} drives (RobotCar traversals), split into {n_fold} folds", fontsize=6.5, va="center")
+    ax.text(1, 67.5, f"{n_trav} drives (RobotCar traversals) in {n_fold} groups", fontsize=6.5, va="center")
     pt = per_trav.sort_values(["fold", "traversal"]).reset_index(drop=True)
     top, rh, cw, cx = 60, 4.3, 6.4, 42
     for c in range(n_fold):
-        ax.text(cx + c * cw + cw / 2, top + 0.6, f"fold\n{c + 1}", ha="center", va="bottom", fontsize=5.5, linespacing=1.0)
+        ax.text(cx + c * cw + cw / 2, top + 0.6, str(c + 1), ha="center", va="bottom", fontsize=5.5)
+    ax.text(cx + n_fold * cw / 2, top + 3.4, "test round", ha="center", va="bottom", fontsize=5.5)
     for r, row in pt.iterrows():
         y = top - (r + 1) * rh
         t = pd.Timestamp(pd.to_datetime(row.traversal, format="%Y-%m-%d-%H-%M-%S"))

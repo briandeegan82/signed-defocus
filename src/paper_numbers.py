@@ -12,7 +12,8 @@ from scipy import stats
 
 from lab_sweep import N_F, PITCH
 from lab_test import DELTA_PER_STEP, MIN_PATCHES
-from m3_lenses import LAMBDA, LEVELS, REF
+from m3_lenses import BASE, LAMBDA, LEVELS, REF, SYNTH_LCAP_LONG_CA
+from m8_confounds import MATCH_DZ
 
 R = Path(__file__).resolve().parents[1] / "results"
 
@@ -79,6 +80,16 @@ def numbers():
     n["MthreeZeroOffsetMax"] = f(abs((lam - REF).mean() / (lam[0] - lam[2])) * max(LEVELS))
     sf = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
     n["LabZeroOffsetDelta"] = f((sf.s0_g - (sf.s0_r + sf.s0_g + sf.s0_b) / 3) * sf.k / (2 * 2.0 * 3.45))
+    fe = pd.read_csv(ref / "m2_displacement_frames.csv")
+    fe = fe[fe.train == "continuous"]
+    dl = 2 * BASE["f_number"] * BASE["pixel_pitch"]
+    n["MthreeNplates"], n["MthreeNtraversals"] = fe.stem.nunique(), fe.traversal.nunique()
+    n["SynthDeltaUm"] = f(dl, 0)
+    n["MthreeDzMaxUm"] = f(np.ceil(fe.dz_um.abs().max()), 0)
+    n["MthreeDzMaxDelta"] = f(np.ceil(fe.dz_um.abs().max()) / dl, 1)
+    n["SynthLcapLca"] = f(SYNTH_LCAP_LONG_CA * (LAMBDA["r"] - LAMBDA["b"]) / BASE["defocus_scale"] * 1000 / dl)
+    n["MeightMatchDelta"] = f(MATCH_DZ * 1000 / dl)
+    n["LabTestNsteps"] = len(pd.read_csv(R / "lab_test/lab_test_frames.csv"))
     sq = pd.read_csv(R / "m7_field/lab_squares_focus.csv")
     sq = sq[sq.freq_cy_px == 0.25].groupby("zone").lca_rb_delta.median()
     n["MsevenLabCenter"], n["MsevenLabMid"], n["MsevenLabCorner"] = (f(sq[z]) for z in ("center", "mid", "corner"))

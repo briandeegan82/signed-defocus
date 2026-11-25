@@ -118,6 +118,18 @@ def numbers():
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (
             f(m8["in focus"]), f(m8["motion"]), f(m8["fog"]))
         n[f"Meight{tag}DefocusPos"], n[f"Meight{tag}DefocusNeg"] = f(m8["defocus +0.02"]), f(m8["defocus -0.02"])
+    fl = pd.read_csv(R / "m8_confounds/fleet/m8_fleet.csv").fillna("")
+    for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
+        au = fl[(fl.lens == lens) & (fl.kind == "auc")].groupby("against").value
+        for q, Q in (("in focus", "Focus"), ("motion", "Motion"), ("fog", "Fog")):
+            n[f"MeightAuc{tag}{Q}Min"], n[f"MeightAuc{tag}{Q}Max"] = f(au.get_group(q).min()), f(au.get_group(q).max())
+        al = fl[(fl.lens == lens) & (fl.kind == "alarm")]
+        for k, K in ((1, "One"), (10, "Ten"), (100, "Hundred")):
+            g = al[al.n == k].set_index("condition").value
+            n[f"MeightAgg{tag}{K}Defocus"] = f(g[["defocus -0.02", "defocus +0.02"]].min())
+            n[f"MeightAgg{tag}{K}DefocusMax"] = f(g[["defocus -0.02", "defocus +0.02"]].max())
+            n[f"MeightAgg{tag}{K}Focus"], n[f"MeightAgg{tag}{K}Motion"], n[f"MeightAgg{tag}{K}Fog"] = (
+                f(g["in focus"]), f(g["motion"]), f(g["fog"]))
     m6 = pd.read_csv(R / "m6_illuminant/m6_summary.csv").set_index("condition")
     n["MsixDirMin"] = f"{np.floor(m6.direction_acc.min() * 100) / 100:.2f}"  # floor: "at or above"
     n["MsixMaeNominal"], n["MsixMaeMax"] = f(m6.loc["nominal", "mae_delta"]), f(m6.mae_delta.max())

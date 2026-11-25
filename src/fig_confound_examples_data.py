@@ -29,9 +29,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--estimator", type=Path, required=True)
     ap.add_argument("--noise-model", type=Path, required=True)
-    ap.add_argument("--plate", type=int, default=0)
-    ap.add_argument("--crop", type=int, default=192)
-    ap.add_argument("--crop-yx", type=int, nargs=2, default=[440, 220],
+    ap.add_argument("--plate", type=int, default=12)
+    ap.add_argument("--crop", type=int, default=320)
+    ap.add_argument("--crop-yx", type=int, nargs=2, default=[380, 680],
                     help="crop top-left (y0, x0) in full-res pixels")
     ap.add_argument("--out", type=Path, default=ROOT / "results/figures/data/confound_examples.npz")
     a = ap.parse_args()

@@ -19,7 +19,8 @@ from m3_lenses import BASE
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "results"
 TRAIN, TEST, EDGE = "#56B4E9", "#D55E00", "#333333"
-plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "dejavuserif", "font.size": 7, "pdf.fonttype": 42, "savefig.dpi": 300})
+# OJVT template: Times-style lettering at 8 pt or more.
+plt.rcParams.update({"font.family": "STIXGeneral", "mathtext.fontset": "stix", "font.size": 8, "pdf.fonttype": 42, "savefig.dpi": 300})
 
 
 def main():
@@ -34,49 +35,53 @@ def main():
     k = len(f) // n_plates
     dz_max = f.dz.abs().max() * BASE["defocus_scale"] * 1000 / (2 * BASE["f_number"] * BASE["pixel_pitch"])
 
-    fig, ax = plt.subplots(figsize=(3.5, 3.3))
-    ax.set_xlim(0, 100), ax.set_ylim(0, 100), ax.axis("off")
-    fig.subplots_adjust(0.01, 0.01, 0.99, 0.99)
+    # drawn in inches on a single-column canvas
+    W, rh, cw = 3.5, 0.165, 0.27
+    pt = per_trav.sort_values(["fold", "traversal"]).reset_index(drop=True)
+    H = 1.75 + len(pt) * rh + 0.75
+    fig = plt.figure(figsize=(W, H))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, W), ax.set_ylim(0, H), ax.axis("off")
 
     def box(x, y, w, h, txt):
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.5", fc="#F2F2F2", ec=EDGE, lw=0.6))
-        ax.text(x + w / 2, y + h / 2, txt, ha="center", va="center", fontsize=6.5, linespacing=1.25)
-
-    def arrow(p, q):
-        ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=7, lw=0.7, color=EDGE))
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=0.05", fc="#F2F2F2", ec=EDGE, lw=0.6))
+        ax.text(x + w / 2, y + h / 2, txt, ha="center", va="center", linespacing=1.15)
 
     # population
-    box(1, 80, 30, 19, f"{len(lenses)} lens designs\nLCA 0 to 2 $\\delta$,\nboth signs, with and\nwithout spherical ab.")
-    box(35, 80, 30, 19, f"{n_plates} RobotCar\nraw images from\n{n_trav} drives")
-    box(69, 80, 30, 19, f"{k} random\ndisplacements per\nimage, within\n$\\pm{dz_max:.1f}\\,\\delta$")
-    for x in (33, 67):
-        ax.text(x, 89.5, r"$\times$", ha="center", va="center", fontsize=8)
-    arrow((50, 79.5), (50, 75.5))
-    ax.text(50, 72.5, f"{len(f):,} rendered frames per design", ha="center", va="center", fontsize=7)
+    bw, bh, gap, y0 = 1.06, 0.64, 0.16, H - 0.69
+    xs = [0.03 + i * (bw + gap) for i in range(3)]
+    box(xs[0], y0, bw, bh, f"{len(lenses)} lens designs,\nLCA 0 to 2 $\\delta$,\nboth signs, with and\nwithout sph. aberr.")
+    box(xs[1], y0, bw, bh, f"{n_plates} RobotCar\nraw images\nfrom {n_trav} drives")
+    box(xs[2], y0, bw, bh, f"{k} random\ndisplacements\nper image, within\n$\\pm{dz_max:.1f}\\,\\delta$")
+    for i in range(2):
+        ax.text(xs[i] + bw + gap / 2, y0 + bh / 2, r"$\times$", ha="center", va="center")
+    ya = y0 - 0.05
+    ax.add_patch(FancyArrowPatch((W / 2, ya), (W / 2, ya - 0.15), arrowstyle="-|>", mutation_scale=7, lw=0.7, color=EDGE))
+    ax.text(W / 2, ya - 0.26, f"{len(f):,} rendered frames per design", ha="center", va="center")
 
-    # one row per drive (traversal), one column per fold
-    ax.text(1, 67.5, f"{n_trav} drives (RobotCar traversals) in {n_fold} groups", fontsize=6.5, va="center")
-    pt = per_trav.sort_values(["fold", "traversal"]).reset_index(drop=True)
-    top, rh, cw, cx = 60, 4.3, 6.4, 42
+    # one row per drive (traversal), one column per test round (fold)
+    ax.text(0.03, ya - 0.52, f"{n_trav} drives (RobotCar traversals, 2014) in {n_fold} groups", va="center")
+    cx = W - n_fold * cw - 0.05
+    top = ya - 0.95
     for c in range(n_fold):
-        ax.text(cx + c * cw + cw / 2, top + 0.6, str(c + 1), ha="center", va="bottom", fontsize=5.5)
-    ax.text(cx + n_fold * cw / 2, top + 3.4, "test round", ha="center", va="bottom", fontsize=5.5)
+        ax.text(cx + c * cw + cw / 2, top + 0.03, str(c + 1), ha="center", va="bottom")
+    ax.text(cx + n_fold * cw / 2, top + 0.17, "test round", ha="center", va="bottom")
     for r, row in pt.iterrows():
         y = top - (r + 1) * rh
         t = pd.Timestamp(pd.to_datetime(row.traversal, format="%Y-%m-%d-%H-%M-%S"))
-        ax.text(1, y + rh / 2, t.strftime("%-d %b %Y, %H:%M"), va="center", fontsize=5.5)
-        ax.text(cx - 2, y + rh / 2, f"{row.n} images", va="center", ha="right", fontsize=5.5)
+        ax.text(0.03, y + rh / 2, t.strftime("%-d %b, %H:%M"), va="center")
+        ax.text(cx - 0.08, y + rh / 2, f"{row.n} images", va="center", ha="right")
         for c in range(n_fold):
-            ax.add_patch(Rectangle((cx + c * cw, y + 0.3), cw - 0.6, rh - 0.6,
+            ax.add_patch(Rectangle((cx + c * cw, y + 0.012), cw - 0.025, rh - 0.024,
                                    fc=TEST if row.fold == c else TRAIN, ec=EDGE, lw=0.3))
         if r + 1 < len(pt) and pt.fold[r + 1] != row.fold:
-            ax.plot([1, cx + n_fold * cw], [y, y], color=EDGE, lw=0.3, ls=":")
-    lx = cx + n_fold * cw + 2
-    ax.add_patch(Rectangle((lx, 51), 3.5, 3.2, fc=TRAIN, ec=EDGE, lw=0.4))
-    ax.text(lx + 4.5, 52.6, "calibrate:\nthreshold $c_0$,\nsign $s$,\ncurve $\\gamma$", va="center", fontsize=6, linespacing=1.2)
-    ax.add_patch(Rectangle((lx, 36), 3.5, 3.2, fc=TEST, ec=EDGE, lw=0.4))
-    ax.text(lx + 4.5, 37.6, "test: score\ndirection and\ndisplacement", va="center", fontsize=6, linespacing=1.2)
-    ax.text(50, 3, "Repeated independently for each lens design", ha="center", va="center", fontsize=6.5, style="italic")
+            ax.plot([0.03, cx + n_fold * cw], [y, y], color=EDGE, lw=0.3, ls=":")
+    yl = top - len(pt) * rh - 0.2
+    for dy, fc, txt in [(0, TRAIN, "calibrate: threshold $c_0$, sign $s$, curve $\\gamma$"),
+                        (-0.19, TEST, "test: score direction and displacement")]:
+        ax.add_patch(Rectangle((0.03, yl + dy - 0.055), 0.16, 0.11, fc=fc, ec=EDGE, lw=0.4))
+        ax.text(0.25, yl + dy, txt, va="center")
+    ax.text(W / 2, 0.1, "Repeated independently for each lens design", ha="center", va="center", style="italic")
 
     a.out.mkdir(parents=True, exist_ok=True)
     for ext in ("pdf", "png"):

@@ -192,6 +192,14 @@ def numbers():
         n[f"LabTr{tag}Mae"] = f(tr.loc[(sub, "all"), "mae_delta"])
     off = pd.read_csv(R / "lab_transfer/lab_transfer_offsets.csv").iloc[0]
     n["LabTrOffsetNear"], n["LabTrOffsetAll"] = f(off.cue_offset_median_within_2d, 3), f(off.cue_offset_median, 3)
+    sm = pd.read_csv(R / "lab_sweep/sharpness_mtf_calibration.csv")
+    n["LabSharpCalN"] = len(sm)
+    n["LabTenMtfLowRho"] = f(sm.tenengrad.corr(sm.mtf_g_0125, method="spearman"), 3)
+    n["LabLapMtfLowRho"] = f(sm.laplacian.corr(sm.mtf_g_0125, method="spearman"), 3)
+    n["LabTenMtfHighRho"] = f(sm.tenengrad.corr(sm.mtf_g_025, method="spearman"), 3)
+    n["LabLapMtfHighRho"] = f(sm.laplacian.corr(sm.mtf_g_025, method="spearman"), 3)
+    n["LabTenFloorPct"] = f(100.0 * sm.ten_norm.min(), 0)
+    n["LabLapFloorPct"] = f(100.0 * sm.lap_norm.min(), 0)
     return n
 
 

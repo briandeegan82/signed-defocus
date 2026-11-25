@@ -202,9 +202,23 @@ On synth\_lcaP, in-focus motion blur and fog raise the alarm rate from \MeightSt
 
 As a detector of defocus against in-focus frames, $|\widehat{\Delta z}|$ has ROC AUC \MeightAucStrongFocusMin--\MeightAucStrongFocusMax{} on synth\_lcaP and \MeightAucWeakFocusMin--\MeightAucWeakFocusMax{} on m5\_lab; against motion blur it is \MeightAucStrongMotionMin--\MeightAucStrongMotionMax{} and \MeightAucWeakMotionMin--\MeightAucWeakMotionMax, and against fog \MeightAucStrongFogMin--\MeightAucStrongFogMax{} and \MeightAucWeakFogMin--\MeightAucWeakFogMax{} (near chance on m5\_lab). A fleet deployment would typically average estimates across multiple frames. Averaging the signed estimate over $N$ frames of distinct scenes, with the alarm threshold at the 95th percentile of held-out in-focus averages, synth\_lcaP alarms on at least \MeightAggStrongTenDefocus{} of defocused windows from $N=10$, whereas motion blur alarms on \MeightAggStrongTenMotion{} at $N=10$ and \MeightAggStrongHundredMotion{} at $N=100$ because its systematic bias accumulates. For $N=1$ this threshold is higher than the training-fold threshold above, which is fitted on in-sample predictions, so single-frame defocus alarms on only \MeightAggStrongOneDefocus--\MeightAggStrongOneDefocusMax. On m5\_lab, temporal averaging raises the defocus alarm rate to \MeightAggWeakHundredDefocus--\MeightAggWeakHundredDefocusMax{} at $N=100$, but simultaneously drives fog to \MeightAggWeakHundredFog{} and motion blur to \MeightAggWeakHundredMotion{} at $N=100$. Without separate screening to reject motion blur and fog, temporal averaging therefore amplifies these confounding degradations as well as the defocus signal. Frames within one drive are correlated, so these rates, which treat the $N$ frames as independent, are optimistic, and a window is assumed to hold one condition throughout.
 
-On synth\_lcaP, illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Fig.~\ref{fig:m6}).
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{fig6_m6_illuminant.pdf}
-\caption{Illuminant and white balance, simulation only, nine-rung ladder on the synth\_lcaP design (LCA $\SynthLcapLca\,\delta$): bias and MAE per illuminant and white-balance condition; bars, 95\,\% interval resampling whole images.}\label{fig:m6}\end{figure*}
+On synth\_lcaP, illuminant shifts of $\pm10$\,nm bias the displacement by at most \MsixShiftBiasMax\,$\delta$, and white-balance errors raise MAE from \MsixMaeNominal{} to at most \MsixMaeMax\,$\delta$, while direction accuracy stays at or above \MsixDirMin{} (Table~\ref{tab:m6}).
+\begin{table}[t]\centering
+\caption{Illuminant and white-balance sensitivity on synth\_lcaP (LCA $\SynthLcapLca\,\delta$, nine-rung ladder, 540 frames per condition).}
+\label{tab:m6}
+\begin{tabular}{@{}lccc@{}}\toprule
+Condition & Direction acc. & Bias ($\delta$) & MAE ($\delta$) \\\midrule
+Nominal & \MsixNomDir & $\MsixNomBias$ & \MsixNomMae \\\midrule
+Wavelength $+10$\,nm & \MsixSpDir & $\MsixSpBias$ & \MsixSpMae \\
+Wavelength $-10$\,nm & \MsixSmDir & $\MsixSmBias$ & \MsixSmMae \\
+Warm illuminant & \MsixWarmDir & $\MsixWarmBias$ & \MsixWarmMae \\
+Cool illuminant & \MsixCoolDir & $\MsixCoolBias$ & \MsixCoolMae \\\midrule
+Red gain $\times 0.8$ & \MsixRloDir & $\MsixRloBias$ & \MsixRloMae \\
+Red gain $\times 1.25$ & \MsixRhiDir & $\MsixRhiBias$ & \MsixRhiMae \\
+Blue gain $\times 0.8$ & \MsixBloDir & $\MsixBloBias$ & \MsixBloMae \\
+Blue gain $\times 1.25$ & \MsixBhiDir & $\MsixBhiBias$ & \MsixBhiMae \\\bottomrule
+\end{tabular}
+\end{table}
 
 \section{DISCUSSION AND LIMITATIONS}
 Placing a camera on the LCA/$\delta$ axis requires its working f-number, pixel pitch and red--blue focus separation. At f/2, a 3\,\textmu m pixel gives $\delta=12$\,\textmu m and a 2\,\textmu m pixel $\delta=8$\,\textmu m, so a given physical LCA spans more depths of focus on a finer-pitch sensor. For the real lens prescription used in the field-position test (Sony) we lack both f-number and pixel pitch, and we could not obtain LCA specifications for production automotive lenses; we therefore cannot locate current automotive cameras on this axis. The laboratory lens, at \LabLcaDelta\,$\delta$, is the only physical lens placed on it.

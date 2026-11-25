@@ -83,9 +83,9 @@ def plot_figure(df: pd.DataFrame) -> None:
         ax.plot(df[col], df["ten_norm"], color=OK["blue"], lw=0.7, alpha=0.35, zorder=1)
         ax.plot(df[col], df["lap_norm"], color=OK["orange"], lw=0.7, alpha=0.35, zorder=1)
         h1, = ax.plot(df.loc[neg, col], df.loc[neg, "ten_norm"], "o", color=OK["blue"],
-                      label="Tenengrad ($\\Delta z < 0$)")
+                      label="Mean $|\\nabla I_g|$ ($\\Delta z < 0$)")
         h2, = ax.plot(df.loc[pos, col], df.loc[pos, "ten_norm"], "o", color=OK["blue"], mfc="white",
-                      label="Tenengrad ($\\Delta z > 0$)")
+                      label="Mean $|\\nabla I_g|$ ($\\Delta z > 0$)")
         h3, = ax.plot(df.loc[neg, col], df.loc[neg, "lap_norm"], "^", color=OK["orange"],
                       label="Laplacian ($\\Delta z < 0$)")
         h4, = ax.plot(df.loc[pos, col], df.loc[pos, "lap_norm"], "^", color=OK["orange"], mfc="white",
@@ -96,7 +96,7 @@ def plot_figure(df: pd.DataFrame) -> None:
 
         rt, _ = spearmanr(df["tenengrad"], df[col])
         rl, _ = spearmanr(df["laplacian"], df[col])
-        ax.text(0.98, 0.08, f"Spearman $\\rho$: Ten. {rt:.3f}, Lap. {rl:.3f}",
+        ax.text(0.98, 0.08, f"Spearman $\\rho$: $|\\nabla I_g|$ {rt:.3f}, Lap. {rl:.3f}",
                 transform=ax.transAxes, ha="right", va="bottom")
         ax.set(xlabel=xlabel, ylabel="Sharpness / peak", ylim=(0.22, 1.06))
         sf.supxlabel(f"({tag})")

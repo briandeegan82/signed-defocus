@@ -69,6 +69,11 @@ def numbers():
     d = pd.read_csv(ref / "m2_direction.csv")
     d = d[d.level == "fitted"].set_index("band")
     n["MtwoDirAll"], n["MtwoDirNear"] = f(d.loc["all", "acc"]), f(d.loc["[0.0, 0.5)", "acc"])
+    m5 = R / "m5_lab/m5_lab"
+    d5 = pd.read_csv(m5 / "m2_direction.csv").set_index(["level", "band"])
+    e5 = pd.read_csv(m5 / "m2_displacement.csv").set_index(["train", "band"])
+    n["MthreeLvlTopDir"] = f(np.floor(p2[p2.lca_over_delta >= 1].dir_acc.min() * 100) / 100)  # floor: "or more"
+    n["MfiveDir"], n["MfiveMae"] = f(d5.loc[("fitted", "all"), "acc"]), f(e5.loc[("continuous", "all"), "mae_delta"])
     # Truth zero is the green plane; its offset from the mean of the three channel planes, in δ.
     lam = np.array([LAMBDA[c] for c in "rgb"])
     n["MthreeZeroOffsetMax"] = f(abs((lam - REF).mean() / (lam[0] - lam[2])) * max(LEVELS))

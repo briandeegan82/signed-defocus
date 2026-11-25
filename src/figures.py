@@ -30,9 +30,12 @@ DELTA_UM, UM_PER_DZ = 22.0, 1000.0
 DZ2D = UM_PER_DZ / DELTA_UM
 RNG = np.random.default_rng(20261124)
 
+# IEEE OJVT template: Times-style lettering, labels 8-10 pt, (a)/(b) centered below each panel.
+FS = 8
 plt.rcParams.update({
-    "font.family": "serif", "font.size": 8, "axes.labelsize": 8, "legend.fontsize": 7,
-    "xtick.labelsize": 7, "ytick.labelsize": 7, "axes.spines.top": False,
+    "font.family": "STIXGeneral", "mathtext.fontset": "stix", "font.size": FS, "axes.labelsize": FS,
+    "legend.fontsize": FS, "xtick.labelsize": FS, "ytick.labelsize": FS, "axes.titlesize": FS,
+    "figure.labelsize": FS, "axes.spines.top": False,
     "axes.spines.right": False, "pdf.fonttype": 42, "savefig.dpi": 300,
     "legend.frameon": False, "lines.markersize": 4,
 })
@@ -47,8 +50,17 @@ def save(fig, out, name):
     plt.close(fig)
 
 
-def tag(ax, s):
-    ax.text(-0.18, 1.04, s, transform=ax.transAxes, fontweight="bold", va="bottom")
+def panels(h, width_ratios=(1, 1), sharey=False):
+    """Two side-by-side panels, each labeled (a)/(b) centered below it."""
+    fig = plt.figure(figsize=(COL2, h), layout="constrained")
+    sfs = fig.subfigures(1, 2, width_ratios=width_ratios, wspace=0.02)
+    axs = [sf.subplots() for sf in sfs]
+    for sf, t in zip(sfs, "ab"):
+        sf.supxlabel(f"({t})")
+    if sharey:
+        axs[1].sharey(axs[0])
+        axs[1].tick_params(labelleft=False)
+    return fig, axs
 
 
 def boot_mean(x, groups, n=2000):
@@ -66,7 +78,7 @@ def fig1_m3(out):
     d.loc[d.lens == "m3_ref", "sign"] = "ref"
     d["sa"] = d.lens.str.endswith("_sa")
     ga = pd.read_csv(R / "phase2/phase2_gate_a.csv").iloc[0]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.4), layout="constrained")
+    fig, (a, b) = panels(2.8)
     mk = {"+": "^", "−": "v", "0": "o", "ref": "*"}
     for (sg, sa), g in d.groupby(["sign", "sa"]):
         kw = dict(marker=mk[sg], ls="none", ms=6 if sg == "ref" else 5, color=OK["orange"] if sa else OK["blue"],
@@ -79,12 +91,11 @@ def fig1_m3(out):
     a.text(0.98, 0.05, f"Spearman ρ = {ga.spearman_rho:.2f}, n = {int(ga.n_lenses)}", transform=a.transAxes, ha="right")
     b.axhline(1.0, color="k", lw=0.8, ls="--")
     b.axvspan(1.0, 2.1, color="0.92", zorder=0)
-    b.text(1.55, 6.3, "Gate B applies", ha="center", fontsize=7)
-    b.text(0.02, 1.08, "1 δ", fontsize=7)
+    b.text(1.55, 6.3, "Gate B applies", ha="center")
+    b.text(0.3, 1.12, "1 δ")
     b.set(xlabel="|LCA| / δ", ylabel="Error, Δz absent from training (δ)", xlim=(-0.08, 2.1), ylim=(0, 7.6))
-    b.set_title("solid: MAE   faded: p90", loc="right", fontsize=7)
+    b.set_title("solid: MAE   faded: p90", loc="right")
     a.legend(loc="center right", ncol=1, handletextpad=0.3)
-    tag(a, "(a)"); tag(b, "(b)")
     save(fig, out, "fig1_m3_dose_response")
 
 
@@ -98,7 +109,7 @@ def fig2_lab(out):
     dps = float(pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0].lca_rb_over_delta /
                 (res["s0_r"] - res["s0_b"]))  # δ per step
     ss = np.linspace(0, 79, 400)
-    fig, axs = plt.subplots(1, 2, figsize=(COL2, 2.4), layout="constrained", sharey=True)
+    fig, axs = panels(2.9, sharey=True)
     for ax, fk in zip(axs, ["0125", "025"]):
         nu = LSW.FREQ[fk] / LSW.PITCH
         for c in "rgb":
@@ -108,14 +119,14 @@ def fig2_lab(out):
             ax.plot(ss, m, color=CH[c], lw=1, ls=["-", "--", "-."]["rgb".index(c)], label=f"{c.upper()} fit")
             ax.axvline(s0[c], color=CH[c], lw=0.6, ls=":")
         ax.set(xlabel="Focus step", xlim=(0, 79))
-        ax.set_title(f"({'ab'[fks.index(fk)]}) {LSW.FREQ[fk]} cy/px", loc="left", fontweight="bold")
+        ax.set_title(f"{LSW.FREQ[fk]} cy/px", loc="left")
         top = ax.secondary_xaxis("top", functions=(lambda s: (s - s0["g"]) * dps, lambda z: z / dps + s0["g"]))
         top.set_xlabel("Δz from green focus (δ)")
     axs[0].set_ylabel("MTF (raw Bayer plane)")
     axs[1].legend(ncol=2, loc="upper right", columnspacing=0.8)
     axs[0].text(0.52, 0.03, f"1 step = {k / LSW.N_F:.2f}·N µm = {dps:.3f} δ\n"
                 f"R − B focus = {(s0['r'] - s0['b']) * dps:.2f} δ", transform=axs[0].transAxes, ha="center",
-                va="bottom", fontsize=7)
+                va="bottom")
     save(fig, out, "fig2_lab_through_focus")
 
 
@@ -124,7 +135,7 @@ def fig3_m2(out):
     f = f[f.train == "continuous"]
     dr = pd.read_csv(R / "phase2/lenses/m3_ref/m2_direction.csv")
     dr = dr[(dr.level == "fitted") & (dr.band != "all")]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.5), layout="constrained", gridspec_kw=dict(width_ratios=[1.3, 1]))
+    fig, (a, b) = panels(2.9, width_ratios=(1.3, 1))
     x, y = f.dz_over_delta, f.dz_hat * DZ2D
     lim = np.array([-5, 5])
     a.fill_between(lim, lim - 1, lim + 1, color="0.9", lw=0, label="±1 δ")
@@ -135,10 +146,9 @@ def fig3_m2(out):
     lab = [s.replace("inf", "∞") for s in dr.band]
     b.bar(range(len(dr)), dr.acc, color=OK["sky"], edgecolor="k", lw=0.5)
     for i, (acc, n) in enumerate(zip(dr.acc, dr.n)):
-        b.text(i, acc + 0.01, f"{acc:.2f}\nn={n}", ha="center", va="bottom", fontsize=6.5)
+        b.text(i, acc + 0.01, f"{acc:.2f}\nn={n}", ha="center", va="bottom")
     b.set(xticks=range(len(dr)), xticklabels=lab, xlabel="|Δz| band (δ)", ylabel="Direction accuracy", ylim=(0, 1.18))
     b.axhline(0.5, color="0.6", lw=0.6, ls=":")
-    tag(a, "(a)"); tag(b, "(b)")
     save(fig, out, "fig3_m2_continuous")
 
 
@@ -146,7 +156,7 @@ def fig4_m7(out):
     s = pd.read_csv(R / "m7_field/m7_summary.csv")
     q = pd.read_csv(R / "m7_field/lab_squares_focus.csv")
     zones = ["centre", "mid", "corner"]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.4), layout="constrained")
+    fig, (a, b) = panels(2.8)
     series = [("uniform", "direction_acc", "Uniform PSF", OK["blue"], "o"),
               ("field-varying", "direction_acc", "Field-varying, nominal focus", OK["verm"], "s"),
               ("field-varying", "direction_acc_local", "Field-varying, zone's own focus", OK["orange"], "D")]
@@ -163,14 +173,13 @@ def fig4_m7(out):
     b.axhline(0, color="k", lw=0.6)
     b.set(xlabel="Field radius (normalized)", ylabel="R − B focus (δ), lab squares")
     b.legend(loc="lower left")
-    tag(a, "(a)"); tag(b, "(b)")
     save(fig, out, "fig4_m7_field")
 
 
 def fig5_m8(out):
     order = ["in focus", "defocus -0.02", "defocus +0.02", "motion", "fog"]
     lab = ["In focus", "Defocus −", "Defocus +", "Motion blur", "Fog"]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.5), layout="constrained")
+    fig, (a, b) = panels(3.1)
     w = 0.38
     for j, (lens, c, h) in enumerate([("synth_lcaP", OK["blue"], None), ("laikin", OK["orange"], "///")]):
         fr = pd.read_csv(R / f"m8_confounds/{lens}/m8_frames.csv")
@@ -195,9 +204,8 @@ def fig5_m8(out):
         b.axhline(y, color="0.5", lw=0.6, ls="--")
     b.set(xticks=range(1, 6), xticklabels=lab, ylabel="Predicted Δz (δ), strong-LCA design")
     b.tick_params(axis="x", rotation=25)
-    b.set_title("box: IQR; whiskers: 5–95 %; dashed: true Δz = ±0.91 δ", loc="right", fontsize=6.5)
-    a.set_title("bars: 95 % traversal-bootstrap interval", loc="right", fontsize=6.5)
-    tag(a, "(a)"); tag(b, "(b)")
+    b.set_title("box: IQR; whiskers: 5–95 %; dashed: true Δz = ±0.91 δ", loc="right")
+    a.set_title("bars: 95 % traversal-bootstrap interval", loc="right")
     save(fig, out, "fig5_m8_confounds")
 
 
@@ -206,7 +214,7 @@ def fig6_m6(out):
     f["e"] = (f.dz_pred - f.dz) * DZ2D
     order = ["nominal", "shift+10", "shift-10", "warm", "cool", "wb_r0.8", "wb_r1.25", "wb_b0.8", "wb_b1.25"]
     lab = ["Nominal", "+10 nm", "−10 nm", "Warm", "Cool", "R gain ×0.8", "R gain ×1.25", "B gain ×0.8", "B gain ×1.25"]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(COL2, 2.6), layout="constrained", sharey=True)
+    fig, (a, b) = panels(2.9, width_ratios=(1.25, 1), sharey=True)
     y = np.arange(len(order))[::-1]
     for i, k in enumerate(order):
         g = f[f.condition == k]
@@ -225,8 +233,7 @@ def fig6_m6(out):
     b.plot([], [], "s", color=OK["verm"], mfc="white", label="|Δz| ≤ 0.45 δ")
     b.axvline(1.0, color="k", lw=0.8, ls="--")
     b.set(xlabel="MAE (δ)", xlim=(0, 1.05))
-    b.legend(loc="lower right")
-    tag(a, "(a)"); tag(b, "(b)")
+    b.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2)
     save(fig, out, "fig6_m6_illuminant")
 
 

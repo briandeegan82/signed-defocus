@@ -19,6 +19,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 import lab_sweep as LSW  # noqa: E402
+from m3_lenses import BASE, LAMBDA, SYNTH_LCAP_LONG_CA  # noqa: E402
 
 R = Path(__file__).resolve().parents[1] / "results"
 OK = dict(black="#000000", orange="#E69F00", sky="#56B4E9", green="#009E73",
@@ -35,6 +36,9 @@ plt.rcParams.update({
     "axes.spines.right": False, "pdf.fonttype": 42, "savefig.dpi": 300,
     "legend.frameon": False, "lines.markersize": 4,
 })
+
+
+LCAP = SYNTH_LCAP_LONG_CA * (LAMBDA["r"] - LAMBDA["b"]) * 1000 / (2 * BASE["f_number"] * BASE["pixel_pitch"])
 
 
 def save(fig, out, name):
@@ -66,7 +70,7 @@ def fig1_m3(out):
     mk = {"+": "^", "−": "v", "0": "o", "ref": "*"}
     for (sg, sa), g in d.groupby(["sign", "sa"]):
         kw = dict(marker=mk[sg], ls="none", ms=6 if sg == "ref" else 5, color=OK["orange"] if sa else OK["blue"],
-                  mfc="white" if sa else None, label=f"LCA {sg}{', SA' if sa else ''}" if sg != "ref" else "synth_lcaP copy")
+                  mfc="white" if sa else None, label=f"LCA {sg}{', SA' if sa else ''}" if sg != "ref" else "reference design (copy)")
         a.plot(g.lca_over_delta, g.dir_acc, **kw)
         b.plot(g.lca_over_delta, g.mae_delta_unseen, **kw)
         b.plot(g.lca_over_delta, g.p90_delta_unseen, **{**kw, "alpha": 0.45, "label": None})
@@ -149,7 +153,7 @@ def fig4_m7(out):
     for j, (rd, col, lab, c, m) in enumerate(series):
         g = s[s.render == rd].set_index("zone").loc[zones]
         a.plot(np.arange(3) + (j - 1) * 0.12, g[col], m, color=c, label=lab, ls="-", lw=0.6, mfc="white" if j == 2 else c)
-    a.set(xticks=range(3), xticklabels=zones, xlabel="Field zone (rendered Sony map)", ylabel="Direction accuracy",
+    a.set(xticks=range(3), xticklabels=["center", "mid", "corner"], xlabel="Field zone (rendered Sony map)", ylabel="Direction accuracy",
           ylim=(0.5, 1.0))
     a.axhline(0.5, color="0.6", lw=0.6, ls=":")
     a.legend(loc="lower left")
@@ -157,7 +161,7 @@ def fig4_m7(out):
         g = q[q.freq_cy_px == fq]
         b.plot(g.field_r, g.lca_rb_delta, m, color=c, mfc="white" if fq == 0.25 else c, label=f"{fq} cy/px")
     b.axhline(0, color="k", lw=0.6)
-    b.set(xlabel="Field radius (normalised)", ylabel="R − B focus (δ), lab squares")
+    b.set(xlabel="Field radius (normalized)", ylabel="R − B focus (δ), lab squares")
     b.legend(loc="lower left")
     tag(a, "(a)"); tag(b, "(b)")
     save(fig, out, "fig4_m7_field")
@@ -175,7 +179,7 @@ def fig5_m8(out):
                            fr[fr.condition == k].traversal.values) for k in order]
         m, lo, hi = np.array(stats).T
         xs = np.arange(5) + (j - 0.5) * w
-        a.bar(xs, m, w, color=c, hatch=h, edgecolor="k", lw=0.5, label=f"{lens} (LCA {'1.82 δ' if j == 0 else 'weak'})")
+        a.bar(xs, m, w, color=c, hatch=h, edgecolor="k", lw=0.5, label=f"strong LCA ({LCAP:.2f} δ)" if j == 0 else "Laikin (weak LCA)")
         a.errorbar(xs, m, [m - lo, hi - m], fmt="none", ecolor="k", lw=0.7, capsize=1.5)
     a.set(xticks=range(5), xticklabels=lab, ylabel="Alarm rate", ylim=(0, 1.0))
     a.tick_params(axis="x", rotation=25)
@@ -189,7 +193,7 @@ def fig5_m8(out):
     b.axhline(0, color="k", lw=0.6)
     for y in (-20 / DELTA_UM, 20 / DELTA_UM):
         b.axhline(y, color="0.5", lw=0.6, ls="--")
-    b.set(xticks=range(1, 6), xticklabels=lab, ylabel="Predicted Δz (δ), synth_lcaP")
+    b.set(xticks=range(1, 6), xticklabels=lab, ylabel="Predicted Δz (δ), strong-LCA design")
     b.tick_params(axis="x", rotation=25)
     b.set_title("box: IQR; whiskers: 5–95 %; dashed: true Δz = ±0.91 δ", loc="right", fontsize=6.5)
     a.set_title("bars: 95 % traversal-bootstrap interval", loc="right", fontsize=6.5)
@@ -217,7 +221,7 @@ def fig6_m6(out):
         for yy in (3.5, 7.5):
             ax.axhline(yy, color="0.75", lw=0.5)
     a.set(yticks=y, yticklabels=lab, xlabel="Bias of predicted Δz (δ)")
-    b.plot([], [], "o", color=OK["blue"], label="all rungs")
+    b.plot([], [], "o", color=OK["blue"], label="all ladder steps")
     b.plot([], [], "s", color=OK["verm"], mfc="white", label="|Δz| ≤ 0.45 δ")
     b.axvline(1.0, color="k", lw=0.8, ls="--")
     b.set(xlabel="MAE (δ)", xlim=(0, 1.05))

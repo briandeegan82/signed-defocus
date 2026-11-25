@@ -149,6 +149,15 @@ def numbers():
     n["MsixDirMin"] = f"{np.floor(m6.direction_acc.min() * 100) / 100:.2f}"  # floor: "at or above"
     n["MsixMaeNominal"], n["MsixMaeMax"] = f(m6.loc["nominal", "mae_delta"]), f(m6.mae_delta.max())
     n["MsixShiftBiasMax"] = f(m6.loc[["shift+10", "shift-10", "warm", "cool"], "bias_delta"].abs().max())
+    for cond, tag in (
+        ("nominal", "Nom"), ("shift+10", "Sp"), ("shift-10", "Sm"),
+        ("warm", "Warm"), ("cool", "Cool"),
+        ("wb_r0.8", "Rlo"), ("wb_r1.25", "Rhi"), ("wb_b0.8", "Blo"), ("wb_b1.25", "Bhi"),
+    ):
+        row = m6.loc[cond]
+        n[f"Msix{tag}Dir"] = f"{row['direction_acc']:.3f}"
+        n[f"Msix{tag}Bias"] = f"{row['bias_delta']:+.2f}"
+        n[f"Msix{tag}Mae"] = f(row["mae_delta"])
     rr = pd.read_csv(R / "reference/reference_rows.csv")
     q = rr[rr.lca_over_delta > 1].pivot(index="lens", columns="method")
     n["RefGateBN"] = len(q)

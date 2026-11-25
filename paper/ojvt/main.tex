@@ -86,7 +86,7 @@ with central differences, and the chromatic cue and the sharpness level
 \begin{equation}
 c(j)=\log\frac{T_r(j)+\epsilon}{T_b(j)+\epsilon},\qquad \ell(j)=\log\bigl\langle|\nabla I_g|\bigr\rangle_j ,
 \end{equation}
-with $\epsilon=10^{-9}$. A frame is summarized by the medians $\bar c$ and $\bar\ell$ over its patches. A frame with fewer than 10 patches returns no estimate and is counted as an abstention.
+with $\epsilon=10^{-9}$. A frame is summarized by the medians $\bar c$ and $\bar\ell$ over its patches. A frame with fewer than 10 patches returns no estimate and is counted as an abstention. We selected first-order gradient sharpness (Tenengrad) for the frozen two-feature baseline for two reasons: it keeps the magnitude feature in the same first-order gradient operator family as the chromatic cue $c(j)$ without pre-freeze feature selection, and first-order gradient operators amplify high-frequency sensor noise and demosaicing artifacts less strongly than higher-order derivative or high-pass operators (such as finest-band Laplacian energy), albeit at the cost of a narrower optical dynamic range across defocus.
 
 The direction estimate is $\hat d=s\,\operatorname{sign}(\bar c-c_0)$, with sign $s\in\{-1,+1\}$ and threshold $c_0$. The displacement estimate inverts a through-focus curve. On training frames, the medians of $(\bar c,\bar\ell)$ are taken in bins of $\Delta z$ and interpolated on a grid $\mathcal{Z}$ to give a curve $\gamma(z)$; with $\Sigma$ the diagonal matrix of training standard deviations of the two features, a test frame is assigned
 \begin{equation}

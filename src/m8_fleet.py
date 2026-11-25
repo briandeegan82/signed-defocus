@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import mannwhitneyu
 
-LENSES = ("synth_lcaP", "laikin")
+LENSES = ("synth_lcaP", "m5_lab")
 POS = ("defocus -0.02", "defocus +0.02")
 NEG = ("in focus", "motion", "fog")
 NS = (1, 10, 100)

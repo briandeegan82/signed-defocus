@@ -181,14 +181,14 @@ def fig5_m8(out):
     lab = ["In focus", "Defocus −", "Defocus +", "Motion blur", "Fog"]
     fig, (a, b) = panels(3.1)
     w = 0.38
-    for j, (lens, c, h) in enumerate([("synth_lcaP", OK["blue"], None), ("laikin", OK["orange"], "///")]):
+    for j, (lens, c, h) in enumerate([("synth_lcaP", OK["blue"], None), ("m5_lab", OK["orange"], "///")]):
         fr = pd.read_csv(R / f"m8_confounds/{lens}/m8_frames.csv")
         fr["alarm"] = fr.dz_pred.abs() > fr.alarm_thr
         stats = [boot_mean(fr[fr.condition == k].alarm.astype(float).values,
                            fr[fr.condition == k].traversal.values) for k in order]
         m, lo, hi = np.array(stats).T
         xs = np.arange(5) + (j - 0.5) * w
-        a.bar(xs, m, w, color=c, hatch=h, edgecolor="k", lw=0.5, label=f"strong LCA ({LCAP:.2f} δ)" if j == 0 else "Laikin (weak LCA)")
+        a.bar(xs, m, w, color=c, hatch=h, edgecolor="k", lw=0.5, label=f"strong LCA ({LCAP:.2f} δ)" if j == 0 else "lab-matched (0.29 δ)")
         a.errorbar(xs, m, [m - lo, hi - m], fmt="none", ecolor="k", lw=0.7, capsize=1.5)
     a.set(xticks=range(5), xticklabels=lab, ylabel="Alarm rate", ylim=(0, 1.0))
     a.tick_params(axis="x", rotation=25)

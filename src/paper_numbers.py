@@ -128,13 +128,13 @@ def numbers():
     n["MfourSeMedianDelta"] = f(s4.se_delta.median())
     n["MfourSeMinDelta"], n["MfourSeMaxDelta"] = f(s4.se_delta.min()), f(s4.se_delta.max(), 1)
     n["LabCalMaeN"] = int(b.dz_hat_steps.notna().sum())
-    for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
+    for lens, tag in (("synth_lcaP", "Strong"), ("m5_lab", "Weak")):
         m8 = pd.read_csv(R / f"m8_confounds/{lens}/m8_summary.csv").set_index("condition").share_alarm
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (
             f(m8["in focus"]), f(m8["motion"]), f(m8["fog"]))
         n[f"Meight{tag}DefocusPos"], n[f"Meight{tag}DefocusNeg"] = f(m8["defocus +0.02"]), f(m8["defocus -0.02"])
     fl = pd.read_csv(R / "m8_confounds/fleet/m8_fleet.csv").fillna("")
-    for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
+    for lens, tag in (("synth_lcaP", "Strong"), ("m5_lab", "Weak")):
         au = fl[(fl.lens == lens) & (fl.kind == "auc")].groupby("against").value
         for q, Q in (("in focus", "Focus"), ("motion", "Motion"), ("fog", "Fog")):
             n[f"MeightAuc{tag}{Q}Min"], n[f"MeightAuc{tag}{Q}Max"] = f(au.get_group(q).min()), f(au.get_group(q).max())

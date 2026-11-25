@@ -13,14 +13,16 @@ import numpy as np
 from matplotlib.patches import FancyArrowPatch, Rectangle
 
 R = Path(__file__).resolve().parents[1] / "results"
-plt.rcParams.update({"font.family": "serif", "font.size": 7, "pdf.fonttype": 42, "savefig.dpi": 300})
+# OJVT template: Times-style lettering at 8 pt or more.
+plt.rcParams.update({"font.family": "STIXGeneral", "mathtext.fontset": "stix", "font.size": 8,
+                     "pdf.fonttype": 42, "savefig.dpi": 300})
 
 
 def show(ax, img, title=None, **kw):
     ax.imshow(img, interpolation="nearest", **kw)
     ax.set_xticks([]), ax.set_yticks([])
     if title:
-        ax.set_title(title, fontsize=7, pad=2)
+        ax.set_title(title, fontsize=8, pad=2)
 
 
 def main():
@@ -34,7 +36,7 @@ def main():
     rows = [("neg", rf"$\Delta z=-{z:g}\,\delta$"), ("source", "Unblurred"), ("pos", rf"$\Delta z=+{z:g}\,\delta$")]
 
     fig = plt.figure(figsize=(7.16, 3.3))
-    gs = fig.add_gridspec(3, 9, width_ratios=[2.66, 0.25, 1, 1, 1, 0.95, 1.3, 1.3, 1.3],
+    gs = fig.add_gridspec(3, 9, width_ratios=[2.66, 0.3, 1, 1, 1, 1.25, 1.3, 1.3, 1.3],
                           left=0.005, right=0.995, top=0.93, bottom=0.02, wspace=0.06, hspace=0.08)
     ax = fig.add_subplot(gs[:, 0])
     show(ax, d["frame_small"], "RobotCar scene")
@@ -43,7 +45,7 @@ def main():
     def arrow(x_a, x_b, y, txt):
         fig.add_artist(FancyArrowPatch((x_a, y), (x_b, y), transform=fig.transFigure,
                                        arrowstyle="-|>", mutation_scale=8, lw=0.8, color="k"))
-        fig.text((x_a + x_b) / 2, y + 0.02, txt, ha="center", va="bottom", fontsize=6, linespacing=1.15)
+        fig.text((x_a + x_b) / 2, y + 0.02, txt, ha="center", va="bottom", fontsize=8, linespacing=1.15)
 
     for r, (s, lab) in enumerate(rows):
         crop = d[f"crop_{s}"]
@@ -56,17 +58,20 @@ def main():
             first = first or ax
         y = first.get_position().y0 + first.get_position().height / 2
         if s == "source":
-            fig.text(0.285, y + 0.02, lab, ha="left", va="bottom", fontsize=7)
+            fig.text(0.285, y + 0.02, lab, ha="left", va="bottom", fontsize=8)
             arrow(0.275, 0.625, y, "no blur, no added noise:\nimage pipeline only")
             continue
+        psf_axes = []
         for c, ch in enumerate("rgb"):
             ax = fig.add_subplot(gs[r, 2 + c])
             k = d[f"psf_{s}_{ch}"]
             show(ax, k / k.max(), {"r": "Red PSF", "g": "Green PSF", "b": "Blue PSF"}[ch] if r == 0 else None,
                  cmap="gray", vmin=0, vmax=1)
+            psf_axes.append(ax)
             if c == 0:
-                ax.set_ylabel(lab, fontsize=7, labelpad=2)
-        arrow(0.555, 0.625, y - 0.04, "blur each\nBayer plane,\nadd noise,\nimage\npipeline")
+                ax.set_ylabel(lab, fontsize=8, labelpad=2)
+        x_a, x_b = psf_axes[-1].get_position().x1 + 0.008, first.get_position().x0 - 0.008
+        arrow(x_a, x_b, y - 0.05, "blur each\nBayer plane,\nadd noise,\nimage pipeline")
     a.out.mkdir(parents=True, exist_ok=True)
     for ext in ("pdf", "png"):
         fig.savefig(a.out / f"fig_pipeline.{ext}")

@@ -20,24 +20,24 @@ synth_lcaP,alarm,defocus +0.02,,100,1.0000
 synth_lcaP,alarm,in focus,,100,0.0380
 synth_lcaP,alarm,motion,,100,0.9985
 synth_lcaP,alarm,fog,,100,0.1675
-laikin,auc,defocus -0.02,in focus,1,0.5804
-laikin,auc,defocus -0.02,motion,1,0.3429
-laikin,auc,defocus -0.02,fog,1,0.4865
-laikin,auc,defocus +0.02,in focus,1,0.7119
-laikin,auc,defocus +0.02,motion,1,0.4995
-laikin,auc,defocus +0.02,fog,1,0.5921
-laikin,alarm,defocus -0.02,,1,0.0160
-laikin,alarm,defocus +0.02,,1,0.1040
-laikin,alarm,in focus,,1,0.0420
-laikin,alarm,motion,,1,0.1845
-laikin,alarm,fog,,1,0.1165
-laikin,alarm,defocus -0.02,,10,0.0045
-laikin,alarm,defocus +0.02,,10,0.0310
-laikin,alarm,in focus,,10,0.0380
-laikin,alarm,motion,,10,0.2105
-laikin,alarm,fog,,10,0.4495
-laikin,alarm,defocus -0.02,,100,0.0065
-laikin,alarm,defocus +0.02,,100,0.0030
-laikin,alarm,in focus,,100,0.0525
-laikin,alarm,motion,,100,0.3545
-laikin,alarm,fog,,100,0.9985
+m5_lab,auc,defocus -0.02,in focus,1,0.6830
+m5_lab,auc,defocus -0.02,motion,1,0.5489
+m5_lab,auc,defocus -0.02,fog,1,0.5317
+m5_lab,auc,defocus +0.02,in focus,1,0.6689
+m5_lab,auc,defocus +0.02,motion,1,0.4958
+m5_lab,auc,defocus +0.02,fog,1,0.4856
+m5_lab,alarm,defocus -0.02,,1,0.1265
+m5_lab,alarm,defocus +0.02,,1,0.0595
+m5_lab,alarm,in focus,,1,0.0490
+m5_lab,alarm,motion,,1,0.1105
+m5_lab,alarm,fog,,1,0.0710
+m5_lab,alarm,defocus -0.02,,10,0.3685
+m5_lab,alarm,defocus +0.02,,10,0.7255
+m5_lab,alarm,in focus,,10,0.0485
+m5_lab,alarm,motion,,10,0.2165
+m5_lab,alarm,fog,,10,0.3830
+m5_lab,alarm,defocus -0.02,,100,0.9285
+m5_lab,alarm,defocus +0.02,,100,1.0000
+m5_lab,alarm,in focus,,100,0.0500
+m5_lab,alarm,motion,,100,0.5785
+m5_lab,alarm,fog,,100,0.9785

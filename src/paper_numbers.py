@@ -62,6 +62,17 @@ def numbers():
     lm, le = f"{p_lv:.0e}".split("e")
     n["MthreeLevelP"] = rf"{lm}\times10^{{{int(le)}}}"
     n["MthreeQuarterMaeMin"], n["MthreeQuarterMaeMax"] = f(q.mae_delta_unseen.min()), f(q.mae_delta_unseen.max())
+    # Per-|dz|-band direction accuracy at |LCA| = 1 delta and 2 delta
+    for lca_val, ltag in ((1.0, "One"), (2.0, "Two")):
+        lenses_lvl = p2[p2.lca_over_delta == lca_val].lens.tolist()
+        b_near, b_mid = [], []
+        for ln in lenses_lvl:
+            md = pd.read_csv(R / f"phase2/lenses/{ln}/m2_direction.csv")
+            md = md[md.level == "fitted"].set_index("band")
+            b_near.append(md.loc["[0.0, 0.5)", "acc"])
+            b_mid.append(md.loc["[0.5, 1.0)", "acc"])
+        n[f"MthreeLvl{ltag}NearMin"], n[f"MthreeLvl{ltag}NearMax"] = f(min(b_near)), f(max(b_near))
+        n[f"MthreeLvl{ltag}MidMin"], n[f"MthreeLvl{ltag}MidMax"] = f(min(b_mid)), f(max(b_mid))
     ref = R / "phase2/lenses/m3_ref"
     e = pd.read_csv(ref / "m2_displacement.csv")
     c = e[(e.train == "continuous") & (e.band == "all")].iloc[0]
@@ -176,12 +187,15 @@ def numbers():
     n["RefGateBN"] = len(q)
     n["RefPhysMaeMin"], n["RefPhysMaeMax"] = f(q.mae_delta.physics.min()), f(q.mae_delta.physics.max())
     n["RefLearnMaeMin"], n["RefLearnMaeMax"] = f(q.mae_delta.learned.min()), f(q.mae_delta.learned.max())
+    n["RefLearnAbsMin"], n["RefLearnAbsMax"] = f(q.abs_mae_delta.learned.min()), f(q.abs_mae_delta.learned.max())
     n["RefPhysAbsMin"], n["RefPhysAbsMax"] = f(q.abs_mae_delta.physics.min()), f(q.abs_mae_delta.physics.max())
     n["RefPairedMaeMin"], n["RefPairedMaeMax"] = f(q.mae_delta.paired.min()), f(q.mae_delta.paired.max())
     ns = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")].groupby(["lca_over_delta", "method"]).mae_delta.mean().unstack()
     n["RefHalfPairedMae"], n["RefHalfLearnMae"] = f(ns.loc[0.5, "paired"]), f(ns.loc[0.5, "learned"])
     for m, tag in (("laplacian", "Lap"), ("tenengrad", "Ten")):
         n[f"Ref{tag}AbsMin"], n[f"Ref{tag}AbsMax"] = f(q.abs_mae_delta[m].min()), f(q.abs_mae_delta[m].max())
+    hlf = rr[rr.lca_over_delta == 0.5].pivot(index="lens", columns="method")
+    n["RefHalfLearnDirMin"], n["RefHalfLearnDirMax"] = f(hlf.direction_acc.learned.min()), f(hlf.direction_acc.learned.max())
     lo = rr[rr.lca_over_delta == 0.25].pivot(index="lens", columns="method")
     n["RefQuarterLearnDirMin"], n["RefQuarterLearnDirMax"] = f(lo.direction_acc.learned.min()), f(lo.direction_acc.learned.max())
     n["RefQuarterLearnMaeMin"], n["RefQuarterLearnMaeMax"] = f(lo.mae_delta.learned.min()), f(lo.mae_delta.learned.max())
@@ -233,14 +247,15 @@ def reference_table():
     p2 = pd.read_csv(R / "phase2/phase2_summary.csv")
     d2 = p2[p2.lens.str.match(r"m3_[zpn]\d{3}$")].groupby("lca_over_delta").dir_acc.mean()
     lines = [r"\begin{table}[t]\centering\footnotesize",
-             r"\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the "
-             r"two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames "
-             r"(two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; "
-             r"$|\Delta z|$: error of the magnitude only; both in $\delta$. "
-             r"Paired: exploratory, added after the method freeze; sign from the two-feature rule, size from the Laplacian floor.}",
-             r"\label{tab:ref}\setlength{\tabcolsep}{2pt}",
+             r"\caption{Reference methods on the continuous-displacement render, designs without spherical aberration, "
+             r"averaged over the two LCA signs (designs with spherical aberration behave similarly). Dir.: direction "
+             r"accuracy, fraction of frames (two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed "
+             r"estimate $\widehat{\Delta z}$; $|\Delta z|$: error of the magnitude only; both in $\delta$. "
+             r"Paired: post-freeze exploratory combination of two-feature sign with Laplacian-energy magnitude; "
+             r"Mean $|\nabla I_g|$ is the unsquared green-channel gradient-magnitude baseline.}",
+             r"\label{tab:ref}\setlength{\tabcolsep}{1.8pt}",
              r"\begin{tabular}{rccccccccc}\toprule",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Laplacian & Tenengrad \\",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Paired & Lap. & Mean $|\nabla I_g|$ \\",
              r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}\cmidrule(lr){10-10}",
              r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & MAE & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
     for lca, r in g.iterrows():

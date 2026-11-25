@@ -90,6 +90,9 @@ def numbers():
     n["SynthLcapLca"] = f(SYNTH_LCAP_LONG_CA * (LAMBDA["r"] - LAMBDA["b"]) / BASE["defocus_scale"] * 1000 / dl)
     n["MeightMatchDelta"] = f(MATCH_DZ * 1000 / dl)
     n["LabTestNsteps"] = len(pd.read_csv(R / "lab_test/lab_test_frames.csv"))
+    sq = pd.read_csv(R / "m7_field/lab_squares_focus.csv")
+    sq = sq[sq.freq_cy_px == 0.25].groupby("zone").lca_rb_delta.median()
+    n["MsevenLabCenter"], n["MsevenLabMid"], n["MsevenLabCorner"] = (f(sq[z]) for z in ("center", "mid", "corner"))
     s2 = pd.read_csv(R / "m2_gate/m2_displacement.csv")
     s2 = s2[s2.band == "all"].set_index("train")
     n["MtwoSubsetN"] = int(s2.loc["continuous", "n"])
@@ -123,6 +126,8 @@ def numbers():
         n[f"MsevenZc{Z}Bias"] = f(zc.loc[zone, "bias_dz"], 3)
     s4 = pd.read_csv(R / "m4_repeat/sampling_se_calibration.csv")
     n["MfourSeMedianDelta"] = f(s4.se_delta.median())
+    n["MfourSeMinDelta"], n["MfourSeMaxDelta"] = f(s4.se_delta.min()), f(s4.se_delta.max(), 1)
+    n["LabCalMaeN"] = int(b.dz_hat_steps.notna().sum())
     for lens, tag in (("synth_lcaP", "Strong"), ("laikin", "Weak")):
         m8 = pd.read_csv(R / f"m8_confounds/{lens}/m8_summary.csv").set_index("condition").share_alarm
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (
@@ -192,19 +197,24 @@ def reference_table():
     rr = pd.read_csv(R / "reference/reference_rows.csv")
     rr = rr[rr.lens.str.match(r"m3_[zpn]\d{3}$")]
     g = rr.groupby(["lca_over_delta", "method"])[["direction_acc", "mae_delta", "abs_mae_delta"]].mean().unstack()
+    p2 = pd.read_csv(R / "phase2/phase2_summary.csv")
+    d2 = p2[p2.lens.str.match(r"m3_[zpn]\d{3}$")].groupby("lca_over_delta").dir_acc.mean()
     lines = [r"\begin{table}[t]\centering\footnotesize",
-             r"\caption{Reference rows on the Phase~2 render (no spherical aberration, mean over LCA sign). "
-             r"Dir.: direction accuracy; MAE: signed error; $|\Delta z|$: error of the magnitude only, all in $\delta$.}",
+             r"\caption{Reference rows on the Phase~2 render, designs without spherical aberration, mean over the "
+             r"two LCA signs (designs with it: results/reference). Dir.: direction accuracy, a fraction of frames "
+             r"(two-feature method as in Fig.~\ref{fig:m3}). MAE: error of the signed estimate $\widehat{\Delta z}$; "
+             r"$|\Delta z|$: error of the magnitude only; both in $\delta$.}",
              r"\label{tab:ref}\setlength{\tabcolsep}{3pt}",
-             r"\begin{tabular}{rcccccccc}\hline",
-             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Lapl. & Ten. \\",
-             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\hline"]
+             r"\begin{tabular}{rcccccccc}\toprule",
+             r"LCA/$\delta$ & \multicolumn{3}{c}{Two-feature} & \multicolumn{3}{c}{Learned} & Laplacian & Tenengrad \\",
+             r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-8}\cmidrule(lr){9-9}",
+             r" & Dir. & MAE & $|\Delta z|$ & Dir. & MAE & $|\Delta z|$ & $|\Delta z|$ & $|\Delta z|$ \\\midrule"]
     for lca, r in g.iterrows():
-        v = [r[("direction_acc", "physics")], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
+        v = [d2[lca], r[("mae_delta", "physics")], r[("abs_mae_delta", "physics")],
              r[("direction_acc", "learned")], r[("mae_delta", "learned")], r[("abs_mae_delta", "learned")],
              r[("abs_mae_delta", "laplacian")], r[("abs_mae_delta", "tenengrad")]]
         lines.append(f"{lca:.2f} & " + " & ".join(f(x) for x in v) + r" \\")
-    lines += [r"\hline\end{tabular}\end{table}"]
+    lines += [r"\bottomrule\end{tabular}\end{table}"]
     return "\n".join(lines) + "\n"
 
 

@@ -12,7 +12,7 @@ from scipy import stats
 
 from lab_sweep import N_F, PITCH
 from lab_test import DELTA_PER_STEP, MIN_PATCHES
-from m3_lenses import BASE, LAMBDA, SYNTH_LCAP_LONG_CA
+from m3_lenses import BASE, LAMBDA, LEVELS, REF, SYNTH_LCAP_LONG_CA
 from m8_confounds import MATCH_DZ
 
 R = Path(__file__).resolve().parents[1] / "results"
@@ -75,6 +75,11 @@ def numbers():
     e5 = pd.read_csv(m5 / "m2_displacement.csv").set_index(["train", "band"])
     n["MthreeLvlTopDir"] = f(np.floor(p2[p2.lca_over_delta >= 1].dir_acc.min() * 100) / 100)  # floor: "or more"
     n["MfiveDir"], n["MfiveMae"] = f(d5.loc[("fitted", "all"), "acc"]), f(e5.loc[("continuous", "all"), "mae_delta"])
+    # Truth zero is the green plane; its offset from the mean of the three channel planes, in δ.
+    lam = np.array([LAMBDA[c] for c in "rgb"])
+    n["MthreeZeroOffsetMax"] = f(abs((lam - REF).mean() / (lam[0] - lam[2])) * max(LEVELS))
+    sf = pd.read_csv(R / "lab_sweep/step_size_fits.csv").iloc[0]
+    n["LabZeroOffsetDelta"] = f((sf.s0_g - (sf.s0_r + sf.s0_g + sf.s0_b) / 3) * sf.k / (2 * 2.0 * 3.45))
     fe = pd.read_csv(ref / "m2_displacement_frames.csv")
     fe = fe[fe.train == "continuous"]
     dl = 2 * BASE["f_number"] * BASE["pixel_pitch"]

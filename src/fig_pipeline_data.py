@@ -1,7 +1,7 @@
 """Stage images for the rendering-pipeline figure (one RobotCar plate, one M3 design).
 
 Runs the same calls as `m2_continuous.render` (pre-ISP arm) on one plate and keeps each stage:
-raw plate -> per-channel PSF at the displacement -> blurred Bayer + measured noise -> ISP -> RGB frame.
+raw plate (also kept unblurred, through the same ISP) -> per-channel PSF at the displacement -> blurred Bayer + measured noise -> ISP -> RGB frame.
 Needs the frozen defocus-estimator checkout (plates, renderer); `src/fig_pipeline.py` then draws the
 figure from the saved npz with no raw data.
 
@@ -56,6 +56,9 @@ def main():
     frames = {z: RA.render(plate, psfs[round(z, 4)], wb, model, "pre", RA.stable_seed(t, p.stem, round(z, 4), 0))
               for z in levels}
     blurred = RA.blur_bayer(plate, psfs[round(dz, 4)])
+    sys.path.insert(0, str(a.estimator / "src"))
+    import isp as ISP
+    source = ISP.run(plate, wb=wb)  # the plate through the same pipeline: no PSF, no added noise
 
     n = a.crop
     if a.crop_yx:
@@ -77,6 +80,7 @@ def main():
                              plate_dtype=str(plate.dtype), plate_max=float(plate.max()), wb=list(map(float, wb)))),
         plate_crop=np.asarray(plate)[sl], blurred_crop=np.asarray(blurred)[sl],
         frame_small=frames[0.0][::2, ::2],
+        crop_source=source[sl],
         **{f"psf_{s}_{c}": psfs[round(z, 4)][c] for s, z in (("neg", -dz), ("pos", dz)) for c in "rgb"},
         **{f"crop_{s}": frames[z][sl] for s, z in (("neg", -dz), ("zero", 0.0), ("pos", dz))})
     print(f"{a.lens} plate {t}/{p.stem} dz=+-{dz} DZ crop at {y0},{x0} -> {a.out}")

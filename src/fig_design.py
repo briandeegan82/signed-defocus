@@ -19,7 +19,7 @@ from m3_lenses import BASE
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "results"
 TRAIN, TEST, EDGE = "#56B4E9", "#D55E00", "#333333"
-plt.rcParams.update({"font.family": "serif", "font.size": 7, "pdf.fonttype": 42, "savefig.dpi": 300})
+plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "dejavuserif", "font.size": 7, "pdf.fonttype": 42, "savefig.dpi": 300})
 
 
 def main():
@@ -71,10 +71,10 @@ def main():
         if r + 1 < len(pt) and pt.fold[r + 1] != row.fold:
             ax.plot([1, cx + n_fold * cw], [y, y], color=EDGE, lw=0.3, ls=":")
     lx = cx + n_fold * cw + 2
-    ax.add_patch(Rectangle((lx, 50), 3.5, 3.2, fc=TRAIN, ec=EDGE, lw=0.4))
-    ax.text(lx + 4.5, 51.6, "fits the\nrule", va="center", fontsize=6, linespacing=1.2)
-    ax.add_patch(Rectangle((lx, 40), 3.5, 3.2, fc=TEST, ec=EDGE, lw=0.4))
-    ax.text(lx + 4.5, 41.6, "scored", va="center", fontsize=6, linespacing=1.2)
+    ax.add_patch(Rectangle((lx, 51), 3.5, 3.2, fc=TRAIN, ec=EDGE, lw=0.4))
+    ax.text(lx + 4.5, 52.6, "calibrate:\nthreshold $c_0$,\nsign $s$,\ncurve $\\gamma$", va="center", fontsize=6, linespacing=1.2)
+    ax.add_patch(Rectangle((lx, 36), 3.5, 3.2, fc=TEST, ec=EDGE, lw=0.4))
+    ax.text(lx + 4.5, 37.6, "test: score\ndirection and\ndisplacement", va="center", fontsize=6, linespacing=1.2)
     ax.text(50, 3, "Repeated independently for each lens design", ha="center", va="center", fontsize=6.5, style="italic")
 
     a.out.mkdir(parents=True, exist_ok=True)

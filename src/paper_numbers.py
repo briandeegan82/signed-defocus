@@ -133,6 +133,19 @@ def numbers():
         n[f"Meight{tag}InFocus"], n[f"Meight{tag}Motion"], n[f"Meight{tag}Fog"] = (
             f(m8["in focus"]), f(m8["motion"]), f(m8["fog"]))
         n[f"Meight{tag}DefocusPos"], n[f"Meight{tag}DefocusNeg"] = f(m8["defocus +0.02"]), f(m8["defocus -0.02"])
+        fr = pd.read_csv(R / f"m8_confounds/{lens}/m8_frames.csv")
+        thrs = fr.groupby("fold")["alarm_thr"].first()
+        synth_dl = 2 * BASE["f_number"] * BASE["pixel_pitch"]
+        n[f"Meight{tag}ThrMinDelta"] = f(thrs.min() * 1000.0 / synth_dl)
+        n[f"Meight{tag}ThrMaxDelta"] = f(thrs.max() * 1000.0 / synth_dl)
+        def_folds = fr[fr.condition.isin(["defocus -0.02", "defocus +0.02"])].groupby(
+            ["condition", "fold"]).apply(lambda x: (x.dz_pred.abs() > x.alarm_thr).mean(), include_groups=False)
+        n[f"Meight{tag}DefFoldMin"], n[f"Meight{tag}DefFoldMax"] = f(def_folds.min()), f(def_folds.max())
+        thr_p = np.quantile(np.abs(fr[fr.condition == "in focus"].dz_pred), 0.95)
+        for cond, cname in (("in focus", "InFocus"), ("motion", "Motion"), ("fog", "Fog"),
+                            ("defocus -0.02", "DefNeg"), ("defocus +0.02", "DefPos")):
+            sub = fr[fr.condition == cond]
+            n[f"Meight{tag}Pooled{cname}"] = f((sub.dz_pred.abs() > thr_p).mean())
     fl = pd.read_csv(R / "m8_confounds/fleet/m8_fleet.csv").fillna("")
     for lens, tag in (("synth_lcaP", "Strong"), ("m5_lab", "Weak")):
         au = fl[(fl.lens == lens) & (fl.kind == "auc")].groupby("against").value

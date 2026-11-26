@@ -6,8 +6,9 @@ within --rtol / --atol (NaN equals NaN). A step whose script or inputs are missi
 skipped, not passed. Regenerated CSVs with no committed counterpart are listed as "new".
 
 Not rerun: renders and feature extraction (GPU, hours; their parquet caches are hashed into the
-provenance instead), and the held-out lab test split, which no script touches until the method is
-frozen (docs/PROTOCOL.md section 2). Figures are rebuilt to check they run, not compared byte-wise.
+provenance instead). The `lab_test` step verifies that the frozen held-out laboratory table
+reproduces byte-consistently from the committed feature cache without modifying or tuning any
+parameter (docs/PROTOCOL.md section 2). Figures are rebuilt to check they run, not compared byte-wise.
 Every input a step reads (feature caches, MTF tables, raw duplicates) is SHA-256-hashed into
 provenance.json with the commit, a dirty flag for src/ and data/, and package versions.
 
@@ -49,7 +50,9 @@ def steps(est, data):
              "--ladder", cache / "rc_feat_robotcar_render_synth_lcaP_pre_all.parquet", "--out", "{out}"]],
          [data / "m2" / "rc_feat_m2_synth_lcaP_pre_all.parquet", rc("synth_lcaP")]),
         ("lab_sweep", "results/lab_sweep", [
-            ["lab_sweep.py", "--estimator", est, "--out", "{out}"]],
+            ["lab_sweep.py", "--estimator", est, "--out", "{out}"],
+            ["fig_lab_sharpness_mtf.py", "--feat", cache / "lab_feat_real_all.parquet",
+             "--csv-out", "{out}/sharpness_mtf_calibration.csv", "--out", "{out}"]],
          [cache / "lab_sweep_mtf.csv", cache / "lab_feat_real_all.parquet"]),
         ("m4_repeat", "results/m4_repeat", [
             ["m4_repeat.py", "--estimator", est, "--out", "{out}"]],
@@ -63,16 +66,18 @@ def steps(est, data):
              "--lab-field", cache / "lab_sweep_field_mtf.csv", "--out", "{out}"]],
          [fv, rc("sony"), est / "data/raw/robotcar_render_fieldvarying/field_labels.json",
           cache / "lab_sweep_field_mtf.csv"]),
-        ("m8_laikin", "results/m8_confounds/laikin", [
-            ["m8_confounds.py", "--cache", cache, "--lens", "laikin", "--out", "{out}"]],
-         [rc("laikin"), cache / "rc_feat_confound_motion.parquet", cache / "rc_feat_confound_fog.parquet"]),
         ("m8_synth_lcaP", "results/m8_confounds/synth_lcaP", [
             ["m8_confounds.py", "--cache", cache, "--lens", "synth_lcaP", "--conf-dir", data / "m8" / "synth_lcaP",
              "--out", "{out}"]],
          [data / "m8" / "synth_lcaP", rc("synth_lcaP")]),
+        ("m8_m5_lab", "results/m8_confounds/m5_lab", [
+            ["m8_confounds.py", "--cache", data / "m8" / "m5_lab", "--lens", "m5_lab",
+             "--conf-dir", data / "m8" / "m5_lab", "--out", "{out}"]],
+         [data / "m8" / "m5_lab"]),
         ("m8_fleet", "results/m8_confounds/fleet", [
             ["m8_fleet.py", "--m8", REPO / "results/m8_confounds", "--out", "{out}/m8_fleet.csv"]],
-         [REPO / "results/m8_confounds/laikin/m8_frames.csv", REPO / "results/m8_confounds/synth_lcaP/m8_frames.csv"]),
+         [REPO / "results/m8_confounds/synth_lcaP/m8_frames.csv",
+          REPO / "results/m8_confounds/m5_lab/m8_frames.csv"]),
         ("phase2", "results/phase2", [
             ["phase2_score.py", "--cache", data / "phase2", "--out", "{out}"]],
          [data / "phase2"]),
@@ -88,7 +93,10 @@ def steps(est, data):
         ("lab_transfer", "results/lab_transfer", [
             ["lab_transfer.py", "--estimator", est, "--out", "{out}"]],
          [cache / "lab_feat_real_all.parquet"]),
-        ("figures", None, [["figures.py", "--out", "{out}"]], []),
+        ("figures", None, [
+            ["figures.py", "--out", "{out}"],
+            ["fig_confound_examples.py", "--out", "{out}"],
+            ["fig_lab_sharpness_mtf.py", "--out", "{out}"]], []),
     ]
 
 

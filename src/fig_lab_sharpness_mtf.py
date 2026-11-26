@@ -46,7 +46,7 @@ plt.rcParams.update({
 })
 
 
-def build_csv(feat_path: Path) -> pd.DataFrame:
+def build_csv(feat_path: Path, csv_path: Path = CSV_PATH) -> pd.DataFrame:
     d = pd.read_parquet(feat_path, columns=["cx_grad_mean", "lp_e0", "step", "px"])
     d["s"] = d.step // 2
     cal = d[d.s.isin(range(0, 80, 4)) & (d.px + 64 < CHART_X_MID)]
@@ -63,11 +63,12 @@ def build_csv(feat_path: Path) -> pd.DataFrame:
     for fk in ("0125", "025"):
         g = mtf[(mtf.ch == "g") & (mtf.fk == fk)][["s", "mtf"]].rename(columns={"mtf": f"mtf_g_{fk}"})
         f = f.merge(g, on="s")
-    f.round(6).to_csv(CSV_PATH, index=False)
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    f.round(6).to_csv(csv_path, index=False)
     return f
 
 
-def plot_figure(df: pd.DataFrame) -> None:
+def plot_figure(df: pd.DataFrame, out_dir: Path = OUT_DIR) -> None:
     fig = plt.figure(figsize=(COL1, 4.35), layout="constrained")
     sfs = fig.subfigures(2, 1, hspace=0.06)
     neg = df["dz_steps"] < 0
@@ -103,19 +104,21 @@ def plot_figure(df: pd.DataFrame) -> None:
 
     fig.legend(handles, labels, loc="outside upper center", ncol=2, handletextpad=0.3, columnspacing=1.0)
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     for ext in ("pdf", "png"):
-        fig.savefig(OUT_DIR / f"fig_lab_sharpness_mtf.{ext}", bbox_inches="tight")
+        fig.savefig(out_dir / f"fig_lab_sharpness_mtf.{ext}", bbox_inches="tight")
     plt.close(fig)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--feat", type=Path, default=None, help="lab_feat_real_all.parquet (optional; rebuilds CSV)")
+    ap.add_argument("--csv-out", type=Path, default=CSV_PATH)
+    ap.add_argument("--out", type=Path, default=OUT_DIR)
     a = ap.parse_args()
-    df = build_csv(a.feat) if a.feat is not None else pd.read_csv(CSV_PATH)
-    plot_figure(df)
-    print(f"Wrote {CSV_PATH} ({len(df)} rows) and {OUT_DIR / 'fig_lab_sharpness_mtf.pdf'}")
+    df = build_csv(a.feat, a.csv_out) if a.feat is not None else pd.read_csv(a.csv_out)
+    plot_figure(df, a.out)
+    print(f"Wrote {a.csv_out} ({len(df)} rows) and {a.out / 'fig_lab_sharpness_mtf.pdf'}")
 
 
 if __name__ == "__main__":
